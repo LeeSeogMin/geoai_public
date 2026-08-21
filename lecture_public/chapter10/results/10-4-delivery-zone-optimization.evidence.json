@@ -1,0 +1,14 @@
+{
+  "file": "10-4-delivery-zone-optimization.py",
+  "chapter_relpath": "practice\\chapter10\\code\\10-4-delivery-zone-optimization.py",
+  "started_at": "2026-08-13T01:17:30.803044+09:00",
+  "duration_sec": 18.06,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "df15a91946fa398a34adc05575da30d4275a15e8594d56f8724c3d999cb3b393",
+  "output_sha256": "b7d25bb6b85b7bd728e3135216091c00a00b272b896b970a6e0d294266f6ba92",
+  "output_log": "practice\\chapter10\\results\\10-4-delivery-zone-optimization.log"
+}

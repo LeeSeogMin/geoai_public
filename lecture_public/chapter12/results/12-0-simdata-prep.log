@@ -1,0 +1,14 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 12-0-simdata-prep.py
+
+=== STDOUT ===
+================================================================
+실습 데이터 준비 (12-1 · 12-2 · 12-3 · 12-4)
+================================================================
+  복지 사각지대 읍면동 300개(20×15 격자) → welfare_units.parquet
+  감염병 시공간 발생 16×16격자×40주(총 14345건) → infectious_incidence.parquet, infectious_pop.parquet
+  DML 합성 표본 N=6000, 위기지표 p=20(+D,Y,m,ey_true) → dml_sample.parquet
+  SaTScan 감염병 격자 300개(20×15), 참 군집 21개 → satscan_cases.parquet
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

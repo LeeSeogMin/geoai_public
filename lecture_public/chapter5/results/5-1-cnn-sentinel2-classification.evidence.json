@@ -1,0 +1,14 @@
+{
+  "file": "5-1-cnn-sentinel2-classification.py",
+  "chapter_relpath": "practice\\chapter5\\code\\5-1-cnn-sentinel2-classification.py",
+  "started_at": "2026-08-13T10:38:57.894134+09:00",
+  "duration_sec": 57.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "7dfa76ffb0f1c0258805f5f1153f709c2fcf6c6fa5ed425a7732a8008f88c9b9",
+  "output_sha256": "e76a951322d1874c9f08ff05935f11fcff5a323f129c347c621c2f115d2f0223",
+  "output_log": "practice\\chapter5\\results\\5-1-cnn-sentinel2-classification.log"
+}

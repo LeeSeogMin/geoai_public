@@ -1,0 +1,13 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 13-0-simdata-prep.py
+
+=== STDOUT ===
+================================================================
+13장 실습 데이터 준비 (13-1 · 13-2 · 13-3)
+================================================================
+  시군구 지표 300개(20×15) → decline_regions.parquet
+  야간조명·쇠퇴 지표 300개(20×15) → econ_regions.parquet
+  SCM 패널 31단위×30년 → scm_Y.parquet·scm_units.parquet·scm_alpha.parquet
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

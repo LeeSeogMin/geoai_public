@@ -1,0 +1,3 @@
+model,random_cv,block_cv,cluster_cv,overestimate
+RF,0.639,0.535,0.373,0.104
+XGBoost,0.629,0.49,0.183,0.139

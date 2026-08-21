@@ -1,0 +1,14 @@
+{
+  "file": "1-1-geoai-tools-visualize.py",
+  "chapter_relpath": "practice\\chapter1\\code\\1-1-geoai-tools-visualize.py",
+  "started_at": "2026-08-12T22:37:34.535635+09:00",
+  "duration_sec": 2.97,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "ffc5e449b7a52e603410748df45247fb3f31bb69e697f56336ebf12b4972da06",
+  "output_sha256": "565b77f50346ffe4042b729f341056405fbad92527ceb07e85f4ec24f0c5dab5",
+  "output_log": "practice\\chapter1\\results\\1-1-geoai-tools-visualize.log"
+}

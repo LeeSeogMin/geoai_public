@@ -1,0 +1,14 @@
+{
+  "file": "13-0b-trade-area-data-prep.py",
+  "chapter_relpath": "practice\\chapter13\\code\\13-0b-trade-area-data-prep.py",
+  "started_at": "2026-08-13T01:12:23.675250+09:00",
+  "duration_sec": 32.17,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "a9896161522dcbe1829ae6c2de720f602a3df9d4debc93dcb7488cdc86744b57",
+  "output_sha256": "e31b9f0f8abb2d31100b96c87f3dc94efcd25bd3801b0e9e4c0732a968c80d24",
+  "output_log": "practice\\chapter13\\results\\13-0b-trade-area-data-prep.log"
+}

@@ -1,0 +1,87 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 3-1-stac-search.py
+
+=== STDOUT ===
+============================================================
+STAC API 검색 실습 — Microsoft Planetary Computer
+============================================================
+
+--- 1. Sentinel 관련 컬렉션 ---
+  sentinel-1-rtc: Sentinel 1 Radiometrically Terrain Corrected (RTC)
+  sentinel-2-l2a: Sentinel-2 Level-2A
+  sentinel-1-grd: Sentinel 1 Level-1 Ground Range Detected (GRD)
+  sentinel-5p-l2-netcdf: Sentinel-5P Level-2
+  sentinel-3-olci-wfr-l2-netcdf: Sentinel-3 Water (Full Resolution)
+  sentinel-3-synergy-aod-l2-netcdf: Sentinel-3 Global Aerosol
+  sentinel-3-synergy-v10-l2-netcdf: Sentinel-3 10-Day Surface Reflectance and NDVI (SPOT VEGETATION)
+  sentinel-3-olci-lfr-l2-netcdf: Sentinel-3 Land (Full Resolution)
+  sentinel-3-sral-lan-l2-netcdf: Sentinel-3 Land Radar Altimetry
+  sentinel-3-slstr-lst-l2-netcdf: Sentinel-3 Land Surface Temperature
+  sentinel-3-slstr-wst-l2-netcdf: Sentinel-3 Sea Surface Temperature
+  sentinel-3-sral-wat-l2-netcdf: Sentinel-3 Ocean Radar Altimetry
+  sentinel-3-slstr-frp-l2-netcdf: Sentinel-3 Fire Radiative Power
+  sentinel-3-synergy-syn-l2-netcdf: Sentinel-3 Land Surface Reflectance and Aerosol
+  sentinel-3-synergy-vgp-l2-netcdf: Sentinel-3 Top of Atmosphere Reflectance (SPOT VEGETATION)
+  sentinel-3-synergy-vg1-l2-netcdf: Sentinel-3 1-Day Surface Reflectance and NDVI (SPOT VEGETATION)
+
+  총 16개 Sentinel 컬렉션 발견
+
+--- 2. 서울 지역 Sentinel-2 검색 ---
+  검색 조건: 2024년 6-8월, 구름 < 10%
+  검색 결과: 5개 영상
+
+--- 3. 검색 결과 메타데이터 ---
+  [1] 2024-08-29 02:15 | 구름: 8.1% | 플랫폼: Sentinel-2B
+  [2] 2024-08-29 02:15 | 구름: 0.0% | 플랫폼: Sentinel-2B
+  [3] 2024-08-19 02:15 | 구름: 9.9% | 플랫폼: Sentinel-2B
+  [4] 2024-08-14 02:16 | 구름: 7.0% | 플랫폼: Sentinel-2A
+  [5] 2024-08-04 02:15 | 구름: 9.0% | 플랫폼: Sentinel-2A
+
+--- 4. STAC Item 구조 (첫 번째 Item) ---
+  ID: S2B_MSIL2A_20240829T021539_R003_T52SCG_20240829T043313
+  날짜: 2024-08-29 02:15:39.024000+00:00
+  좌표계: EPSG:32652
+  구름비율: 8.1%
+
+  Asset 목록 (23개):
+    AOT             | image/tiff; application=geotiff; profile=cloud-optimized
+    B01             | image/tiff; application=geotiff; profile=cloud-optimized
+    B02             | image/tiff; application=geotiff; profile=cloud-optimized
+    B03             | image/tiff; application=geotiff; profile=cloud-optimized
+    B04             | image/tiff; application=geotiff; profile=cloud-optimized
+    B05             | image/tiff; application=geotiff; profile=cloud-optimized
+    B06             | image/tiff; application=geotiff; profile=cloud-optimized
+    B07             | image/tiff; application=geotiff; profile=cloud-optimized
+    B08             | image/tiff; application=geotiff; profile=cloud-optimized
+    B09             | image/tiff; application=geotiff; profile=cloud-optimized
+    B11             | image/tiff; application=geotiff; profile=cloud-optimized
+    B12             | image/tiff; application=geotiff; profile=cloud-optimized
+    B8A             | image/tiff; application=geotiff; profile=cloud-optimized
+    SCL             | image/tiff; application=geotiff; profile=cloud-optimized
+    WVP             | image/tiff; application=geotiff; profile=cloud-optimized
+    datastrip-metadata | application/xml
+    granule-metadata | application/xml
+    inspire-metadata | application/xml
+    product-metadata | application/xml
+    rendered_preview | image/png
+    safe-manifest   | application/xml
+    tilejson        | application/json
+    visual          | image/tiff; application=geotiff; profile=cloud-optimized
+
+--- 5. 구름 비율 통계 ---
+  평균 구름 비율: 6.8%
+  최소 구름 비율: 0.0%
+  최대 구름 비율: 9.9%
+  총 5개 영상 중 구름 5% 미만: 1개
+
+--- 6. Landsat C2 L2 검색 비교 ---
+  동일 조건 Landsat 검색 결과: 6개 영상
+    2024-08-29: 구름 3.1%
+    2024-08-14: 구름 6.9%
+    2024-08-13: 구름 8.2%
+
+  Sentinel-2: 5개 vs Landsat: 6개
+  → Sentinel-2의 재방문 주기(5일)가 Landsat(16일)보다 짧아 더 많은 영상 확보
+
+[완료] STAC API 검색 실습을 마쳤다.
+
+=== STDERR ===

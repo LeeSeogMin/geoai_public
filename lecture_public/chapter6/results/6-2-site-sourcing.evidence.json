@@ -1,0 +1,14 @@
+{
+  "file": "6-2-site-sourcing.py",
+  "chapter_relpath": "practice\\chapter6\\code\\6-2-site-sourcing.py",
+  "started_at": "2026-08-13T10:07:35.061368+09:00",
+  "duration_sec": 2.63,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "ce13724201eb70541161d5212ebeb8b38f1d041d652292efe0bae36ce754233d",
+  "output_sha256": "ddb667fc1e859adfe8db3542b0634a9fe4c79ee18e9b29b0b383c8360792a04e",
+  "output_log": "practice\\chapter6\\results\\6-2-site-sourcing.log"
+}

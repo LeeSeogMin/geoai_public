@@ -1,0 +1,13 @@
+$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 4-0-simdata-prep.py
+
+=== STDOUT ===
+============================================================
+실습 데이터 준비 (4-1 · 4-2 · 4-5)
+============================================================
+  건물 200개 → buildings.geojson, 지하철역 3개 → stations.geojson
+  공간 포인트 500개 → spatial_points.geojson
+  격자 400개(20×20) → grid_vulnerability.parquet
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

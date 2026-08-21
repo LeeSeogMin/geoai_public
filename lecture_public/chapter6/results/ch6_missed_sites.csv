@@ -1,0 +1,6 @@
+﻿obj_id,area_m2,perim_m,compactness,aspect,min_width_m,frontage_m,frontage_strict_m,is_good,보정후_남은오탈락,두겹침식
+19,1054.0,130.0,0.784,1.097,32.0,66.0,31.0,True,True,True
+20,1044.0,130.0,0.776,1.241,30.0,40.0,36.0,True,False,False
+21,1036.0,130.0,0.77,1.321,28.0,67.0,37.0,True,True,True
+22,1024.0,128.0,0.785,1.0,32.0,36.0,32.0,True,False,False
+23,1015.0,128.0,0.778,1.207,30.0,66.0,35.0,True,False,False

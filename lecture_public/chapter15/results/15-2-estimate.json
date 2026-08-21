@@ -1,0 +1,12 @@
+{
+  "treated_market": 35,
+  "att_log_scm_clean": 0.109180935995314,
+  "att_pct_scm_clean": 11.536414160634472,
+  "att_log_scm_full": 0.11286840440334887,
+  "true_effect_log": 0.049,
+  "placebo_p": 0.02702702702702703,
+  "placebo_ratio_treated": 3.051063805664761,
+  "post_gap_sd": 0.03618004495454175,
+  "pre_gap_sd": 0.037941715455649096,
+  "n_donors_clean": 36
+}

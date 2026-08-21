@@ -1,0 +1,28 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 15-0-simdata-prep.py
+
+=== STDOUT ===
+====================================================================
+15-0 시장 단위 패널 준비 — 지역 실험·시장 SCM 공용 DGP
+====================================================================
+시장 = 40개 (4×10 격자, rook 인접)
+군집 = 10개 (2×2 블록) — 군집 무작위화 설계용
+기간 = 104주 (사전 52 / 사후 52)
+참 처치효과 = 로그 +0.049 (+5.02%)
+인접 대조 파급 = 로그 -0.015 (-1.49%)
+관측 잡음 SD = 0.035 (로그 스케일)
+
+인접 이웃 수: 최소 2 / 중앙값 3 / 최대 4
+인접 시장 쌍 = 66개
+
+성장률의 공간 자기상관(인접 쌍 평균 곱) = +0.779
+  → 양수이므로 가까운 시장끼리 성장률이 닮는다. 이 성질 때문에 SCM이
+    고르는 좋은 기증 단위가 곧 파급으로 오염된 이웃이 된다(15.4의 교환).
+
+사전 관측 성장률 상위 5개 시장: [5, 15, 4, 16, 6]
+
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_panel.parquet
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_markets.parquet
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_adjacency.npy
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_truth.json
+
+=== STDERR ===

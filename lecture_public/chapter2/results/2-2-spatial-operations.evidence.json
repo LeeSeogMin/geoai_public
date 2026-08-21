@@ -1,0 +1,14 @@
+{
+  "file": "2-2-spatial-operations.py",
+  "chapter_relpath": "practice\\chapter2\\code\\2-2-spatial-operations.py",
+  "started_at": "2026-08-13T10:08:32.493841+09:00",
+  "duration_sec": 4.59,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "17451516bf0508d14b04868137514269d10d6bf997c2aa0b35fcf9cdc38d0fc2",
+  "output_sha256": "37c8c6ada54cde1745c7d8e4ba76f29b0cb74c660dbdcedb75a3c05a053ffda9",
+  "output_log": "practice\\chapter2\\results\\2-2-spatial-operations.log"
+}

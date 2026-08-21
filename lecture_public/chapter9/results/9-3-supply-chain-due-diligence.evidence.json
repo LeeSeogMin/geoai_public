@@ -1,0 +1,14 @@
+{
+  "file": "9-3-supply-chain-due-diligence.py",
+  "chapter_relpath": "practice\\chapter9\\code\\9-3-supply-chain-due-diligence.py",
+  "started_at": "2026-08-13T00:45:26.047226+09:00",
+  "duration_sec": 1.92,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "767f381060f61f22766e6d5803922d29c93a112695111f6188099f544f5428f3",
+  "output_sha256": "8378796302ac9938c125f7743568afeee20661d724fb8c1465c216dadfdec288",
+  "output_log": "practice\\chapter9\\results\\9-3-supply-chain-due-diligence.log"
+}

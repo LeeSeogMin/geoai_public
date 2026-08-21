@@ -1,0 +1,14 @@
+{
+  "file": "3-0b-commercial-bias-data-prep.py",
+  "chapter_relpath": "practice\\chapter3\\code\\3-0b-commercial-bias-data-prep.py",
+  "started_at": "2026-08-13T10:30:06.616776+09:00",
+  "duration_sec": 7.58,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "0addf4c1b5cce735d5dd05720c6118446bd6e57f746b0ab8b6dd32704e47d343",
+  "output_sha256": "bd940724bd9635746d97d4cc839803d5b565a7faeadf62ef3d3e4eee0b6c0633",
+  "output_log": "practice\\chapter3\\results\\3-0b-commercial-bias-data-prep.log"
+}

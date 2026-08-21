@@ -1,0 +1,14 @@
+{
+  "file": "12-1-welfare-blindspot-priority.py",
+  "chapter_relpath": "practice\\chapter12\\code\\12-1-welfare-blindspot-priority.py",
+  "started_at": "2026-08-13T01:02:27.953609+09:00",
+  "duration_sec": 5.21,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "e59c3caf1914cd3caa679c77d4b5039caaa311c34ca64dbc17b5e3d4c1d1bcb9",
+  "output_sha256": "41c3dbc0282deedcd87e355358990a51c0b173ec1af4acaa5dbee5d883bb088f",
+  "output_log": "practice\\chapter12\\results\\12-1-welfare-blindspot-priority.log"
+}

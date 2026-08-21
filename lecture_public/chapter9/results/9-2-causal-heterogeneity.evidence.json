@@ -1,0 +1,14 @@
+{
+  "file": "9-2-causal-heterogeneity.py",
+  "chapter_relpath": "practice\\chapter9\\code\\9-2-causal-heterogeneity.py",
+  "started_at": "2026-08-13T00:45:05.034342+09:00",
+  "duration_sec": 21.02,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "aae874dec6e1d31072cc00d4f2ac7ae2269b961d67a6ee4ab507e0123dc56375",
+  "output_sha256": "574a2468de1934484c0a29d72ee00af2264802f916ae9c44f92bc6d7d2f5c2cf",
+  "output_log": "practice\\chapter9\\results\\9-2-causal-heterogeneity.log"
+}

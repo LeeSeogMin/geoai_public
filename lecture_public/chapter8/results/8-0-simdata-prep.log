@@ -1,0 +1,17 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 8-0-simdata-prep.py
+
+=== STDOUT ===
+============================================================
+실습 데이터 준비 (8-1 야간조명 DID/DML · 8-2 시차 도입 DID · 8-3 출점 도넛 DID)
+============================================================
+  야간조명 패널 2400행(격자 300×8년) → nightlight_panel.parquet
+  고차원 공변량 8개 → nightlight_covariates.parquet
+  시차 도입 패널 2400행(3코호트×100단위×8기) → staggered_panel.parquet
+  출점 패널 19248행(브랜드 상권 격자 802개 × 24개월) × 3세계 → store_opening_panel_A/B/C.parquet
+  격자 속성 802행 → store_opening_cells.parquet
+  처치 격자 80 · 잠식 링 격자 120 · 원거리 격자 602
+  참값 — 총효과 +0.400 · 잠식 최대 0.090(링 평균 0.069) · 순효과 +811.13 매출지수(+16.42%) → store_opening_truth.json
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

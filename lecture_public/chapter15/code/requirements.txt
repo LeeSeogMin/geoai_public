@@ -1,0 +1,32 @@
+# 15장 실습: 종합 프로젝트
+# 세 가지 End-to-End 프로젝트를 위한 의존성
+
+# 데이터 수집
+pystac-client>=0.7.0
+planetary-computer>=1.0.0
+stackstac>=0.5.0
+
+# 래스터/벡터 처리
+rasterio>=1.3.0
+geopandas>=0.14.0
+xarray>=2024.1.0
+rioxarray>=0.15.0
+
+# 딥러닝
+torch>=2.0.0
+segmentation-models-pytorch>=0.3.0
+
+# 시각화
+matplotlib>=3.7.0
+folium>=0.15.0
+plotly>=5.18.0
+
+# 대시보드
+streamlit>=1.30.0
+streamlit-folium>=0.15.0
+
+# 유틸리티
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+tqdm>=4.66.0

@@ -1,0 +1,14 @@
+{
+  "file": "11-2-predictive-policing-bias.py",
+  "chapter_relpath": "practice\\chapter11\\code\\11-2-predictive-policing-bias.py",
+  "started_at": "2026-08-12T22:41:21.910394+09:00",
+  "duration_sec": 3.13,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "9199dc4d289c00908c0be43cdd465bfea7023901cc13bbf31a41a49fa28f734c",
+  "output_sha256": "6f5c28c681fac795ca637a11da13d882ef3b9b88b96165749a3c6f524d1c7e6f",
+  "output_log": "practice\\chapter11\\results\\11-2-predictive-policing-bias.log"
+}

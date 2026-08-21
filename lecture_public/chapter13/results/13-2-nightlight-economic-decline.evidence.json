@@ -1,0 +1,14 @@
+{
+  "file": "13-2-nightlight-economic-decline.py",
+  "chapter_relpath": "practice\\chapter13\\code\\13-2-nightlight-economic-decline.py",
+  "started_at": "2026-08-13T01:08:10.755030+09:00",
+  "duration_sec": 3.92,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "eab8c81bd115090ce3179a4cb59cbcc0a48775404270f54b172651a4b6edc7e8",
+  "output_sha256": "ee659835b9a2fbd9e2fc878efa97f3c0d3f60caa8569615f0f26c484a255cd85",
+  "output_log": "practice\\chapter13\\results\\13-2-nightlight-economic-decline.log"
+}

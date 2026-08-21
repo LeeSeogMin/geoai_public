@@ -1,0 +1,39 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 8-2-staggered-did.py
+
+=== STDOUT ===
+[설계] 진짜 overall ATT (처치 관측의 평균 효과) = 0.7875
+[설계] 코호트: 조기 g=3(100), 후기 g=5(100), 미도입(100) / 기간 T=8
+
+[TWFE] 양방향고정효과 DID
+  ATT 추정 = 0.5203 (군집 SE 0.0291)
+  진짜값(0.7875)과 오차 = -0.2672
+
+[CS] group-time ATT(g,t) (미도입 통제군, 기준기 g-1)
+  g=3 t=3 (event +0): ATT(g,t) = 0.2897
+  g=3 t=4 (event +1): ATT(g,t) = 0.5519
+  g=3 t=5 (event +2): ATT(g,t) = 0.8219
+  g=3 t=6 (event +3): ATT(g,t) = 1.1031
+  g=3 t=7 (event +4): ATT(g,t) = 1.4770
+  g=5 t=5 (event +0): ATT(g,t) = 0.1724
+  g=5 t=6 (event +1): ATT(g,t) = 0.4879
+  g=5 t=7 (event +2): ATT(g,t) = 0.7982
+
+[CS] overall ATT (처치 관측 가중) = 0.7128
+  진짜값(0.7875)과 오차 = -0.0747
+
+[CS] 이벤트-스터디 (경과기간별 동적 효과)
+  event +0: 0.2311  (설계 기대 = 0.3000)
+  event +1: 0.5199  (설계 기대 = 0.6000)
+  event +2: 0.8101  (설계 기대 = 0.9000)
+  event +3: 1.1031  (설계 기대 = 1.2000)
+  event +4: 1.4770  (설계 기대 = 1.5000)
+
+============================================================
+요약: 추정량별 overall ATT (진짜값 = 0.7875)
+============================================================
+  TWFE (양방향고정효과)               0.5203  (오차 -0.2672)
+  CS group-time ATT            0.7128  (오차 -0.0747)
+
+[그림] C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter8\data\fig_8_2_staggered_did.png
+
+=== STDERR ===

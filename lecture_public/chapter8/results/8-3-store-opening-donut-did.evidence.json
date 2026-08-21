@@ -1,0 +1,14 @@
+{
+  "file": "8-3-store-opening-donut-did.py",
+  "chapter_relpath": "practice\\chapter8\\code\\8-3-store-opening-donut-did.py",
+  "started_at": "2026-08-13T02:04:42.994529+09:00",
+  "duration_sec": 660.69,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "ea0b20c3e40dd813c07a308b07a4007fcf4191999800d221e6bc6841a763d84a",
+  "output_sha256": "f5802dcf66a395edd4d7d5657b54914de7f9da005451b1eb6ec1b1c75afe2f6a",
+  "output_log": "practice\\chapter8\\results\\8-3-store-opening-donut-did.log"
+}

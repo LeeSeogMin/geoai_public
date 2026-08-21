@@ -1,0 +1,7 @@
+# 참고용 목록. 실제 설치는 루트 practice/requirements.txt 하나로 한다(전 장 공용).
+numpy>=1.26.0
+pandas>=2.0
+scikit-learn>=1.4.0
+pyarrow>=14.0.0    # parquet 읽기·쓰기 (12-0 ~ 12-5 전부)
+matplotlib>=3.8.0  # 산출 그림 (12-3 잔차 산점도, 12-5 지도)
+pyproj>=3.6.0      # 경위도 → EPSG:5179 투영 (12-0b·12-5의 거리 계산)

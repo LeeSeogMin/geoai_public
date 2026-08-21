@@ -1,0 +1,14 @@
+{
+  "file": "10-2-civil-complaint-forecast.py",
+  "chapter_relpath": "practice\\chapter10\\code\\10-2-civil-complaint-forecast.py",
+  "started_at": "2026-08-13T01:17:23.564663+09:00",
+  "duration_sec": 4.35,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "7e0bafd68e0461102b9c5cbe06bcd99b673beb511039fcb9b87b53d94df2d9e2",
+  "output_sha256": "8988c1e24c32c576b40afbdd0160b725dfebdd145138e180da31f352622ffc70",
+  "output_log": "practice\\chapter10\\results\\10-2-civil-complaint-forecast.log"
+}

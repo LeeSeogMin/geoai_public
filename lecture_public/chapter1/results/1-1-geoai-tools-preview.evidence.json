@@ -1,0 +1,14 @@
+{
+  "file": "1-1-geoai-tools-preview.py",
+  "chapter_relpath": "practice\\chapter1\\code\\1-1-geoai-tools-preview.py",
+  "started_at": "2026-08-12T22:37:29.281472+09:00",
+  "duration_sec": 5.15,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "84d947e94cbd6a825f0d2061047d51b3133c01562b7b4b8a71f835a397f4913a",
+  "output_sha256": "899f11132c41f1af4a2cfbb8ae9d166e3451a822e6e1e356c7916c809d7fda70",
+  "output_log": "practice\\chapter1\\results\\1-1-geoai-tools-preview.log"
+}

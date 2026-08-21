@@ -1,0 +1,14 @@
+{
+  "file": "12-3-dml-highdim-confounding.py",
+  "chapter_relpath": "practice\\chapter12\\code\\12-3-dml-highdim-confounding.py",
+  "started_at": "2026-08-13T01:02:36.208636+09:00",
+  "duration_sec": 44.03,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "0a0e7c7bdc34ced1dfd4aab28384ca062d271abcdfc236715888e6e54c314897",
+  "output_sha256": "d760837ffa3c1b0fa624738a3aec110050b3bb5dc18a1f669280e4e271e88982",
+  "output_log": "practice\\chapter12\\results\\12-3-dml-highdim-confounding.log"
+}

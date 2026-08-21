@@ -1,0 +1,14 @@
+{
+  "file": "4-4-spatial-clustering.py",
+  "chapter_relpath": "practice\\chapter4\\code\\4-4-spatial-clustering.py",
+  "started_at": "2026-08-12T22:39:22.561613+09:00",
+  "duration_sec": 6.67,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "4f43a2dd2a1b24d73522aac7b239c743718811055940031b1dc3ec21c4fd3f84",
+  "output_sha256": "bddc412fef36aef088087157b3da5faee14072e214d467e30d768a320f9bdb40",
+  "output_log": "practice\\chapter4\\results\\4-4-spatial-clustering.log"
+}

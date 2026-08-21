@@ -1,0 +1,13 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 7-0-simdata-prep.py
+
+=== STDOUT ===
+============================================================
+실습 데이터 준비 (7-1 · 7-2)
+============================================================
+  인구격자 400셀 → pop_grid.parquet
+  도서관 6개소 → libraries.parquet, 학교 12개소 → schools.parquet (좌표계 EPSG:5179)
+  교통량 시계열 1200시간 → traffic_volume.npy
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

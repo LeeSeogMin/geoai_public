@@ -1,0 +1,14 @@
+{
+  "file": "10-1-living-soc-accessibility.py",
+  "chapter_relpath": "practice\\chapter10\\code\\10-1-living-soc-accessibility.py",
+  "started_at": "2026-08-13T01:17:22.692720+09:00",
+  "duration_sec": 0.86,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "2a442f78f1da6dadc650abca3df363cc08bc4059486f0743a436ab1e763082c2",
+  "output_sha256": "64a59947d4dd32b01a4554ef845b3682c520ad4b74059c8e5a2273172850cbe1",
+  "output_log": "practice\\chapter10\\results\\10-1-living-soc-accessibility.log"
+}

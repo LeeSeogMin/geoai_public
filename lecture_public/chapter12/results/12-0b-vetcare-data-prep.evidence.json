@@ -1,0 +1,14 @@
+{
+  "file": "12-0b-vetcare-data-prep.py",
+  "chapter_relpath": "practice\\chapter12\\code\\12-0b-vetcare-data-prep.py",
+  "started_at": "2026-08-13T01:02:21.254593+09:00",
+  "duration_sec": 6.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "33ee0f863a72569728bcf6c9d11e35baf306e5244e053c4ba83bb6e20a7b802a",
+  "output_sha256": "eea47b74d7ae364614d3d226d28810d739a032552c34c551de28759459dd5ab9",
+  "output_log": "practice\\chapter12\\results\\12-0b-vetcare-data-prep.log"
+}

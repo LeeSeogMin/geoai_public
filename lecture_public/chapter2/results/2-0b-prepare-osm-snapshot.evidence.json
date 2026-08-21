@@ -1,0 +1,14 @@
+{
+  "file": "2-0b-prepare-osm-snapshot.py",
+  "chapter_relpath": "practice\\chapter2\\code\\2-0b-prepare-osm-snapshot.py",
+  "started_at": "2026-08-13T10:08:30.965039+09:00",
+  "duration_sec": 1.11,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "e08401ef85e2aa1723aada7b7fbe14e37efc61b41136ca80098a3c9dc8dc7033",
+  "output_sha256": "e06af20216a0bb22ff881db2ef1f433d7e9d66ad15c169c59bdd41c283ee39a1",
+  "output_log": "practice\\chapter2\\results\\2-0b-prepare-osm-snapshot.log"
+}

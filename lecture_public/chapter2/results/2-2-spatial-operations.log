@@ -1,0 +1,54 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 2-2-spatial-operations.py
+
+=== STDOUT ===
+============================================================
+GeoPandas 공간 연산 실습
+============================================================
+
+--- 1. 버퍼(Buffer) ---
+  서울: 500km 버퍼 면적 = 784,137 km²
+  도쿄: 500km 버퍼 면적 = 784,137 km²
+  베이징: 500km 버퍼 면적 = 784,137 km²
+  방콕: 500km 버퍼 면적 = 784,137 km²
+  이론 면적 (π×500²): 785,398 km²
+
+--- 2. 오버레이(Overlay) ---
+  서울 500km 반경 내 아시아 국가: 3개
+    - North Korea: 교집합 면적 89,765 km²
+    - South Korea: 교집합 면적 99,206 km²
+    - China: 교집합 면적 16,472 km²
+
+--- 3. 공간 조인(Spatial Join) ---
+  8개 도시 → 국가 매칭 완료
+    서울 → South Korea (Asia, 인구 52백만)
+    도쿄 → Japan (Asia, 인구 126백만)
+    베이징 → China (Asia, 인구 1398백만)
+    방콕 → Thailand (Asia, 인구 70백만)
+    뉴델리 → India (Asia, 인구 1366백만)
+    시드니 → Australia (Oceania, 인구 25백만)
+    런던 → United Kingdom (Europe, 인구 67백만)
+    파리 → France (Europe, 인구 67백만)
+
+--- 4. 공간 필터링 (Bounding Box) ---
+  동아시아 영역(100-145°E, 20-50°N) 내 국가: 11개
+    - Russia
+    - Thailand
+    - Laos
+    - Myanmar
+    - Vietnam
+    - North Korea
+    - South Korea
+    - Mongolia
+    - China
+    - Taiwan
+    - Japan
+
+--- 5. 좌표계에 따른 면적 차이 ---
+  한국 면적:
+    EPSG:4326 (경위도): 9.9548 (도² — 의미 없음)
+    Mollweide (등면적): 99,206 km²
+    실제 면적 참고값:   ~100,210 km²
+
+[완료] 공간 연산 실습을 마쳤다.
+
+=== STDERR ===

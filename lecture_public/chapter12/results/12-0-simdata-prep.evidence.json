@@ -1,0 +1,14 @@
+{
+  "file": "12-0-simdata-prep.py",
+  "chapter_relpath": "practice\\chapter12\\code\\12-0-simdata-prep.py",
+  "started_at": "2026-08-13T01:02:20.140807+09:00",
+  "duration_sec": 1.01,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "3438f23e516e6eb042319358215248fb9394fee2e2bf1329ddded4a7a807a5c7",
+  "output_sha256": "c0865db44a6d70997562220dcd243c838bb46d6b02e35f835cdbaf3ed1d7b353",
+  "output_log": "practice\\chapter12\\results\\12-0-simdata-prep.log"
+}

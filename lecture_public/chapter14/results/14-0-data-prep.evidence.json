@@ -1,0 +1,14 @@
+{
+  "file": "14-0-data-prep.py",
+  "chapter_relpath": "practice\\chapter14\\code\\14-0-data-prep.py",
+  "started_at": "2026-08-12T22:02:54.111794+09:00",
+  "duration_sec": 6.45,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "98ed111a98c516e2833d70d8f2a91402470e24265cc8ecae83e28d25b9201cd2",
+  "output_sha256": "cb6ecf1fef053d2e349dbef39b5f8aae35c9b7905b2765dbc52733f6b3236f3d",
+  "output_log": "practice\\chapter14\\results\\14-0-data-prep.log"
+}

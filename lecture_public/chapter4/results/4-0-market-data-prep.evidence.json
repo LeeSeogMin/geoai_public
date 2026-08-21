@@ -1,0 +1,14 @@
+{
+  "file": "4-0-market-data-prep.py",
+  "chapter_relpath": "practice\\chapter4\\code\\4-0-market-data-prep.py",
+  "started_at": "2026-08-13T00:23:10.879003+09:00",
+  "duration_sec": 6.14,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "c6b93ce089996acc95288243c987a3614d25d932900a7bed13c8b0b6b202fd09",
+  "output_sha256": "ef0ee18c01de79b51f2fdb0302135001b0b6a70e57388bc4578c0aa25ce61fd5",
+  "output_log": "practice\\chapter4\\results\\4-0-market-data-prep.log"
+}

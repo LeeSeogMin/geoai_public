@@ -1,0 +1,6 @@
+geopandas>=1.0.0
+scikit-learn>=1.4.0
+libpysal>=4.9.0
+esda>=2.5.0
+numpy>=1.26.0
+shapely>=2.0.0

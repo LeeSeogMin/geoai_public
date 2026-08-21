@@ -1,0 +1,14 @@
+{
+  "file": "13-4-trade-area-exit-decision.py",
+  "chapter_relpath": "practice\\chapter13\\code\\13-4-trade-area-exit-decision.py",
+  "started_at": "2026-08-13T01:13:34.055534+09:00",
+  "duration_sec": 6.58,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "a8dfb2e1258a642967b1535b8d4b8e10d49c4c5f85901ff1b1b3409232f4d5eb",
+  "output_sha256": "3ef1d203828270fe6b5031daf29a220c40b51fbc97693b0e7ad508510039a785",
+  "output_log": "practice\\chapter13\\results\\13-4-trade-area-exit-decision.log"
+}

@@ -1,0 +1,14 @@
+{
+  "file": "2-3-delivery-service-area.py",
+  "chapter_relpath": "practice\\chapter2\\code\\2-3-delivery-service-area.py",
+  "started_at": "2026-08-13T10:08:37.086055+09:00",
+  "duration_sec": 4.89,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "3384e1ca685a4a51ce093a03eafce1b44a6926a7fc6fb0e58e0d95f31378d401",
+  "output_sha256": "0148e8ec434763d158c7a38bf392a2cff2cd29946eb2bdb4ccfdc485e2dc8f55",
+  "output_log": "practice\\chapter2\\results\\2-3-delivery-service-area.log"
+}

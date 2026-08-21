@@ -1,0 +1,14 @@
+{
+  "file": "4-0-raster-inspection.py",
+  "chapter_relpath": "practice\\chapter4\\code\\4-0-raster-inspection.py",
+  "started_at": "2026-08-12T22:38:21.369272+09:00",
+  "duration_sec": 0.88,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "ca952df35dadedf7a7b75b40a15ad2f4db4d8fdc2d85a980b4f8618727172dfb",
+  "output_sha256": "884a6b3c7bedbe32421caec417dae0ac0b0de3c321685a6a53c65d0b5417b9b9",
+  "output_log": "practice\\chapter4\\results\\4-0-raster-inspection.log"
+}

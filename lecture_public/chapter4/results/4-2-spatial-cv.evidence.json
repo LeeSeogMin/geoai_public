@@ -1,0 +1,14 @@
+{
+  "file": "4-2-spatial-cv.py",
+  "chapter_relpath": "practice\\chapter4\\code\\4-2-spatial-cv.py",
+  "started_at": "2026-08-13T11:19:41.507854+09:00",
+  "duration_sec": 54.34,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "51bea4c122fa754a3d0a718a3e221fa35b66719e7004834375db55de95a9a403",
+  "output_sha256": "96d260afa72c7319480dace397169b4a6bacffba17b2da7301cc436491979b69",
+  "output_log": "practice\\chapter4\\results\\4-2-spatial-cv.log"
+}

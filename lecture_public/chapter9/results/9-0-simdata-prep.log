@@ -1,0 +1,13 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 9-0-simdata-prep.py
+
+=== STDOUT ===
+============================================================
+9장 실습 데이터 준비 (9-1 · 9-2 · 9-3)
+============================================================
+  산림손실 패널 6000행(300단위×20년, 보호 150) → forest_loss_panel.parquet
+  참 CATE 격자 1600개(40×40, 보호 692) → cate_grid.parquet
+  조달 구역 240개(참 위반확률 평균 0.128, 실현 위반 25건) → sourcing_districts.parquet
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

@@ -1,0 +1,8 @@
+# 13장 실습: GeoAI 개발 환경과 플랫폼
+# Google Earth Engine NDVI 시계열 분석
+
+earthengine-api>=0.1.370
+geemap>=0.30.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+numpy>=1.24.0

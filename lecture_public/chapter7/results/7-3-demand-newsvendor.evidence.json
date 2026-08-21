@@ -1,0 +1,14 @@
+{
+  "file": "7-3-demand-newsvendor.py",
+  "chapter_relpath": "practice\\chapter7\\code\\7-3-demand-newsvendor.py",
+  "started_at": "2026-08-13T09:51:52.037362+09:00",
+  "duration_sec": 41.75,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "b51ae8db3d81ab945c267106dade835e562a454a5df1fc2e7ecade9038a8c736",
+  "output_sha256": "4bcb693f8c6012480ff7340a77426d6a6a9fbf808cc51dace33f293ef64fb13d",
+  "output_log": "practice\\chapter7\\results\\7-3-demand-newsvendor.log"
+}

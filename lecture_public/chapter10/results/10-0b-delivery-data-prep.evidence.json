@@ -1,0 +1,14 @@
+{
+  "file": "10-0b-delivery-data-prep.py",
+  "chapter_relpath": "practice\\chapter10\\code\\10-0b-delivery-data-prep.py",
+  "started_at": "2026-08-13T01:17:16.374389+09:00",
+  "duration_sec": 6.31,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "55229bc2f82ba2bb5818a092f84ebcf1f137b29ca45976a829a2866b1995c11d",
+  "output_sha256": "2a0892152db38e4b6026235922c44118a03189a0453b0dbdacbb30c461f964b6",
+  "output_log": "practice\\chapter10\\results\\10-0b-delivery-data-prep.log"
+}

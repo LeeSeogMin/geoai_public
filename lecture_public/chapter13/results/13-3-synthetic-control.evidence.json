@@ -1,0 +1,14 @@
+{
+  "file": "13-3-synthetic-control.py",
+  "chapter_relpath": "practice\\chapter13\\code\\13-3-synthetic-control.py",
+  "started_at": "2026-08-13T01:08:14.672896+09:00",
+  "duration_sec": 2.33,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "5ee1473d1644d9b969faf57568cecdfea0d32b85ab6c3634b1a47f649492320f",
+  "output_sha256": "3ca2bf9b9d31476c8ff6db3dd754104bdd4196ccf20293eefb4d1e043f03470b",
+  "output_log": "practice\\chapter13\\results\\13-3-synthetic-control.log"
+}

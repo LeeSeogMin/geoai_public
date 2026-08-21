@@ -1,0 +1,18 @@
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 10-0-simdata-prep.py
+
+=== STDOUT ===
+============================================================
+실습 데이터 준비 (10-1 · 10-2 · 10-3)
+============================================================
+[10-1] 생활SOC 접근성
+  격자 300개(20×15, 인구 1,870,844명) → soc_grid.parquet
+  생활SOC 시설: 도서관 6개소, 돌봄 10개소, 공원 12개소, 체육 8개소 → soc_facilities.parquet
+[10-2] 민원 시공간 패널
+  도로 공변량 256개 격자 → complaint_road.parquet
+  민원 관측 40주 × 256격자 = 10,240행 → complaint_obs.parquet
+[10-3] 규제경계 RDD 표본
+  정상 표본 2000행 → rdd_normal.parquet, 조작 표본 2666행 → rdd_manip.parquet
+
+[완료] 실습 데이터를 data/ 폴더에 저장했다.
+
+=== STDERR ===

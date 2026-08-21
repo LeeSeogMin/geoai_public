@@ -1,0 +1,14 @@
+{
+  "file": "7-1-autonomous-gis-query.py",
+  "chapter_relpath": "practice\\chapter7\\code\\7-1-autonomous-gis-query.py",
+  "started_at": "2026-08-13T09:49:54.911990+09:00",
+  "duration_sec": 0.92,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "a1dc2a96be4297906ce6f4afb5051bc767163a5a86cb3b76058683129cfa9ac9",
+  "output_sha256": "5930c8faa06fa9f4e481285b51807ce7905eec35aad6ee41437575e97026d276",
+  "output_log": "practice\\chapter7\\results\\7-1-autonomous-gis-query.log"
+}

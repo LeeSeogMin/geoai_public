@@ -1,0 +1,14 @@
+{
+  "file": "15-2-market-synthetic-control.py",
+  "chapter_relpath": "practice\\chapter15\\code\\15-2-market-synthetic-control.py",
+  "started_at": "2026-08-12T22:48:23.607920+09:00",
+  "duration_sec": 3.11,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "9c35bcfd51790803a6f5d51836ff663c6ab9b49aa07ab8ae7870a84dc573a75c",
+  "output_sha256": "58a2a184104c9896e235f4c7c7f2862c2e9c5ec9ef062fb184cf285eba14f4d2",
+  "output_log": "practice\\chapter15\\results\\15-2-market-synthetic-control.log"
+}

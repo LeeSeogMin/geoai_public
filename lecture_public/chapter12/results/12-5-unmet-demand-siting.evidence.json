@@ -1,0 +1,14 @@
+{
+  "file": "12-5-unmet-demand-siting.py",
+  "chapter_relpath": "practice\\chapter12\\code\\12-5-unmet-demand-siting.py",
+  "started_at": "2026-08-13T01:03:29.723122+09:00",
+  "duration_sec": 7.11,
+  "exit_code": 0,
+  "timed_out": false,
+  "success": true,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": "9d27a4881c4898b3fe3c4256696ae3f083ab2a3be6e375b1be780bf9e9e0d68f",
+  "output_sha256": "10850ef2f21991dc8c290f55c8fe809538c0641bb422c92d0fb18994093d50d5",
+  "output_log": "practice\\chapter12\\results\\12-5-unmet-demand-siting.log"
+}
