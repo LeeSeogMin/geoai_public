@@ -243,4 +243,28 @@ irm https://antigravity.google/cli/install.ps1 | iex
 
 ---
 
-**마지막 업데이트**: 2026-08-15
+### 교수자의 코드에서 강의자료 클론하기
+
+내 컴퓨터 내 문서 폴더로 이동하기
+
+https://github.com/LeeSeogMin/geoai_public.git 을 현재 폴더에서 클론해줘. 
+
+### 내가 작업한 것은 그대로 남기고 교수자의 변경 강의자료 가져오기
+
+```jsx
+# 1단계: 내가 수정한 실습 코드를 임시 보관함에 안전하게 저장하기
+git stash
+
+# 2단계: 강사 최신 업데이트 자료 다운로드하기
+git pull origin main
+
+# 3단계: 임시 보관함에 넣어둔 내 코드 다시 꺼내와서 합치기
+git stash pop
+```
+
+### Vscode Extension 설치
+
+vscode pdf, Markdwon PD 설치:
+
+마크다운 파일을 연다. → 열린 파일의 화면에서 우클릭한다. → markdown pdf: export(pdf) 선택하면 변환됨
+
