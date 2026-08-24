@@ -1,12 +1,12 @@
 """
 AI 에이전트 규칙 파일 배치
 ==========================
-규칙 원본은 `practice/AGENTS.md` 하나다. 그런데 도구마다 읽는 파일 이름이 달라서,
+규칙 원본은 `lecture_practice/AGENTS.md` 하나다. 그런데 도구마다 읽는 파일 이름이 달라서,
 저장소 루트에 도구별 파일을 만들어 줘야 같은 규칙이 모두에게 적용된다.
 
 이 스크립트가 만드는 것 (저장소 루트):
 
-    AGENTS.md                        <- practice/AGENTS.md 복사본.
+    AGENTS.md                        <- lecture_practice/AGENTS.md 복사본.
                                         Codex, Antigravity, Copilot이 직접 읽는다.
     CLAUDE.md                        <- 첫 줄에 @AGENTS.md 임포트.
                                         Claude Code는 AGENTS.md를 직접 읽지 않는다.
@@ -15,8 +15,8 @@ AI 에이전트 규칙 파일 배치
 
 사용법:
 
-    python practice/agent-setup/install.py            # 없는 파일만 만든다
-    python practice/agent-setup/install.py --force    # 있어도 덮어쓴다
+    python lecture_practice/agent-setup/install.py            # 없는 파일만 만든다
+    python lecture_practice/agent-setup/install.py --force    # 있어도 덮어쓴다
 
 이미 있는 파일은 기본적으로 건드리지 않는다. 직접 쓴 context.md, todo.md가
 날아가지 않게 하기 위해서다.
@@ -36,8 +36,8 @@ CLAUDE_MD = """@AGENTS.md
 
 <!--
 Claude Code는 AGENTS.md를 직접 읽지 않는다. 위 한 줄이 AGENTS.md를 그대로
-불러오므로, 규칙을 고칠 때는 practice/AGENTS.md만 고치면 된다.
-이 파일은 practice/agent-setup/install.py가 만든다. 직접 고치지 않는다.
+불러오므로, 규칙을 고칠 때는 lecture_practice/AGENTS.md만 고치면 된다.
+이 파일은 lecture_practice/agent-setup/install.py가 만든다. 직접 고치지 않는다.
 -->
 """
 
@@ -53,7 +53,7 @@ COPILOT_MD = """# GitHub Copilot 지시사항 (GeoAI 실습)
 - 실행은 프로젝트 루트의 가상환경 `.venv`에서 한다.
 - 세션을 시작할 때 `context.md`와 `todo.md`를 읽고, 작업이 끝나면 갱신한다.
 
-<!-- practice/agent-setup/install.py가 만든 파일이다. 규칙 수정은 practice/AGENTS.md에서 한다. -->
+<!-- lecture_practice/agent-setup/install.py가 만든 파일이다. 규칙 수정은 lecture_practice/AGENTS.md에서 한다. -->
 """
 
 
@@ -106,7 +106,7 @@ def main():
         print("    (덮어쓰려면 --force 를 붙인다)")
 
     print()
-    print("  규칙을 고칠 때는 practice/AGENTS.md 를 고친 뒤 이 스크립트를 --force 로 다시 실행한다.")
+    print("  규칙을 고칠 때는 lecture_practice/AGENTS.md 를 고친 뒤 이 스크립트를 --force 로 다시 실행한다.")
     print("  (context.md 와 todo.md 는 직접 쓴 내용이 날아가므로 --force 를 조심해서 쓴다)")
     return 0
 

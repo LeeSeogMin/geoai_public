@@ -20,7 +20,7 @@
 
 ## 쓰는 데이터
 
-- 파일: (예: practice/chapter4/data/grid_features.parquet)
+- 파일: (예: lecture_practice/chapter4/data/grid_features.parquet)
 - 만든 코드: (예: 4-0-simdata-prep.py)
 - 주의할 점: (예: 좌표계가 EPSG:5179다. 위경도로 바꾸면 면적 계산이 틀어진다)
 

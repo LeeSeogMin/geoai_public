@@ -6,8 +6,8 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter4/code/4-0-simdata-prep.py   # 최초 1회: 데이터 준비
-    python practice/chapter4/code/4-2-spatial-cv.py
+    python lecture_practice/chapter4/code/4-0-simdata-prep.py   # 최초 1회: 데이터 준비
+    python lecture_practice/chapter4/code/4-2-spatial-cv.py
 """
 
 from pathlib import Path

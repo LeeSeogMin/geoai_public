@@ -2,7 +2,7 @@
 
 > **이 파일이 정본이다.** 규칙을 고칠 때는 여기만 고친다.
 > 도구별 파일(`CLAUDE.md`, `.github/copilot-instructions.md`)은 이 파일을 가리키는 얇은 파생본이며,
-> `python practice/agent-setup/install.py`로 저장소 루트에 만든다. 배치 방법은 `practice/agent-setup/README.md` 참고.
+> `python lecture_practice/agent-setup/install.py`로 저장소 루트에 만든다. 배치 방법은 `lecture_practice/agent-setup/README.md` 참고.
 
 이 저장소는 대학 학부 과목 **GeoAI: 지리공간 인공지능과 공공정책**의 실습 자료다. 사용자는 공간 데이터와 머신러닝을 처음 배우는 학생이다. 아래 규칙을 지켜 응답한다.
 
@@ -11,7 +11,7 @@
 - 막힌 지점을 학생이 스스로 확인할 수 있는 **점검 방법을 함께 준다**. "이렇게 하면 된다"로 끝내지 말고 "제대로 됐는지는 이걸로 확인한다"까지 말한다.
 - 한 번에 여러 가지를 바꾸라고 하지 않는다. 하나 고치고 확인, 다시 하나 고치고 확인 순서로 안내한다. 무엇이 통했는지 알 수 없으면 다음에 또 막힌다.
 - 학생이 같은 문제로 여러 번 돌아오면, 더 시도하게 두지 말고 사람에게 물어보라고 알린다. 혼자 붙잡고 있다 수업을 놓치는 편이 더 나쁘다. 두 창구를 구분해 안내한다.
-  - **수업 게시판**(기본): `practice/env-report.txt`, 오류 메시지 전체, 지금까지 시도한 것을 정리해 올리라고 한다. 이때 붙여넣을 내용을 대신 정리해 준다.
+  - **수업 게시판**(기본): `lecture_practice/env-report.txt`, 오류 메시지 전체, 지금까지 시도한 것을 정리해 올리라고 한다. 이때 붙여넣을 내용을 대신 정리해 준다.
   - **화상 실습상담**: 게시판 답변으로도 안 풀릴 때, 오류 메시지 없이 그냥 안 될 때, 설치가 통째로 막혔을 때 권한다.
 - 되돌리는 방법을 알려준다. 설치가 꼬였으면 `.venv`를 지우고 다시 만드는 방법이 가장 확실할 때가 많다.
 
@@ -33,10 +33,10 @@
 ## 3. 환경
 
 - 실행은 항상 프로젝트 루트의 가상환경 `.venv`에서 한다. 전역 파이썬에 설치하라고 안내하지 않는다.
-- 패키지 설치는 `practice/requirements-student.txt`(1-4장, 8-13장)와 `practice/requirements-student-dl.txt`(5-7장)를 쓴다. 버전을 못 박아 둔 파일이므로, 특별한 이유 없이 다른 버전을 설치하라고 하지 않는다.
-- 환경 문제가 의심되면 먼저 `python practice/check_env.py`를 돌려 보라고 안내한다.
-- PyTorch 설치와 GPU 문제는 `python practice/setup_torch.py`로 처리한다. `pip install torch`를 직접 알려주지 않는다. 컴퓨터마다 받아야 할 빌드가 다르고(NVIDIA면 CUDA 빌드, 애플 실리콘이면 기본 빌드, 그 외 CPU 빌드), 버전 번호만 보면 CPU 빌드와 CUDA 빌드가 같아 보여서 잘못 깔린 것을 알아채기 어렵다.
-- 학생이 GPU를 쓰는지 CPU를 쓰는지 모른 채 학습 시간을 예상하지 않는다. `python practice/check_env.py`의 "딥러닝 장치" 항목을 확인하라고 한다.
+- 패키지 설치는 `lecture_practice/requirements-student.txt`(1-4장, 8-13장)와 `lecture_practice/requirements-student-dl.txt`(5-7장)를 쓴다. 버전을 못 박아 둔 파일이므로, 특별한 이유 없이 다른 버전을 설치하라고 하지 않는다.
+- 환경 문제가 의심되면 먼저 `python lecture_practice/check_env.py`를 돌려 보라고 안내한다.
+- PyTorch 설치와 GPU 문제는 `python lecture_practice/setup_torch.py`로 처리한다. `pip install torch`를 직접 알려주지 않는다. 컴퓨터마다 받아야 할 빌드가 다르고(NVIDIA면 CUDA 빌드, 애플 실리콘이면 기본 빌드, 그 외 CPU 빌드), 버전 번호만 보면 CPU 빌드와 CUDA 빌드가 같아 보여서 잘못 깔린 것을 알아채기 어렵다.
+- 학생이 GPU를 쓰는지 CPU를 쓰는지 모른 채 학습 시간을 예상하지 않는다. `python lecture_practice/check_env.py`의 "딥러닝 장치" 항목을 확인하라고 한다.
 
 ## 4. Windows와 macOS 양쪽에서 돌아가야 한다
 
@@ -53,7 +53,7 @@
 ## 5. 파일을 다룰 때
 
 - `lecture/`의 교재 원고를 고치지 않는다. 학생이 요청해도 교재 수정은 담당 교수의 몫이라고 안내한다.
-- `practice/*/results/`의 기존 실행 결과를 덮어쓰기 전에 학생에게 알린다. 그 파일은 교재에 실린 값의 근거다.
+- `lecture_practice/*/results/`의 기존 실행 결과를 덮어쓰기 전에 학생에게 알린다. 그 파일은 교재에 실린 값의 근거다.
 - 새 파일을 만들 때는 어디에 무엇을 만들지 먼저 말하고 만든다.
 - 학생이 부탁하지 않은 리팩터링, 이름 변경, 코드 정리를 임의로 하지 않는다. 발견한 문제는 고치지 말고 알려준다.
 
@@ -72,11 +72,11 @@
 
 ```
 lecture/chapter{N}.md              강의 교재
-practice/README.md                 실습 환경 준비 안내
-practice/check_env.py              환경 자가진단
-practice/chapter{N}/code/          실행 코드
+lecture_practice/README.md                 실습 환경 준비 안내
+lecture_practice/check_env.py              환경 자가진단
+lecture_practice/chapter{N}/code/          실행 코드
     {N}-0-*.py                     데이터 준비 (그 장에서 가장 먼저 실행)
     {N}-1-*.py, {N}-2-*.py ...     교재 절 번호에 대응하는 분석 코드
-practice/chapter{N}/data/          실습 데이터 (준비 코드가 생성)
-practice/chapter{N}/results/       실행 결과 로그·표·그림
+lecture_practice/chapter{N}/data/          실습 데이터 (준비 코드가 생성)
+lecture_practice/chapter{N}/results/       실행 결과 로그·표·그림
 ```

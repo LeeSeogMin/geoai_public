@@ -11,7 +11,7 @@
 
 원자료: 소상공인시장진흥공단 상가(상권)정보(공공데이터포털 15083033, 분기 갱신).
   포털이 스크립트로 다운로드를 처리해 자동 내려받기가 막히므로 한 번은 직접 받아야
-  한다. 내려받는 절차는 practice/chapter14/data/raw/README.md와 같다.
+  한다. 내려받는 절차는 lecture_practice/chapter14/data/raw/README.md와 같다.
   14장이 이미 받아 둔 폴더가 있으면 그대로 읽는다(1.6GB를 두 벌 두지 않는다).
 
 주의: 이 데이터에는 **매출도 인구도 없다.** 13-4는 그 사실을 전제로 설계되어 있다.
@@ -115,7 +115,7 @@ def find_raw_files() -> tuple[list[Path], Path]:
         f"  찾은 폴더:\n{tried}\n"
         f"  찾는 이름: {' 또는 '.join(RAW_PATTERNS)} 가 들어간 .csv\n"
         "  → 공공데이터포털 15083033에서 내려받아 위 폴더 중 하나에 둔다.\n"
-        "    절차는 practice/chapter14/data/raw/README.md 참조."
+        "    절차는 lecture_practice/chapter14/data/raw/README.md 참조."
     )
 
 

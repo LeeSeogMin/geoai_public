@@ -39,7 +39,7 @@
 바뀌지 않는다.
 
 실행 방법 (프로젝트 루트, 통합 .venv):
-    python practice/chapter6/code/6-0b-site-simdata-prep.py
+    python lecture_practice/chapter6/code/6-0b-site-simdata-prep.py
 """
 
 from pathlib import Path

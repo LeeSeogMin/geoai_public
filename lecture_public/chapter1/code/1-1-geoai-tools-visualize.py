@@ -2,11 +2,11 @@
 Create PNG snapshots from generated GeoJSON files.
 
 Produces:
- - practice/chapter1/results/world_countries_110m.png
- - practice/chapter1/results/asia_countries.png
+ - lecture_practice/chapter1/results/world_countries_110m.png
+ - lecture_practice/chapter1/results/asia_countries.png
 
 Run with the project's `.venv`:
-  c:/.../.venv/Scripts/python.exe practice/chapter1/code/1-1-geoai-tools-visualize.py
+  c:/.../.venv/Scripts/python.exe lecture_practice/chapter1/code/1-1-geoai-tools-visualize.py
 """
 
 from pathlib import Path

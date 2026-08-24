@@ -143,8 +143,8 @@ def require_snapshot() -> int:
     print(f"  있어야 할 위치: {DATA_DIR}")
     print("\n  스냅샷은 저장소에 함께 배포됩니다. 내려받은 사본에 없다면 준비 스크립트로")
     print("  다시 만들 수 있습니다(인터넷 연결과 osmnx가 필요합니다).")
-    print("      pip install -r practice/requirements.txt")
-    print("      python practice/chapter2/code/2-0b-prepare-osm-snapshot.py --refresh")
+    print("      pip install -r lecture_practice/requirements.txt")
+    print("      python lecture_practice/chapter2/code/2-0b-prepare-osm-snapshot.py --refresh")
     print("\n  주의: 다시 만들면 그 사이 갱신된 OpenStreetMap을 받으므로 교재 본문의")
     print("  표·그림 수치와 값이 조금 달라집니다. 절차와 출처는 data/README.md 참고.")
     return 1

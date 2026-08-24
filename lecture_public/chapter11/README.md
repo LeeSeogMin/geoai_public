@@ -1,26 +1,26 @@
 # 11장 실습: 침수위험 우선순위, 예측적 치안의 되먹임 편향, 보험 리스크 등급
 
-이 실습은 `docs/ch11.md`와 `lecture/chapter11.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter11/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch11.md`와 `lecture/chapter11.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter11/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`11-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter11/code/11-0-simdata-prep.py` — 격자 지형·강우·범죄·보험 건물 데이터 생성
-- `practice/chapter11/code/11-1-flood-risk-priority.py` — 침수위험 공간 예측, 예측구간·신뢰등급·적용가능영역(AoA)
-- `practice/chapter11/code/11-2-predictive-policing-bias.py` — 예측적 치안 8라운드 되먹임 시뮬레이션(반면교사)
-- `practice/chapter11/code/11-3-insurance-risk-grading.py` — 건물별 홍수 리스크 등급과 보험료 차등(비즈니스), 선택·라벨 왜곡 분리 대조군
+- `lecture_practice/chapter11/code/11-0-simdata-prep.py` — 격자 지형·강우·범죄·보험 건물 데이터 생성
+- `lecture_practice/chapter11/code/11-1-flood-risk-priority.py` — 침수위험 공간 예측, 예측구간·신뢰등급·적용가능영역(AoA)
+- `lecture_practice/chapter11/code/11-2-predictive-policing-bias.py` — 예측적 치안 8라운드 되먹임 시뮬레이션(반면교사)
+- `lecture_practice/chapter11/code/11-3-insurance-risk-grading.py` — 건물별 홍수 리스크 등급과 보험료 차등(비즈니스), 선택·라벨 왜곡 분리 대조군
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter11/code/11-0-simdata-prep.py
-python practice/chapter11/code/11-1-flood-risk-priority.py
-python practice/chapter11/code/11-2-predictive-policing-bias.py
-python practice/chapter11/code/11-3-insurance-risk-grading.py
+python lecture_practice/chapter11/code/11-0-simdata-prep.py
+python lecture_practice/chapter11/code/11-1-flood-risk-priority.py
+python lecture_practice/chapter11/code/11-2-predictive-policing-bias.py
+python lecture_practice/chapter11/code/11-3-insurance-risk-grading.py
 ```
 
 예상 결과(검증 포인트)
@@ -47,7 +47,7 @@ python practice/chapter11/code/11-3-insurance-risk-grading.py
 
 결과 파일
 
-- `practice/chapter11/results/11-1-*.log`, `11-2-*.log`, `11-3-*.log` — 실행 로그
+- `lecture_practice/chapter11/results/11-1-*.log`, `11-2-*.log`, `11-3-*.log` — 실행 로그
 - `flood_risk_priority.csv`, `flood_admin_priority.csv`, `flood_admin_priority_uncertainty.csv` — 침수 우선순위표
 - `predictive_policing_bias.csv` — 라운드별 편향 추이
 
@@ -58,4 +58,4 @@ python practice/chapter11/code/11-3-insurance-risk-grading.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter11/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter11/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

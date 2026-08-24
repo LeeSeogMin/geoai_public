@@ -1,6 +1,6 @@
 # 11장 위험을 예측하는 세 얼굴 — 침수·치안·보험 (학부 강의용)
 
-> 이 장에 나오는 예측 성능, 신뢰등급, 편향 지표 같은 숫자는 모두 `practice/chapter11/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 예측 성능, 신뢰등급, 편향 지표 같은 숫자는 모두 `lecture_practice/chapter11/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -32,13 +32,13 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter11/README.md](practice/chapter11/README.md)
-- 실습 코드: practice/chapter11/code/11-0-simdata-prep.py → 11-1-flood-risk-priority.py → 11-2-predictive-policing-bias.py → 11-3-insurance-risk-grading.py
-- 결과 로그: practice/chapter11/results/11-1-flood-risk-priority.log, practice/chapter11/results/11-2-predictive-policing-bias.log, practice/chapter11/results/11-3-insurance-risk-grading.log
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter11/README.md](lecture_practice/chapter11/README.md)
+- 실습 코드: lecture_practice/chapter11/code/11-0-simdata-prep.py → 11-1-flood-risk-priority.py → 11-2-predictive-policing-bias.py → 11-3-insurance-risk-grading.py
+- 결과 로그: lecture_practice/chapter11/results/11-1-flood-risk-priority.log, lecture_practice/chapter11/results/11-2-predictive-policing-bias.log, lecture_practice/chapter11/results/11-3-insurance-risk-grading.log
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 세 실습(`practice/chapter11/code/`)이 만든 핵심 숫자를 먼저 보자.
+이 장의 세 실습(`lecture_practice/chapter11/code/`)이 만든 핵심 숫자를 먼저 보자.
 
 - 실습 1 (침수 예측): 격자 300개의 모의 도시. 저지대의 평균 침수심 25.1cm(그 외 10.3cm). 공간 시차를 넣자 R² `0.781 → 0.816`. 행정구역 우선순위 1위는 평균 침수심 23.49cm의 행정구역 2 — 그런데 **신뢰등급이 '낮음'**.
 - 실습 2 (예측적 치안): 두 동네의 진짜 범죄율은 `8.4 vs 8.5`로 사실상 같다. 그런데 8라운드 뒤, 기록에 대한 모델 정확도는 R² `0.999`, 순찰과 진짜 위험의 상관은 `0.429`, 차별적 영향은 `2.001` — **거의 완벽해 보이는 모델이 한 동네를 위험 몫의 두 배로 표적**했다.

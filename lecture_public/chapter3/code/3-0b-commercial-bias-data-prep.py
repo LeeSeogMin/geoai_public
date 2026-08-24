@@ -209,7 +209,7 @@ def find_sbiz_csv() -> Path:
         sys.exit(
             "[중단] 서울 상가(상권)정보 CSV를 찾지 못했다.\n"
             f"  찾은 곳: {[str(p) for p in SBIZ_RAW_CANDIDATES]}\n"
-            "  → practice/chapter3/data/raw/README.md의 절차를 먼저 밟는다."
+            "  → lecture_practice/chapter3/data/raw/README.md의 절차를 먼저 밟는다."
         )
     return max(cands, key=lambda p: p.stat().st_size)
 

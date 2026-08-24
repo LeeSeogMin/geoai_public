@@ -1,6 +1,6 @@
 # 12장 중간 지대의 라벨 — 복지·보건·감염병 (학부 강의용)
 
-> 이 장에 나오는 예측 성능, 신뢰등급, 추정치 같은 숫자는 모두 `practice/chapter12/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 예측 성능, 신뢰등급, 추정치 같은 숫자는 모두 `lecture_practice/chapter12/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -29,13 +29,13 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter12/README.md](practice/chapter12/README.md)
-- 실습 코드: practice/chapter12/code/12-0-simdata-prep.py → 12-1 ~ 12-4 순서로 실행. 그 다음 12-0b(실데이터 준비) → 12-5
-- 결과 로그: practice/chapter12/results/*.log
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter12/README.md](lecture_practice/chapter12/README.md)
+- 실습 코드: lecture_practice/chapter12/code/12-0-simdata-prep.py → 12-1 ~ 12-4 순서로 실행. 그 다음 12-0b(실데이터 준비) → 12-5
+- 결과 로그: lecture_practice/chapter12/results/*.log
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 다섯 실습(`practice/chapter12/code/`)이 만든 핵심 숫자를 먼저 보자.
+이 장의 다섯 실습(`lecture_practice/chapter12/code/`)이 만든 핵심 숫자를 먼저 보자.
 
 - 실습 1 (사각지대): 의료 접근성이 나쁜 동네의 사각지대 위험(13.56%)은 그 외(10.88%)보다 조금 높을 뿐. 접근성만으론 부족하다. 이웃 정보(공간 시차)를 넣자 R² `0.681 → 0.737`. 1순위 읍면동은 신뢰등급 '낮음'.
 - 실습 2 (감염병): 이웃의 최근 발생을 넣자 R² `0.694 → 0.776`, 이웃 발생이 예측의 최상위 근거가 됐다.

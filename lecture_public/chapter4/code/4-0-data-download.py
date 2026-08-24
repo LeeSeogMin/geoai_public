@@ -19,8 +19,8 @@ Sentinel-2 L2A 장면을 검색하고, 연구지역 bbox를 10m 공통 격자로
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    pip install -r practice/requirements.txt
-    python practice/chapter4/code/4-0-data-download.py
+    pip install -r lecture_practice/requirements.txt
+    python lecture_practice/chapter4/code/4-0-data-download.py
 """
 
 import json

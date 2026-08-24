@@ -1,6 +1,6 @@
 # 3장 데이터를 어디서 찾고, 어떤 규칙 아래 써야 할까 (학부 강의용)
 
-> 이 장에 나오는 검색 결과 개수, 파일 크기, 읽기 시간은 모두 `practice/chapter3/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 검색 결과 개수, 파일 크기, 읽기 시간은 모두 `lecture_practice/chapter3/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -63,14 +63,14 @@ GeoAI를 처음 배우면 보통 모델이나 분석 기법부터 떠올리기 �
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter3/README.md](practice/chapter3/README.md)
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter3/README.md](lecture_practice/chapter3/README.md)
 - 실습 코드:
-  - practice/chapter3/code/3-0b-commercial-bias-data-prep.py (준비 스크립트 — 자료를 처음 만들 때만 실행)
-  - practice/chapter3/code/3-1-stac-search.py
-  - practice/chapter3/code/3-2-cloud-formats.py
-  - practice/chapter3/code/3-3-cog-partial-read.py
-  - practice/chapter3/code/3-4-commercial-data-bias.py
-- 결과 로그: practice/chapter3/results/3-1-stac-search.log, practice/chapter3/results/3-2-cloud-formats.log, practice/chapter3/results/3-3-cog-partial-read.log, practice/chapter3/results/3-4-commercial-data-bias.log
+  - lecture_practice/chapter3/code/3-0b-commercial-bias-data-prep.py (준비 스크립트 — 자료를 처음 만들 때만 실행)
+  - lecture_practice/chapter3/code/3-1-stac-search.py
+  - lecture_practice/chapter3/code/3-2-cloud-formats.py
+  - lecture_practice/chapter3/code/3-3-cog-partial-read.py
+  - lecture_practice/chapter3/code/3-4-commercial-data-bias.py
+- 결과 로그: lecture_practice/chapter3/results/3-1-stac-search.log, lecture_practice/chapter3/results/3-2-cloud-formats.log, lecture_practice/chapter3/results/3-3-cog-partial-read.log, lecture_practice/chapter3/results/3-4-commercial-data-bias.log
 
 ## 5. 실제 사례로 먼저 보기
 
@@ -101,7 +101,7 @@ GeoAI를 처음 배우면 보통 모델이나 분석 기법부터 떠올리기 �
 3. 날짜 범위를 2024년 6월부터 8월까지로 잡는다.
 4. 구름이 적은 장면만 남기도록 필터를 건다.
 
-STAC API 코드는 이 과정을 **메뉴 클릭 대신 코드로 반복 가능하게 적어 놓은 것**에 가깝다. 그래서 아래 코드를 볼 때는 문법을 외우기보다, "방금 웹 화면에서 고른 조건을 코드로 옮긴 것"이라고 읽는 편이 맞다. 전체 실행 코드는 `practice/chapter3/code/3-1-stac-search.py`와 `practice/chapter3/code/3-2-cloud-formats.py`에 있다.
+STAC API 코드는 이 과정을 **메뉴 클릭 대신 코드로 반복 가능하게 적어 놓은 것**에 가깝다. 그래서 아래 코드를 볼 때는 문법을 외우기보다, "방금 웹 화면에서 고른 조건을 코드로 옮긴 것"이라고 읽는 편이 맞다. 전체 실행 코드는 `lecture_practice/chapter3/code/3-1-stac-search.py`와 `lecture_practice/chapter3/code/3-2-cloud-formats.py`에 있다.
 
 ```python
 from pystac_client import Client
@@ -393,7 +393,7 @@ STAC에서 가장 바깥쪽 구조를 보통 **Catalog**라고 부른다. Catalo
 
 한 가지는 정확히 짚고 넘어가야 한다. `0.048%`는 **픽셀 개수**로 정확히 계산한 값이지만, 실제로 오간 데이터양(바이트)이 정확히 이 비율만큼 작다는 뜻은 아니다. COG는 256~512픽셀 크기의 작은 사각형(내부 타일) 단위로 압축되어 있어서, 원하는 영역이 타일 경계에 걸치면 타일 몇 개를 통째로 더 받게 된다. 그래도 268.5MB를 다 받는 것과는 비교할 수 없을 정도로 적은 양이라는 방향은 변하지 않는다.
 
-_전체 코드는 practice/chapter3/code/3-3-cog-partial-read.py, 전체 로그는 practice/chapter3/results/3-3-cog-partial-read.log 참고_
+_전체 코드는 lecture_practice/chapter3/code/3-3-cog-partial-read.py, 전체 로그는 lecture_practice/chapter3/results/3-3-cog-partial-read.log 참고_
 
 ## 9. 데이터를 쓰는 길: 거버넌스와 라이선스
 
@@ -519,7 +519,7 @@ _전체 코드는 practice/chapter3/code/3-3-cog-partial-read.py, 전체 로그�
 - **활동 1 (10분):** Planetary Computer STAC API와 Copernicus Browser를 본다고 가정하고, 둘 다 위성데이터 검색 창구라는 점과 다른 점을 한 줄씩 적어 보자.
 - **활동 2 (10분):** 같은 데이터를 GeoJSON, Shapefile, GeoParquet 중 어느 형식으로 보관할지 비교해 보자. 파일 크기, 읽기 속도, 익숙함 가운데 무엇을 더 중시하는지도 함께 적어 보자.
 - **활동 3 (10분):** 국가공간정보포털, 공공데이터포털, SGIS, 브이월드 가운데 "인구와 행정단위가 필요한 과제"에 가장 먼저 들어갈 곳을 고르고 이유를 적어 보자.
-- **활동 4 (20분):** 우리 동네(또는 학교 주변) 한 블록을 정하고, 지도 앱에서 카페 수를 세어 보자. 그다음 실제로 걸어가거나 로드뷰로 다시 세어 보자. 두 수가 다르면 어느 쪽이 더 많은가? 왜 그럴까? 세어 본 뒤 `python practice/chapter3/code/3-4-commercial-data-bias.py`를 돌려, 서울 전체에서도 같은 방향인지 확인해 보자.
+- **활동 4 (20분):** 우리 동네(또는 학교 주변) 한 블록을 정하고, 지도 앱에서 카페 수를 세어 보자. 그다음 실제로 걸어가거나 로드뷰로 다시 세어 보자. 두 수가 다르면 어느 쪽이 더 많은가? 왜 그럴까? 세어 본 뒤 `python lecture_practice/chapter3/code/3-4-commercial-data-bias.py`를 돌려, 서울 전체에서도 같은 방향인지 확인해 보자.
 - **토론:** "출처만 적으면 공개 데이터는 어디에나 자유롭게 쓸 수 있다"는 주장에 동의하는가? ODbL과 공공누리를 떠올리며 이유를 설명해 보자.
 
 ## 12. 체크 질문
@@ -578,4 +578,4 @@ python scripts/submit.py 3 --id 학번 --name 이름
 - **서울 상권을 숫자로 보기**  
   서울시 상권분석 서비스(https://golmok.seoul.go.kr)는 행정동·업종별 추정 매출과 유동인구를 지도 위에서 보여 준다. 이 매출이 카드 결제 자료에서 나온다는 점을 알고 보면, 어떤 업종의 숫자를 더 조심해서 읽어야 하는지 감이 잡힌다.
 
-> 이 장의 수치를 직접 재현해 보고 싶다면 `practice/chapter3/code/`의 코드를 실행해 보면 된다.
+> 이 장의 수치를 직접 재현해 보고 싶다면 `lecture_practice/chapter3/code/`의 코드를 실행해 보면 된다.

@@ -4,7 +4,7 @@
 WGS84 경위도를 UTM 52N으로 변환하고, 역변환 검증 및 거리 계산을 수행한다.
 
 실행 방법:
-    cd practice/chapter2
+    cd lecture_practice/chapter2
     python -m venv venv
     source venv/bin/activate          # macOS/Linux
     pip install -r code/requirements.txt

@@ -1,6 +1,6 @@
 # 5장 컴퓨터는 위성사진에서 무엇을 보는가
 
-> 이 장에 나오는 분류 정확도, 학습 시간 같은 숫자는 모두 `practice/chapter5/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 분류 정확도, 학습 시간 같은 숫자는 모두 `lecture_practice/chapter5/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -33,14 +33,14 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter5/README.md](practice/chapter5/README.md)
-- 실습 코드: `5-1-cnn-sentinel2-classification.py`(실험 1~3), `5-2-baseline-vs-cnn.py`(실험 4), `5-3-adoption-cost-breakeven.py`(실험 5) — 모두 practice/chapter5/code/ 아래에 있다
-- 결과 로그: practice/chapter5/results/ 의 같은 이름 `.log` 파일 세 개
-- 선행 준비: 4장의 `practice/chapter4/code/4-0-data-download.py`로 위성영상을 먼저 내려받아야 한다. 실험 5는 실험 4가 남긴 CSV를 읽으므로 순서대로 실행한다
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter5/README.md](lecture_practice/chapter5/README.md)
+- 실습 코드: `5-1-cnn-sentinel2-classification.py`(실험 1~3), `5-2-baseline-vs-cnn.py`(실험 4), `5-3-adoption-cost-breakeven.py`(실험 5) — 모두 lecture_practice/chapter5/code/ 아래에 있다
+- 결과 로그: lecture_practice/chapter5/results/ 의 같은 이름 `.log` 파일 세 개
+- 선행 준비: 4장의 `lecture_practice/chapter4/code/4-0-data-download.py`로 위성영상을 먼저 내려받아야 한다. 실험 5는 실험 4가 남긴 CSV를 읽으므로 순서대로 실행한다
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 실습(`practice/chapter5/code/5-1-cnn-sentinel2-classification.py`)이 만든 핵심 숫자를 먼저 한눈에 보자. 지금은 외울 필요 없다.
+이 장의 실습(`lecture_practice/chapter5/code/5-1-cnn-sentinel2-classification.py`)이 만든 핵심 숫자를 먼저 한눈에 보자. 지금은 외울 필요 없다.
 
 - 데이터: 32×32 크기, 12채널짜리 위성 패치 `724장`(4개 토지 유형 × 181장)
 - 채널 실험: 눈에 보이는 3채널만 `0.973` → 근적외선 1개 추가 `0.984` → 12채널 전부 `0.984`(더 안 오름)
@@ -95,7 +95,7 @@ self.features = nn.Sequential(
 - ③ 층이 깊어질수록 돋보기 수(32→64→128)를 늘린다. 깊은 층일수록 알아봐야 할 패턴의 종류가 많아서다.
 - ④ 마지막 줄은 각 무늬가 "사진 안 어디에" 있었는지는 버리고 "있었는지"만 남긴다. 사진 전체에 라벨 하나를 붙이는 분류에서는 위치가 필요 없기 때문이다.
 
-이 작은 모델의 배워야 할 숫자(파라미터)가 96,804개다. 실습의 큰 모델(MiniResNet)은 1,231,236개로 약 13배다. 전체 코드는 `practice/chapter5/code/5-1-cnn-sentinel2-classification.py`에 있다.
+이 작은 모델의 배워야 할 숫자(파라미터)가 96,804개다. 실습의 큰 모델(MiniResNet)은 1,231,236개로 약 13배다. 전체 코드는 `lecture_practice/chapter5/code/5-1-cnn-sentinel2-classification.py`에 있다.
 
 ## 6. 위성사진은 셀카와 다르다
 

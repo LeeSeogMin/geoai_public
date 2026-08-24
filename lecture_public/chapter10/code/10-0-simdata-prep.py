@@ -20,7 +20,7 @@ RDD 실습(10-3)도 참 규제효과 τ를 아는 합성 자료로 추정량을 
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter10/code/10-0-simdata-prep.py
+    python lecture_practice/chapter10/code/10-0-simdata-prep.py
 """
 
 from pathlib import Path

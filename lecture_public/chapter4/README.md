@@ -1,40 +1,40 @@
 # 4장 실습: 공간 피처·공간 교차검증·앙상블·군집·취약성 예측·상권 기대 공급량
 
-이 실습은 `docs/ch04.md`와 `lecture/chapter4.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter4/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch04.md`와 `lecture/chapter4.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter4/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 위성영상·벡터 파일은 저장소에 포함되지 않습니다(`.gitignore`). **아래 0단계 스크립트를 먼저 실행해 데이터를 만들어야** 나머지 실습이 돌아갑니다.
 - `4-0-data-download.py`는 Planetary Computer에서 실제 Sentinel-2 장면을 내려받으므로 인터넷 연결과 수백 MB의 여유 공간이 필요합니다.
 - `4-0-market-data-prep.py`는 **국내 공개 데이터 원본 CSV 두 개**(소상공인 상가정보 서울분, 서울 생활인구 행정동)를 필요로 합니다. 두 포털 모두 자바스크립트로 다운로드를 처리해 자동 내려받기가 막히므로 한 번은 직접 받아야 합니다. 절차는 `data/raw/README.md` 참조. **인증키는 필요 없습니다.** 14장도 같은 원자료를 쓰므로, 이미 받아 두었다면 그대로 재사용합니다.
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter4/code/4-0-simdata-prep.py` — 4-1·4-2·4-5용 벡터·격자 데이터 생성
-- `practice/chapter4/code/4-0-data-download.py` — 4-3·4-4용 실제 Sentinel-2 L2A + ESA WorldCover 내려받기
-- `practice/chapter4/code/4-0-raster-inspection.py` — 내려받은 위성영상 메타데이터·밴드 확인
-- `practice/chapter4/code/4-1-spatial-features.py` — 건물 필지에서 형태·거리·위상 피처 추출
-- `practice/chapter4/code/4-2-spatial-cv.py` — 공간 자기상관(Moran's I)과 Random/Block/Cluster CV 비교
-- `practice/chapter4/code/4-3-ensemble-comparison.py` — RF·XGBoost·LightGBM 비교(실제 위성 픽셀)
-- `practice/chapter4/code/4-4-spatial-clustering.py` — K-means·DBSCAN 비지도 군집
-- `practice/chapter4/code/4-5-grid-vulnerability-shap.py` — 격자 취약성 예측 + 공간 CV + SHAP (4.6 분석 1)
-- `practice/chapter4/code/4-0-market-data-prep.py` — 상가정보·생활인구를 서울 행정동 단위로 집계
-- `practice/chapter4/code/4-6-store-location-supply.py` — 행정동 카페 기대 공급량 + 자치구 단위 CV + SHAP + 라벨 셔플 대조군 (4.6 분석 2)
+- `lecture_practice/chapter4/code/4-0-simdata-prep.py` — 4-1·4-2·4-5용 벡터·격자 데이터 생성
+- `lecture_practice/chapter4/code/4-0-data-download.py` — 4-3·4-4용 실제 Sentinel-2 L2A + ESA WorldCover 내려받기
+- `lecture_practice/chapter4/code/4-0-raster-inspection.py` — 내려받은 위성영상 메타데이터·밴드 확인
+- `lecture_practice/chapter4/code/4-1-spatial-features.py` — 건물 필지에서 형태·거리·위상 피처 추출
+- `lecture_practice/chapter4/code/4-2-spatial-cv.py` — 공간 자기상관(Moran's I)과 Random/Block/Cluster CV 비교
+- `lecture_practice/chapter4/code/4-3-ensemble-comparison.py` — RF·XGBoost·LightGBM 비교(실제 위성 픽셀)
+- `lecture_practice/chapter4/code/4-4-spatial-clustering.py` — K-means·DBSCAN 비지도 군집
+- `lecture_practice/chapter4/code/4-5-grid-vulnerability-shap.py` — 격자 취약성 예측 + 공간 CV + SHAP (4.6 분석 1)
+- `lecture_practice/chapter4/code/4-0-market-data-prep.py` — 상가정보·생활인구를 서울 행정동 단위로 집계
+- `lecture_practice/chapter4/code/4-6-store-location-supply.py` — 행정동 카페 기대 공급량 + 자치구 단위 CV + SHAP + 라벨 셔플 대조군 (4.6 분석 2)
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter4/code/4-0-simdata-prep.py
-python practice/chapter4/code/4-0-data-download.py
-python practice/chapter4/code/4-0-raster-inspection.py
-python practice/chapter4/code/4-1-spatial-features.py
-python practice/chapter4/code/4-2-spatial-cv.py
-python practice/chapter4/code/4-3-ensemble-comparison.py
-python practice/chapter4/code/4-4-spatial-clustering.py
-python practice/chapter4/code/4-5-grid-vulnerability-shap.py
-python practice/chapter4/code/4-0-market-data-prep.py
-python practice/chapter4/code/4-6-store-location-supply.py
+python lecture_practice/chapter4/code/4-0-simdata-prep.py
+python lecture_practice/chapter4/code/4-0-data-download.py
+python lecture_practice/chapter4/code/4-0-raster-inspection.py
+python lecture_practice/chapter4/code/4-1-spatial-features.py
+python lecture_practice/chapter4/code/4-2-spatial-cv.py
+python lecture_practice/chapter4/code/4-3-ensemble-comparison.py
+python lecture_practice/chapter4/code/4-4-spatial-clustering.py
+python lecture_practice/chapter4/code/4-5-grid-vulnerability-shap.py
+python lecture_practice/chapter4/code/4-0-market-data-prep.py
+python lecture_practice/chapter4/code/4-6-store-location-supply.py
 ```
 
 예상 결과(검증 포인트)
@@ -73,12 +73,12 @@ python practice/chapter4/code/4-6-store-location-supply.py
 
 결과 파일
 
-- `practice/chapter4/results/*.log` — 스크립트별 실행 로그
-- `practice/chapter4/results/ch4_cv_comparison.csv` — CV 기법 비교 표
-- `practice/chapter4/results/ch4_vulnerability_priority.csv` — 격자 우선순위 표
-- `practice/chapter4/results/ch4_dong_supply_gap.csv` — 행정동별 기대 공급량과 공급 격차
-- `practice/chapter4/results/ch4_supply_cv_comparison.csv` — 검증 설계별 성능 비교
-- `practice/chapter4/results/ch4_supply_gap_map.png` — 공급 격차 지도(그림 4.3)
+- `lecture_practice/chapter4/results/*.log` — 스크립트별 실행 로그
+- `lecture_practice/chapter4/results/ch4_cv_comparison.csv` — CV 기법 비교 표
+- `lecture_practice/chapter4/results/ch4_vulnerability_priority.csv` — 격자 우선순위 표
+- `lecture_practice/chapter4/results/ch4_dong_supply_gap.csv` — 행정동별 기대 공급량과 공급 격차
+- `lecture_practice/chapter4/results/ch4_supply_cv_comparison.csv` — 검증 설계별 성능 비교
+- `lecture_practice/chapter4/results/ch4_supply_gap_map.png` — 공급 격차 지도(그림 4.3)
 
 연관 자료
 
@@ -87,4 +87,4 @@ python practice/chapter4/code/4-6-store-location-supply.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter4/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter4/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

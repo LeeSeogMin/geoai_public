@@ -1,27 +1,27 @@
 # 9장 실습: 보호구역 효과 추정, 이질적 처치효과 기반 배분, 그리고 실사 컷오프 결정
 
-이 실습은 `docs/ch09.md`와 `lecture/chapter9.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter9/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch09.md`와 `lecture/chapter9.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter9/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`9-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
 - 네트워크는 필요하지 않습니다. 세 분석 모두 저장된 합성 자료만 씁니다.
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter9/code/9-0-simdata-prep.py` — 세 데이터 생성(보호구역 패널, 참 CATE 격자, 조달 구역)
-- `practice/chapter9/code/9-1-protected-area-forest-loss.py` — 단순 비교 vs DID, 공간 ML 벌채위험 예측, 신뢰등급
-- `practice/chapter9/code/9-2-causal-heterogeneity.py` — R-러너 CATE, GATES·BLP 이질성 검정, 배분 전략 비교
-- `practice/chapter9/code/9-3-supply-chain-due-diligence.py` — 비대칭 손실 하의 실사 컷오프, 예산 곡선, 대조군
+- `lecture_practice/chapter9/code/9-0-simdata-prep.py` — 세 데이터 생성(보호구역 패널, 참 CATE 격자, 조달 구역)
+- `lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py` — 단순 비교 vs DID, 공간 ML 벌채위험 예측, 신뢰등급
+- `lecture_practice/chapter9/code/9-2-causal-heterogeneity.py` — R-러너 CATE, GATES·BLP 이질성 검정, 배분 전략 비교
+- `lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py` — 비대칭 손실 하의 실사 컷오프, 예산 곡선, 대조군
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter9/code/9-0-simdata-prep.py
-python practice/chapter9/code/9-1-protected-area-forest-loss.py
-python practice/chapter9/code/9-2-causal-heterogeneity.py
-python practice/chapter9/code/9-3-supply-chain-due-diligence.py
+python lecture_practice/chapter9/code/9-0-simdata-prep.py
+python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
+python lecture_practice/chapter9/code/9-2-causal-heterogeneity.py
+python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
 ```
 
 예상 결과(검증 포인트)
@@ -52,11 +52,11 @@ python practice/chapter9/code/9-3-supply-chain-due-diligence.py
 
 결과 파일
 
-- `practice/chapter9/results/9-1-*.log`, `9-2-*.log`, `9-3-*.log` — 실행 로그
-- `practice/chapter9/results/spatial_unit_priority.csv`, `admin_area_priority.csv`, `admin_area_priority_uncertainty.csv` — 우선순위표
-- `practice/chapter9/results/9-2-cate-heterogeneity.png`, `9-2-cate-summary.txt` — 이질성 분석 산출물
-- `practice/chapter9/results/9-3-due-diligence-cutoff.png` — 위험함수·컷오프와 예산 곡선
-- `practice/chapter9/results/9-3-cost-ratio-cutoff.csv`, `9-3-rule-comparison.csv`, `9-3-calibration-sensitivity.csv`, `9-3-cost-ratio-misspecification.csv`, `9-3-null-control.csv` — 실사 결정 산출물
+- `lecture_practice/chapter9/results/9-1-*.log`, `9-2-*.log`, `9-3-*.log` — 실행 로그
+- `lecture_practice/chapter9/results/spatial_unit_priority.csv`, `admin_area_priority.csv`, `admin_area_priority_uncertainty.csv` — 우선순위표
+- `lecture_practice/chapter9/results/9-2-cate-heterogeneity.png`, `9-2-cate-summary.txt` — 이질성 분석 산출물
+- `lecture_practice/chapter9/results/9-3-due-diligence-cutoff.png` — 위험함수·컷오프와 예산 곡선
+- `lecture_practice/chapter9/results/9-3-cost-ratio-cutoff.csv`, `9-3-rule-comparison.csv`, `9-3-calibration-sensitivity.csv`, `9-3-cost-ratio-misspecification.csv`, `9-3-null-control.csv` — 실사 결정 산출물
 
 연관 자료
 
@@ -65,4 +65,4 @@ python practice/chapter9/code/9-3-supply-chain-due-diligence.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter9/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter9/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

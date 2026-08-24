@@ -1,6 +1,6 @@
 # 14장 어디에 가게를 열 것인가 — 위치 인텔리전스와 입지 분석 (학부 강의용)
 
-> 이 장에 나오는 점포 수, 배분 수요, 전이율, 상관계수 같은 숫자는 모두 `practice/chapter14/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다. 그리고 이 장은 이 수업에서 드물게 **시뮬레이션이 아니라 국내 공개 데이터**를 쓴다.
+> 이 장에 나오는 점포 수, 배분 수요, 전이율, 상관계수 같은 숫자는 모두 `lecture_practice/chapter14/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다. 그리고 이 장은 이 수업에서 드물게 **시뮬레이션이 아니라 국내 공개 데이터**를 쓴다.
 
 ## 1. 오늘의 큰 질문
 
@@ -31,9 +31,9 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법·원자료 내려받는 절차·기대값): [practice/chapter14/README.md](practice/chapter14/README.md)
-- 실습 코드: `practice/chapter14/code/14-0-data-prep.py` → `14-1-huff-location-cannibalization.py`
-- 결과 로그: `practice/chapter14/results/*.log`
+- 실습 README(실행 방법·원자료 내려받는 절차·기대값): [lecture_practice/chapter14/README.md](lecture_practice/chapter14/README.md)
+- 실습 코드: `lecture_practice/chapter14/code/14-0-data-prep.py` → `14-1-huff-location-cannibalization.py`
+- 결과 로그: `lecture_practice/chapter14/results/*.log`
 
 이 장의 실습은 원자료를 한 번 직접 내려받아야 한다. 두 포털 모두 자동 다운로드가 막혀 있어서다. 절차는 README에 적혀 있다.
 

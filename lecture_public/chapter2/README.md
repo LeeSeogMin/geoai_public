@@ -1,32 +1,32 @@
 # 2장 실습: 좌표계 변환, 공간 연산과 서비스 권역 계산
 
-이 실습은 `docs/ch02.md`와 `lecture/chapter2.md`의 내용을 코드로 확인하는 목적입니다. 실습은 로컬에서 실행되며, 결과 로그는 `practice/chapter2/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch02.md`와 `lecture/chapter2.md`의 내용을 코드로 확인하는 목적입니다. 실습은 로컬에서 실행되며, 결과 로그는 `lecture_practice/chapter2/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
-- 세 번째 실습(`2-3`)은 `networkx`가, 준비 스크립트(`2-0b`)는 `osmnx`가 필요합니다. 두 패키지는 루트 `practice/requirements.txt`에 들어 있으므로, 예전에 환경을 만들었다면 한 번 다시 설치하세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
+- 세 번째 실습(`2-3`)은 `networkx`가, 준비 스크립트(`2-0b`)는 `osmnx`가 필요합니다. 두 패키지는 루트 `lecture_practice/requirements.txt`에 들어 있으므로, 예전에 환경을 만들었다면 한 번 다시 설치하세요.
 
 ```bash
-pip install -r practice/requirements.txt
+pip install -r lecture_practice/requirements.txt
 ```
 
 실습 파일
 
-- `practice/chapter2/code/2-1-coordinate-transform.py` — 경위도 ↔ UTM 변환 예제
-- `practice/chapter2/code/2-2-spatial-operations.py` — 버퍼·오버레이·면적 계산 예제
-- `practice/chapter2/code/2-3-delivery-service-area.py` — 배달 권역: 원형 반경과 도로망 도달권 비교
+- `lecture_practice/chapter2/code/2-1-coordinate-transform.py` — 경위도 ↔ UTM 변환 예제
+- `lecture_practice/chapter2/code/2-2-spatial-operations.py` — 버퍼·오버레이·면적 계산 예제
+- `lecture_practice/chapter2/code/2-3-delivery-service-area.py` — 배달 권역: 원형 반경과 도로망 도달권 비교
 
 준비 스크립트(평소에는 실행하지 않습니다)
 
-- `practice/chapter2/code/2-0b-prepare-osm-snapshot.py` — OpenStreetMap에서 도로망·건물을 내려받아 `data/`에 스냅샷으로 저장합니다. **스냅샷이 이미 저장소에 들어 있으므로 실행할 필요가 없습니다.** 그냥 실행하면 스냅샷 요약만 출력하고 끝나고, `--refresh`를 붙여야 다시 내려받습니다. 다시 받으면 OSM이 그동안 갱신된 만큼 아래 기대값과 어긋날 수 있습니다.
+- `lecture_practice/chapter2/code/2-0b-prepare-osm-snapshot.py` — OpenStreetMap에서 도로망·건물을 내려받아 `data/`에 스냅샷으로 저장합니다. **스냅샷이 이미 저장소에 들어 있으므로 실행할 필요가 없습니다.** 그냥 실행하면 스냅샷 요약만 출력하고 끝나고, `--refresh`를 붙여야 다시 내려받습니다. 다시 받으면 OSM이 그동안 갱신된 만큼 아래 기대값과 어긋날 수 있습니다.
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter2/code/2-1-coordinate-transform.py
-python practice/chapter2/code/2-2-spatial-operations.py
-python practice/chapter2/code/2-3-delivery-service-area.py
+python lecture_practice/chapter2/code/2-1-coordinate-transform.py
+python lecture_practice/chapter2/code/2-2-spatial-operations.py
+python lecture_practice/chapter2/code/2-3-delivery-service-area.py
 ```
 
 예상 결과(검증 포인트)
@@ -77,4 +77,4 @@ python practice/chapter2/code/2-3-delivery-service-area.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter2/results/*.evidence.json`를 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter2/results/*.evidence.json`를 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

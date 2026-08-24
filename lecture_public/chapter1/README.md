@@ -4,12 +4,12 @@
 
 ## 시작 전에
 
-`practice/README.md`의 1-5단계를 마쳤어야 한다. 아직이면 거기부터 한다. 터미널 앞에 `(.venv)`가 붙어 있는지 확인한다.
+`lecture_practice/README.md`의 1-5단계를 마쳤어야 한다. 아직이면 거기부터 한다. 터미널 앞에 `(.venv)`가 붙어 있는지 확인한다.
 
 ## 1. 코드 돌리기
 
 ```
-python practice/chapter1/code/1-1-geoai-tools-preview.py
+python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py
 ```
 
 전 세계 국가 경계 데이터를 인터넷에서 받아 와 대륙별로 세어 보는 코드다. 처음 실행하면 데이터를 받느라 몇 초 걸린다.
@@ -53,7 +53,7 @@ before this operation.
 
 1. **원인 이해**
    ```
-   practice/chapter1/code/1-1-geoai-tools-preview.py 를 돌렸더니
+   lecture_practice/chapter1/code/1-1-geoai-tools-preview.py 를 돌렸더니
    "Geometry is in a geographic CRS" 경고가 떴어.
    왜 이런 경고가 나는지, 위도 경도로 면적을 재면 뭐가 잘못되는지
    그림 그리듯 쉽게 설명해줘. 코드는 아직 고치지 마.

@@ -1,6 +1,6 @@
 # 9장 보호구역은 정말 숲을 지켰을까 (학부 강의용)
 
-> 이 장에 나오는 효과 추정치, 표의 평균값, 예측 성능 같은 숫자는 모두 `practice/chapter9/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 효과 추정치, 표의 평균값, 예측 성능 같은 숫자는 모두 `lecture_practice/chapter9/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -32,13 +32,13 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter9/README.md](practice/chapter9/README.md)
-- 실습 코드: practice/chapter9/code/9-0-simdata-prep.py → 9-1-protected-area-forest-loss.py → 9-2-causal-heterogeneity.py → 9-3-supply-chain-due-diligence.py
-- 결과 로그: practice/chapter9/results/9-1-protected-area-forest-loss.log, practice/chapter9/results/9-2-causal-heterogeneity.log, practice/chapter9/results/9-3-supply-chain-due-diligence.log
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter9/README.md](lecture_practice/chapter9/README.md)
+- 실습 코드: lecture_practice/chapter9/code/9-0-simdata-prep.py → 9-1-protected-area-forest-loss.py → 9-2-causal-heterogeneity.py → 9-3-supply-chain-due-diligence.py
+- 결과 로그: lecture_practice/chapter9/results/9-1-protected-area-forest-loss.log, lecture_practice/chapter9/results/9-2-causal-heterogeneity.log, lecture_practice/chapter9/results/9-3-supply-chain-due-diligence.log
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 실습 세 개(`practice/chapter9/code/`)가 만든 핵심 숫자를 먼저 보자.
+이 장의 실습 세 개(`lecture_practice/chapter9/code/`)가 만든 핵심 숫자를 먼저 보자.
 
 - 실습 1 (보호구역이 숲을 지켰나): 격자 300개(보호 150개)의 모의 숲, 2001~2020년, 2011년 보호 지정, **진짜 효과 −0.80%p를 미리 심어 둠**(연간 손실률을 0.80%p 낮춤) → 단순 비교 `−1.306`(약 1.6배 부풀림), 이중차분 `−0.822`(진짜값 회복). 벌채위험 예측은 공간 시차를 넣으면 R² `0.307`, 빼면 `−0.080`(평균 찍기보다 나쁨).
 - 실습 2 (보호 예산을 어디에): 진짜 효과를 지역마다 다르게 심은 모의 자료(1,600격자) → 보호 100곳 배분에서 손실 좇기 `83.28`(무작위 `86.17`보다 **못함**), CATE 표적화 `123.12`(정답을 아는 oracle `135.13`의 91%).
@@ -142,7 +142,7 @@
 
 쉽게 말해서, 모든 지역에서 보호효과가 같지 않다. 어떤 곳은 보호하면 벌채가 크게 줄지만, 어떤 곳은 보호해도 별 차이가 없다. 이 "지역마다 다른 효과"가 **조건부 평균처치효과(CATE)**다. 평균효과(ATE)는 이걸 하나의 수로 뭉개서, 효과가 큰 지역과 작은 지역을 한데 섞어 버린다.
 
-두 번째 실습(`practice/chapter9/code/9-2-causal-heterogeneity.py`)은 이 이질성을 추정한다. 1,600개 격자에 진짜 CATE를 심되, **결정적인 설계 하나**를 넣었다. 손실의 *크기*(보호 없을 때 얼마나 베이는가)는 **개발 압력**이 정하고, 보호의 *효과*(보호가 막아 주는 손실)는 **집행역량**(단속·경계 관리가 실제로 작동하는 정도)이 따로 정하게 했다. 두 변수는 서로 어긋난다 — **손실이 큰 곳(고압력)과 보호가 잘 듣는 곳(고집행역량)이 다른 곳**이다. 이 어긋남이 CATE가 필요한 이유의 핵심이다.
+두 번째 실습(`lecture_practice/chapter9/code/9-2-causal-heterogeneity.py`)은 이 이질성을 추정한다. 1,600개 격자에 진짜 CATE를 심되, **결정적인 설계 하나**를 넣었다. 손실의 *크기*(보호 없을 때 얼마나 베이는가)는 **개발 압력**이 정하고, 보호의 *효과*(보호가 막아 주는 손실)는 **집행역량**(단속·경계 관리가 실제로 작동하는 정도)이 따로 정하게 했다. 두 변수는 서로 어긋난다 — **손실이 큰 곳(고압력)과 보호가 잘 듣는 곳(고집행역량)이 다른 곳**이다. 이 어긋남이 CATE가 필요한 이유의 핵심이다.
 
 방법은 8장의 이중기계학습(DML)과 같은 규율을 쓴다. 교란(압력이 낮은 곳이 우선 보호된 것)을 먼저 걷어내고, 남은 것에서 지역별 효과 τ(x)만 뽑아낸다(R-러너). 이 추정이 잘 됐는지부터 채점하자. 추정한 CATE와 진짜 CATE의 상관은 **0.744** — 이질성의 순서와 크기를 상당히 회복했다. 평균효과도 편향 없이 잡았다(단순 하위집단 비교 −1.343은 과대추정이지만, 교란을 걷어낸 추정은 −0.937로 진짜 평균 −0.891에 근접).
 

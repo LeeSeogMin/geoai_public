@@ -2,7 +2,7 @@
 2장 준비(비즈니스 예제): 배달 권역 분석용 OpenStreetMap 스냅샷 만들기
 =====================================================================
 이 스크립트는 **실습 본편이 아니다.** 분석 코드(2-3)가 읽을 원자료를 한 번
-내려받아 `practice/chapter2/data/`에 고정해 두는 준비 단계다. 스냅샷이 이미
+내려받아 `lecture_practice/chapter2/data/`에 고정해 두는 준비 단계다. 스냅샷이 이미
 있으면 네트워크에 접속하지 않고 요약만 출력하고 끝낸다. 그래서 하네스가 이
 파일을 매번 실행해도 결과가 흔들리지 않는다.
 
@@ -127,7 +127,7 @@ def build_snapshot() -> int:
     try:
         import osmnx as ox
     except ImportError:
-        print("[오류] osmnx가 필요합니다.  pip install -r practice/requirements.txt")
+        print("[오류] osmnx가 필요합니다.  pip install -r lecture_practice/requirements.txt")
         return 1
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)

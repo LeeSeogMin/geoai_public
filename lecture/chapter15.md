@@ -1,6 +1,6 @@
 # 15장 가게를 열었더니 매출이 올랐다 — 가게 덕분인가? (학부 강의용)
 
-> 이 장에 나오는 편향, 검정력, 추정치, 순현재가치 같은 숫자는 모두 `practice/chapter15/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다. 단, 이 장의 데이터는 **합성 데이터**이고 비용 파라미터는 **가정값**이다. 왜 그래야 하는지는 5절에서 설명한다.
+> 이 장에 나오는 편향, 검정력, 추정치, 순현재가치 같은 숫자는 모두 `lecture_practice/chapter15/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다. 단, 이 장의 데이터는 **합성 데이터**이고 비용 파라미터는 **가정값**이다. 왜 그래야 하는지는 5절에서 설명한다.
 
 ## 1. 오늘의 큰 질문
 
@@ -35,9 +35,9 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter15/README.md](practice/chapter15/README.md)
-- 실습 코드: `practice/chapter15/code/15-0-simdata-prep.py` → `15-1` → `15-2` → `15-3` 순서로 실행
-- 결과 로그: `practice/chapter15/results/*.log`
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter15/README.md](lecture_practice/chapter15/README.md)
+- 실습 코드: `lecture_practice/chapter15/code/15-0-simdata-prep.py` → `15-1` → `15-2` → `15-3` 순서로 실행
+- 결과 로그: `lecture_practice/chapter15/results/*.log`
 
 확인할 지점은 셋이다. `15-1`에서는 **설계만 바꿔 못 잴 것을 잴 수 있게 되는가**, `15-2`에서는 **계단을 올라가도 참값에 못 닿는가**, `15-3`에서는 **같은 예측에서 정반대 주문량이 나오는가**를 본다.
 

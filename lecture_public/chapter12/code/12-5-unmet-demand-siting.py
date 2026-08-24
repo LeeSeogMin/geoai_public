@@ -36,8 +36,8 @@
 심야 생활인구). 사육률·용량·원가만 가정값이며 민감도로 다룬다.
 
 실행 방법 (프로젝트 루트, 통합 .venv):
-    python practice/chapter12/code/12-0b-vetcare-data-prep.py   # 최초 1회
-    python practice/chapter12/code/12-5-unmet-demand-siting.py
+    python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py   # 최초 1회
+    python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 """
 
 import sys

@@ -1,10 +1,10 @@
 # 10장 실습: 생활SOC 접근성·민원 예측·규제경계 RDD·배달 권역 최적화
 
-이 실습은 `docs/ch10.md`와 `lecture/chapter10.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter10/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch10.md`와 `lecture/chapter10.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter10/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요. **신규 의존성은 없습니다** — 최적화는 `scipy.optimize.milp`(HiGHS)로 풀고, 좌표 변환은 이미 설치된 `pyproj`를 씁니다.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요. **신규 의존성은 없습니다** — 최적화는 `scipy.optimize.milp`(HiGHS)로 풀고, 좌표 변환은 이미 설치된 `pyproj`를 씁니다.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다.
   - 10-1~10-3(시뮬레이션): **`10-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
   - 10-4(실데이터): **`10-0b-delivery-data-prep.py`를 먼저 실행**해 스냅샷을 만들어야 합니다. 이 준비 스크립트는 아래 원자료 두 개를 필요로 합니다.
@@ -20,22 +20,22 @@ API 인증키는 쓰지 않습니다. 키가 필요한 경로로 확장할 경�
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter10/code/10-0-simdata-prep.py` — 격자 인구·생활SOC·민원 데이터 생성(시뮬레이션)
-- `practice/chapter10/code/10-1-living-soc-accessibility.py` — 접근성·형평성 진단과 우선 공급 후보지(AI 없이 결정론적 계산)
-- `practice/chapter10/code/10-2-civil-complaint-forecast.py` — 다음 주 민원 시공간 예측
-- `practice/chapter10/code/10-3-rdd-regulation-boundary.py` — 규제경계 회귀불연속(RDD)
-- `practice/chapter10/code/10-0b-delivery-data-prep.py` — **실데이터 스냅샷 생성**(원자료 필요, 1회)
-- `practice/chapter10/code/10-4-delivery-zone-optimization.py` — 배달 권역 최적화와 원가 컷라인(스냅샷만 읽음)
+- `lecture_practice/chapter10/code/10-0-simdata-prep.py` — 격자 인구·생활SOC·민원 데이터 생성(시뮬레이션)
+- `lecture_practice/chapter10/code/10-1-living-soc-accessibility.py` — 접근성·형평성 진단과 우선 공급 후보지(AI 없이 결정론적 계산)
+- `lecture_practice/chapter10/code/10-2-civil-complaint-forecast.py` — 다음 주 민원 시공간 예측
+- `lecture_practice/chapter10/code/10-3-rdd-regulation-boundary.py` — 규제경계 회귀불연속(RDD)
+- `lecture_practice/chapter10/code/10-0b-delivery-data-prep.py` — **실데이터 스냅샷 생성**(원자료 필요, 1회)
+- `lecture_practice/chapter10/code/10-4-delivery-zone-optimization.py` — 배달 권역 최적화와 원가 컷라인(스냅샷만 읽음)
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter10/code/10-0-simdata-prep.py
-python practice/chapter10/code/10-1-living-soc-accessibility.py
-python practice/chapter10/code/10-2-civil-complaint-forecast.py
-python practice/chapter10/code/10-3-rdd-regulation-boundary.py
-python practice/chapter10/code/10-0b-delivery-data-prep.py        # 원자료 있을 때 1회
-python practice/chapter10/code/10-4-delivery-zone-optimization.py
+python lecture_practice/chapter10/code/10-0-simdata-prep.py
+python lecture_practice/chapter10/code/10-1-living-soc-accessibility.py
+python lecture_practice/chapter10/code/10-2-civil-complaint-forecast.py
+python lecture_practice/chapter10/code/10-3-rdd-regulation-boundary.py
+python lecture_practice/chapter10/code/10-0b-delivery-data-prep.py        # 원자료 있을 때 1회
+python lecture_practice/chapter10/code/10-4-delivery-zone-optimization.py
 ```
 
 스냅샷(`data/delivery_grid.parquet`)이 이미 만들어져 있으면 취득 단계를 건너뛰고 `10-4`만 실행해도 같은 수치가 재현됩니다.
@@ -68,7 +68,7 @@ python practice/chapter10/code/10-4-delivery-zone-optimization.py
 
 결과 파일
 
-- `practice/chapter10/results/10-1~10-4 *.log` — 실행 로그(+ `.evidence.json` 증거)
+- `lecture_practice/chapter10/results/10-1~10-4 *.log` — 실행 로그(+ `.evidence.json` 증거)
 - `living_soc_priority.csv`, `complaint_response_priority.csv`, `complaint_response_priority_uncertainty.csv` — 우선순위표
 - `10-3-rdd-discontinuity.png`, `10-3-rdd-summary.txt` — RDD 산출물
 - `delivery_zone_cells.csv`(격자별 원가·기여이익·컷라인 판정), `delivery_zone_summary.csv`(시나리오 요약), `10-4-delivery-zone.png` — 배달 권역 산출물
@@ -80,5 +80,5 @@ python practice/chapter10/code/10-4-delivery-zone-optimization.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter10/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
-- 10-0b가 "원자료를 찾지 못했다"로 멈추면, 위 두 포털에서 받은 CSV가 `practice/*/data/raw/` 아래에 있는지 확인하세요(하위 폴더도 탐색합니다).
+- 실행 로그와 `lecture_practice/chapter10/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 10-0b가 "원자료를 찾지 못했다"로 멈추면, 위 두 포털에서 받은 CSV가 `lecture_practice/*/data/raw/` 아래에 있는지 확인하세요(하위 폴더도 탐색합니다).

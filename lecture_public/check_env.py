@@ -4,7 +4,7 @@
 실습을 시작하기 전에 이 파일을 한 번 실행한다. 내 컴퓨터에서 무엇이 준비됐고
 무엇이 빠졌는지 항목별로 알려주고, 빠진 항목은 어떻게 채우는지까지 알려준다.
 
-    python practice/check_env.py
+    python lecture_practice/check_env.py
 
 Windows와 macOS 모두에서 같은 방식으로 동작한다.
 
@@ -209,7 +209,7 @@ def check_gpu():
         import torch
     except ImportError:
         print("  PyTorch   : 아직 설치 안 함 (5장에서 설치한다)")
-        print("  설치 방법 : python practice/setup_torch.py")
+        print("  설치 방법 : python lecture_practice/setup_torch.py")
         return problems
 
     device = "cpu"
@@ -226,7 +226,7 @@ def check_gpu():
     except Exception as exc:
         problems.append(
             f"GPU를 인식했지만 계산에서 실패했다({type(exc).__name__}). "
-            "python practice/setup_torch.py 를 다시 실행해 CPU 빌드로 바꾼다."
+            "python lecture_practice/setup_torch.py 를 다시 실행해 CPU 빌드로 바꾼다."
         )
 
     label = {"cuda": "그래픽카드(CUDA)", "mps": "맥 내장 GPU(MPS)", "cpu": "CPU"}
@@ -236,7 +236,7 @@ def check_gpu():
     if device == "cpu" and (cuda_driver or is_apple_silicon):
         problems.append(
             "GPU가 있는데 CPU로 돌게 되어 있다. 학습이 몇 배 느려진다. "
-            "python practice/setup_torch.py 를 실행하면 맞는 버전으로 바꿔준다."
+            "python lecture_practice/setup_torch.py 를 실행하면 맞는 버전으로 바꿔준다."
         )
     return problems
 
@@ -300,7 +300,7 @@ def main():
     if not problems:
         print("  모든 항목 통과. 실습을 시작해도 된다.")
         print()
-        print("  다음 단계: python practice/chapter1/code/1-1-geoai-tools-preview.py")
+        print("  다음 단계: python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py")
         return 0
 
     print(f"  해결할 항목 {len(problems)}개")

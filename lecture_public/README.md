@@ -109,7 +109,7 @@ VS Code 오른쪽 아래(또는 `Ctrl+Shift+P` → `Python: Select Interpreter`)
 `(.venv)`가 붙어 있는 상태에서 실행한다.
 
 ```
-pip install -r practice/requirements-student.txt
+pip install -r lecture_practice/requirements-student.txt
 ```
 
 5분에서 15분쯤 걸린다. 1장부터 4장, 8장부터 13장까지 이 설치분으로 진행한다.
@@ -117,7 +117,7 @@ pip install -r practice/requirements-student.txt
 딥러닝을 쓰는 **5-7장은 학기 중반에** 추가로 깐다. 용량이 크고, 컴퓨터마다 받아야 할 파일이 달라서 아래 명령 하나로 처리한다.
 
 ```
-python practice/setup_torch.py
+python lecture_practice/setup_torch.py
 ```
 
 이 명령이 내 컴퓨터를 살펴보고 맞는 것을 골라 깐다.
@@ -128,26 +128,26 @@ python practice/setup_torch.py
 
 설치가 끝나면 실제로 GPU 계산을 한 번 돌려서 정말 되는지까지 확인해 준다. **그래픽카드가 없어도 실습은 모두 할 수 있다.** 시간이 더 걸릴 뿐이다.
 
-무엇을 깔지 미리 보려면 `python practice/setup_torch.py --dry-run`, 이미 깔린 상태만 보려면 `--check`를 붙인다.
+무엇을 깔지 미리 보려면 `python lecture_practice/setup_torch.py --dry-run`, 이미 깔린 상태만 보려면 `--check`를 붙인다.
 
 ---
 
 ## 5단계. 제대로 됐는지 확인
 
 ```
-python practice/check_env.py
+python lecture_practice/check_env.py
 ```
 
 항목별로 무엇이 준비됐는지 보여준다. 마지막에 "모든 항목 통과"가 나오면 끝이다.
 
 문제가 있으면 무엇을 하면 되는지 문장으로 알려준다. 그 문장을 그대로 AI 에이전트에게 붙여넣고 "내 운영체제에 맞게 해결 방법을 단계로 알려줘"라고 물어보면 된다. 시킨 대로 한 뒤 진단을 다시 돌려 그 항목이 사라졌는지 확인한다.
 
-실행할 때마다 같은 내용이 `practice/env-report.txt`로도 저장된다. 두세 번 시도해도 같은 문제가 남으면 **이 파일을 게시판 글에 첨부**한다. 내 컴퓨터 상태가 다 들어 있어서, 무엇이 어떻게 안 되는지 따로 설명하지 않아도 된다.
+실행할 때마다 같은 내용이 `lecture_practice/env-report.txt`로도 저장된다. 두세 번 시도해도 같은 문제가 남으면 **이 파일을 게시판 글에 첨부**한다. 내 컴퓨터 상태가 다 들어 있어서, 무엇이 어떻게 안 되는지 따로 설명하지 않아도 된다.
 
 이어서 1장 실습 코드를 한 번 돌려 본다.
 
 ```
-python practice/chapter1/code/1-1-geoai-tools-preview.py
+python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py
 ```
 
 전 세계 국가 경계 데이터를 내려받아 대륙별 국가 수를 세는 코드다. `전체 국가 수: 177`이 나오면 환경이 완성된 것이다.
@@ -188,7 +188,7 @@ VS Code 확장(Codex)을 설치하고 OpenAI 계정으로 로그인한다. 터�
 도구는 저장소에 있는 규칙 파일을 읽고 이 수업의 방식대로 움직인다. 파일을 아직 안 만들었으면 한 번 실행한다.
 
 ```
-python practice/agent-setup/install.py
+python lecture_practice/agent-setup/install.py
 ```
 
 루트에 `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`와 작업 기록용 `context.md`, `todo.md`가 생긴다. 이미 있으면 건드리지 않는다.
@@ -198,7 +198,7 @@ python practice/agent-setup/install.py
 에이전트에게 이렇게 물어본다.
 
 ```
-practice/chapter1/code/1-1-geoai-tools-preview.py 파일을 읽고,
+lecture_practice/chapter1/code/1-1-geoai-tools-preview.py 파일을 읽고,
 이 코드가 무엇을 하는지 한 문단으로 설명해줘.
 ```
 
@@ -316,7 +316,7 @@ Windows 한국어 환경은 기본 문자 인코딩이 `cp949`다. 실행 결과
 }
 ```
 
-VS Code 터미널을 닫았다 다시 열고 `python practice/check_env.py`를 실행하면 "2. 문자 인코딩" 항목에서 확인할 수 있다.
+VS Code 터미널을 닫았다 다시 열고 `python lecture_practice/check_env.py`를 실행하면 "2. 문자 인코딩" 항목에서 확인할 수 있다.
 
 ### 3) 한글 폰트
 
@@ -335,8 +335,8 @@ VS Code 터미널을 닫았다 다시 열고 `python practice/check_env.py`를 �
 | `UnicodeEncodeError` / 결과 파일의 한글이 깨짐 | 위 "Windows 한글 인코딩"을 적용한다. |
 | 그림의 한글이 네모로 나옴 | 위 "한글 폰트"를 적용한다. |
 | 데이터 파일이 없다는 메시지 | 각 장 폴더의 `-0-`으로 시작하는 데이터 준비 코드를 먼저 돌린다. 메시지에 어느 파일을 돌리라고 나온다. |
-| 그래픽카드가 있는데 학습이 느림 | CPU 빌드가 깔린 것이다. `python practice/setup_torch.py`를 실행하면 맞는 빌드로 바꿔 준다. `python practice/check_env.py`의 "딥러닝 장치" 항목에서 지금 무엇으로 도는지 볼 수 있다. |
-| `CUDA error` / GPU 연산에서 오류 | 그래픽카드가 너무 오래됐거나 드라이버가 낮다. `python practice/setup_torch.py`가 이 경우를 감지해 CPU 빌드로 바꾸는 명령을 알려준다. CPU로도 실습은 모두 된다. |
+| 그래픽카드가 있는데 학습이 느림 | CPU 빌드가 깔린 것이다. `python lecture_practice/setup_torch.py`를 실행하면 맞는 빌드로 바꿔 준다. `python lecture_practice/check_env.py`의 "딥러닝 장치" 항목에서 지금 무엇으로 도는지 볼 수 있다. |
+| `CUDA error` / GPU 연산에서 오류 | 그래픽카드가 너무 오래됐거나 드라이버가 낮다. `python lecture_practice/setup_torch.py`가 이 경우를 감지해 CPU 빌드로 바꾸는 명령을 알려준다. CPU로도 실습은 모두 된다. |
 
 ### 그래도 안 될 때 — 어디까지 혼자 하고, 언제 물어보나
 
@@ -346,7 +346,7 @@ VS Code 터미널을 닫았다 다시 열고 `python practice/check_env.py`를 �
 오류 메시지를 요약하지 말고 **전체를 그대로** 붙여넣는다. "내 운영체제는 (윈도우/맥)이고, 방금 이걸 하려던 참이었어"를 덧붙인다. 요약하면 진짜 원인이 잘려 나간다.
 
 **2단계. 한 번에 하나만 고친다**
-에이전트가 방법을 여러 개 주면 위에서부터 하나씩 해 보고, 매번 `python practice/check_env.py`로 확인한다. 한꺼번에 바꾸면 무엇이 통했는지 알 수 없어서 다음에 또 막힌다.
+에이전트가 방법을 여러 개 주면 위에서부터 하나씩 해 보고, 매번 `python lecture_practice/check_env.py`로 확인한다. 한꺼번에 바꾸면 무엇이 통했는지 알 수 없어서 다음에 또 막힌다.
 
 **3단계. 되돌린다**
 설치가 꼬였다 싶으면 `.venv` 폴더를 통째로 지우고 3단계부터 다시 한다. 실습 코드는 그대로 있으니 잃는 것이 없다. 이 방법이 가장 빠를 때가 많다.
@@ -358,7 +358,7 @@ VS Code 터미널을 닫았다 다시 열고 `python practice/check_env.py`를 �
 - 운영체제와 파이썬 버전
 - **오류 메시지 전체** (줄여서 옮기지 않는다)
 - 1~3단계에서 시도한 것과 그 결과
-- 첨부: `practice/env-report.txt`
+- 첨부: `lecture_practice/env-report.txt`
 
 에이전트가 알려준 방법을 그대로 적어 주면 더 좋다. 무엇이 안 통했는지가 단서가 된다.
 
@@ -369,7 +369,7 @@ VS Code 터미널을 닫았다 다시 열고 `python practice/check_env.py`를 �
 - 설치가 통째로 진행되지 않아 무엇부터 봐야 할지 모르겠다
 - 오류 메시지 없이 그냥 안 된다 (붙여넣을 것이 없는 경우)
 
-신청 전에 `python practice/check_env.py`를 한 번 돌려 두고, 상담 때 그 화면과 문제가 나는 상황을 바로 보여줄 수 있게 준비한다. 준비돼 있으면 상담 시간이 훨씬 짧아진다.
+신청 전에 `python lecture_practice/check_env.py`를 한 번 돌려 두고, 상담 때 그 화면과 문제가 나는 상황을 바로 보여줄 수 있게 준비한다. 준비돼 있으면 상담 시간이 훨씬 짧아진다.
 
 ### 최후 수단: 구글 코랩
 
@@ -386,7 +386,7 @@ geoAI/
 ├── context.md                내 작업 맥락 (직접 쓴다)
 ├── todo.md                   내 할 일 목록 (직접 쓴다)
 ├── lecture/                  강의 교재 (chapter1.md ~ chapter14.md)
-└── practice/                 실습
+└── lecture_practice/                 실습
     ├── README.md             이 문서
     ├── check_env.py          환경 자가진단
     ├── setup_torch.py        내 컴퓨터에 맞는 PyTorch 설치 (5-7장)

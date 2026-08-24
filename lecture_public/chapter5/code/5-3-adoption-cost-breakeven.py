@@ -24,8 +24,8 @@
 파라미터마다 찾아 함께 보고한다.
 
 실행 (프로젝트 루트, 통합 .venv):
-    python practice/chapter5/code/5-3-adoption-cost-breakeven.py
-    # 먼저: python practice/chapter5/code/5-2-baseline-vs-cnn.py
+    python lecture_practice/chapter5/code/5-3-adoption-cost-breakeven.py
+    # 먼저: python lecture_practice/chapter5/code/5-2-baseline-vs-cnn.py
 """
 
 from pathlib import Path

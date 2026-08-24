@@ -64,7 +64,7 @@ def find_raw(patterns: tuple[str, ...], label: str, prefer: str | None = None) -
         looked = "\n".join(f"    - {r}" for r in RAW_DIRS)
         sys.exit(f"[중단] {label} 파일을 찾지 못했다.\n"
                  f"  찾는 이름: {' 또는 '.join(patterns)} 가 들어간 .csv\n"
-                 f"  찾아본 곳:\n{looked}\n  → practice/chapter4/data/raw/README.md 참조")
+                 f"  찾아본 곳:\n{looked}\n  → lecture_practice/chapter4/data/raw/README.md 참조")
     if prefer:
         pref = [p for p in cands if prefer in unicodedata.normalize("NFC", p.name)]
         if pref:

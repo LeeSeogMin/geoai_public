@@ -1,6 +1,6 @@
 # 2장 공간 데이터는 왜 좌표와 전처리부터 시작할까
 
-> 이 장에 나오는 좌표값, 면적, 비교 수치는 모두 `practice/chapter2/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 좌표값, 면적, 비교 수치는 모두 `lecture_practice/chapter2/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -61,7 +61,7 @@
 
 ## 5. 실제 사례로 먼저 보기
 
-`practice/chapter2/results/2-1-coordinate-transform.log`의 실제 실행 결과를 보면, 위경도 좌표를 UTM으로 바꿨을 때 다음이 나왔다.
+`lecture_practice/chapter2/results/2-1-coordinate-transform.log`의 실제 실행 결과를 보면, 위경도 좌표를 UTM으로 바꿨을 때 다음이 나왔다.
 
 - 서울: `(127.0°E, 37.5°N)` → `(323,210.47m E, 4,152,220.15m N)`
 - 부산: `(129.0°E, 35.1°N)` → `(500,000.00m E, 3,884,132.78m N)`
@@ -72,7 +72,7 @@
 - 서울-부산: UTM `321.13km` vs Haversine `321.45km`
 - 서울-제주: UTM `446.16km` vs Haversine `447.07km`
 
-또 `practice/chapter2/results/2-2-spatial-operations.log`에서는 한국 면적을 이렇게 비교했다.
+또 `lecture_practice/chapter2/results/2-2-spatial-operations.log`에서는 한국 면적을 이렇게 비교했다.
 
 - `EPSG:4326`에서 계산한 한국 면적: `9.9548`
 - Mollweide 등면적 투영에서 계산한 한국 면적: `99,206 km²`
@@ -81,14 +81,14 @@
 
 같은 로그에서 서울 500km 버퍼 면적은 `784,137 km²`였고, 이론값 `785,398 km²`와 매우 가까웠다. 또 서울 500km 반경 안에서 교집합으로 잡힌 국가는 `North Korea`, `South Korea`, `China` 3개였다. 이것은 공간 연산이 "그림 꾸미기"가 아니라 실제 계산이라는 점을 보여 준다.
 
-세 번째 코드는 이 장의 내용을 실제 사업 판단에 붙여 본 것이다. `practice/chapter2/results/2-3-delivery-service-area.log`에서 이런 값이 나왔다.
+세 번째 코드는 이 장의 내용을 실제 사업 판단에 붙여 본 것이다. `lecture_practice/chapter2/results/2-3-delivery-service-area.log`에서 이런 값이 나왔다.
 
 - 성동구 옥수동 매장에서 직선 3km 원 안 건물은 `10,343채`인데, 실제로 3km를 달려서 갈 수 있는 건물은 `2,418채`였다(`−76.6%`).
 - 같은 계산을 관악구 신림동에서 하면 `11,699채` → `9,233채`(`−21.1%`)로, 훨씬 덜 줄었다.
 
 같은 규칙("반경 3km")이 어디에 적용되느냐에 따라 전혀 다른 결과를 낸다는 뜻이다. 자세한 이야기는 7.4에서 다룬다.
 
-이 결과가 어떻게 나왔는지 감을 잡기 위해, 본문에는 핵심 코드만 먼저 본다. 전체 실행 코드는 `practice/chapter2/code/2-1-coordinate-transform.py`와 `practice/chapter2/code/2-2-spatial-operations.py`에 있다.
+이 결과가 어떻게 나왔는지 감을 잡기 위해, 본문에는 핵심 코드만 먼저 본다. 전체 실행 코드는 `lecture_practice/chapter2/code/2-1-coordinate-transform.py`와 `lecture_practice/chapter2/code/2-2-spatial-operations.py`에 있다.
 
 ```python
 from pyproj import Transformer
@@ -128,13 +128,13 @@ print(cities_moll["buffer_500km"].area.iloc[0] / 1e6)  # 버퍼 면적(m²)을 k
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter2/README.md](practice/chapter2/README.md)
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter2/README.md](lecture_practice/chapter2/README.md)
 - 실습 코드:
-  - practice/chapter2/code/2-1-coordinate-transform.py
-  - practice/chapter2/code/2-2-spatial-operations.py
-  - practice/chapter2/code/2-3-delivery-service-area.py
-- 결과 로그: practice/chapter2/results/2-1-coordinate-transform.log, practice/chapter2/results/2-2-spatial-operations.log, practice/chapter2/results/2-3-delivery-service-area.log
-- 결과 지도: practice/chapter2/results/2-3-service-areas.png
+  - lecture_practice/chapter2/code/2-1-coordinate-transform.py
+  - lecture_practice/chapter2/code/2-2-spatial-operations.py
+  - lecture_practice/chapter2/code/2-3-delivery-service-area.py
+- 결과 로그: lecture_practice/chapter2/results/2-1-coordinate-transform.log, lecture_practice/chapter2/results/2-2-spatial-operations.log, lecture_practice/chapter2/results/2-3-delivery-service-area.log
+- 결과 지도: lecture_practice/chapter2/results/2-3-service-areas.png
 
 ## 6. 좌표계: 왜 같은 지점이 다르게 읽힐까
 
@@ -221,7 +221,7 @@ https://www.dmap.co.uk/utmworld.htm
 
 그러면 실제로 얼마나 다를까. 세 번째 실습 코드가 서울 세 곳(성동구 옥수동, 관악구 신림동, 강서구 화곡동)에서 이것을 계산한다. 같은 "3km"를 다섯 방식으로 그어 보고, 각 권역 안에 건물이 몇 채 들어오는지 센다.
 
-`practice/chapter2/results/2-3-delivery-service-area.log`에 나온 실행 결과는 다음과 같다. 올바른 투영 좌표계에서 그린 직선 3km 원 안의 건물 수를 기준(100%)으로 삼았다.
+`lecture_practice/chapter2/results/2-3-delivery-service-area.log`에 나온 실행 결과는 다음과 같다. 올바른 투영 좌표계에서 그린 직선 3km 원 안의 건물 수를 기준(100%)으로 삼았다.
 
 | 어떻게 쟀나 | 옥수 | 신림 | 화곡 |
 | --- | ---: | ---: | ---: |
@@ -356,14 +356,14 @@ HLS는 **Harmonized Landsat Sentinel**의 줄임말이다. Landsat과 Sentinel-2
 
 ## 11. 수업 활동 / 토론
 
-이번 장의 활동도 1장과 같다. 읽은 내용을 머릿속으로 그려 보는 것이 아니라 **내 컴퓨터에서 직접 돌려 보는 것**이다. 1장에서 만든 실습 환경을 그대로 쓴다. 터미널 앞에 `(.venv)`가 붙어 있는지 먼저 확인하고 시작한다. 붙어 있지 않으면 `practice/README.md`의 가상환경 활성화 단계로 돌아간다.
+이번 장의 활동도 1장과 같다. 읽은 내용을 머릿속으로 그려 보는 것이 아니라 **내 컴퓨터에서 직접 돌려 보는 것**이다. 1장에서 만든 실습 환경을 그대로 쓴다. 터미널 앞에 `(.venv)`가 붙어 있는지 먼저 확인하고 시작한다. 붙어 있지 않으면 `lecture_practice/README.md`의 가상환경 활성화 단계로 돌아간다.
 
 - **활동 1 (15분) — 기준값과 맞춰 보기**
   두 코드를 차례로 실행한다.
 
   ```
-  python practice/chapter2/code/2-1-coordinate-transform.py
-  python practice/chapter2/code/2-2-spatial-operations.py
+  python lecture_practice/chapter2/code/2-1-coordinate-transform.py
+  python lecture_practice/chapter2/code/2-2-spatial-operations.py
   ```
 
   화면에 나온 값을 5절에 적힌 값과 맞춰 본다. 서울 UTM 좌표 `(323,210.47m E, 4,152,220.15m N)`, 서울 500km 버퍼 면적 `784,137 km²`, 서울 500km 반경에 걸린 아시아 국가 `3개`가 그대로 나왔는가.
@@ -382,7 +382,7 @@ HLS는 **Harmonized Landsat Sentinel**의 줄임말이다. Landsat과 Sentinel-2
     이 셋을 "계산이 틀렸다"로 한꺼번에 묶으면 안 된다. 각각 **무엇과 무엇을 비교한 차이인지** 먼저 적는다. 그다음 이 가운데 무시해도 되는 차이와 반드시 짚어야 하는 차이를 갈라 보고, 무엇을 기준으로 갈랐는지도 함께 적는다. 같은 0.1%라도 도시 간 거리에서와 필지 경계에서는 의미가 다르다.
 
 - **활동 4 (20분) — 꺼 놓은 경고를 다시 켜기**
-  1장에서 본 그 경고(`Geometry is in a geographic CRS`)가 2장 실행 화면에는 뜨지 않는다. 코드가 경고를 꺼 두었기 때문이다. `practice/chapter2/code/2-2-spatial-operations.py`의 18번째 줄에 `warnings.filterwarnings("ignore", category=UserWarning)`이 있다.
+  1장에서 본 그 경고(`Geometry is in a geographic CRS`)가 2장 실행 화면에는 뜨지 않는다. 코드가 경고를 꺼 두었기 때문이다. `lecture_practice/chapter2/code/2-2-spatial-operations.py`의 18번째 줄에 `warnings.filterwarnings("ignore", category=UserWarning)`이 있다.
   원본을 지우지 말고 `2-2-my-version.py`처럼 복사한 뒤 그 줄을 주석 처리하고 다시 실행한다. 경고가 **어느 단계에서** 뜨는지 찾아본다. 다섯 단계(버퍼·오버레이·공간 조인·공간 필터링·면적 비교) 가운데 어디인가. 경고는 화면 맨 위에 먼저 나올 수도 있으니(출력 순서는 컴퓨터마다 다르다) 몇 번째 줄에서 났는지를 보고 판단한다.
   그다음 AI 에이전트에게 순서대로 묻는다. 답을 받아 적기만 하면 안 된다.
   - "이 코드는 왜 경고를 꺼 두었을까? 경고를 꺼도 되는 상황과 끄면 안 되는 상황을 나눠서 설명해줘."
@@ -395,7 +395,7 @@ HLS는 **Harmonized Landsat Sentinel**의 줄임말이다. Landsat과 Sentinel-2
   그다음 코드를 돌린다.
 
   ```
-  python practice/chapter2/code/2-3-delivery-service-area.py
+  python lecture_practice/chapter2/code/2-3-delivery-service-area.py
   ```
 
   출력에서 "우회비(주행/직선) 중앙값"을 찾는다. 서울 세 지점에서 `1.270`(신림), `1.327`(화곡), `1.493`(옥수)이 나온다. 내가 손으로 잰 값이 이 범위 어디쯤인지 놓아 본다.

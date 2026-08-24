@@ -13,8 +13,8 @@ Random Forest·XGBoost·LightGBM으로 비교한다. 핵심은 픽셀을 무작�
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter4/code/4-3-ensemble-comparison.py
-    # 데이터가 없으면 먼저: python practice/chapter4/code/4-0-data-download.py
+    python lecture_practice/chapter4/code/4-3-ensemble-comparison.py
+    # 데이터가 없으면 먼저: python lecture_practice/chapter4/code/4-0-data-download.py
 """
 
 import time

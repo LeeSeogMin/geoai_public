@@ -32,7 +32,7 @@
 오는지 확인한다.
 
 실행 방법 (프로젝트 루트, 통합 .venv):
-    python practice/chapter7/code/7-0b-demand-simdata.py
+    python lecture_practice/chapter7/code/7-0b-demand-simdata.py
 """
 
 from pathlib import Path

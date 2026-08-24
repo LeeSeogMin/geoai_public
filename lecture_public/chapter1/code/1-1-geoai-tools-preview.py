@@ -8,8 +8,8 @@ GeoAI 워크플로우에서 자주 사용되는 핵심 Python 라이브러리를
 실행 방법 (프로젝트 루트의 통합 가상환경 사용):
     python -m venv .venv
     source .venv/bin/activate          # macOS/Linux
-    pip install -r practice/requirements.txt
-    python practice/chapter1/code/1-1-geoai-tools-preview.py
+    pip install -r lecture_practice/requirements.txt
+    python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py
 """
 
 import geopandas as gpd
@@ -76,7 +76,7 @@ print("다음 장에서 좌표 변환, 공간 연산, 래스터 처리를 본격
 # ============================================================
 # 4. 결과 저장: CSV 및 GeoJSON
 # ============================================================
-# 결과를 저장할 폴더 (practice/chapter1/results)
+# 결과를 저장할 폴더 (lecture_practice/chapter1/results)
 results_dir = Path(__file__).resolve().parents[1] / "results"
 results_dir.mkdir(parents=True, exist_ok=True)
 

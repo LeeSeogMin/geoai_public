@@ -3,7 +3,7 @@
 이 수업은 학생마다 다른 AI 코딩 도구를 쓴다. 도구가 달라도 **같은 규칙**이 적용되도록, 규칙 원본을 하나만 두고 도구별 파일을 거기서 파생시킨다.
 
 ```
-practice/AGENTS.md   (정본 — 규칙은 여기만 고친다)
+lecture_practice/AGENTS.md   (정본 — 규칙은 여기만 고친다)
         |
         +--> AGENTS.md                        저장소 루트 복사본
         +--> CLAUDE.md                        @AGENTS.md 한 줄 임포트
@@ -15,7 +15,7 @@ practice/AGENTS.md   (정본 — 규칙은 여기만 고친다)
 저장소 루트에서 한 번 실행한다.
 
 ```
-python practice/agent-setup/install.py
+python lecture_practice/agent-setup/install.py
 ```
 
 이미 있는 파일은 건드리지 않는다. 규칙을 고친 뒤 다시 반영할 때는 `--force`를 붙인다. 다만 `--force`는 직접 써 둔 `context.md`, `todo.md`까지 서식으로 되돌리므로 주의한다.
@@ -35,4 +35,4 @@ Windows에서는 심볼릭 링크에 관리자 권한이 필요해, 공식 문�
 
 ## 함께 만들어지는 작업 기록 파일
 
-`install.py`는 `context.md`와 `todo.md`도 루트에 만든다. 학생이 직접 채워 쓰는 파일이고, 에이전트가 세션마다 읽는다. 쓰는 법은 `practice/README.md`의 "작업 기록 두 개" 항목에 있다.
+`install.py`는 `context.md`와 `todo.md`도 루트에 만든다. 학생이 직접 채워 쓰는 파일이고, 에이전트가 세션마다 읽는다. 쓰는 법은 `lecture_practice/README.md`의 "작업 기록 두 개" 항목에 있다.

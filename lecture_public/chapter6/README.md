@@ -1,6 +1,6 @@
 # 6장 실습: 변화 탐지 결과의 정책 집계와 개발 가능 부지 탐색
 
-이 실습은 `docs/ch06.md`와 `lecture/chapter6.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter6/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch06.md`와 `lecture/chapter6.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter6/results/`에 저장되어 있습니다.
 
 두 개의 분석이 들어 있습니다.
 
@@ -9,23 +9,23 @@
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **준비 스크립트(`6-0`, `6-0b`)를 먼저 실행**해야 나머지가 돌아갑니다. 두 준비 스크립트는 서로 독립이며, 각각 `data/change_masks.npz`와 `data/urban_block.npz`를 만듭니다.
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter6/code/6-0-simdata-prep.py` — 분석 1용 두 시점 NDVI 래스터·변화 마스크 생성 (128×128, 픽셀 10m)
-- `practice/chapter6/code/6-0b-site-simdata-prep.py` — 분석 2용 도시 블록 래스터 생성 (512×512, 픽셀 1m). 도로·건물·유휴 부지 정답과 오차 3종을 심은 예측 마스크, 대조군 마스크 3종
-- `practice/chapter6/code/6-1-change-detection-policy.py` — IoU·정밀도·재현율 평가, 거짓변화 필터, 행정구역 집계
-- `practice/chapter6/code/6-2-site-sourcing.py` — 객체화·형상 피처·3단 요건 필터·면적 편향 보정·대조군 3종·임계값 비용 곡선·실사 순서
+- `lecture_practice/chapter6/code/6-0-simdata-prep.py` — 분석 1용 두 시점 NDVI 래스터·변화 마스크 생성 (128×128, 픽셀 10m)
+- `lecture_practice/chapter6/code/6-0b-site-simdata-prep.py` — 분석 2용 도시 블록 래스터 생성 (512×512, 픽셀 1m). 도로·건물·유휴 부지 정답과 오차 3종을 심은 예측 마스크, 대조군 마스크 3종
+- `lecture_practice/chapter6/code/6-1-change-detection-policy.py` — IoU·정밀도·재현율 평가, 거짓변화 필터, 행정구역 집계
+- `lecture_practice/chapter6/code/6-2-site-sourcing.py` — 객체화·형상 피처·3단 요건 필터·면적 편향 보정·대조군 3종·임계값 비용 곡선·실사 순서
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter6/code/6-0-simdata-prep.py
-python practice/chapter6/code/6-0b-site-simdata-prep.py
-python practice/chapter6/code/6-1-change-detection-policy.py
-python practice/chapter6/code/6-2-site-sourcing.py
+python lecture_practice/chapter6/code/6-0-simdata-prep.py
+python lecture_practice/chapter6/code/6-0b-site-simdata-prep.py
+python lecture_practice/chapter6/code/6-1-change-detection-policy.py
+python lecture_practice/chapter6/code/6-2-site-sourcing.py
 ```
 
 예상 결과(검증 포인트) — 분석 1
@@ -57,13 +57,13 @@ python practice/chapter6/code/6-2-site-sourcing.py
 
 결과 파일
 
-- `practice/chapter6/results/6-1-change-detection-policy.log` — 분석 1 실행 로그
-- `practice/chapter6/results/change_admin_priority.csv` — 행정구역별 변화 면적·우선순위
-- `practice/chapter6/results/6-2-site-sourcing.log` — 분석 2 실행 로그
-- `practice/chapter6/results/ch6_site_candidates.csv` — 후보 부지 표(추정·보정 면적, 형상 피처, 방문 순위)
-- `practice/chapter6/results/ch6_missed_sites.csv` — 오탈락한 우량 부지와 보정 후 잔존 여부
-- `practice/chapter6/results/ch6_threshold_cost.csv` — 면적 임계별 후보 수·오탈락 수·비용
-- `practice/chapter6/results/6-2-site-sourcing-map.png` — 정답과 후보 지도
+- `lecture_practice/chapter6/results/6-1-change-detection-policy.log` — 분석 1 실행 로그
+- `lecture_practice/chapter6/results/change_admin_priority.csv` — 행정구역별 변화 면적·우선순위
+- `lecture_practice/chapter6/results/6-2-site-sourcing.log` — 분석 2 실행 로그
+- `lecture_practice/chapter6/results/ch6_site_candidates.csv` — 후보 부지 표(추정·보정 면적, 형상 피처, 방문 순위)
+- `lecture_practice/chapter6/results/ch6_missed_sites.csv` — 오탈락한 우량 부지와 보정 후 잔존 여부
+- `lecture_practice/chapter6/results/ch6_threshold_cost.csv` — 면적 임계별 후보 수·오탈락 수·비용
+- `lecture_practice/chapter6/results/6-2-site-sourcing-map.png` — 정답과 후보 지도
 
 연관 자료
 
@@ -72,4 +72,4 @@ python practice/chapter6/code/6-2-site-sourcing.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter6/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter6/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

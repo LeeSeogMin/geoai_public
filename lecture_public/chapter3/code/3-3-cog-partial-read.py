@@ -15,7 +15,7 @@ STAC로 검색한 Sentinel-2 COG(Cloud Optimized GeoTIFF) 밴드를 대상으로
   PNG 미리보기를 만든다. 스트레치 없는 단일 밴드 PNG도 함께 저장해 비교한다.
 
 실행 방법:
-    cd practice/chapter3
+    cd lecture_practice/chapter3
     python code/3-3-cog-partial-read.py
 """
 

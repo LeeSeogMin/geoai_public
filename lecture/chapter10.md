@@ -1,6 +1,6 @@
 # 10장 도시의 세 가지 질문 — 계산·예측·인과 (학부 강의용)
 
-> 이 장에 나오는 접근성 수치, 예측 성능, 추정치 같은 숫자는 모두 `practice/chapter10/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 접근성 수치, 예측 성능, 추정치 같은 숫자는 모두 `lecture_practice/chapter10/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -32,14 +32,14 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter10/README.md](practice/chapter10/README.md)
-- 실습 코드: practice/chapter10/code/10-0-simdata-prep.py → 10-1-living-soc-accessibility.py → 10-2-civil-complaint-forecast.py → 10-3-rdd-regulation-boundary.py → 10-4-delivery-zone-optimization.py
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter10/README.md](lecture_practice/chapter10/README.md)
+- 실습 코드: lecture_practice/chapter10/code/10-0-simdata-prep.py → 10-1-living-soc-accessibility.py → 10-2-civil-complaint-forecast.py → 10-3-rdd-regulation-boundary.py → 10-4-delivery-zone-optimization.py
 - 네 번째 실습(배달 권역)은 **실제 서울 공개 데이터**를 쓴다. 그래서 앞선 세 실습과 달리 원자료를 한 번 내려받아 스냅샷을 만드는 준비 단계(10-0b-delivery-data-prep.py)가 있다. 절차는 README에 있다.
-- 결과 로그: practice/chapter10/results/*.log
+- 결과 로그: lecture_practice/chapter10/results/*.log
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 세 실습(`practice/chapter10/code/`)이 만든 핵심 숫자를 먼저 보자.
+이 장의 세 실습(`lecture_practice/chapter10/code/`)이 만든 핵심 숫자를 먼저 보자.
 
 - 실습 1 (생활SOC 접근성, 계산·1층): 격자 300개, 인구 187만. 4종 시설 종합 접근성 평균 21.4분, 15분 초과 사각지대에 인구의 `69.5%`. 도서관·체육처럼 공급이 적은 시설일수록 사각지대가 넓다(67.2%, 64.3%). **AI 없이 거리 계산만으로 완결.**
 - 실습 2 (민원 예측, 예측·2층): 격자 256개 × 40주. 자기 과거만 쓰면 R² `0.753`, 이웃 과거(공간 시차)를 더하면 `0.813`으로 개선. **AI가 실제로 기여함을 확인하고 붙인다.**
@@ -125,7 +125,7 @@ RDD의 착상은 **경계선**이다. 투기과열지구는 시군구 단위로 
 | 1.0 | −54.9 | 655 |
 | 2.0 | −68.4 | 1,315 |
 
-경계 아주 가까이(0.5~1.0km)만 보면 τ̂는 −55~−58로 참값 −60에 가깝다. 그런데 대역폭을 2.0km로 넓히면 −68.4로 오히려 빗나간다. 왜일까? 표본은 늘지만 경계에서 먼, 조건이 다른 집들이 섞여 들어오기 때문이다. "표본을 더 쓰면 낫겠지" 하고 범위를 넓히면 오히려 답이 나빠지는 것이다. 원칙은 **좁은 범위만 보기**다. 산점도(`practice/chapter10/results/10-3-rdd-discontinuity.png`)를 보면 경계에서 집값 추세선이 뚝 끊기는 낙차를 눈으로 볼 수 있다.
+경계 아주 가까이(0.5~1.0km)만 보면 τ̂는 −55~−58로 참값 −60에 가깝다. 그런데 대역폭을 2.0km로 넓히면 −68.4로 오히려 빗나간다. 왜일까? 표본은 늘지만 경계에서 먼, 조건이 다른 집들이 섞여 들어오기 때문이다. "표본을 더 쓰면 낫겠지" 하고 범위를 넓히면 오히려 답이 나빠지는 것이다. 원칙은 **좁은 범위만 보기**다. 산점도(`lecture_practice/chapter10/results/10-3-rdd-discontinuity.png`)를 보면 경계에서 집값 추세선이 뚝 끊기는 낙차를 눈으로 볼 수 있다.
 
 ## 10. 숫자 하나를 믿기 전 — 세 번의 검문
 

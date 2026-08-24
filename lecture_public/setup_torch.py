@@ -13,9 +13,9 @@ PyTorch는 컴퓨터마다 깔아야 할 파일이 다르다.
 
 사용법 (가상환경을 켠 상태에서):
 
-    python practice/setup_torch.py              # 진단 후 설치
-    python practice/setup_torch.py --dry-run    # 무엇을 깔지 보기만 한다
-    python practice/setup_torch.py --check      # 이미 깔린 PyTorch 상태만 확인
+    python lecture_practice/setup_torch.py              # 진단 후 설치
+    python lecture_practice/setup_torch.py --dry-run    # 무엇을 깔지 보기만 한다
+    python lecture_practice/setup_torch.py --check      # 이미 깔린 PyTorch 상태만 확인
 
 그래픽카드가 없어도 괜찮다. 실습 코드는 CPU로도 돌아가도록 크기를 줄여 두었다.
 GPU가 있으면 더 빨리 끝날 뿐이다.

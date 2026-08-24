@@ -17,8 +17,8 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter5/code/5-1-cnn-sentinel2-classification.py
-    # 데이터가 없으면 먼저: python practice/chapter4/code/4-0-data-download.py
+    python lecture_practice/chapter5/code/5-1-cnn-sentinel2-classification.py
+    # 데이터가 없으면 먼저: python lecture_practice/chapter4/code/4-0-data-download.py
 
 주의: CPU에서도 수 분 내 끝나도록 패치 수·에폭을 축소했다.
 """

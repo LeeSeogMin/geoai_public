@@ -1,38 +1,38 @@
 # 13장 실습: 지역 쇠퇴 유형화·야간조명 프록시·합성통제법·상권 세분화와 철수 결정
 
-이 실습은 `docs/ch13.md`와 `lecture/chapter13.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter13/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch13.md`와 `lecture/chapter13.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter13/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`13-0-simdata-prep.py`를 먼저 실행**해야 13-1~13-3이 돌아갑니다.
 - **실습 4(13-0b·13-4)는 실제 공개 데이터를 씁니다.** 소상공인시장진흥공단 상가(상권)정보 CSV를 한 번 직접 내려받아야 합니다(아래 "실습 4의 원자료" 참조).
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter13/code/13-0-simdata-prep.py` — 시군구·읍면동 단위 인구·경제 데이터 생성(실습 1~3용 시뮬레이션)
-- `practice/chapter13/code/13-1-decline-vulnerability-typology.py` — 소멸위험 등급, 합성 취약성 지표, KMeans 지역 유형화
-- `practice/chapter13/code/13-2-nightlight-economic-decline.py` — 야간조명 프록시 검증과 쇠퇴 예측
-- `practice/chapter13/code/13-3-synthetic-control.py` — 처치 지역이 하나뿐일 때의 합성통제법(SCM)
-- `practice/chapter13/code/13-0b-trade-area-data-prep.py` — **실데이터** 준비. 상가(상권)정보 → 읍면동 상권 지표 + 편의점 점포 목록
-- `practice/chapter13/code/13-4-trade-area-exit-decision.py` — 상권 세분화(실측)와 점포 철수 판정(단위 경제 모형)
+- `lecture_practice/chapter13/code/13-0-simdata-prep.py` — 시군구·읍면동 단위 인구·경제 데이터 생성(실습 1~3용 시뮬레이션)
+- `lecture_practice/chapter13/code/13-1-decline-vulnerability-typology.py` — 소멸위험 등급, 합성 취약성 지표, KMeans 지역 유형화
+- `lecture_practice/chapter13/code/13-2-nightlight-economic-decline.py` — 야간조명 프록시 검증과 쇠퇴 예측
+- `lecture_practice/chapter13/code/13-3-synthetic-control.py` — 처치 지역이 하나뿐일 때의 합성통제법(SCM)
+- `lecture_practice/chapter13/code/13-0b-trade-area-data-prep.py` — **실데이터** 준비. 상가(상권)정보 → 읍면동 상권 지표 + 편의점 점포 목록
+- `lecture_practice/chapter13/code/13-4-trade-area-exit-decision.py` — 상권 세분화(실측)와 점포 철수 판정(단위 경제 모형)
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter13/code/13-0-simdata-prep.py
-python practice/chapter13/code/13-1-decline-vulnerability-typology.py
-python practice/chapter13/code/13-2-nightlight-economic-decline.py
-python practice/chapter13/code/13-3-synthetic-control.py
-python practice/chapter13/code/13-0b-trade-area-data-prep.py
-python practice/chapter13/code/13-4-trade-area-exit-decision.py
+python lecture_practice/chapter13/code/13-0-simdata-prep.py
+python lecture_practice/chapter13/code/13-1-decline-vulnerability-typology.py
+python lecture_practice/chapter13/code/13-2-nightlight-economic-decline.py
+python lecture_practice/chapter13/code/13-3-synthetic-control.py
+python lecture_practice/chapter13/code/13-0b-trade-area-data-prep.py
+python lecture_practice/chapter13/code/13-4-trade-area-exit-decision.py
 ```
 
 실습 4의 원자료
 
 - 자료: 소상공인시장진흥공단 상가(상권)정보 (공공데이터포털 <https://www.data.go.kr/data/15083033/fileData.do>, 분기 갱신, 이용허락범위 제한 없음)
-- 포털이 스크립트로 다운로드를 처리해 자동 내려받기가 막힙니다. 페이지에서 시도별 분할 CSV(또는 전국 파일)를 직접 받아 `practice/chapter13/data/raw/` 아래에 두세요.
-- 14장 실습을 위해 이미 받아 둔 파일이 `practice/chapter14/data/raw/소상공인시장진흥공단/`에 있으면 `13-0b`가 그 폴더를 그대로 읽습니다. 1.6GB를 두 벌 둘 필요가 없습니다.
+- 포털이 스크립트로 다운로드를 처리해 자동 내려받기가 막힙니다. 페이지에서 시도별 분할 CSV(또는 전국 파일)를 직접 받아 `lecture_practice/chapter13/data/raw/` 아래에 두세요.
+- 14장 실습을 위해 이미 받아 둔 파일이 `lecture_practice/chapter14/data/raw/소상공인시장진흥공단/`에 있으면 `13-0b`가 그 폴더를 그대로 읽습니다. 1.6GB를 두 벌 둘 필요가 없습니다.
 - `13-0b`가 원본 파일명과 처리 일자를 `data/SOURCES_trade_area.txt`에 남깁니다. **공개 데이터가 갱신되면 아래 수치는 달라집니다.** 확인할 것은 숫자의 일치가 아니라 구조의 재현입니다.
 - 인구감소지역 89곳 목록은 `13-0b` 안에 상수로 들어 있습니다(행정안전부 지정 현황, 2021년 10월 최초 지정, 5년 주기). 재지정이 있었다면 목록을 갱신해야 합니다.
 
@@ -63,7 +63,7 @@ python practice/chapter13/code/13-4-trade-area-exit-decision.py
 
 결과 파일
 
-- `practice/chapter13/results/13-0 ~ 13-4 *.log` — 실행 로그
+- `lecture_practice/chapter13/results/13-0 ~ 13-4 *.log` — 실행 로그
 - `decline_priority.csv`, `econ_decline_priority.csv` — 우선순위표
 - `13-3-synthetic-control.png`, `13-3-scm-summary.txt` — SCM 산출물
 - `trade_area_typology.csv` — 읍면동 상권 유형과 생활서비스 보유 여부
@@ -78,4 +78,4 @@ python practice/chapter13/code/13-4-trade-area-exit-decision.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter13/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter13/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

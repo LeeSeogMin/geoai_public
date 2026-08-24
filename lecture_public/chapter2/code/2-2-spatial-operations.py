@@ -5,7 +5,7 @@ GeoPandas를 활용한 버퍼, 오버레이, 공간 조인 연산을 수행한�
 Natural Earth 세계 국가 데이터를 사용한다.
 
 실행 방법:
-    cd practice/chapter2
+    cd lecture_practice/chapter2
     python -m venv venv
     source venv/bin/activate
     pip install -r code/requirements.txt

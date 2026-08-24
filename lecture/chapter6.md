@@ -1,6 +1,6 @@
 # 6장 지도를 오려 내고, 달라진 곳을 찾아내기
 
-> 이 장에 나오는 IoU, 정밀도, 변화 면적, 부지 후보 수 같은 숫자는 모두 `practice/chapter6/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 IoU, 정밀도, 변화 면적, 부지 후보 수 같은 숫자는 모두 `lecture_practice/chapter6/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -33,14 +33,14 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter6/README.md](practice/chapter6/README.md)
-- 실습 코드 ①: practice/chapter6/code/6-0-simdata-prep.py → 6-1-change-detection-policy.py
-- 실습 코드 ②: practice/chapter6/code/6-0b-site-simdata-prep.py → 6-2-site-sourcing.py
-- 결과 로그: practice/chapter6/results/6-1-change-detection-policy.log, 6-2-site-sourcing.log
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter6/README.md](lecture_practice/chapter6/README.md)
+- 실습 코드 ①: lecture_practice/chapter6/code/6-0-simdata-prep.py → 6-1-change-detection-policy.py
+- 실습 코드 ②: lecture_practice/chapter6/code/6-0b-site-simdata-prep.py → 6-2-site-sourcing.py
+- 결과 로그: lecture_practice/chapter6/results/6-1-change-detection-policy.log, 6-2-site-sourcing.log
 
 ## 4. 실측 숫자로 먼저 보기
 
-이 장의 실습(`practice/chapter6/code/6-1-change-detection-policy.py`)이 만든 핵심 숫자를 먼저 보자.
+이 장의 실습(`lecture_practice/chapter6/code/6-1-change-detection-policy.py`)이 만든 핵심 숫자를 먼저 보자.
 
 - 무대: 128×128 픽셀 지도(픽셀 하나 = 10m×10m = 0.01헥타르)
 - 진짜 변화(산림 → 개발)는 `2,001`픽셀인데, 모델의 예측 변화는 `3,022`픽셀 — 절반쯤 부풀어 있다
@@ -144,7 +144,7 @@ lbl, n = ndimage.label(pred_f1)            # 붙어 있는 픽셀끼리 덩어�
 | 4 | 구역 6 | 1.78 ha |
 | 5 | 구역 15 | 1.41 ha |
 
-전체 탐지된 개발 변화는 17.3헥타르, 변화가 있는 구역은 16개 중 15개다(전체 표는 `practice/chapter6/results/change_admin_priority.csv`).
+전체 탐지된 개발 변화는 17.3헥타르, 변화가 있는 구역은 16개 중 15개다(전체 표는 `lecture_practice/chapter6/results/change_admin_priority.csv`).
 
 이 표를 잠깐 들여다보자. "픽셀 3,022개가 변했습니다"는 보고서에 쓸 수 없는 문장이다. 담당 부서도, 근거 법규도, 예산 항목도 정해지지 않는다. 반면 "구역 9에서 2.93헥타르가 개발되었고 관내 최대입니다"는 점검반이 내일 어디로 나가야 하는지를 정해 준다. 픽셀이 정책 언어가 되는 순간이다.
 
@@ -162,7 +162,7 @@ lbl, n = ndimage.label(pred_f1)            # 붙어 있는 픽셀끼리 덩어�
 
 먼저 비유 하나. 방 크기를 줄자로 잰다고 하자. 그런데 이 줄자는 매번 벽에서 조금씩 안쪽으로 재는 버릇이 있어서, 실제보다 **항상 조금 작게** 나온다. 평소에는 큰 문제가 아니다. 그런데 "12제곱미터 이상인 방만 세를 놓는다"는 규칙이 있고, 방 여러 개가 하필 12제곱미터 언저리라면? 멀쩡한 방들이 통째로 탈락한다. 세그멘테이션의 경계 침식이 딱 이 줄자다.
 
-두 번째 실습(`practice/chapter6/code/6-2-site-sourcing.py`)이 이 상황을 숫자로 만든다. 무대는 512×512 지도이고 픽셀 하나가 1미터, 전체가 26.2헥타르다. 그 안에 빈 땅 **32필지**가 정답으로 심겨 있다. 개발 요건은 세 가지다.
+두 번째 실습(`lecture_practice/chapter6/code/6-2-site-sourcing.py`)이 이 상황을 숫자로 만든다. 무대는 512×512 지도이고 픽셀 하나가 1미터, 전체가 26.2헥타르다. 그 안에 빈 땅 **32필지**가 정답으로 심겨 있다. 개발 요건은 세 가지다.
 
 - 넓이 1,000㎡ 이상
 - 도로에 닿은 길이 12m 이상
@@ -252,7 +252,7 @@ SAM처럼 "한 번 크게 배워 두고 여러 일에 쓰는" 모델을 **파운
 
 **활동 3 — 가짜 변화 사냥.** 같은 산의 여름 사진과 겨울 사진을 찾아 나란히 놓고, "값은 변했지만 땅은 안 변한 것"의 목록을 만들어 보자(단풍, 눈, 그림자 방향, 논의 물).
 
-**활동 4 — 문턱 정하기.** 8.5절의 개발 요건 셋(넓이 1,000㎡·접도 12m·최소폭 15m) 중 하나를 골라, 그 문턱을 10% 낮추면 후보가 몇 배로 늘 것 같은지 먼저 짐작해 보자. 그다음 `practice/chapter6/results/ch6_threshold_cost.csv`를 열어 실제 숫자와 비교해 보자. 짐작이 빗나갔다면 왜 빗나갔는지 생각해 보자(힌트: 다른 두 요건이 이미 몇 개를 걸러 냈는가?).
+**활동 4 — 문턱 정하기.** 8.5절의 개발 요건 셋(넓이 1,000㎡·접도 12m·최소폭 15m) 중 하나를 골라, 그 문턱을 10% 낮추면 후보가 몇 배로 늘 것 같은지 먼저 짐작해 보자. 그다음 `lecture_practice/chapter6/results/ch6_threshold_cost.csv`를 열어 실제 숫자와 비교해 보자. 짐작이 빗나갔다면 왜 빗나갔는지 생각해 보자(힌트: 다른 두 요건이 이미 몇 개를 걸러 냈는가?).
 
 **토론 — 재는 버릇의 방향.** 넓이를 실제보다 12% **작게** 재는 모델과 12% **크게** 재는 모델이 있다. 어느 쪽이 더 위험한가? 그리고 무엇을 찾는지에 따라 답이 달라지는가? ① 개발할 빈 땅을 찾을 때 ② 홍수 피해 면적을 재서 보상금을 줄 때 ③ 불법 증축을 단속할 때 — 세 경우로 나눠 이야기해 보자.
 

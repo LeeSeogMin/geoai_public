@@ -1,11 +1,11 @@
 # 5장 실습: CNN 위성영상 분류, 기준선 비교, 도입 손익분기
 
-이 실습은 5장의 두 분석을 코드로 확인합니다. 결과 로그는 `practice/chapter5/results/`에 저장되어 있습니다.
+이 실습은 5장의 두 분석을 코드로 확인합니다. 결과 로그는 `lecture_practice/chapter5/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
-- **4장의 실제 Sentinel-2 클립을 그대로 씁니다.** `practice/chapter4/code/4-0-data-download.py`를 먼저 실행해 `practice/chapter4/data/`에 위성영상과 WorldCover 라벨을 만들어 두어야 합니다(위성 파일은 `.gitignore` 대상이라 저장소에 들어 있지 않습니다). 5장에는 별도 `data/` 폴더가 없고, `code/_s2_data.py`가 4장 폴더의 로더를 그대로 불러 씁니다.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
+- **4장의 실제 Sentinel-2 클립을 그대로 씁니다.** `lecture_practice/chapter4/code/4-0-data-download.py`를 먼저 실행해 `lecture_practice/chapter4/data/`에 위성영상과 WorldCover 라벨을 만들어 두어야 합니다(위성 파일은 `.gitignore` 대상이라 저장소에 들어 있지 않습니다). 5장에는 별도 `data/` 폴더가 없고, `code/_s2_data.py`가 4장 폴더의 로더를 그대로 불러 씁니다.
 - CPU만으로 실행됩니다. GPU가 있으면 자동으로 사용합니다(CUDA → MPS → CPU 폴백).
 
 실습 파일 (실행 순서대로)
@@ -21,10 +21,10 @@
 실행 방법 (Windows PowerShell / macOS · Linux)
 
 ```bash
-python practice/chapter4/code/4-0-data-download.py       # 아직 안 했다면
-python practice/chapter5/code/5-1-cnn-sentinel2-classification.py
-python practice/chapter5/code/5-2-baseline-vs-cnn.py
-python practice/chapter5/code/5-3-adoption-cost-breakeven.py
+python lecture_practice/chapter4/code/4-0-data-download.py       # 아직 안 했다면
+python lecture_practice/chapter5/code/5-1-cnn-sentinel2-classification.py
+python lecture_practice/chapter5/code/5-2-baseline-vs-cnn.py
+python lecture_practice/chapter5/code/5-3-adoption-cost-breakeven.py
 ```
 
 예상 결과 (검증 포인트) — 5-1
@@ -81,4 +81,4 @@ python practice/chapter5/code/5-3-adoption-cost-breakeven.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter5/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter5/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

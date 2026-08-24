@@ -1,27 +1,27 @@
 # 8장 실습: 야간조명 DID·DML, 시차 도입 DID, 그리고 출점 도넛 설계
 
-이 실습은 8장 본문의 분석을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter8/results/`에 저장되어 있습니다.
+이 실습은 8장 본문의 분석을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter8/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`8-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter8/code/8-0-simdata-prep.py` — 야간조명·시차도입·출점 3종 패널 생성(진짜 효과를 심어 둔다)
-- `practice/chapter8/code/8-1-nightlight-did-dml.py` — 단순 비교 → DID → DML 3단 비교, event-study
-- `practice/chapter8/code/8-2-staggered-did.py` — 도입 시점이 지역마다 다를 때 TWFE vs Callaway-Sant'Anna
-- `practice/chapter8/code/8-3-store-opening-donut-did.py` — 신규 출점의 상권 효과: IPW-DID + 도넛 설계, 링별 노출-반응 프로파일, 대조군 세 세계, 1종 오류율, 순효과
-- `practice/chapter8/code/_store_dgp.py` — 8-3이 쓰는 합성 데이터 생성 모듈(단독 실행하지 않습니다. `8-0`과 `8-3`이 함께 불러 씁니다)
+- `lecture_practice/chapter8/code/8-0-simdata-prep.py` — 야간조명·시차도입·출점 3종 패널 생성(진짜 효과를 심어 둔다)
+- `lecture_practice/chapter8/code/8-1-nightlight-did-dml.py` — 단순 비교 → DID → DML 3단 비교, event-study
+- `lecture_practice/chapter8/code/8-2-staggered-did.py` — 도입 시점이 지역마다 다를 때 TWFE vs Callaway-Sant'Anna
+- `lecture_practice/chapter8/code/8-3-store-opening-donut-did.py` — 신규 출점의 상권 효과: IPW-DID + 도넛 설계, 링별 노출-반응 프로파일, 대조군 세 세계, 1종 오류율, 순효과
+- `lecture_practice/chapter8/code/_store_dgp.py` — 8-3이 쓰는 합성 데이터 생성 모듈(단독 실행하지 않습니다. `8-0`과 `8-3`이 함께 불러 씁니다)
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter8/code/8-0-simdata-prep.py
-python practice/chapter8/code/8-1-nightlight-did-dml.py
-python practice/chapter8/code/8-2-staggered-did.py
-python practice/chapter8/code/8-3-store-opening-donut-did.py
+python lecture_practice/chapter8/code/8-0-simdata-prep.py
+python lecture_practice/chapter8/code/8-1-nightlight-did-dml.py
+python lecture_practice/chapter8/code/8-2-staggered-did.py
+python lecture_practice/chapter8/code/8-3-store-opening-donut-did.py
 ```
 
 > `8-3`은 배치 재추출 200회 + 잡음 재추출 1,000회를 돌리므로 **CPU에서 10분 이상** 걸립니다. 나머지 셋은 각각 1~11초입니다. 빠르게 훑고 싶으면 `MC_REPS_PLACE`를 50 정도로 낮추세요(몬테카를로 오차가 커집니다).
@@ -54,9 +54,9 @@ python practice/chapter8/code/8-3-store-opening-donut-did.py
 
 결과 파일
 
-- `practice/chapter8/results/8-0-simdata-prep.log`, `8-1-nightlight-did-dml.log`, `8-2-staggered-did.log`, `8-3-store-opening-donut-did.log` — 실행 로그
-- `practice/chapter8/results/*.evidence.json` — 소스·출력 해시와 실행 환경 기록
-- `practice/chapter8/data/fig_8_1_event_study.png`, `fig_8_2_staggered_did.png`, `fig_8_3_ring_profile.png` — 그림(실행 시 생성)
+- `lecture_practice/chapter8/results/8-0-simdata-prep.log`, `8-1-nightlight-did-dml.log`, `8-2-staggered-did.log`, `8-3-store-opening-donut-did.log` — 실행 로그
+- `lecture_practice/chapter8/results/*.evidence.json` — 소스·출력 해시와 실행 환경 기록
+- `lecture_practice/chapter8/data/fig_8_1_event_study.png`, `fig_8_2_staggered_did.png`, `fig_8_3_ring_profile.png` — 그림(실행 시 생성)
 
 연관 자료
 
@@ -65,4 +65,4 @@ python practice/chapter8/code/8-3-store-opening-donut-did.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter8/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter8/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

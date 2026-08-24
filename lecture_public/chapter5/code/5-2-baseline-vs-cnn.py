@@ -32,8 +32,8 @@
 바꿔 세 번 돌려 그 폭을 함께 보고한다(5-1의 재현성 점검과 같은 취지).
 
 실행 (프로젝트 루트, 통합 .venv):
-    python practice/chapter5/code/5-2-baseline-vs-cnn.py
-    # 데이터가 없으면 먼저: python practice/chapter4/code/4-0-data-download.py
+    python lecture_practice/chapter5/code/5-2-baseline-vs-cnn.py
+    # 데이터가 없으면 먼저: python lecture_practice/chapter4/code/4-0-data-download.py
 """
 
 import time

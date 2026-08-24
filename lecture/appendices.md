@@ -489,7 +489,7 @@ GeoAI에서 데이터는 크게 세 가지 모습으로 온다.
 python -m venv .venv
 .venv\Scripts\activate             # Windows (이 교재의 기준 환경)
 # source .venv/bin/activate        # macOS/Linux
-pip install -r practice/requirements.txt
+pip install -r lecture_practice/requirements.txt
 ```
 
 **GPU 디바이스 자동 감지** (CUDA → MPS → CPU):
@@ -516,7 +516,7 @@ def get_device():
 
 ## 부록 A. Python 지리공간 라이브러리 레퍼런스
 
-본서 실습은 루트 통합 가상환경(`.venv`) 하나로 전 장을 실행한다(`pip install -r practice/requirements.txt`).
+본서 실습은 루트 통합 가상환경(`.venv`) 하나로 전 장을 실행한다(`pip install -r lecture_practice/requirements.txt`).
 
 **표 A.1** 핵심 지리공간·ML 라이브러리
 

@@ -4,7 +4,7 @@
 GeoParquet와 일반 포맷의 성능 비교, STAC Item 메타데이터 분석을 수행한다.
 
 실행 방법:
-    cd practice/chapter3
+    cd lecture_practice/chapter3
     python -m venv venv
     source venv/bin/activate
     pip install -r code/requirements.txt

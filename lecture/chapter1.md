@@ -1,6 +1,6 @@
 # 1장 공간 데이터 과학과 GeoAI, 무엇이 다르고 어떤 결정으로 이어지나
 
-> 이 장에 나오는 국가 수, 좌표계, 분석 결과 수치는 모두 `practice/chapter1/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
+> 이 장에 나오는 국가 수, 좌표계, 분석 결과 수치는 모두 `lecture_practice/chapter1/`의 코드를 실제로 실행해 얻은 값이다. 예시를 위해 지어낸 숫자는 없다.
 
 ## 1. 오늘의 큰 질문
 
@@ -64,13 +64,13 @@
 
 ## 실습 안내
 
-- 실습 README(실행 방법 및 기대값): [practice/chapter1/README.md](practice/chapter1/README.md)
-- 실습 코드: practice/chapter1/code/1-1-geoai-tools-preview.py
-- 결과 로그: practice/chapter1/results/1-1-geoai-tools-preview.log
+- 실습 README(실행 방법 및 기대값): [lecture_practice/chapter1/README.md](lecture_practice/chapter1/README.md)
+- 실습 코드: lecture_practice/chapter1/code/1-1-geoai-tools-preview.py
+- 결과 로그: lecture_practice/chapter1/results/1-1-geoai-tools-preview.log
 
 ## 5. 실제 사례로 먼저 보기
 
-`practice/chapter1/results/1-1-geoai-tools-preview.log`의 실제 실행 결과를 보면, GeoPandas로 Natural Earth 국가 경계 데이터를 읽었을 때 다음이 나왔다.
+`lecture_practice/chapter1/results/1-1-geoai-tools-preview.log`의 실제 실행 결과를 보면, GeoPandas로 Natural Earth 국가 경계 데이터를 읽었을 때 다음이 나왔다.
 
 - 전체 국가 수: `177`
 - 좌표계(CRS): `EPSG:4326`
@@ -94,7 +94,7 @@
 
 실행 로그 마지막에는 아주 중요한 경고도 나온다. 경위도 좌표계에서 면적을 계산하자, 결과가 부정확할 수 있다는 경고가 떴다. 이 경고는 뒤의 2장으로 이어진다. 1장에서는 이 사실만 먼저 기억하면 된다. **공간 데이터를 읽는 일은 파일을 여는 것과 끝나지 않는다.**
 
-이 결과가 어떻게 나왔는지 감을 잡기 위해, 본문에는 핵심 코드만 먼저 본다. 전체 실행 코드는 `practice/chapter1/code/1-1-geoai-tools-preview.py`에 있다.
+이 결과가 어떻게 나왔는지 감을 잡기 위해, 본문에는 핵심 코드만 먼저 본다. 전체 실행 코드는 `lecture_practice/chapter1/code/1-1-geoai-tools-preview.py`에 있다.
 
 ```python
 import geopandas as gpd
@@ -411,12 +411,12 @@ Google Earth Engine 소개 페이지를 보면 "multi-petabyte" 같은 표현이
 이번 장의 활동은 읽은 내용을 상상해 보는 것이 아니라, **내 컴퓨터에서 직접 해 보는 것**이다. 이 수업의 실습은 처음부터 끝까지 AI 코딩 에이전트와 함께, 각자 자기 컴퓨터에서 진행한다. 오늘 그 방식을 처음 익힌다. 혼자 하는 만큼 **막혔을 때 어떻게 빠져나오는지**도 함께 연습한다.
 
 - **활동 1 (25분) — 실습 환경 준비하기**
-  `practice/README.md`를 따라 파이썬, VS Code, 가상환경, 패키지를 설치한다. 다 됐으면 `python practice/check_env.py`를 실행한다. "모든 항목 통과"가 나오면 끝이다.
+  `lecture_practice/README.md`를 따라 파이썬, VS Code, 가상환경, 패키지를 설치한다. 다 됐으면 `python lecture_practice/check_env.py`를 실행한다. "모든 항목 통과"가 나오면 끝이다.
   한 번에 통과하지 못해도 정상이다. 컴퓨터마다 막히는 지점이 다르다. 윈도우와 맥이 다르고, 같은 윈도우끼리도 다르다. 화면에 나온 문장을 AI 에이전트에 그대로 붙여넣고 시킨 대로 한 뒤, 진단을 다시 돌려 그 항목이 사라졌는지 확인한다. **혼자 고쳐서 통과시키는 이 과정 자체가 오늘의 첫 배움이다.**
-  같은 곳에서 30분 넘게 막히면 그때가 물어볼 때다.질문을 수업 게시판에 올리고, 글로 풀리지 않으면 화상 실습상담을 신청한다. 자세한 순서는 `practice/README.md`의 "그래도 안 될 때"에 있다.
+  같은 곳에서 30분 넘게 막히면 그때가 물어볼 때다.질문을 수업 게시판에 올리고, 글로 풀리지 않으면 화상 실습상담을 신청한다. 자세한 순서는 `lecture_practice/README.md`의 "그래도 안 될 때"에 있다.
 
 - **활동 2 (15분) — 기준값과 맞춰 보기**
-  `python practice/chapter1/code/1-1-geoai-tools-preview.py`를 실행하고 화면에 나온 값을 앞의 5절에 적힌 값과 맞춰 본다. 전체 국가 수 `177`, 아시아 국가 수 `47`, 데이터 형태 `(177, 169)`가 그대로 나왔는가.
+  `python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py`를 실행하고 화면에 나온 값을 앞의 5절에 적힌 값과 맞춰 본다. 전체 국가 수 `177`, 아시아 국가 수 `47`, 데이터 형태 `(177, 169)`가 그대로 나왔는가.
   5절의 값은 다른 컴퓨터에서 실행해 얻은 결과다. **운영체제도 파이썬 버전도 다른데 숫자가 같아야 한다.** 왜 같아야 하는지, 만약 달랐다면 무엇을 의심해야 하는지 한 문장으로 적어 보자.
   이어서 스스로 답해 보자. **이 데이터가 점·선·면 가운데 무엇이고, 어떻게 그렇게 판단했는가?** 화면에 나온 값 하나를 근거로 대야 한다.
 
@@ -425,7 +425,7 @@ Google Earth Engine 소개 페이지를 보면 "multi-petabyte" 같은 표현이
   실행 화면에는 경고 문구도 함께 떠 있다(위치는 컴퓨터마다 다를 수 있다). 경고가 가리키는 문제와 이 목록이 어떻게 연결되는지 한 문장으로 적어 본다. **오류가 아니라 경고라서 코드는 끝까지 돌았다는 점**이 핵심이다. 결과가 나왔다고 맞는 것이 아니다.
 
 - **활동 4 (20분) — AI 에이전트에게 처음 물어보기**
-  `practice/chapter1/README.md`의 4번 대화 순서를 따라 에이전트에게 질문한다. 답을 받아 적기만 하면 안 된다. 최소 한 번은 되물어야 한다.
+  `lecture_practice/chapter1/README.md`의 4번 대화 순서를 따라 에이전트에게 질문한다. 답을 받아 적기만 하면 안 된다. 최소 한 번은 되물어야 한다.
   - "방금 설명에서 내가 모를 만한 단어를 하나 골라 다시 쉽게 설명해줘"
   - "그 말이 맞는지 내가 직접 확인하려면 무엇을 보면 돼?"
     마지막으로 저장소 루트의 `context.md`를 열어 "지금 하는 것"에 오늘 한 일을 한 줄로 적는다. 다음 수업의 에이전트는 이 줄부터 읽는다.

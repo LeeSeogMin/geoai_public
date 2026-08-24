@@ -44,7 +44,7 @@ from pyproj import Transformer
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
-PRACTICE_DIR = SCRIPT_DIR.parent.parent          # practice/
+PRACTICE_DIR = SCRIPT_DIR.parent.parent          # lecture_practice/
 
 # ---------------------------------------------------------------- 설정
 TARGET_SIGUNGU = ("종로구", "서대문구", "은평구")   # 도심 → 외곽으로 이어지는 인접 3구
@@ -71,7 +71,7 @@ def find_raw(patterns: tuple[str, ...], label: str, prefer: str | None = None) -
         sys.exit(
             f"[중단] {label} 원자료를 찾지 못했다.\n"
             f"  찾는 이름: {' 또는 '.join(patterns)} 가 들어간 .csv\n"
-            f"  찾는 위치: practice/*/data/raw/ (하위 폴더 포함)\n"
+            f"  찾는 위치: lecture_practice/*/data/raw/ (하위 폴더 포함)\n"
             f"  → 이 파일 머리말의 주소에서 내려받아 "
             f"{(DATA_DIR / 'raw').relative_to(PRACTICE_DIR.parent)} 에 둔다.")
     if prefer:

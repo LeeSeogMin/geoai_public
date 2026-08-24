@@ -1,10 +1,10 @@
 # 7장 실습: 자율 GIS 질의 검증, 시공간 예측 불확실성, 그리고 발주 결정
 
-이 실습은 `docs/ch07.md`와 `lecture/chapter7.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `practice/chapter7/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch07.md`와 `lecture/chapter7.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter7/results/`에 저장되어 있습니다.
 
 요구사항
 
-- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`7-0-simdata-prep.py`와 `7-0b-demand-simdata.py`를 먼저 실행**해야 나머지가 돌아갑니다. 두 준비 스크립트는 서로 다른 난수열을 쓰므로 실행 순서를 바꿔도 결과가 흔들리지 않습니다.
 - `7-2`는 LSTM을 학습합니다. CPU로 1~2분이면 끝납니다.
 - `7-3`은 품목 2개 × 데이터셋 2종으로 LSTM을 네 번 학습합니다. CPU로 40초쯤 걸립니다. 가속기(CUDA·MPS)를 쓰면 커널 차이로 소수점 아래가 달라지므로, 본문 수치와 맞추기 위해 **CPU로 고정**해 두었습니다(`PIN_CPU = True`).
@@ -12,20 +12,20 @@
 
 실습 파일 (실행 순서대로)
 
-- `practice/chapter7/code/7-0-simdata-prep.py` — 레이어 카탈로그·교통량 시계열 생성 (7-1·7-2용)
-- `practice/chapter7/code/7-0b-demand-simdata.py` — 점포 6곳 × 두 품목 × 1,460일 수요 패널 생성 (7-3용). 이분산 패널과 대조군 C1(등분산) 패널을 함께 저장
-- `practice/chapter7/code/7-1-autonomous-gis-query.py` — 자연어 공간 질의와 검증 관문의 차단 사례
-- `practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` — LSTM + MC Dropout 시공간 예측과 예측구간
-- `practice/chapter7/code/7-3-demand-newsvendor.py` — LSTM + 3분할 정규화 conformal → 임계비 발주 결정과 세 정책의 실현 손익
+- `lecture_practice/chapter7/code/7-0-simdata-prep.py` — 레이어 카탈로그·교통량 시계열 생성 (7-1·7-2용)
+- `lecture_practice/chapter7/code/7-0b-demand-simdata.py` — 점포 6곳 × 두 품목 × 1,460일 수요 패널 생성 (7-3용). 이분산 패널과 대조군 C1(등분산) 패널을 함께 저장
+- `lecture_practice/chapter7/code/7-1-autonomous-gis-query.py` — 자연어 공간 질의와 검증 관문의 차단 사례
+- `lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` — LSTM + MC Dropout 시공간 예측과 예측구간
+- `lecture_practice/chapter7/code/7-3-demand-newsvendor.py` — LSTM + 3분할 정규화 conformal → 임계비 발주 결정과 세 정책의 실현 손익
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python practice/chapter7/code/7-0-simdata-prep.py
-python practice/chapter7/code/7-0b-demand-simdata.py
-python practice/chapter7/code/7-1-autonomous-gis-query.py
-python practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
-python practice/chapter7/code/7-3-demand-newsvendor.py
+python lecture_practice/chapter7/code/7-0-simdata-prep.py
+python lecture_practice/chapter7/code/7-0b-demand-simdata.py
+python lecture_practice/chapter7/code/7-1-autonomous-gis-query.py
+python lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
+python lecture_practice/chapter7/code/7-3-demand-newsvendor.py
 ```
 
 예상 결과(검증 포인트)
@@ -59,13 +59,13 @@ python practice/chapter7/code/7-3-demand-newsvendor.py
 
 결과 파일
 
-- `practice/chapter7/results/7-1-autonomous-gis-query.log`, `7-2-spatiotemporal-uncertainty.log`, `7-3-demand-newsvendor.log` — 실행 로그
-- `practice/chapter7/results/autonomous_gis_query_log.csv` — 질의 처리 기록
-- `practice/chapter7/results/traffic_uncertainty.csv` — 예측값과 신뢰구간
-- `practice/chapter7/results/ch7_conformal_coverage.csv` — 데이터·품목·conformal 방식별 포함률과 조건부 진단
-- `practice/chapter7/results/ch7_newsvendor_policy.csv` — 정책 × 품목 실현 손익
-- `practice/chapter7/results/ch7_newsvendor_sensitivity.csv` — 가정 임계비별 발주량과 총손실
-- `practice/chapter7/results/7-3-demand-newsvendor.png` — 세 정책의 발주선과 실현 수요
+- `lecture_practice/chapter7/results/7-1-autonomous-gis-query.log`, `7-2-spatiotemporal-uncertainty.log`, `7-3-demand-newsvendor.log` — 실행 로그
+- `lecture_practice/chapter7/results/autonomous_gis_query_log.csv` — 질의 처리 기록
+- `lecture_practice/chapter7/results/traffic_uncertainty.csv` — 예측값과 신뢰구간
+- `lecture_practice/chapter7/results/ch7_conformal_coverage.csv` — 데이터·품목·conformal 방식별 포함률과 조건부 진단
+- `lecture_practice/chapter7/results/ch7_newsvendor_policy.csv` — 정책 × 품목 실현 손익
+- `lecture_practice/chapter7/results/ch7_newsvendor_sensitivity.csv` — 가정 임계비별 발주량과 총손실
+- `lecture_practice/chapter7/results/7-3-demand-newsvendor.png` — 세 정책의 발주선과 실현 수요
 
 연관 자료
 
@@ -74,4 +74,4 @@ python practice/chapter7/code/7-3-demand-newsvendor.py
 
 문제 발생 시
 
-- 실행 로그와 `practice/chapter7/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter7/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.

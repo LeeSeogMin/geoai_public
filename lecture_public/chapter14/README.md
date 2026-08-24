@@ -1,12 +1,12 @@
 # 14장 실습: 입지 점수와 자기잠식 제약 (Huff 흡인 모형)
 
-이 실습은 `docs/ch14.md` 14.6절의 분석을 코드로 확인합니다. 결과 로그는 `practice/chapter14/results/`에 있습니다.
+이 실습은 `docs/ch14.md` 14.6절의 분석을 코드로 확인합니다. 결과 로그는 `lecture_practice/chapter14/results/`에 있습니다.
 
 **이 장은 이 책에서 드물게 시뮬레이션이 아니라 국내 공개 데이터를 씁니다.** 그래서 원자료를 한 번 직접 내려받아야 합니다.
 
 ## 요구사항
 
-- 루트에 `.venv` 가상환경이 준비되어 있어야 합니다. 아직이면 `practice/README.md`의 설치 지침을 먼저 따르세요.
+- 루트에 `.venv` 가상환경이 준비되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - **원자료 두 개를 직접 내려받아 `data/raw/`에 두어야 합니다.** 절차는 [data/raw/README.md](data/raw/README.md)에 있습니다. 두 포털 모두 자동 다운로드가 막혀 있습니다.
 
 ## 실습 파일 (실행 순서대로)
@@ -17,8 +17,8 @@
 ## 실행 방법
 
 ```bash
-python practice/chapter14/code/14-0-data-prep.py
-python practice/chapter14/code/14-1-huff-location-cannibalization.py
+python lecture_practice/chapter14/code/14-0-data-prep.py
+python lecture_practice/chapter14/code/14-1-huff-location-cannibalization.py
 ```
 
 원자료가 큽니다(서울 상가정보 약 300MB, 생활인구 약 180MB). 준비 단계는 필요한 열만 읽어 10초 안팎이면 끝납니다.

@@ -24,7 +24,7 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter11/code/11-0-simdata-prep.py
+    python lecture_practice/chapter11/code/11-0-simdata-prep.py
 """
 
 from pathlib import Path

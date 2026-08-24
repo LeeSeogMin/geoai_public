@@ -5,7 +5,7 @@ pystac-client로 Microsoft Planetary Computer STAC API에 접속하여
 서울 지역 Sentinel-2 영상을 검색하고, 메타데이터를 분석한다.
 
 실행 방법:
-    cd practice/chapter3
+    cd lecture_practice/chapter3
     python -m venv venv
     source venv/bin/activate
     pip install -r code/requirements.txt

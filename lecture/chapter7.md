@@ -1,6 +1,6 @@
 # 7장 말로 시키는 공간 분석과 불확실성을 담은 예측
 
-> 이 장의 모든 수치는 `practice/chapter7/`의 코드를 실제로 실행해 얻은 값이다. 설명을 위해 지어낸 숫자는 없다.
+> 이 장의 모든 수치는 `lecture_practice/chapter7/`의 코드를 실제로 실행해 얻은 값이다. 설명을 위해 지어낸 숫자는 없다.
 
 4장부터 6장까지는 사람이 분석의 순서를 직접 설계했다. 어떤 변수를 넣을지, 어떤 모델을 쓸지, 결과를 어떻게 검증할지 모두 사람이 정했다. 이 장은 그 설계 과정의 일부를 자동화하는 도구와, 미래를 예측할 때 예측값 하나가 아니라 **범위**를 함께 내놓는 방법을 다룬다.
 
@@ -45,8 +45,8 @@
 실습 전 준비는 한 번만 하면 된다.
 
 ```bash
-python practice/chapter7/code/7-0-simdata-prep.py     # 1교시·2교시용 데이터
-python practice/chapter7/code/7-0b-demand-simdata.py  # 3교시용 데이터
+python lecture_practice/chapter7/code/7-0-simdata-prep.py     # 1교시·2교시용 데이터
+python lecture_practice/chapter7/code/7-0b-demand-simdata.py  # 3교시용 데이터
 ```
 
 ---
@@ -177,7 +177,7 @@ def verify(plan, catalog):
 ## 7.4 실습 1: 자연어 질의 시스템 돌려 보기
 
 ```bash
-python practice/chapter7/code/7-1-autonomous-gis-query.py
+python lecture_practice/chapter7/code/7-1-autonomous-gis-query.py
 ```
 
 ### 7.4.1 시스템 구성
@@ -378,7 +378,7 @@ python practice/chapter7/code/7-1-autonomous-gis-query.py
 ## 7.9 실습 2: 교통량 예측과 불확실성
 
 ```bash
-python practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
+python lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
 ```
 
 ### 7.9.1 실행 조건
@@ -545,7 +545,7 @@ python practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
 ## 7.13 실습 3: 예측구간에서 발주량 정하기
 
 ```bash
-python practice/chapter7/code/7-3-demand-newsvendor.py
+python lecture_practice/chapter7/code/7-3-demand-newsvendor.py
 ```
 
 ### 7.13.1 실행 조건
@@ -708,10 +708,10 @@ Cu와 Co도 추정값이다. 소수점 아래까지 정확히 알기는 어렵�
 
 | 순서 | 파일                                                       | 하는 일                  |
 | :--- | :--------------------------------------------------------- | :----------------------- |
-| 0    | `practice/chapter7/code/7-0-simdata-prep.py`               | 1·2교시용 데이터 생성    |
-| 0b   | `practice/chapter7/code/7-0b-demand-simdata.py`            | 3교시용 수요 데이터 생성 |
-| 1    | `practice/chapter7/code/7-1-autonomous-gis-query.py`       | 자연어 질의와 검증 관문  |
-| 2    | `practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` | 교통량 예측과 불확실성   |
-| 3    | `practice/chapter7/code/7-3-demand-newsvendor.py`          | 예측구간에서 발주량 결정 |
+| 0    | `lecture_practice/chapter7/code/7-0-simdata-prep.py`               | 1·2교시용 데이터 생성    |
+| 0b   | `lecture_practice/chapter7/code/7-0b-demand-simdata.py`            | 3교시용 수요 데이터 생성 |
+| 1    | `lecture_practice/chapter7/code/7-1-autonomous-gis-query.py`       | 자연어 질의와 검증 관문  |
+| 2    | `lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` | 교통량 예측과 불확실성   |
+| 3    | `lecture_practice/chapter7/code/7-3-demand-newsvendor.py`          | 예측구간에서 발주량 결정 |
 
-실행 결과는 `practice/chapter7/results/`에 로그와 표로 저장된다. 이 장의 모든 수치는 그 로그에서 인용했다.
+실행 결과는 `lecture_practice/chapter7/results/`에 로그와 표로 저장된다. 이 장의 모든 수치는 그 로그에서 인용했다.

@@ -20,7 +20,7 @@ np.random.default_rng(42)를 두어, 원래의 파일별 시드 스트림을 그
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python practice/chapter13/code/13-0-simdata-prep.py
+    python lecture_practice/chapter13/code/13-0-simdata-prep.py
 """
 
 from pathlib import Path
