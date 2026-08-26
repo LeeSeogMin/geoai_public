@@ -1,14 +1,14 @@
 {
   "file": "5-2-baseline-vs-cnn.py",
-  "chapter_relpath": "practice\\chapter5\\code\\5-2-baseline-vs-cnn.py",
-  "started_at": "2026-08-13T10:39:55.898396+09:00",
-  "duration_sec": 28.66,
+  "chapter_relpath": "lecture_practice\\chapter5\\code\\5-2-baseline-vs-cnn.py",
+  "started_at": "2026-08-26T11:52:59.525608+09:00",
+  "duration_sec": 29.98,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "d25475d0b42c294eaf69c6a067ad1ac472f2040d9902a18ac57da8df816fe668",
-  "output_sha256": "a3263e5cf2ab274ab30aae62d379e87d39c96df19f42ac78539ab5533ae0924c",
-  "output_log": "practice\\chapter5\\results\\5-2-baseline-vs-cnn.log"
+  "source_sha256": "c14793d306b9064a6f494ec8c31acbacdeeca8374c9c93f9593fc4bb1a57b19e",
+  "output_sha256": "81dc992aa6f2732bd25858ab0352deb50992c430d9c0bb4c7492a81ded705708",
+  "output_log": "lecture_practice\\chapter5\\results\\5-2-baseline-vs-cnn.log"
 }

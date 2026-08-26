@@ -1,8 +1,8 @@
 {
   "file": "14-1-huff-location-cannibalization.py",
-  "chapter_relpath": "practice\\chapter14\\code\\14-1-huff-location-cannibalization.py",
-  "started_at": "2026-08-12T22:03:00.688804+09:00",
-  "duration_sec": 0.96,
+  "chapter_relpath": "lecture_practice\\chapter14\\code\\14-1-huff-location-cannibalization.py",
+  "started_at": "2026-08-26T12:04:32.746059+09:00",
+  "duration_sec": 0.92,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "b3761e1fcb3658a9a2181e5e11c02570dc0f1c7277c1a1ead8aaf3f16bc862c8",
   "output_sha256": "4b877d9eacd68db8c66611ead852becaef789c9fc12f25fe851172c1fe18aca7",
-  "output_log": "practice\\chapter14\\results\\14-1-huff-location-cannibalization.log"
+  "output_log": "lecture_practice\\chapter14\\results\\14-1-huff-location-cannibalization.log"
 }

@@ -1,14 +1,14 @@
 {
   "file": "6-0b-site-simdata-prep.py",
-  "chapter_relpath": "practice\\chapter6\\code\\6-0b-site-simdata-prep.py",
-  "started_at": "2026-08-13T10:07:31.688621+09:00",
-  "duration_sec": 1.96,
+  "chapter_relpath": "lecture_practice\\chapter6\\code\\6-0b-site-simdata-prep.py",
+  "started_at": "2026-08-26T11:53:31.335729+09:00",
+  "duration_sec": 1.57,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "b468c42f9e6a717b89ca0a45e680570f2fcb1c35dabb02f451f47a88d87e7d6d",
+  "source_sha256": "c40cdabf383911fcfff666e9f9d384634a33b55423f9a1ccd89a2d3c18f84974",
   "output_sha256": "a259bd5bb8b45f355869916d1f218abdb332b5cb1857686e612ac5f5d1966e2c",
-  "output_log": "practice\\chapter6\\results\\6-0b-site-simdata-prep.log"
+  "output_log": "lecture_practice\\chapter6\\results\\6-0b-site-simdata-prep.log"
 }

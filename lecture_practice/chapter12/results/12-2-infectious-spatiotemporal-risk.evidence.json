@@ -1,8 +1,8 @@
 {
   "file": "12-2-infectious-spatiotemporal-risk.py",
-  "chapter_relpath": "practice\\chapter12\\code\\12-2-infectious-spatiotemporal-risk.py",
-  "started_at": "2026-08-13T01:02:33.176580+09:00",
-  "duration_sec": 3.03,
+  "chapter_relpath": "lecture_practice\\chapter12\\code\\12-2-infectious-spatiotemporal-risk.py",
+  "started_at": "2026-08-26T12:08:13.021375+09:00",
+  "duration_sec": 2.82,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "c299972cb88ce3e32d61d2fb77b28789ce92ce54edc6b1f03651a87ba68ac544",
   "output_sha256": "6e02195b0c9b1b6402679f2d57522f28c1b19b30de0c1d52e0053e7af1fd7188",
-  "output_log": "practice\\chapter12\\results\\12-2-infectious-spatiotemporal-risk.log"
+  "output_log": "lecture_practice\\chapter12\\results\\12-2-infectious-spatiotemporal-risk.log"
 }

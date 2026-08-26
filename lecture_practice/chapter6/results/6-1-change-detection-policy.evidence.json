@@ -1,8 +1,8 @@
 {
   "file": "6-1-change-detection-policy.py",
-  "chapter_relpath": "practice\\chapter6\\code\\6-1-change-detection-policy.py",
-  "started_at": "2026-08-13T10:07:33.651759+09:00",
-  "duration_sec": 1.41,
+  "chapter_relpath": "lecture_practice\\chapter6\\code\\6-1-change-detection-policy.py",
+  "started_at": "2026-08-26T11:53:32.908855+09:00",
+  "duration_sec": 1.09,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "f2843e2181da121e4f0073c06db2e121833de207c9c8665de0dbb7407bc9227a",
   "output_sha256": "4ec6ae7eb0077261901fb893872309cffa42164d2980278ba2d37a34516392a6",
-  "output_log": "practice\\chapter6\\results\\6-1-change-detection-policy.log"
+  "output_log": "lecture_practice\\chapter6\\results\\6-1-change-detection-policy.log"
 }

@@ -1,8 +1,8 @@
 {
   "file": "7-2-spatiotemporal-uncertainty.py",
-  "chapter_relpath": "practice\\chapter7\\code\\7-2-spatiotemporal-uncertainty.py",
-  "started_at": "2026-08-13T09:49:55.832556+09:00",
-  "duration_sec": 5.42,
+  "chapter_relpath": "lecture_practice\\chapter7\\code\\7-2-spatiotemporal-uncertainty.py",
+  "started_at": "2026-08-26T12:03:49.852311+09:00",
+  "duration_sec": 5.46,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "2f4205cfde436a42ba9e9f7d2c3b6b9259c321c56cb359dd78ee69b4704c9b4c",
   "output_sha256": "6f1a65f05180c84d2c70cf178930dece4eb2dff7567007269beba59ce5c89fc1",
-  "output_log": "practice\\chapter7\\results\\7-2-spatiotemporal-uncertainty.log"
+  "output_log": "lecture_practice\\chapter7\\results\\7-2-spatiotemporal-uncertainty.log"
 }

@@ -1,14 +1,14 @@
 {
   "file": "4-1-spatial-features.py",
-  "chapter_relpath": "practice\\chapter4\\code\\4-1-spatial-features.py",
-  "started_at": "2026-08-12T22:38:23.475533+09:00",
-  "duration_sec": 1.21,
+  "chapter_relpath": "lecture_practice\\chapter4\\code\\4-1-spatial-features.py",
+  "started_at": "2026-08-26T11:39:16.878166+09:00",
+  "duration_sec": 1.31,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "4f3b33aaa2b0f6c9d64450d39b96a41261af213b7e2c56c8281f80fc949db944",
-  "output_sha256": "3b4f432b5f1b4afe8ac27c598eb1c15ffe8f7ff7fac38930233ea9e38940f797",
-  "output_log": "practice\\chapter4\\results\\4-1-spatial-features.log"
+  "source_sha256": "ccb8c4954decb9201f373f7bca6fefbce32a9efe4ec4138a6e41ac6b10b250a5",
+  "output_sha256": "8dbcada405a3fc975e531209bb2ea0feb9351084a81e3574aaa2aedd71ad1edb",
+  "output_log": "lecture_practice\\chapter4\\results\\4-1-spatial-features.log"
 }

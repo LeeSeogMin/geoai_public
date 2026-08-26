@@ -1,14 +1,14 @@
 {
   "file": "2-1-coordinate-transform.py",
-  "chapter_relpath": "practice\\chapter2\\code\\2-1-coordinate-transform.py",
-  "started_at": "2026-08-13T10:08:32.200256+09:00",
-  "duration_sec": 0.29,
+  "chapter_relpath": "lecture_practice\\chapter2\\code\\2-1-coordinate-transform.py",
+  "started_at": "2026-08-26T11:27:06.014058+09:00",
+  "duration_sec": 0.27,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "dff33696d52dee749a3a2aa315739381939419bd3a8a1a9dc48a4aa3a4853b10",
+  "source_sha256": "dbb3774ce5896496172e427bc1c31cf92c11fc0ca15f9488ace6e5aa4b58b6ca",
   "output_sha256": "81c59ae2f9e81b72fc280878e9833652ec627d4f01d8c4483d6b80aae5188164",
-  "output_log": "practice\\chapter2\\results\\2-1-coordinate-transform.log"
+  "output_log": "lecture_practice\\chapter2\\results\\2-1-coordinate-transform.log"
 }

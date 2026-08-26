@@ -97,7 +97,7 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 4-6-st
        손님을 얼마나 가져가는지는 이 모델이 답하지 못한다.
 
 === STDERR ===
-C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter4\code\4-6-store-location-supply.py:259: UserWarning: Glyph 8722 (\N{MINUS SIGN}) missing from font(s) Malgun Gothic.
+C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter4\code\4-6-store-location-supply.py:259: UserWarning: Glyph 8722 (\N{MINUS SIGN}) missing from font(s) Malgun Gothic.
   fig.tight_layout()
-C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter4\code\4-6-store-location-supply.py:260: UserWarning: Glyph 8722 (\N{MINUS SIGN}) missing from font(s) Malgun Gothic.
+C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter4\code\4-6-store-location-supply.py:260: UserWarning: Glyph 8722 (\N{MINUS SIGN}) missing from font(s) Malgun Gothic.
   fig.savefig(RESULT_DIR / "ch4_supply_gap_map.png", dpi=150)

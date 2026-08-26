@@ -1,14 +1,14 @@
 {
   "file": "5-3-adoption-cost-breakeven.py",
-  "chapter_relpath": "practice\\chapter5\\code\\5-3-adoption-cost-breakeven.py",
-  "started_at": "2026-08-13T10:40:24.558540+09:00",
-  "duration_sec": 0.84,
+  "chapter_relpath": "lecture_practice\\chapter5\\code\\5-3-adoption-cost-breakeven.py",
+  "started_at": "2026-08-26T11:53:29.505859+09:00",
+  "duration_sec": 0.83,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "3afa4f3b170513daecfd8d1f4fa607ec72888ca04aaf746ed0960db866feb0dc",
+  "source_sha256": "c41a315aa63f7de0ee3828c1649edd122d89898c87a7b1479358f485365b2bfe",
   "output_sha256": "79da4e2039a66a25203d9ab59200d7c83b6a0d07b476d535cb2667bbecee2ee4",
-  "output_log": "practice\\chapter5\\results\\5-3-adoption-cost-breakeven.log"
+  "output_log": "lecture_practice\\chapter5\\results\\5-3-adoption-cost-breakeven.log"
 }

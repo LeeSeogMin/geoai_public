@@ -1,4 +1,4 @@
-$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 4-0-raster-inspection.py
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 4-0-raster-inspection.py
 
 === STDOUT ===
 ============================================================
@@ -6,7 +6,7 @@ $ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 4-0-ra
 ============================================================
 
 --- 1. 파일 메타데이터 ---
-  파일 경로: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter4\data\sentinel2_l2a_12band_clip.tif
+  파일 경로: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter4\data\sentinel2_l2a_12band_clip.tif
   밴드 수: 12
   행×열: 1314 × 1338
   좌표계: EPSG:32652 (('EPSG', '32652'))

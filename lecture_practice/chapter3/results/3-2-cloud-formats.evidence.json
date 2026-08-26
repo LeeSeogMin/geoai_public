@@ -1,14 +1,14 @@
 {
   "file": "3-2-cloud-formats.py",
-  "chapter_relpath": "practice\\chapter3\\code\\3-2-cloud-formats.py",
-  "started_at": "2026-08-13T10:30:17.904241+09:00",
-  "duration_sec": 5.94,
+  "chapter_relpath": "lecture_practice\\chapter3\\code\\3-2-cloud-formats.py",
+  "started_at": "2026-08-26T11:27:28.737639+09:00",
+  "duration_sec": 6.53,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "3864ecef7f52022383598552cfeb7eca4eddde855df81a1121c18011061149fe",
-  "output_sha256": "d1fd11e38ebf4357f17230cd16f9a8ecd089b609c2dc83e2f6f44dc9cd3ecbda",
-  "output_log": "practice\\chapter3\\results\\3-2-cloud-formats.log"
+  "source_sha256": "6883f0813d74052a8826826a9cdde329010be6b40a233a8aba980d18b6cce8df",
+  "output_sha256": "415cf74bdde20fd7483dd97e077d18817d8c12473c7de876a4a1f98af06f4e92",
+  "output_log": "lecture_practice\\chapter3\\results\\3-2-cloud-formats.log"
 }

@@ -7,7 +7,7 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 12-0b-
 
 [1/2] 상가(상권)정보 — 동물병원·행정동 대표점·후보지
   원본: 소상공인시장진흥공단_상가(상권)정보_서울_202606.csv (302 MB, utf-8-sig)
-  경로: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter14\data\raw\소상공인시장진흥공단
+  경로: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter14\data\raw\소상공인시장진흥공단
   서울 전체 점포 554,092개, 자치구 25개
   좌표 결측률(전 업종) 0.000%
   동물병원(소분류 '동물병원') 905개 | 자치구 25개 | 행정동 344개

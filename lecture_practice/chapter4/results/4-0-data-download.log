@@ -1,4 +1,4 @@
-$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 4-0-data-download.py
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 4-0-data-download.py
 
 === STDOUT ===
 ============================================================
@@ -18,25 +18,7 @@ $ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 4-0-da
   크기: 1314행 × 1338열, 해상도 10m
   bounds: (379420, 4186720) ~ (392800, 4199860)
 
---- 3. 12밴드 클립 다운로드 ---
-  B01  ( 443nm, Coastal aerosol): 60m→10m 쌍선형 보간
-  B02  ( 490nm, Blue           ): 원본 10m
-  B03  ( 560nm, Green          ): 원본 10m
-  B04  ( 665nm, Red            ): 원본 10m
-  B05  ( 705nm, Red Edge 1     ): 20m→10m 쌍선형 보간
-  B06  ( 740nm, Red Edge 2     ): 20m→10m 쌍선형 보간
-  B07  ( 783nm, Red Edge 3     ): 20m→10m 쌍선형 보간
-  B08  ( 842nm, NIR            ): 원본 10m
-  B8A  ( 865nm, NIR narrow     ): 20m→10m 쌍선형 보간
-  B09  ( 945nm, Water vapour   ): 60m→10m 쌍선형 보간
-  B11  (1610nm, SWIR 1         ): 20m→10m 쌍선형 보간
-  B12  (2190nm, SWIR 2         ): 20m→10m 쌍선형 보간
-  저장: sentinel2_l2a_12band_clip.tif (29.4 MB)
-
---- 4. SCL·WorldCover 클립 다운로드 ---
-  저장: sentinel2_scl_clip.tif (SCL, 범주형이므로 최근접 보간)
-  저장: worldcover_2021_clip.tif (WorldCover ESA_WorldCover_10m_2021_v200_N36E126)
-  저장: clip_metadata.json
+  데이터 파일이 이미 존재하므로 다운로드를 건너뛴다.
 
 --- 5. 저장 파일 요약 ---
   sentinel2_l2a_12band_clip.tif: 12밴드 1314×1338, EPSG:32652, 10m, dtype=uint16

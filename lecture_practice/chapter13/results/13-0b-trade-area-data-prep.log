@@ -5,7 +5,7 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 13-0b-
 13장 준비(비즈니스): 상가(상권)정보 → 읍면동 상권 지표·편의점 점포 목록
 ========================================================================
 
-[1/4] 원자료 16개 읽기  (폴더: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter14\data\raw)
+[1/4] 원자료 16개 읽기  (폴더: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter14\data\raw)
   [ 1/16] 소상공인시장진흥공단_상가(상권)정보_강원_202606.csv                     110,206행 (utf-8-sig)
   [ 2/16] 소상공인시장진흥공단_상가(상권)정보_경기_202606.csv                     672,680행 (utf-8-sig)
   [ 3/16] 소상공인시장진흥공단_상가(상권)정보_경남_202606.csv                     172,887행 (utf-8-sig)

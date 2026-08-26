@@ -22,28 +22,28 @@ CNN 기반 위성영상 분류: 실제 12밴드 Sentinel-2 패치
 --- 4. Random Split vs Spatial Split ---
 
   [Random 5-Fold CV]
-    Fold 1: Acc=0.952, Macro-F1=0.952
+    Fold 1: Acc=0.945, Macro-F1=0.944
     Fold 2: Acc=0.972, Macro-F1=0.974
     Fold 3: Acc=0.979, Macro-F1=0.980
-    Fold 4: Acc=0.966, Macro-F1=0.961
+    Fold 4: Acc=0.959, Macro-F1=0.956
     Fold 5: Acc=0.965, Macro-F1=0.965
-    평균: Acc=0.967±0.009, Macro-F1=0.966±0.010
+    평균: Acc=0.964±0.012, Macro-F1=0.964±0.013
 
   [Spatial CV — 타일 기반]
-    Fold 1: Acc=0.958, Macro-F1=0.952
+    Fold 1: Acc=0.951, Macro-F1=0.945
     Fold 2: Acc=0.986, Macro-F1=0.965
     Fold 3: Acc=0.979, Macro-F1=0.977
     Fold 4: Acc=0.972, Macro-F1=0.971
     Fold 5: Acc=0.966, Macro-F1=0.966
-    평균: Acc=0.972±0.010, Macro-F1=0.966±0.008
+    평균: Acc=0.971±0.012, Macro-F1=0.965±0.011
 
   과대추정 (Random - Spatial):
-    Accuracy: -0.006
-    Macro-F1: -0.000
+    Accuracy: -0.007
+    Macro-F1: -0.001
 
 --- 5. SimpleCNN vs MiniResNet (공간 분할) ---
-  SimpleCNN: Acc=0.986, Macro-F1=0.984, 학습시간=1.0초
-  MiniResNet: Acc=0.986, Macro-F1=0.984, 학습시간=2.3초
+  SimpleCNN: Acc=0.986, Macro-F1=0.984, 학습시간=1.2초
+  MiniResNet: Acc=0.986, Macro-F1=0.984, 학습시간=2.7초
 
 --- 6. 밴드 선택 비교 (공간 분할) ---
   RGB (3밴드): Acc=0.979, Macro-F1=0.973
@@ -65,18 +65,18 @@ weighted avg      0.980     0.979     0.979       143
 --- 8. 요약 ---
   항목             |  Random CV | Spatial CV |     과대추정
   -------------- | ---------- | ---------- | --------
-  Accuracy       |      0.967 |      0.972 |   -0.006
-  Macro-F1       |      0.966 |      0.966 |   -0.000
+  Accuracy       |      0.964 |      0.971 |   -0.007
+  Macro-F1       |      0.964 |      0.965 |   -0.001
 
   단일 장면(춘천, 2021-04-07) 기반이므로 다른 지역·계절 일반화는
   이 수치로 보장되지 않는다. 4월 초라 경작지가 나지 상태인 점도 라벨과 어긋난다.
 
 --- 9. 재현성 점검: 과대추정 차이가 실행 간 변동보다 큰가 ---
-  시드 0: Random Acc=0.967 F1=0.967 | Spatial Acc=0.968 F1=0.957 | 과대추정 Acc=-0.001 F1=+0.009
-  시드 1: Random Acc=0.965 F1=0.965 | Spatial Acc=0.971 F1=0.965 | 과대추정 Acc=-0.006 F1=+0.000
-  시드 2: Random Acc=0.967 F1=0.966 | Spatial Acc=0.968 F1=0.959 | 과대추정 Acc=-0.001 F1=+0.007
-  과대추정 Accuracy 범위: -0.006 ~ -0.001
-  과대추정 Macro-F1 범위: +0.000 ~ +0.009
+  시드 0: Random Acc=0.967 F1=0.967 | Spatial Acc=0.967 F1=0.956 | 과대추정 Acc=-0.000 F1=+0.011
+  시드 1: Random Acc=0.967 F1=0.967 | Spatial Acc=0.970 F1=0.962 | 과대추정 Acc=-0.003 F1=+0.004
+  시드 2: Random Acc=0.968 F1=0.968 | Spatial Acc=0.968 F1=0.959 | 과대추정 Acc=-0.000 F1=+0.008
+  과대추정 Accuracy 범위: -0.003 ~ -0.000
+  과대추정 Macro-F1 범위: +0.004 ~ +0.011
   → 이 범위가 0을 걸치면 '과대추정이 검출되지 않았다'로 읽어야 하고,
     차이의 부호(어느 쪽이 높은가)를 해석해서는 안 된다.
 

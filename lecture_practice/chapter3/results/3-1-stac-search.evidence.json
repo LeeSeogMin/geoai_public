@@ -1,14 +1,14 @@
 {
   "file": "3-1-stac-search.py",
-  "chapter_relpath": "practice\\chapter3\\code\\3-1-stac-search.py",
-  "started_at": "2026-08-13T10:30:14.293936+09:00",
-  "duration_sec": 3.61,
+  "chapter_relpath": "lecture_practice\\chapter3\\code\\3-1-stac-search.py",
+  "started_at": "2026-08-26T11:27:24.384705+09:00",
+  "duration_sec": 4.35,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "af8b18fa6e1b5b472b950a4992917d8565e2333ce4823a0d630ac95b80b92c94",
+  "source_sha256": "70c79786baf198e3257593eaae558b01e2e32366f528a929de846d572b19c26a",
   "output_sha256": "63053993c975ce0e193e7c98a47f14a8f3febc9ea80b109c9a495014fe6a86c3",
-  "output_log": "practice\\chapter3\\results\\3-1-stac-search.log"
+  "output_log": "lecture_practice\\chapter3\\results\\3-1-stac-search.log"
 }

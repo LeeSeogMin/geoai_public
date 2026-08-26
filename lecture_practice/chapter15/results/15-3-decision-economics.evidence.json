@@ -1,8 +1,8 @@
 {
   "file": "15-3-decision-economics.py",
-  "chapter_relpath": "practice\\chapter15\\code\\15-3-decision-economics.py",
-  "started_at": "2026-08-12T22:48:26.722174+09:00",
-  "duration_sec": 2.89,
+  "chapter_relpath": "lecture_practice\\chapter15\\code\\15-3-decision-economics.py",
+  "started_at": "2026-08-26T12:04:40.433417+09:00",
+  "duration_sec": 2.64,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "ade44054ad17b73b1f23accb6467d44443781026c92bb2a63534b0c0ea5b0965",
   "output_sha256": "cd6780cfc84791e8ec6dc47abd7bf65c7ff33ee8bacfc7368b30e73218f5ae42",
-  "output_log": "practice\\chapter15\\results\\15-3-decision-economics.log"
+  "output_log": "lecture_practice\\chapter15\\results\\15-3-decision-economics.log"
 }

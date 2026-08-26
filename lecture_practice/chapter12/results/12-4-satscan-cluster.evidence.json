@@ -1,8 +1,8 @@
 {
   "file": "12-4-satscan-cluster.py",
-  "chapter_relpath": "practice\\chapter12\\code\\12-4-satscan-cluster.py",
-  "started_at": "2026-08-13T01:03:20.241919+09:00",
-  "duration_sec": 9.49,
+  "chapter_relpath": "lecture_practice\\chapter12\\code\\12-4-satscan-cluster.py",
+  "started_at": "2026-08-26T12:08:59.035750+09:00",
+  "duration_sec": 9.88,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "8a61b7ae57a747490ee5fffbb2cc9fd7f7da0168c2ddef460fbc2693c7fa440d",
   "output_sha256": "749ed90e199a6eb2cb0193d7d374f4b4100f37461c193d7f07ed8eeb240dcb3c",
-  "output_log": "practice\\chapter12\\results\\12-4-satscan-cluster.log"
+  "output_log": "lecture_practice\\chapter12\\results\\12-4-satscan-cluster.log"
 }

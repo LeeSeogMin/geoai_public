@@ -11,27 +11,27 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 3-2-cl
 --- 2. 포맷별 저장 비교 ---
   포맷           |      파일 크기 |      저장 시간
   ------------ | ---------- | ----------
-  GeoJSON      |    11.89 MB |    1.428초
-  Shapefile    |    21.05 MB |    1.490초
-  GeoParquet   |     2.18 MB |    0.070초
+  GeoJSON      |    11.89 MB |    1.631초
+  Shapefile    |    21.05 MB |    1.661초
+  GeoParquet   |     2.18 MB |    0.076초
 
 --- 3. 포맷별 읽기 성능 비교 ---
-  GeoJSON:    0.712초
-  Shapefile:  0.488초
-  GeoParquet: 0.052초
+  GeoJSON:    0.723초
+  Shapefile:  0.540초
+  GeoParquet: 0.055초
 
   GeoParquet 대비 속도:
-    vs GeoJSON:   13.6배 빠름
-    vs Shapefile: 9.3배 빠름
+    vs GeoJSON:   13.2배 빠름
+    vs Shapefile: 9.8배 빠름
 
 --- 4. GeoParquet 공간 필터링 ---
   전체 데이터: 50,000개
   필터링 결과: 2,055개 (강남 영역)
-  필터링 시간: 0.035초
+  필터링 시간: 0.030초
   필터링 비율: 4.1%
 
 --- 5. 컬럼 선택 읽기 ---
-  전체 컬럼 (6개): 0.049초
+  전체 컬럼 (6개): 0.046초
   2개 컬럼만:            0.066초
   속도 개선: 0.7배
 

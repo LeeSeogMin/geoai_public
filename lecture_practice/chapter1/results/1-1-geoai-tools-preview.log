@@ -1,4 +1,4 @@
-$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 1-1-geoai-tools-preview.py
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 1-1-geoai-tools-preview.py
 
 === STDOUT ===
 ============================================================
@@ -37,12 +37,12 @@ GeoPandas 벡터 데이터 탐색
 
 [완료] GeoPandas를 활용한 벡터 데이터 탐색을 마쳤다.
 다음 장에서 좌표 변환, 공간 연산, 래스터 처리를 본격적으로 학습한다.
-저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\continent_counts.csv
-저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\asia_top5_by_area_approx.csv
-저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\asia_countries.geojson
-저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\world_countries_110m.geojson
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\continent_counts.csv
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\asia_top5_by_area_approx.csv
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\asia_countries.geojson
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\world_countries_110m.geojson
 
 === STDERR ===
-C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\code\1-1-geoai-tools-preview.py:55: UserWarning: Geometry is in a geographic CRS. Results from 'area' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\code\1-1-geoai-tools-preview.py:55: UserWarning: Geometry is in a geographic CRS. Results from 'area' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
 
   asia["area_approx"] = asia.geometry.area

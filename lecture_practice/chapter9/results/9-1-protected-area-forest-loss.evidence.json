@@ -1,14 +1,14 @@
 {
   "file": "9-1-protected-area-forest-loss.py",
-  "chapter_relpath": "practice\\chapter9\\code\\9-1-protected-area-forest-loss.py",
-  "started_at": "2026-08-13T00:45:00.060274+09:00",
-  "duration_sec": 4.97,
+  "chapter_relpath": "lecture_practice\\chapter9\\code\\9-1-protected-area-forest-loss.py",
+  "started_at": "2026-08-26T12:06:47.303212+09:00",
+  "duration_sec": 5.22,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "9d71efc55e4f757d390b1f67571e88dfb9ea614cab2eb7f3c9d0d0d3d74f716a",
-  "output_sha256": "f45c20225983d63a96e968dd7ad4aaa2b6cbd6fd897349eee2b376c5aeb59916",
-  "output_log": "practice\\chapter9\\results\\9-1-protected-area-forest-loss.log"
+  "output_sha256": "ee6918b9922b87f67e8fc920a37e6471702e33cb153e6249e03c31593c7f8f94",
+  "output_log": "lecture_practice\\chapter9\\results\\9-1-protected-area-forest-loss.log"
 }

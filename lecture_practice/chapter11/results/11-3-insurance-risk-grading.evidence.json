@@ -1,14 +1,14 @@
 {
   "file": "11-3-insurance-risk-grading.py",
-  "chapter_relpath": "practice\\chapter11\\code\\11-3-insurance-risk-grading.py",
-  "started_at": "2026-08-12T22:41:25.047498+09:00",
-  "duration_sec": 4.57,
+  "chapter_relpath": "lecture_practice\\chapter11\\code\\11-3-insurance-risk-grading.py",
+  "started_at": "2026-08-26T12:07:56.418076+09:00",
+  "duration_sec": 4.09,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "828c02fbc977574f1048c85f6050b802020caa54bb589caf8f0fb5781bb3c49f",
-  "output_sha256": "dcd94628deaf732a60069c85069785ba1dd74bb359e71426c2768289d7165bb6",
-  "output_log": "practice\\chapter11\\results\\11-3-insurance-risk-grading.log"
+  "output_sha256": "51bacea9a8cd966bcfcc94e89336571efd7a5f99ae65f5f882bb8438c0d61c32",
+  "output_log": "lecture_practice\\chapter11\\results\\11-3-insurance-risk-grading.log"
 }

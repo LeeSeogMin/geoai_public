@@ -1,14 +1,14 @@
 {
   "file": "7-0b-demand-simdata.py",
-  "chapter_relpath": "practice\\chapter7\\code\\7-0b-demand-simdata.py",
-  "started_at": "2026-08-13T09:49:53.962467+09:00",
-  "duration_sec": 0.95,
+  "chapter_relpath": "lecture_practice\\chapter7\\code\\7-0b-demand-simdata.py",
+  "started_at": "2026-08-26T12:03:48.170346+09:00",
+  "duration_sec": 0.83,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "cbcb46af4da1ec3577cdfaeb5b0db9e3c1652c5dae0850eb14f4fe62781a953e",
+  "source_sha256": "7c2c4c6121c7d3219e78bc76048bfc50a6b029fb883d7de77a587d978887f87a",
   "output_sha256": "4066cac20cbe0cde3a59185686431d03be9f9976a63c3b90f277c3afcd180650",
-  "output_log": "practice\\chapter7\\results\\7-0b-demand-simdata.log"
+  "output_log": "lecture_practice\\chapter7\\results\\7-0b-demand-simdata.log"
 }

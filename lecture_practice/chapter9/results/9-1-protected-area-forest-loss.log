@@ -20,11 +20,11 @@ DID 효과(treated:post): -0.822 %p  (SE=0.020, p=0.0000)
 === [심화] DID 추정 (매칭(공통지지) 표본, n=4640) ===
 DID 효과(treated:post): -0.804 %p  (SE=0.022, p=0.0000)
 
-그림 저장: practice\chapter9\data\fig_9_1_forest_loss_trends.png
+그림 저장: lecture_practice\chapter9\data\fig_9_1_forest_loss_trends.png
 
 === 공간단위 정책 산출물 ===
-격자 단위 우선순위표 저장: practice\chapter9\results\spatial_unit_priority.csv
-행정구역 우선순위표 저장: practice\chapter9\results\admin_area_priority.csv
+격자 단위 우선순위표 저장: lecture_practice\chapter9\results\spatial_unit_priority.csv
+행정구역 우선순위표 저장: lecture_practice\chapter9\results\admin_area_priority.csv
 
 행정구역 우선순위 상위 5개
 admin_area  priority_rank  post_loss  mean_pressure  protected_share  high_priority_units

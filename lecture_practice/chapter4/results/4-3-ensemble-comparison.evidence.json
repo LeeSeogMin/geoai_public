@@ -1,14 +1,14 @@
 {
   "file": "4-3-ensemble-comparison.py",
-  "chapter_relpath": "practice\\chapter4\\code\\4-3-ensemble-comparison.py",
-  "started_at": "2026-08-13T10:54:50.123054+09:00",
-  "duration_sec": 327.96,
+  "chapter_relpath": "lecture_practice\\chapter4\\code\\4-3-ensemble-comparison.py",
+  "started_at": "2026-08-26T11:40:22.226194+09:00",
+  "duration_sec": 426.8,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "01afa1ecb22dd831e40818c7a532d515ad996c9d79f68532a1f53b806726a4b3",
-  "output_sha256": "28652243fda06a1c66b6f7e5825b445e7947d5d888f0c3e57a5aa592cc4b043c",
-  "output_log": "practice\\chapter4\\results\\4-3-ensemble-comparison.log"
+  "source_sha256": "80199f1383c3681c920aa1f0ffb621e128508b4301c2224e96e31f45de1f5992",
+  "output_sha256": "2b48f1475dacd11287304c63e1bdbb0bfece827b4078d4f541177b6977dd31d1",
+  "output_log": "lecture_practice\\chapter4\\results\\4-3-ensemble-comparison.log"
 }

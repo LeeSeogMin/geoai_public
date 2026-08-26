@@ -1,7 +1,7 @@
-$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 1-1-geoai-tools-visualize.py
+$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 1-1-geoai-tools-visualize.py
 
 === STDOUT ===
-Saved: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\world_countries_110m.png
-Saved: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter1\results\asia_countries.png
+Saved: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\world_countries_110m.png
+Saved: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter1\results\asia_countries.png
 
 === STDERR ===

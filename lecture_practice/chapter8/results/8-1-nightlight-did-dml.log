@@ -34,7 +34,7 @@ DML 표준오차 — 무작위 CV: 0.032 · 공간 블록 CV: 0.030  (진짜 ATT
       공간 블록 CV는 train/test를 공간적으로 분리해 누수를 막는다 — 두 추정의 차이가 그 신호다.
 주의(규칙4): 통제 후 인과 해석은 '관측 공변량 조건부 평행추세/무교란' 가정 위에서만 성립. 예측력≠인과.
 
-그림 저장: practice\chapter8\data\fig_8_1_event_study.png
+그림 저장: lecture_practice\chapter8\data\fig_8_1_event_study.png
 
 [3층 구조] 1층 집계 → 2층 DML 고차원 통제 → 3층 DID 인과·event-study. AI(2층)는 비선형 고차원 교란을 통제할 때 정당하며, 식별 가정을 대체하지 않는다.
 

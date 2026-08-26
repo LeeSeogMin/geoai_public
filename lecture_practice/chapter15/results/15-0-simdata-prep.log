@@ -20,9 +20,9 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 15-0-s
 
 사전 관측 성장률 상위 5개 시장: [5, 15, 4, 16, 6]
 
-저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_panel.parquet
-저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_markets.parquet
-저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_adjacency.npy
-저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\practice\chapter15\data\geoexp_truth.json
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter15\data\geoexp_panel.parquet
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter15\data\geoexp_markets.parquet
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter15\data\geoexp_adjacency.npy
+저장: C:\Users\user\Documents\lee\class\2026-2\geoAI\lecture_practice\chapter15\data\geoexp_truth.json
 
 === STDERR ===

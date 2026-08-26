@@ -1,14 +1,14 @@
 {
   "file": "4-0-data-download.py",
-  "chapter_relpath": "practice\\chapter4\\code\\4-0-data-download.py",
-  "started_at": "2026-08-12T22:37:42.184430+09:00",
-  "duration_sec": 39.1,
+  "chapter_relpath": "lecture_practice\\chapter4\\code\\4-0-data-download.py",
+  "started_at": "2026-08-26T11:39:02.716241+09:00",
+  "duration_sec": 4.65,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "deea389adfa074ec4984ce001ca3e3999cd89cc82269a582723b6f26aa4d7b72",
-  "output_sha256": "9febd3405de5160fcf5046e7e6131d970e63fc1b95ab5dbc7296d12596fb5cca",
-  "output_log": "practice\\chapter4\\results\\4-0-data-download.log"
+  "source_sha256": "27d48d5500cf7bc09655eb6e71ff6139af3be0c9c83d8827e346c17838aaea0c",
+  "output_sha256": "239ac8d45c0cabdd5ccaf1985249e50f50a4b2d463e2056e263c3c214b02eb13",
+  "output_log": "lecture_practice\\chapter4\\results\\4-0-data-download.log"
 }

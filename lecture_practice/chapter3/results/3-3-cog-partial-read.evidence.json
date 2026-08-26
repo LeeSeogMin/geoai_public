@@ -1,14 +1,14 @@
 {
   "file": "3-3-cog-partial-read.py",
-  "chapter_relpath": "practice\\chapter3\\code\\3-3-cog-partial-read.py",
-  "started_at": "2026-08-13T10:30:23.844252+09:00",
-  "duration_sec": 12.07,
+  "chapter_relpath": "lecture_practice\\chapter3\\code\\3-3-cog-partial-read.py",
+  "started_at": "2026-08-26T11:27:35.266260+09:00",
+  "duration_sec": 11.28,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "eac325a3a3fcda237f2ef052bb032b8754980ab7d953cfbcddbe8fc9611a3355",
-  "output_sha256": "1bf62f5b00a2f7dab08e9b11ab2919c9066e80c086ce2c10635b811581fe0f47",
-  "output_log": "practice\\chapter3\\results\\3-3-cog-partial-read.log"
+  "source_sha256": "a9c2004730f7ad837f89fc2fed28f57f3d7f8b3c0ef42d7bd70299677174b7fa",
+  "output_sha256": "5f7b7dc8b52666fe4ef94fda42c201cfb99cdbbb946e114c09a3c965d1974837",
+  "output_log": "lecture_practice\\chapter3\\results\\3-3-cog-partial-read.log"
 }

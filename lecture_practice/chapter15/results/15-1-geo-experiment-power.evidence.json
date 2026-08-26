@@ -1,8 +1,8 @@
 {
   "file": "15-1-geo-experiment-power.py",
-  "chapter_relpath": "practice\\chapter15\\code\\15-1-geo-experiment-power.py",
-  "started_at": "2026-08-12T22:48:20.749301+09:00",
-  "duration_sec": 2.85,
+  "chapter_relpath": "lecture_practice\\chapter15\\code\\15-1-geo-experiment-power.py",
+  "started_at": "2026-08-26T12:04:34.742924+09:00",
+  "duration_sec": 2.66,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "d111b447db37c3d61f7e06ca7853b237bbd3b75b0bc56d4255628a55938b4b55",
   "output_sha256": "eb5b73c0fd1ddff1f14bb2b8c671dfdcff59de0fcc246c6ac7747954343bff49",
-  "output_log": "practice\\chapter15\\results\\15-1-geo-experiment-power.log"
+  "output_log": "lecture_practice\\chapter15\\results\\15-1-geo-experiment-power.log"
 }

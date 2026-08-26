@@ -1,14 +1,14 @@
 {
   "file": "8-2-staggered-did.py",
-  "chapter_relpath": "practice\\chapter8\\code\\8-2-staggered-did.py",
-  "started_at": "2026-08-13T01:29:05.940593+09:00",
-  "duration_sec": 2.57,
+  "chapter_relpath": "lecture_practice\\chapter8\\code\\8-2-staggered-did.py",
+  "started_at": "2026-08-26T11:53:49.843618+09:00",
+  "duration_sec": 3.8,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "d25c3a566ded2983c95cbbef6ceb0b7dd25a42520bec95621be586c898c3af86",
-  "output_sha256": "3fddb49ec3c497675e4b9a665079aca7f0bd18cf292e92f773515cdc6e8c9a28",
-  "output_log": "practice\\chapter8\\results\\8-2-staggered-did.log"
+  "output_sha256": "4ab9c8812a0a6eed8d63548a1a25729ed4ac396d78418dac60e79953ee467f7a",
+  "output_log": "lecture_practice\\chapter8\\results\\8-2-staggered-did.log"
 }

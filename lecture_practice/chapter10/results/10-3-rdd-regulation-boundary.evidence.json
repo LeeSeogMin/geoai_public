@@ -1,8 +1,8 @@
 {
   "file": "10-3-rdd-regulation-boundary.py",
-  "chapter_relpath": "practice\\chapter10\\code\\10-3-rdd-regulation-boundary.py",
-  "started_at": "2026-08-13T01:17:27.901093+09:00",
-  "duration_sec": 2.9,
+  "chapter_relpath": "lecture_practice\\chapter10\\code\\10-3-rdd-regulation-boundary.py",
+  "started_at": "2026-08-26T12:07:26.847843+09:00",
+  "duration_sec": 2.56,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
@@ -10,5 +10,5 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "078f15fd94f775dcb544ec85cec0e738e004fd593a2593cbe6f5b33b5812cf56",
   "output_sha256": "b33dc6c91286134c2a7ad58830bdd3da42b24e644a68074f6531de672422706b",
-  "output_log": "practice\\chapter10\\results\\10-3-rdd-regulation-boundary.log"
+  "output_log": "lecture_practice\\chapter10\\results\\10-3-rdd-regulation-boundary.log"
 }

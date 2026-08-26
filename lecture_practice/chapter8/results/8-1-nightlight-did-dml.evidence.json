@@ -1,14 +1,14 @@
 {
   "file": "8-1-nightlight-did-dml.py",
-  "chapter_relpath": "practice\\chapter8\\code\\8-1-nightlight-did-dml.py",
-  "started_at": "2026-08-13T01:28:56.055828+09:00",
-  "duration_sec": 9.88,
+  "chapter_relpath": "lecture_practice\\chapter8\\code\\8-1-nightlight-did-dml.py",
+  "started_at": "2026-08-26T11:53:37.414661+09:00",
+  "duration_sec": 12.43,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "f61bfc4ca786e4387b1b9887838c7481d65a4159135538e47007ed73867eef98",
-  "output_sha256": "c4609d681a331fc8767a992146dc0bee7593365f1394aea276295395c684227a",
-  "output_log": "practice\\chapter8\\results\\8-1-nightlight-did-dml.log"
+  "output_sha256": "4d344bf7f66410e76b6f6ae0155aeaa5bdbfe38f6c97eb80fdc3c3bad55ec802",
+  "output_log": "lecture_practice\\chapter8\\results\\8-1-nightlight-did-dml.log"
 }

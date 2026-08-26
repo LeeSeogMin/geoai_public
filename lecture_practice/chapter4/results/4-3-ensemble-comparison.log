@@ -27,26 +27,26 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 4-3-en
 --- 4. Random CV vs 공간 Block CV (Macro-F1) ---
 
   Random Forest:
-    Random CV Macro-F1: 0.763 +/- 0.011 (2.1초)
+    Random CV Macro-F1: 0.763 +/- 0.011 (2.2초)
     Block CV  Macro-F1: 0.753 +/- 0.020 (2.2초)
     과대추정(Random-Block): +0.010
 
   XGBoost:
-    Random CV Macro-F1: 0.772 +/- 0.007 (7.0초)
-    Block CV  Macro-F1: 0.760 +/- 0.021 (7.0초)
+    Random CV Macro-F1: 0.772 +/- 0.007 (7.6초)
+    Block CV  Macro-F1: 0.760 +/- 0.021 (7.4초)
     과대추정(Random-Block): +0.012
 
   LightGBM:
-    Random CV Macro-F1: 0.768 +/- 0.010 (3.9초)
-    Block CV  Macro-F1: 0.755 +/- 0.015 (3.6초)
+    Random CV Macro-F1: 0.768 +/- 0.010 (5.2초)
+    Block CV  Macro-F1: 0.755 +/- 0.015 (5.2초)
     과대추정(Random-Block): +0.013
 
 --- 5. 모델 비교 요약 ---
   모델              |  Random F1 |   Block F1 |     과대추정 |     학습시간
   --------------- | ---------- | ---------- | -------- | --------
   Random Forest   |      0.763 |      0.753 |   +0.010 |     2.2초
-  XGBoost         |      0.772 |      0.760 |   +0.012 |     7.0초
-  LightGBM        |      0.768 |      0.755 |   +0.013 |     3.6초
+  XGBoost         |      0.772 |      0.760 |   +0.012 |     7.4초
+  LightGBM        |      0.768 |      0.755 |   +0.013 |     5.2초
 
 --- 6. Random Forest 변수 중요도 ---
   피처       |      중요도

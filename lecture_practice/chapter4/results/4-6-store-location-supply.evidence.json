@@ -1,14 +1,14 @@
 {
   "file": "4-6-store-location-supply.py",
-  "chapter_relpath": "practice\\chapter4\\code\\4-6-store-location-supply.py",
-  "started_at": "2026-08-13T10:40:14.949282+09:00",
-  "duration_sec": 140.77,
+  "chapter_relpath": "lecture_practice\\chapter4\\code\\4-6-store-location-supply.py",
+  "started_at": "2026-08-26T11:49:30.613749+09:00",
+  "duration_sec": 147.36,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
   "source_sha256": "077c1b0b6c0580eb4eda220094f2838d67a89705c19a7162fa5e566fb926a0e3",
-  "output_sha256": "361fdd9897e48e26a3b7d30dc9fbc4abe9ae8a97717a62f35ca8b95d7d95370a",
-  "output_log": "practice\\chapter4\\results\\4-6-store-location-supply.log"
+  "output_sha256": "fa3107badb590bf194b9efdfd5dc45962b9d6cc4e34e9f523ce56bb8aeda6200",
+  "output_log": "lecture_practice\\chapter4\\results\\4-6-store-location-supply.log"
 }
