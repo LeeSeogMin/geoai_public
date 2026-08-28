@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430">
+  <rect width="880" height="430" fill="#ffffff"/>
+  <style>
+    .ink { fill: #16242A; }
+    .muted { fill: #55696D; }
+    .blue { fill: #1C6E8C; }
+    .amber { fill: #A85A1A; }
+    .label { font: 600 12.5px sans-serif; }
+    .label-sm { font: 600 12px sans-serif; }
+    .label-title { font: 600 13px sans-serif; }
+    .value { font: 600 13px "Consolas","IBM Plex Mono",monospace; }
+    .foot { font: 11px sans-serif; }
+  </style>
+
+  <text x="60" y="26" class="label muted">UTM 52N 존 안에서의 위치</text>
+  <rect x="60" y="42" width="760" height="20" rx="4" fill="#E1EAE7"/>
+  <line x1="440" y1="30" x2="440" y2="62" stroke="#1C6E8C" stroke-width="2.5"/>
+  <text x="440" y="22" text-anchor="middle" class="label-sm blue">129°E (중심 경도)</text>
+  <circle cx="440" cy="52" r="4.5" fill="#1C6E8C" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="440" y="80" text-anchor="middle" class="label ink">부산</text>
+  <circle cx="187" cy="52" r="4.5" fill="#55696D" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="187" y="80" text-anchor="middle" class="label ink">서울</text>
+  <text x="60" y="80" text-anchor="start" class="foot muted">126°E</text>
+  <text x="820" y="80" text-anchor="end" class="foot muted">132°E</text>
+
+  <text x="100" y="140" class="label-title ink">중심 경도 원점 기준 좌표 — False Easting 적용 전</text>
+  <text x="620" y="160" text-anchor="middle" class="label-sm blue">부산</text>
+  <text x="280" y="160" text-anchor="middle" class="label-sm muted">서울</text>
+  <line x1="100" y1="185" x2="772" y2="185" stroke="#C7D6D3" stroke-width="1.5"/>
+  <polygon points="780,185 770,180 770,190" fill="#C7D6D3"/>
+  <circle cx="620" cy="185" r="5.5" fill="#1C6E8C" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="280" cy="185" r="5" fill="#55696D" stroke="#ffffff" stroke-width="2"/>
+  <text x="620" y="207" text-anchor="middle" class="value blue">0 m (원점)</text>
+  <text x="280" y="207" text-anchor="middle" class="value ink">−176,789.53 m</text>
+
+  <line x1="620" y1="222" x2="620" y2="258" stroke="#A85A1A" stroke-width="2.5"/>
+  <polygon points="620,270 611,256 629,256" fill="#A85A1A"/>
+  <line x1="280" y1="222" x2="280" y2="258" stroke="#A85A1A" stroke-width="2.5"/>
+  <polygon points="280,270 271,256 289,256" fill="#A85A1A"/>
+  <rect x="352" y="234" width="176" height="26" rx="13" fill="#F3E3D1"/>
+  <text x="440" y="251" text-anchor="middle" class="label-sm amber">+500,000 m 공통 이동</text>
+
+  <text x="100" y="300" class="label-title ink">False Easting 적용 후 — 실제 UTM Easting</text>
+  <text x="620" y="320" text-anchor="middle" class="label-sm blue">부산</text>
+  <text x="280" y="320" text-anchor="middle" class="label-sm muted">서울</text>
+  <line x1="100" y1="345" x2="772" y2="345" stroke="#C7D6D3" stroke-width="1.5"/>
+  <polygon points="780,345 770,340 770,350" fill="#C7D6D3"/>
+  <circle cx="620" cy="345" r="5.5" fill="#1C6E8C" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="280" cy="345" r="5" fill="#55696D" stroke="#ffffff" stroke-width="2"/>
+  <text x="620" y="367" text-anchor="middle" class="value blue">500,000.00 m</text>
+  <text x="280" y="367" text-anchor="middle" class="value ink">323,210.47 m</text>
+
+  <circle cx="112" cy="405" r="4" fill="#1C6E8C"/>
+  <text x="122" y="409" class="foot muted">중심 경도 위 지점(원점)</text>
+  <circle cx="300" cy="405" r="4" fill="#55696D"/>
+  <text x="310" y="409" class="foot muted">그 외 지점</text>
+  <line x1="450" y1="405" x2="478" y2="405" stroke="#A85A1A" stroke-width="3"/>
+  <text x="486" y="409" class="foot muted">모든 지점에 동일하게 더해지는 상수</text>
+</svg>

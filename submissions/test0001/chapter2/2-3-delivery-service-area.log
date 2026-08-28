@@ -1,0 +1,12 @@
+$ python 2-3-delivery-service-area.py
+
+=== 표준 출력 ===
+
+=== 오류 출력 ===
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\lee\class\2026-2\geoAI\scripts\_seeded_run.py", line 57, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\user\Documents\lee\class\2026-2\geoAI\scripts\_seeded_run.py", line 40, in main
+    from student import apply_student_seed
+ModuleNotFoundError: No module named 'student'

@@ -1,0 +1,32 @@
+{
+  "student_id": "test0001",
+  "student_name": "테스트",
+  "chapter": 2,
+  "seed_offset": 220886,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prep": [
+    {
+      "file": "2-0b-prepare-osm-snapshot.py",
+      "relpath": "lecture_practice\\chapter2\\code\\2-0b-prepare-osm-snapshot.py",
+      "started_at": "2026-08-28T17:17:53.934029+09:00",
+      "duration_sec": 0.08,
+      "exit_code": 1,
+      "timed_out": false,
+      "success": false,
+      "source_sha256": "81657d797e1df9f15140216685dd4188fb9e9d35b277d6ef0add87ecb3377f8d",
+      "output_sha256": "10f7b6d98229d751a5288391dc31d48ac22ed15d6bb67602310c95ae2a6d7eac"
+    }
+  ],
+  "target": {
+    "file": "2-3-delivery-service-area.py",
+    "relpath": "lecture_practice\\chapter2\\code\\2-3-delivery-service-area.py",
+    "started_at": "2026-08-28T17:17:54.012987+09:00",
+    "duration_sec": 0.09,
+    "exit_code": 1,
+    "timed_out": false,
+    "success": false,
+    "source_sha256": "2feec45de59c28f9f52bb022c9e7f31a7ad6709033ca1ac0b2cbb4d2babaeccb",
+    "output_sha256": "62f891dd735cb44029e06a417d97e3c1ae6af589f013524a25442fc0fc0a2166"
+  }
+}

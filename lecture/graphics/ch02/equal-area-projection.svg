@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="640" viewBox="0 0 880 640">
+  <rect width="880" height="640" fill="#ffffff"/>
+  <style>
+    .ink { fill: #16242A; }
+    .muted { fill: #55696D; }
+    .blue { fill: #1C6E8C; }
+    .amber { fill: #A85A1A; }
+    .eyebrow { font: 600 12.5px sans-serif; }
+    .label { font: 600 12.5px sans-serif; }
+    .title { font: 600 13px sans-serif; }
+    .value { font: 700 19px "Consolas","IBM Plex Mono",monospace; }
+    .foot { font: 12px sans-serif; }
+    .cap { font: 12.5px sans-serif; }
+  </style>
+
+  <!-- Panel A: 원래 영역 -> 임의 투영(왜곡) / 등면적 투영(보존) -->
+  <text x="60" y="26" class="eyebrow muted">등면적 투영의 원리 — 같은 영역이 투영에 따라 다르게 계산된다</text>
+
+  <circle cx="150" cy="150" r="42" fill="#E1EAE7" stroke="#C7D6D3" stroke-width="1.5"/>
+  <text x="150" y="154" text-anchor="middle" class="label ink">면적 = A</text>
+  <text x="150" y="212" text-anchor="middle" class="foot muted">원래 영역(지표면)</text>
+
+  <line x1="189" y1="124" x2="368" y2="80" stroke="#55696D" stroke-width="2"/>
+  <polygon points="378,78 366,74 368,86" fill="#55696D"/>
+  <text x="272" y="92" text-anchor="middle" class="foot ink">임의의 투영</text>
+
+  <line x1="189" y1="176" x2="368" y2="220" stroke="#1C6E8C" stroke-width="2"/>
+  <polygon points="378,222 366,218 368,230" fill="#1C6E8C"/>
+  <text x="272" y="216" text-anchor="middle" class="foot blue">등면적 투영(h × k = 1)</text>
+
+  <ellipse cx="460" cy="78" rx="55" ry="55" fill="#F3E3D1" stroke="#A85A1A" stroke-width="1.5"/>
+  <text x="460" y="82" text-anchor="middle" class="label amber">면적 ≠ A</text>
+  <text x="460" y="150" text-anchor="middle" class="foot amber">임의 투영 — 면적이 부풀려짐</text>
+
+  <ellipse cx="460" cy="222" rx="63" ry="28" fill="#DCEEF3" stroke="#1C6E8C" stroke-width="1.5"/>
+  <text x="460" y="226" text-anchor="middle" class="label blue">면적 = A</text>
+  <text x="460" y="268" text-anchor="middle" class="foot blue">등면적 투영 — 모양만 변형, 면적 보존</text>
+
+  <text x="440" y="298" text-anchor="middle" class="cap muted">등면적 투영만 h와 k가 서로 상쇄되어 원래 면적 A를 그대로 유지한다</text>
+
+  <line x1="60" y1="316" x2="820" y2="316" stroke="#E1EAE7" stroke-width="1.5"/>
+
+  <!-- Panel B: 한국 국토 경계 계산 흐름 -->
+  <text x="100" y="344" class="title ink">1단계 · 경위도 좌표에서 그대로 계산</text>
+  <text x="100" y="378" class="value ink">9.9548 도²</text>
+  <rect x="290" y="360" width="200" height="26" rx="13" fill="#F3E3D1"/>
+  <text x="390" y="377" text-anchor="middle" class="foot amber">면적 단위 아님 · 비교 불가</text>
+
+  <line x1="150" y1="394" x2="150" y2="426" stroke="#A85A1A" stroke-width="2.5"/>
+  <polygon points="150,436 141,422 159,422" fill="#A85A1A"/>
+  <text x="170" y="416" class="foot muted">Mollweide 등면적 투영으로 재계산</text>
+
+  <text x="100" y="462" class="title ink">2단계 · 등면적 투영(Mollweide) 좌표에서 계산</text>
+  <text x="100" y="496" class="value blue">99,206 km²</text>
+  <text x="270" y="496" class="foot blue">물리적 면적</text>
+
+  <line x1="150" y1="512" x2="150" y2="542" stroke="#55696D" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="150,550 141,538 159,538" fill="#55696D"/>
+  <text x="170" y="532" class="foot muted">통계 참고값과 대조</text>
+
+  <text x="100" y="576" class="title ink">3단계 · 통계청 공표 참고값과 비교</text>
+  <text x="100" y="610" class="value ink">100,210 km²</text>
+
+  <line x1="250" y1="496" x2="558" y2="536" stroke="#C7D6D3" stroke-width="1.2"/>
+  <line x1="272" y1="610" x2="558" y2="568" stroke="#C7D6D3" stroke-width="1.2"/>
+  <rect x="560" y="520" width="260" height="72" rx="10" fill="#F3E3D1" stroke="#A85A1A" stroke-width="1.2"/>
+  <text x="690" y="543" text-anchor="middle" class="title amber">차이 약 1,004 km²(≈1%)</text>
+  <text x="690" y="562" text-anchor="middle" class="foot muted">원인: 경계 자료의 단순화</text>
+  <text x="690" y="580" text-anchor="middle" class="foot muted">(등면적 투영 자체의 오차 아님)</text>
+</svg>
