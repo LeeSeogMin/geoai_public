@@ -1,0 +1,31 @@
+# Python 환경
+__pycache__/
+venv/
+.venv/
+.env
+
+# 운영체제 시스템 파일 (학생 환경은 Windows·macOS 혼재)
+.DS_Store
+Thumbs.db
+
+# 실습 데이터는 공개 저장소에 포함하지 않는다(AGENTS.md 저장소 범위 참조).
+# 필요한 데이터는 각 장의 데이터 준비 코드로 로컬에서 생성한다.
+lecture_practice/**/data/
+
+# 학생이 자기 컴퓨터에서 만든 환경 진단 결과 (lecture_practice/check_env.py가 생성)
+lecture_practice/env-report.txt
+
+# HTTP 응답 캐시. osmnx는 cache_folder를 지정하지 않으면 현재 작업 디렉터리 아래
+# ./cache 에 Overpass 응답을 쌓는다.
+cache/
+lecture_practice/**/cache/
+
+# 학습된 모델 가중치 — 코드로 재현한다
+*.pth
+
+# API 인증 토큰 임시 파일 — 절대 커밋 금지
+.sgis_token
+*.token
+
+# 주의: submissions/ 는 학생 제출물 경로다(scripts/submit.py 참조).
+# 커밋 대상이므로 여기서 제외하지 않는다.
