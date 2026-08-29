@@ -248,8 +248,9 @@
 | **Asset** | Item이 가리키는 실제 파일 | `B04.tif`, `SCL.tif` |
 
 - Item이 GeoJSON Feature 형식을 따르므로 별도 파서 없이 모든 GIS 도구에서 읽을 수 있음
-- Item은 geometry(관측 범위), datetime(관측 시각), properties(구름 비율·좌표계 등)를 담음
-- 도메인별 속성은 Extension으로 규정함 — EO(`eo:cloud_cover`로 구름 필터링), SAR(`sar:polarizations`), Projection(`proj:epsg`), View(태양·관측 각도)
+- Item의 `geometry`는 자산 전체의 공간 범위를 WGS 84 좌표로 나타냄
+- `properties`에는 관측 시각인 `datetime`과 검색에 필요한 메타데이터가 들어감
+- 도메인별 속성은 Extension으로 규정함 — EO(`eo:cloud_cover`로 구름 필터링), SAR(`sar:polarizations`), Projection(원본 자산의 좌표계), View(태양·관측 각도)
 
 ### 8.2 검색 절차 여섯 단계
 
