@@ -74,7 +74,7 @@
 - 결과 로그: `lecture_practice/chapter15/results/*.log`
 
 - 이 장의 실습은 GPU가 필요 없음. 시뮬레이션 4개를 합쳐도 실행 시간이 약 10초임
-- `lecture_practice/`는 노트북에서 돌아가도록 가볍게 만든 실습이고, `docs_practice/`는 연구 규모라 GPU를 씀. 두 폴더의 숫자가 달라도 오류가 아님
+- `lecture_practice/`는 노트북에서 돌아가도록 가볍게 만든 실습이고, 이 장의 본문 수치는 전부 이 폴더의 결과 로그에서 나옴
 
 ## 5. 실제 사례로 먼저 보기
 

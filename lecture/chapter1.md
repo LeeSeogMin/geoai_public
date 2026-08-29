@@ -114,10 +114,8 @@ flowchart TB
 - 실습 코드: `lecture_practice/chapter1/code/1-1-geoai-tools-preview.py`
 - 결과 로그: `lecture_practice/chapter1/results/1-1-geoai-tools-preview.log`
 
-- 실습이 `lecture_practice/`와 `docs_practice/` 둘로 나뉘어 있음
-- **`lecture_practice/`는 GPU 없이 노트북에서 돌아가도록 가볍게 만든 실습**이며, 이 교재가 쓰는 쪽
-- `docs_practice/`는 연구·실무 규모의 무거운 실습이라 GPU가 필요하고, 같은 개념이라도 데이터 규모와 수치가 다름
-- 두 폴더의 숫자가 서로 달라도 오류가 아님
+- 이 교재의 실습은 전부 `lecture_practice/` 폴더에 있음
+- **GPU 없이 노트북에서 돌아가도록 가볍게 만든 실습**이며, 본문의 실행 수치는 전부 이 폴더의 결과 로그에서 나옴
 
 ## 5. 실제 사례로 먼저 보기
 

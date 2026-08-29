@@ -68,8 +68,7 @@
   - `lecture_practice/chapter10/code/10-4-delivery-zone-optimization.py` — 배달 권역 최적화와 원가 컷라인
 - 결과 로그: `lecture_practice/chapter10/results/*.log`
 
-- `lecture_practice/`는 노트북에서 돌아가도록 가볍게 만든 실습이고, `docs_practice/`는 연구 규모라 GPU를 씀
-- 두 폴더의 숫자가 달라도 오류가 아님
+- `lecture_practice/`는 노트북에서 돌아가도록 가볍게 만든 실습이고, 이 장의 본문 수치는 전부 이 폴더의 결과 로그에서 나옴
 - 10-1·10-2·10-3은 시뮬레이션 자료를 씀. 10-4만 실제 공개 자료(서울시 상가정보·생활인구)를 가공해 씀
 
 ## 5. 실제 사례로 먼저 보기

@@ -80,7 +80,6 @@
 - 결과 로그: `lecture_practice/chapter4/results/*.log`
 
 - 이 장의 실습은 `lecture_practice/`에서 진행하며 GPU가 필요 없음
-- `docs_practice/`는 7장부터 쓰는 연구 규모 실습이며, 4장은 두 트랙이 같은 실습 폴더를 공유함
 
 ## 5. 실제 사례로 먼저 보기
 
