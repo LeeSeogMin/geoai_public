@@ -1,14 +1,14 @@
 {
   "file": "3-4-commercial-data-bias.py",
   "chapter_relpath": "lecture_practice\\chapter3\\code\\3-4-commercial-data-bias.py",
-  "started_at": "2026-08-26T11:27:46.545594+09:00",
-  "duration_sec": 8.94,
+  "started_at": "2026-08-30T15:34:35.712042+09:00",
+  "duration_sec": 23.37,
   "exit_code": 0,
   "timed_out": false,
   "success": true,
   "python_version": "3.12.7",
   "platform": "Windows-11-10.0.26200-SP0",
-  "source_sha256": "5102c0a076f829b6bf58617956e8305fa9cd7c910c60cf0ce7575ca65f246330",
-  "output_sha256": "1252c6e584f04a5921bb91b84271a6caa9dba1a7f5ca64992547fdadf3a65719",
+  "source_sha256": "070f60ad4ff878ff51777e8a2b6c86580f12ac83f58d3bb06024a3a9874295e5",
+  "output_sha256": "a989e4bc3142e8572637ae857bc2df455376a07fb1fe6a1b9a7c1544dd9f3bb7",
   "output_log": "lecture_practice\\chapter3\\results\\3-4-commercial-data-bias.log"
 }

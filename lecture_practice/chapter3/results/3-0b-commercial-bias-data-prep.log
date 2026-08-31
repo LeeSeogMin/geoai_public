@@ -1,4 +1,4 @@
-$ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 3-0b-commercial-bias-data-prep.py
+$ C:\Users\user\Documents\lee\class\2026-2\geoAI\.venv\Scripts\python.exe 3-0b-commercial-bias-data-prep.py
 
 === STDOUT ===
 ========================================================================
@@ -12,7 +12,8 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 3-0b-c
 
 [2] 소상공인시장진흥공단 상가(상권)정보
   원본: 소상공인시장진흥공단_상가(상권)정보_서울_202606.csv (302 MB)
-  서울 점포 554,092개, 행정동 427개
+  서울 점포 554,092개, 자료에 적힌 행정동 코드 427개
+  좌표로 배정: 경계 안 554,092개, 행정동 425개 (자료 코드와 다르게 배정된 점포 5,672개, 1.02%)
   대응표에 잡힌 점포(좁은 대응 합계): 187,592개
 
 [3] OpenStreetMap POI (Overpass API)
@@ -45,7 +46,7 @@ $ C:\Users\user\documents\lee\class\2026-2\geoai\.venv\Scripts\python.exe 3-0b-c
 
 [5] 저장
   bias_dong.parquet — 25 KB
-  bias_counts.parquet — 51 KB
+  bias_counts.parquet — 49 KB
   bias_sales.parquet — 2205 KB
   SOURCES_bias.json
 

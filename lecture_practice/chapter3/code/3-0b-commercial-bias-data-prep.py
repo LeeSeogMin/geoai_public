@@ -362,7 +362,30 @@ def main() -> None:
     sbiz_path = find_sbiz_csv()
     log(f"  원본: {sbiz_path.name} ({sbiz_path.stat().st_size / 1e6:.0f} MB)")
     sbiz = read_sbiz(sbiz_path)
-    log(f"  서울 점포 {len(sbiz):,}개, 행정동 {sbiz['행정동코드'].nunique()}개")
+    log(f"  서울 점포 {len(sbiz):,}개, 자료에 적힌 행정동 코드 {sbiz['행정동코드'].nunique()}개")
+
+    # 행정동 배정은 자료에 적힌 코드가 아니라 좌표로 한다. 상가정보의 코드는
+    # 2026-06 기준이고 경계 파일은 다른 시점 기준이어서, 코드로 집계하면 개편된
+    # 동(용신동·상일동 등)의 점포가 경계 파일에 없는 옛 코드로 남아 이후 결합에서
+    # 소리 없이 빠진다. 뒤에서 OSM도 같은 경계로 배정하므로, 분자와 분모가 같은
+    # 경계 정의를 쓰게 하려면 여기서 좌표 기준으로 통일해야 한다.
+    sbiz_gdf = gpd.GeoDataFrame(
+        sbiz, geometry=gpd.points_from_xy(sbiz["경도"], sbiz["위도"]), crs=4326
+    ).to_crs(gdf.crs)
+    sj = gpd.sjoin(sbiz_gdf, gdf[["ADSTRD_CD", "geometry"]], how="left", predicate="within")
+    dup = int(sj.index.duplicated().sum())
+    if dup:
+        log(f"  [경고] 경계가 겹쳐 두 동에 걸린 점포 {dup:,}개 — 처음 하나만 남긴다")
+        sj = sj[~sj.index.duplicated(keep="first")]
+    outside = int(sj["ADSTRD_CD"].isna().sum())
+    if outside:
+        log(f"  [경고] 행정동 경계 밖에 찍힌 점포 {outside:,}개 제외 "
+            f"({outside / len(sj) * 100:.2f}%)")
+    sbiz = sj.dropna(subset=["ADSTRD_CD"]).copy()
+    sbiz["dong_cd"] = sbiz["ADSTRD_CD"].astype(int)
+    moved = int((sbiz["dong_cd"] != sbiz["행정동코드"].astype(int)).sum())
+    log(f"  좌표로 배정: 경계 안 {len(sbiz):,}개, 행정동 {sbiz['dong_cd'].nunique()}개 "
+        f"(자료 코드와 다르게 배정된 점포 {moved:,}개, {moved / len(sbiz) * 100:.2f}%)")
 
     counts: list[dict] = []
     for cat, spec in ALL_MAP.items():
@@ -373,9 +396,9 @@ def main() -> None:
             log(f"  [경고] {cat}: 상권정보에 없는 소분류명 {miss}")
         for scope, names in (("narrow", narrow), ("broad", broad)):
             g = (sbiz[sbiz["상권업종소분류명"].isin(names)]
-                 .groupby("행정동코드").size().rename("n").reset_index())
+                 .groupby("dong_cd").size().rename("n").reset_index())
             for _, r in g.iterrows():
-                counts.append({"dong_cd": int(r["행정동코드"]), "cat": cat,
+                counts.append({"dong_cd": int(r["dong_cd"]), "cat": cat,
                                "source": f"sbiz_{scope}", "n": int(r["n"])})
     sbiz_tot = (sbiz[sbiz["상권업종소분류명"].isin(
         {n for s in ALL_MAP.values() for n in s["narrow"]})].shape[0])

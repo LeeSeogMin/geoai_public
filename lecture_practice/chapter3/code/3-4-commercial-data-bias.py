@@ -375,12 +375,19 @@ def analysis_c(d: pd.DataFrame, cells: pd.DataFrame, tb: pd.DataFrame, wide: pd.
         s, n_vals, p_n = prior_of(cat)
         cov_c = (wide[wide["cat"] == cat]["osm_broad"].sum()
                  / max(wide[wide["cat"] == cat]["sbiz_broad"].sum(), 1))
-        _, post = posterior(n_vals, p_n, min(cov_c, 0.999))
-        ps = p_star_of(n_vals, p_n, tau)
+        # 포착률은 확률이므로 1을 넘을 수 없다. 1을 넘었다면 대응표가 어긋난 것이고,
+        # 그 값을 0.999로 잘라 넣으면 잘못된 대응이 계산을 통과해 버린다. 자르지 않고
+        # 판정에서 뺀다.
+        if cov_c > 1.0:
+            post, ps = float("nan"), float("nan")
+            verdict = "대응표 점검"
+        else:
+            _, post = posterior(n_vals, p_n, cov_c)
+            ps = p_star_of(n_vals, p_n, tau)
+            verdict = "진입 가능" if post >= tau else "판정 불가"
         star_tbl[cat] = (float(cov_c), float(post), ps)
-        verdict = "진입 가능" if post >= tau else "판정 불가"
         log(f"{cat:<10}{int((s == 0).sum()):>9}{float(p_n[n_vals == 0].sum()):>9.3f}"
-            f"{cov_c:>12.3f}{post:>20.3f}"
+            f"{cov_c:>12.3f}{('—' if np.isnan(post) else f'{post:.3f}'):>20}"
             f"{('—' if np.isnan(ps) else f'{ps:.2f}'):>9}{verdict:>12}")
     log("  ('필요 p*'가 —인 업종군은 포착률을 1에 가깝게 올려도 컷라인을 넘지 못한다는 뜻이다.")
     log("   그런 업종군은 점포가 없는 동 자체가 드물어, '0개'가 애초에 정보를 거의 담지 않는다.)")
@@ -464,14 +471,25 @@ def analysis_c(d: pd.DataFrame, cells: pd.DataFrame, tb: pd.DataFrame, wide: pd.
     log(f"  각 동의 포착률을 그 동의 값으로 넣고, 사전분포는 {focus}의 것을 쓴다.")
     log("  (성기게 깔린 업종을 그 동에서 찾는다면 '0개'를 믿어도 되는가 하는 물음이다)")
     d = d.copy()
-    d["post0"] = [posterior(n_vals, p_n, p)[1] for p in d["cov"].clip(1e-6, 0.999)]
+    # 포착률이 1을 넘는 동은 등급을 매기지 않는다. 예전 코드는 clip(1e-6, 0.999)로
+    # 잘라 넣었는데, 그러면 대응표가 어긋나 생긴 값이 오류 메시지 없이 판정을 통과해
+    # 가장 높은 등급을 받는다. 자르는 대신 따로 세어 보고한다.
+    bad = d[d["cov"] > 1.0]
+    if len(bad):
+        log(f"\n  [경고] 포착률이 1을 넘는 동 {len(bad)}개는 등급 판정에서 뺀다.")
+        for r in bad.sort_values("cov", ascending=False).itertuples():
+            log(f"    {r.dong_nm} — 분모 {int(r.sbiz_broad)}개, 분자 {int(r.osm_broad)}개, "
+                f"포착률 {r.cov:.3f}. 확률로 해석할 수 없는 값이므로 업종 대응표를 다시 잡는다.")
+    d["post0"] = [posterior(n_vals, p_n, p)[1] if p <= 1.0 else np.nan
+                  for p in d["cov"]]
     d["grade"] = np.where(
-        d["post0"] >= tau, "그대로 사용",
-        np.where(d["resid"].abs() <= 2.0, "보정 후 사용", "사용 금지"))
+        d["cov"] > 1.0, "대응표 점검",
+        np.where(d["post0"] >= tau, "그대로 사용",
+                 np.where(d["resid"].abs() <= 2.0, "보정 후 사용", "사용 금지")))
     g = d.groupby("grade").agg(n=("dong_cd", "size"), cov_min=("cov", "min"),
                                cov_med=("cov", "median"), cov_max=("cov", "max"))
     log(f"\n{'등급':<12}{'행정동 수':>9}{'포착률 최소':>12}{'중앙값':>9}{'최대':>9}{'대표 동':>24}")
-    for grade in ("그대로 사용", "보정 후 사용", "사용 금지"):
+    for grade in ("그대로 사용", "보정 후 사용", "사용 금지", "대응표 점검"):
         if grade not in g.index:
             log(f"{grade:<12}{0:>9}{'—':>12}{'—':>9}{'—':>9}{'—':>24}")
             continue
