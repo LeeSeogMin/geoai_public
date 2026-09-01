@@ -45,6 +45,8 @@
 
 ### 4.1 지리 좌표계와 투영 좌표계
 
+참고) https://brunch.co.kr/@data/20
+
 - **좌표참조체계**(Coordinate Reference System, CRS)는 지구 위 위치를 수치로 적는 규칙
 - 좌표계마다 고유 번호(EPSG 코드)가 있고, 번호 하나에 기준·투영법·단위·적용 범위가 함께 정의됨
 

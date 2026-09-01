@@ -1,0 +1,48 @@
+$ python 1-1-geoai-tools-preview.py
+
+=== 표준 출력 ===
+============================================================
+GeoPandas 벡터 데이터 탐색
+============================================================
+
+전체 국가 수: 177
+좌표계(CRS): EPSG:4326
+기하 유형: ['MultiPolygon', 'Polygon']
+
+대륙별 국가 수:
+  Africa: 51개
+  Asia: 47개
+  Europe: 39개
+  North America: 18개
+  South America: 13개
+  Oceania: 7개
+  Antarctica: 1개
+  Seven seas (open ocean): 1개
+
+아시아 국가 수: 47
+
+아시아 면적 상위 5개국 (근사값 기준):
+  China: 인구 약 1398백만 명
+  Kazakhstan: 인구 약 19백만 명
+  India: 인구 약 1366백만 명
+  Mongolia: 인구 약 3백만 명
+  Saudi Arabia: 인구 약 34백만 명
+
+데이터 형태: (177, 169)
+메모리 사용량: 356.4 KB
+
+경계 상자(Bounding Box):
+  경도: -180.00 ~ 180.00
+  위도: -90.00 ~ 83.65
+
+[완료] GeoPandas를 활용한 벡터 데이터 탐색을 마쳤다.
+다음 장에서 좌표 변환, 공간 연산, 래스터 처리를 본격적으로 학습한다.
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoai_public\lecture_practice\chapter1\results\continent_counts.csv
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoai_public\lecture_practice\chapter1\results\asia_top5_by_area_approx.csv
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoai_public\lecture_practice\chapter1\results\asia_countries.geojson
+저장됨: C:\Users\user\Documents\lee\class\2026-2\geoai_public\lecture_practice\chapter1\results\world_countries_110m.geojson
+
+=== 오류 출력 ===
+C:\Users\user\Documents\lee\class\2026-2\geoai_public\lecture_practice\chapter1\code\1-1-geoai-tools-preview.py:55: UserWarning: Geometry is in a geographic CRS. Results from 'area' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+
+  asia["area_approx"] = asia.geometry.area

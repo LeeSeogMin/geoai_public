@@ -1,0 +1,20 @@
+{
+  "student_id": "200023",
+  "student_name": "이석민",
+  "chapter": 1,
+  "seed_offset": 0,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prep": [],
+  "target": {
+    "file": "1-1-geoai-tools-preview.py",
+    "relpath": "lecture_practice\\chapter1\\code\\1-1-geoai-tools-preview.py",
+    "started_at": "2026-08-31T18:13:30.823171+09:00",
+    "duration_sec": 4.87,
+    "exit_code": 0,
+    "timed_out": false,
+    "success": true,
+    "source_sha256": "819b079112f4a0c5f2099a80e7a8079ebe66fe42d43bf2b05044a80f2e144b1d",
+    "output_sha256": "406abab0f0dcdc03869abea003d3e51a0534ec7944d4727ec808fadc706c0ef6"
+  }
+}
