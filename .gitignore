@@ -12,6 +12,9 @@ Thumbs.db
 # 필요한 데이터는 각 장의 데이터 준비 코드로 로컬에서 생성한다.
 lecture_practice/**/data/
 
+# 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
+lecture_practice/**/results/
+
 # 학생이 자기 컴퓨터에서 만든 환경 진단 결과 (lecture_practice/check_env.py가 생성)
 lecture_practice/env-report.txt
 
