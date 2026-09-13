@@ -146,6 +146,10 @@ for item in landsat_items[:3]:
     print(f"    {dt}: 구름 {cloud:.1f}%")
 
 print(f"\n  Sentinel-2: {len(items)}개 vs Landsat: {len(landsat_items)}개")
-print("  → Sentinel-2의 재방문 주기(5일)가 Landsat(16일)보다 짧아 더 많은 영상 확보")
+print("  → 재방문 주기는 Sentinel-2(5일)가 Landsat(16일)보다 짧지만, "
+      "구름 10% 미만 조건과 max_items=20 제한이 걸려 있어 "
+      "관측 횟수가 그대로 검색 개수로 이어지지 않음")
+print(f"    (이번 실행 결과: Sentinel-2 {len(items)}개, "
+      f"Landsat {len(landsat_items)}개)")
 
 print("\n[완료] STAC API 검색 실습을 마쳤다.")

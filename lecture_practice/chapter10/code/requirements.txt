@@ -1,27 +1,16 @@
-# Chapter 10: LLM과 지리공간 분석
-# Python 3.10+ 필요
+# 10장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
 
-# LLM 및 에이전트
-langchain>=0.1.0
-langchain-openai>=0.0.5
-openai>=1.0.0
-
-# 지리공간 처리
-geopandas>=0.14.0
-shapely>=2.0.0
-pyproj>=3.6.0
-
-# 시각화
-folium>=0.15.0
-matplotlib>=3.8.0
-
-# 벡터 DB (선택)
-chromadb>=0.4.0
-
-# 멀티모달 임베딩 (선택)
-sentence-transformers>=2.2.0
-
-# 유틸리티
-python-dotenv>=1.0.0
-pandas>=2.0.0
-numpy>=1.24.0
+matplotlib==3.11.1       # 10-3 · 10-4
+numpy==2.4.6             # 전부
+pandas==3.0.5            # 전부
+pyarrow==25.0.0          # 전부
+pyproj==3.7.2            # 10-0b
+scikit-learn==1.9.0      # 10-2
+scipy==1.18.0            # 10-4

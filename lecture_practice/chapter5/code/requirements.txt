@@ -1,4 +1,17 @@
-torch>=2.0.0
-torchvision>=0.15.0
-numpy>=1.26.0
-scikit-learn>=1.4.0
+# 5장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 이 장은 PyTorch가 더 필요하다. pip으로 직접 깔지 말고 아래를 실행한다
+# (컴퓨터마다 받아야 할 빌드가 다르다).
+#   python lecture_practice/setup_torch.py
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
+
+numpy==2.4.6             # 5-1 · 5-2 · 5-3
+pandas==3.0.5            # 5-2 · 5-3
+scikit-learn==1.9.0      # 5-1 · 5-2
+# torch>=2.0.0             # 5-1 · 5-2 — setup_torch.py로 설치

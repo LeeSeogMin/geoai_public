@@ -1,2 +1,12 @@
-geopandas>=1.0.0
-matplotlib>=3.8.0
+# 1장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
+
+geopandas==1.1.4         # 1-1
+matplotlib==3.11.1       # 1-1
+pandas==3.0.5            # 1-1

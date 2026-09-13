@@ -127,12 +127,20 @@ def main():
     print(hist.round(3).to_string(index=False))
 
     first, last = hist.iloc[0], hist.iloc[-1]
-    print(f"\n  기록 기준 모델 R²: {first.r2_recorded:.3f} → {last.r2_recorded:.3f} (계속 높음 = 겉보기 정확)")
-    print(f"  순찰-진짜위험 상관: {first.corr_patrol_true:.3f} → {last.corr_patrol_true:.3f} "
-          f"({last.corr_patrol_true-first.corr_patrol_true:+.3f}, 진짜 수요와 괴리)")
-    print(f"  순찰 집중도 Gini : {first.patrol_gini:.3f} → {last.patrol_gini:.3f} "
+    loop_first = hist.iloc[1]          # 순찰이 기록을 바꾸기 시작한 첫 라운드
+    last_r = int(last["round"])
+
+    # 라운드 0의 기록은 '진짜율 × 역사적 단속 편향'이라 되먹임 이전 상태다.
+    # 되먹임 루프의 추이는 라운드 1부터 읽어야 한다.
+    print(f"\n  ※ 라운드 0은 되먹임 이전 상태다. 기록이 '진짜율 × 역사적 단속 편향'이라")
+    print(f"     예측이 집단 경계를 따라가고, 순찰-진짜위험 상관도 {first.corr_patrol_true:.3f}로 낮게 시작한다.")
+    print(f"     순찰이 기록을 바꾼 뒤인 라운드 1부터가 되먹임 루프 구간이다.")
+    print(f"\n  기록 기준 모델 R²: R0 {first.r2_recorded:.3f} → R{last_r} {last.r2_recorded:.3f} (계속 높음 = 겉보기 정확)")
+    print(f"  순찰-진짜위험 상관: R1 {loop_first.corr_patrol_true:.3f} → R{last_r} {last.corr_patrol_true:.3f} "
+          f"({last.corr_patrol_true-loop_first.corr_patrol_true:+.3f}, 라운드를 거듭할수록 진짜 수요와 멀어진다)")
+    print(f"  순찰 집중도 Gini : R0 {first.patrol_gini:.3f} → R{last_r} {last.patrol_gini:.3f} "
           f"({last.patrol_gini-first.patrol_gini:+.3f}, 소수 지역 집중)")
-    print(f"  disparate impact: {first.disparate_impact:.3f} → {last.disparate_impact:.3f} "
+    print(f"  disparate impact: R0 {first.disparate_impact:.3f} → R{last_r} {last.disparate_impact:.3f} "
           f"(group A 과잉표적; 1.0=공정, >1=차별)")
 
     csv_path = RESULTS_DIR / "predictive_policing_bias.csv"

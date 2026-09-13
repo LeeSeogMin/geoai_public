@@ -1,6 +1,25 @@
-geopandas>=1.0.0
-scikit-learn>=1.4.0
-libpysal>=4.9.0
-esda>=2.5.0
-numpy>=1.26.0
-shapely>=2.0.0
+# 4장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
+
+esda==2.10.0             # 4-2 · 4-5
+geopandas==1.1.4         # 4-0 · 4-1 · 4-2
+libpysal==4.15.0         # 4-2 · 4-5
+lightgbm==4.7.0          # 4-3
+matplotlib==3.11.1       # 4-6
+numpy==2.4.6             # 4-0 · 4-1 · 4-2 · 4-3 · 4-4 · 4-5 · 4-6 · _s2_data
+pandas==3.0.5            # 4-0 · 4-5 · 4-6
+planetary-computer>=1.0.0 # 4-0
+pyarrow==25.0.0          # 4-0 · 4-5 · 4-6
+pyproj==3.7.2            # 4-0
+pystac-client==0.9.0     # 4-0
+rasterio==1.5.0          # 4-0 · _s2_data
+scikit-learn==1.9.0      # 4-2 · 4-3 · 4-4 · 4-5 · 4-6
+shap==0.52.0             # 4-5 · 4-6
+shapely==2.1.2           # 4-0 · 4-1
+xgboost==3.3.0           # 4-3 · 4-5

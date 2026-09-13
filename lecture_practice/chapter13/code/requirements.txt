@@ -1,8 +1,15 @@
-# 13장 실습: GeoAI 개발 환경과 플랫폼
-# Google Earth Engine NDVI 시계열 분석
+# 13장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
 
-earthengine-api>=0.1.370
-geemap>=0.30.0
-pandas>=2.0.0
-matplotlib>=3.7.0
-numpy>=1.24.0
+matplotlib==3.11.1       # 13-3 · 13-4
+numpy==2.4.6             # 전부
+pandas==3.0.5            # 전부
+pyarrow==25.0.0          # 전부
+scikit-learn==1.9.0      # 13-1 · 13-2 · 13-4
+scipy==1.18.0            # 13-3

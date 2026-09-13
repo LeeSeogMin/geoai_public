@@ -112,9 +112,9 @@ VS Code 오른쪽 아래(또는 `Ctrl+Shift+P` → `Python: Select Interpreter`)
 pip install -r lecture_practice/requirements-student.txt
 ```
 
-5분에서 15분쯤 걸린다. 1장부터 4장, 8장부터 13장까지 이 설치분으로 진행한다.
+5분에서 15분쯤 걸린다. 이 설치분 하나로 1장부터 15장까지 진행한다.
 
-딥러닝을 쓰는 **5-7장은 학기 중반에** 추가로 깐다. 용량이 크고, 컴퓨터마다 받아야 할 파일이 달라서 아래 명령 하나로 처리한다.
+딥러닝(PyTorch)을 쓰는 **5장과 7장은 학기 중반에** 추가로 깐다(6장은 PyTorch 없이 돌아간다). 용량이 크고, 컴퓨터마다 받아야 할 파일이 달라서 아래 명령 하나로 처리한다.
 
 ```
 python lecture_practice/setup_torch.py
@@ -389,12 +389,12 @@ geoAI/
 └── lecture_practice/                 실습
     ├── README.md             이 문서
     ├── check_env.py          환경 자가진단
-    ├── setup_torch.py        내 컴퓨터에 맞는 PyTorch 설치 (5-7장)
+    ├── setup_torch.py        내 컴퓨터에 맞는 PyTorch 설치 (5·7장)
     ├── AGENTS.md             에이전트 규칙 원본
     ├── agent-setup/          규칙 파일 배치 도구
-    ├── requirements-student.txt      1-4장, 8-13장 패키지
-    ├── requirements-student-dl.txt   5-7장 딥러닝 패키지
-    └── chapter1/ ~ chapter14/
+    ├── requirements-student.txt      전 장 공통 패키지
+    ├── requirements-student-dl.txt   5·7장 딥러닝 패키지
+    └── chapter1/ ~ chapter15/
         ├── code/             실행할 코드 ({장}-{절}-{주제}.py)
         ├── data/             실습 데이터 (준비 코드가 만들어 넣는다)
         └── results/          실행 결과 (로그·표·그림)

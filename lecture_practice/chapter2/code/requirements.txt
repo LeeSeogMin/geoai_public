@@ -1,4 +1,18 @@
-geopandas>=1.0.0
-matplotlib>=3.8.0
-pyproj>=3.6.0
-shapely>=2.0.0
+# 2장 실습이 실제로 import 하는 패키지 — 참고용 목록이다.
+#
+# 설치는 이 파일이 아니라 전 장 공용 파일 하나로 한다.
+#   pip install -r lecture_practice/requirements-student.txt
+#
+# 버전은 requirements-student.txt의 고정 버전을 그대로 적었다. 목록만 보고
+# 낱개로 설치하면 장마다 다른 버전이 깔려 결과가 달라진다.
+# ---------------------------------------------------------------
+
+geopandas==1.1.4         # 2-0b · 2-2 · 2-3
+matplotlib==3.11.1       # 2-3
+numpy==2.4.6             # 2-3
+# osmnx                  # 2-0b --refresh 전용(선택) — OSM 스냅샷을 새로 받을 때만 필요하다
+pandas==3.0.5            # 2-0b · 2-3
+pyarrow==25.0.0          # 2-0b · 2-3
+pyproj==3.7.2            # 2-1
+scipy==1.18.0            # 2-3
+shapely==2.1.2           # 2-0b · 2-2 · 2-3
