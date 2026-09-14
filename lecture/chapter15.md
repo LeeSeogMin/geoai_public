@@ -168,6 +168,7 @@ graph LR
 □ 먼저 패키지를 설치함. GPU는 필요 없고 노트북에서 끝까지 돌아감  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 ```
 

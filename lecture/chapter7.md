@@ -67,6 +67,7 @@
 □ 먼저 패키지를 설치함. 이 장은 7-2·7-3이 PyTorch를 쓰므로 공통 설치에 더해 두 번째 명령을 한 번 실행함  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 python lecture_practice/setup_torch.py
 ```

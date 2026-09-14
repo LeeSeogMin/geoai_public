@@ -88,6 +88,7 @@
 □ 먼저 공통 패키지를 설치함  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 ```
 

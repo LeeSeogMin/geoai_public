@@ -150,6 +150,7 @@
 □ 먼저 패키지를 설치함. 이 장은 위성 학습이 아니라 통계 추정이 중심이라 GPU가 필요 없음  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 ```
 

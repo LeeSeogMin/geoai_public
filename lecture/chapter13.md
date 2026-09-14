@@ -142,6 +142,7 @@
 □ 먼저 패키지를 설치함. GPU가 필요 없음 — 표준화·군집·회귀·최적화 규모의 계산이라 CPU로 충분함  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 ```
 

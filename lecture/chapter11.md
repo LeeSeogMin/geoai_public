@@ -173,6 +173,7 @@ elevationᵢˡᵃᵍ = 0.25×12 + 0.25×14 + 0.25×10 + 0.25×8 = 11m
 □ 먼저 패키지를 설치함. GPU는 필요 없고, 격자 300개(침수)·256개(치안)·건물 500채(보험) 규모라 노트북에서 몇 초 만에 끝남  
 
 ```bash
+cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 실행함
 pip install -r lecture_practice/requirements-student.txt
 ```
 
