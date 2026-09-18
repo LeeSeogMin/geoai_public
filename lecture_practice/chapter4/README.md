@@ -5,13 +5,13 @@
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
-- `data/` 폴더의 위성영상·벡터 파일은 저장소에 포함되지 않습니다(`.gitignore`). **아래 0단계 스크립트를 먼저 실행해 데이터를 만들어야** 나머지 실습이 돌아갑니다.
+- 공간 피처·공간 CV·격자 취약성 실습 자료는 `data/`에 미리 제공하며, 생성 코드는 실습 파일에 포함하지 않습니다.
+- 위성영상은 별도 자료이며 `4-0-data-download.py`가 Planetary Computer에서 내려받습니다.
 - `4-0-data-download.py`는 Planetary Computer에서 실제 Sentinel-2 장면을 내려받으므로 인터넷 연결과 수백 MB의 여유 공간이 필요합니다.
 - `4-0-market-data-prep.py`는 **국내 공개 데이터 원본 CSV 두 개**(소상공인 상가정보 서울분, 서울 생활인구 행정동)를 필요로 합니다. 두 포털 모두 자바스크립트로 다운로드를 처리해 자동 내려받기가 막히므로 한 번은 직접 받아야 합니다. 절차는 `data/raw/README.md` 참조. **인증키는 필요 없습니다.** 14장도 같은 원자료를 쓰므로, 이미 받아 두었다면 그대로 재사용합니다.
 
 실습 파일 (실행 순서대로)
 
-- `lecture_practice/chapter4/code/4-0-simdata-prep.py` — 4-1·4-2·4-5용 벡터·격자 데이터 생성
 - `lecture_practice/chapter4/code/4-0-data-download.py` — 4-3·4-4용 실제 Sentinel-2 L2A + ESA WorldCover 내려받기
 - `lecture_practice/chapter4/code/4-0-raster-inspection.py` — 내려받은 위성영상 메타데이터·밴드 확인
 - `lecture_practice/chapter4/code/4-1-spatial-features.py` — 건물 필지에서 형태·거리·위상 피처 추출
@@ -25,7 +25,6 @@
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python lecture_practice/chapter4/code/4-0-simdata-prep.py
 python lecture_practice/chapter4/code/4-0-data-download.py
 python lecture_practice/chapter4/code/4-0-raster-inspection.py
 python lecture_practice/chapter4/code/4-1-spatial-features.py
@@ -39,7 +38,7 @@ python lecture_practice/chapter4/code/4-6-store-location-supply.py
 
 예상 결과(검증 포인트)
 
-- 0단계 생성 데이터: 건물 `200개`, 지하철역 `3개`, 공간 포인트 `500개`, 격자 `400개(20×20)`
+- 미리 제공한 데이터: 건물 `200개`, 지하철역 `3개`, 공간 포인트 `500개`, 격자 `400개(20×20)`
 - 내려받은 장면: `S2B_MSIL2A_20210407T021559_R003_T52SCG` (2021-04-07, 구름 `0.44%`), `12밴드 1314×1338`, `EPSG:32652`, 해상도 `10m`
 - 4-1 공간 피처: 건물 200개에서 피처 `7개`, 면적 범위 `167.0 ~ 3393.9 m²`
 - 4-2 공간 자기상관: Moran's I `0.8660` (p = `0.0010`)
@@ -60,11 +59,11 @@ python lecture_practice/chapter4/code/4-6-store-location-supply.py
 
 검증 팁
 
-- `[Errno 2] No such file or directory ... data/...`가 나오면 0단계 스크립트를 건너뛴 것입니다. `4-0-simdata-prep.py`부터 다시 실행하세요.
+- `data/...` 파일을 찾을 수 없으면 저장소의 `lecture_practice/chapter4/data/` 자료가 있는지 확인하세요.
 - 4-2·4-5의 핵심은 절대 점수가 아니라 **Random CV가 Block/Cluster CV보다 높게 나온다**는 방향입니다. 숫자가 소수점 아래에서 조금 달라도 이 부등호가 유지되면 정상입니다.
-- 4-2는 8절 시드 반복 12회 때문에 **약 55초**가 걸립니다(1~7절만은 20초 남짓). 8절 첫 줄의 **생성식 대조가 `0.00e+00`이 아니면** 4-0-simdata-prep.py의 `prepare_spatial_points()`가 바뀐 것이므로, 4-2의 `regenerate_points()`를 같은 식(난수 소비 순서 x → y → 잡음)으로 맞춘 뒤 다시 실행하세요.
+- 4-2는 8절 시드 반복 12회 때문에 **약 55초**가 걸립니다(1~7절만은 20초 남짓). 8절 첫 줄의 생성식 대조는 제공 자료와 시드별 재생성 식이 일치하는지 확인합니다.
 - 4-2에서 **`+0.071`은 재현 확인 항목이 아닙니다.** 8절이 보여 주듯 Random−Block은 `+0.031~+0.123`으로 흩어지므로 양수라는 방향만 확인합니다. 반면 Random−Cluster 낙폭은 12회 모두 `0.517` 이상이라 크기까지 확인해도 됩니다.
-- 4-5는 6절 시드 반복 24회 때문에 **약 1분 반**이 걸립니다(1~5절만은 20초 남짓). 6절 첫 줄의 **생성식 대조가 `0.00e+00`이 아니면** 4-0-simdata-prep.py의 `prepare_grid()`가 바뀐 것이므로, 4-5의 `regenerate_grid()`를 같은 식으로 맞춘 뒤 다시 실행하세요.
+- 4-5는 6절 시드 반복 24회 때문에 **약 1분 반**이 걸립니다(1~5절만은 20초 남짓). 6절 첫 줄의 생성식 대조는 제공 자료와 시드별 재생성 식이 일치하는지 확인합니다.
 - 4-3은 9절의 시드 반복 36회 때문에 **약 5분 반**이 걸립니다(1~8절만은 30초 남짓). LightGBM의 `X does not have valid feature names` 경고는 예측 단계의 알림이며 결과에 영향을 주지 않습니다.
 - 4-3에서 확인할 것은 **과대추정이 양수라는 방향**이지 그 크기가 아닙니다. 9절이 보여 주듯 크기는 `+0.005~+0.022`로 벌어지므로, `+0.010`이 재현되지 않아도 정상입니다. 같은 이유로 **세 모델 중 어느 쪽이 가장 크게 부풀려지는지는 재현 확인 항목이 아닙니다.**
 - 4-3의 경작지 F1이 낮은 것은 모델 결함이 아니라 **4월 초 장면의 나지 상태와 WorldCover 연간 라벨이 어긋나기 때문**입니다. 로그의 "이 실습의 범위와 한계"를 함께 읽으세요.

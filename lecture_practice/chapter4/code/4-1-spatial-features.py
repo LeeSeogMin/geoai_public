@@ -6,7 +6,6 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python lecture_practice/chapter4/code/4-0-simdata-prep.py   # 최초 1회: 데이터 준비
     python lecture_practice/chapter4/code/4-1-spatial-features.py
 """
 
@@ -21,7 +20,7 @@ BUILDINGS_PATH = DATA_DIR / "buildings.geojson"
 if not BUILDINGS_PATH.exists():
     raise SystemExit(
         f"데이터가 없습니다: {BUILDINGS_PATH}\n"
-        "먼저 실행: python 4-0-simdata-prep.py"
+        "저장소의 lecture_practice/chapter4/data/ 자료를 확인하세요."
     )
 
 print("=" * 60)

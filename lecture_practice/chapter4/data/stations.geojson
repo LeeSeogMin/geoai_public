@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "stations",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32652" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "역A" }, "geometry": { "type": "Point", "coordinates": [ 322000.0, 4160000.0 ] } },
+{ "type": "Feature", "properties": { "name": "역B" }, "geometry": { "type": "Point", "coordinates": [ 324500.0, 4160500.0 ] } },
+{ "type": "Feature", "properties": { "name": "역C" }, "geometry": { "type": "Point", "coordinates": [ 323000.0, 4158000.0 ] } }
+]
+}

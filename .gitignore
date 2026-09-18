@@ -8,9 +8,14 @@ venv/
 .DS_Store
 Thumbs.db
 
-# 실습 데이터는 공개 저장소에 포함하지 않는다(AGENTS.md 저장소 범위 참조).
-# 필요한 데이터는 각 장의 데이터 준비 코드로 로컬에서 생성한다.
+# 실습 자료는 장별로 기본 제외한다. 4장의 가상 데이터만 예외로 포함한다.
 lecture_practice/**/data/
+!lecture_practice/chapter4/data/
+lecture_practice/chapter4/data/*
+!lecture_practice/chapter4/data/buildings.geojson
+!lecture_practice/chapter4/data/stations.geojson
+!lecture_practice/chapter4/data/spatial_points.geojson
+!lecture_practice/chapter4/data/grid_vulnerability.parquet
 
 # 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
 lecture_practice/**/results/

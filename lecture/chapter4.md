@@ -65,7 +65,6 @@
 | 6 공간 검증 | 검증을 어떻게 나눌지 정함 | 7절 |
 | 5, 7~8 모델·해석·산출물 | 모델을 학습하고 결과를 읽음 | 8절 |
 
-□ 5절부터 8절까지는 설명과 실습을 나누지 않음 — 각 절 첫머리에 실행할 명령이 나오고 그 아래에 코드와 실제 실행 결과가 이어짐. 순서대로 따라가면 이 장의 모든 수치를 직접 만들게 됨  
 
 □ 먼저 패키지를 설치함. GPU는 필요 없고 노트북에서 끝까지 돌아감  
 
@@ -76,17 +75,17 @@ pip install -r lecture_practice/requirements-student.txt
 
 ○ 4장이 쓰는 패키지만 따로 보려면 `lecture_practice/chapter4/code/requirements.txt`에 적혀 있으나, 설치는 위 공통 파일 하나로 끝남  
 
-□ 이 장에서 실행할 코드는 네 개이며 순서가 정해져 있음  
+□ 이 장에서 실행할 코드는 세 개이며 순서가 정해져 있음  
 
 | 순서 | 실행할 파일 | 하는 일 | 절 |
 | ---: | --- | --- | ---: |
-| 1 | `4-0-simdata-prep.py` | 실습 자료 생성(건물 200개·포인트 500개·격자 400개) | 5 |
-| 2 | `4-1-spatial-features.py` | 건물에서 형태·거리·위상 피처 추출 | 5.1 |
-| 3 | `4-2-spatial-cv.py` | Moran's I와 검증 사다리 | 6~7 |
-| 4 | `4-5-grid-vulnerability-shap.py` | 격자 취약성 예측·SHAP·순위표 | 8 |
+| 1 | `4-1-spatial-features.py` | 건물에서 형태·거리·위상 피처 추출 | 5.1 |
+| 2 | `4-2-spatial-cv.py` | Moran's I와 검증 사다리 | 6~7 |
+| 3 | `4-5-grid-vulnerability-shap.py` | 격자 취약성 예측·SHAP·순위표 | 8 |
 
-○ 2·3·4번은 1번이 만든 `data/` 폴더의 파일을 입력으로 받으므로 **1번을 먼저 실행**해야 함 — 없으면 "데이터가 없습니다"를 찍고 멈춤  
-○ 네 코드 모두 인터넷도 GPU도 쓰지 않음 — 자료를 내려받지 않고 코드가 직접 만들기 때문임  
+○ 세 코드는 미리 준비한 `lecture_practice/chapter4/data/` 자료를 읽음 — 데이터 생성 과정은 실습 코드에 포함하지 않음  
+○ 데이터는 파일이 이미 있으면 사용하고, 없으면 저장소를 다시 내려받아 `data/` 파일을 복원해야 함  
+○ 세 코드 모두 인터넷도 GPU도 쓰지 않음  
 ○ 본문에 인용한 출력은 모두 `lecture_practice/chapter4/results/`의 실행 로그에서 그대로 가져온 것이며, 어느 파일에서 왔는지를 출력 블록 첫 줄에 적어 두었음  
 
 ## 4. 표의 한 행 정하기: 분석 단위와 집계
@@ -136,17 +135,16 @@ pip install -r lecture_practice/requirements-student.txt
 
 ## 5. 공간 피처 만들기
 
-□ 첫 번째 코드를 실행함. 5절부터 8절까지가 모두 쓰는 실습 자료를 만드는 단계이며 한 번만 실행하면 됨  
+□ 실습 데이터는 미리 준비되어 있으므로 첫 번째 코드에서 바로 불러옴  
 
 ```bash
-python lecture_practice/chapter4/code/4-0-simdata-prep.py
+python lecture_practice/chapter4/code/4-1-spatial-features.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter4/results/4-0-simdata-prep.log
-  건물 200개 → buildings.geojson, 지하철역 3개 → stations.geojson
-  공간 포인트 500개 → spatial_points.geojson
-  격자 400개(20×20) → grid_vulnerability.parquet
+# 데이터: lecture_practice/chapter4/data/
+  건물 200개, 지하철역 3개, 공간 포인트 500개
+  격자 400개(20×20)
 ```
 
 ○ 세 자료의 쓰임이 각각 다름 — 건물 200개는 5.1의 피처 추출에, 포인트 500개는 6~7절의 자기상관·검증에, 격자 400개는 8절의 취약성 예측에 씀  
@@ -156,7 +154,7 @@ python lecture_practice/chapter4/code/4-0-simdata-prep.py
 □ 이 장의 모델은 관측치가 행으로, 각 관측치를 설명하는 피처가 열로 놓인 표를 입력받음  
   ○ **관측치**는 분석의 대상이고, **피처**는 그 대상을 설명하기 위해 측정하거나 계산한 변수임. 예측 대상(취약성 점수 등)은 별도의 타깃 열로 둠  
 
-○ 8절이 쓰는 격자 시뮬레이션 자료의 첫 네 칸이 그 예임(방금 실행한 `4-0-simdata-prep.py`가 만든 파일)    
+○ 8절이 쓰는 격자 자료의 첫 네 칸이 그 예임(`data/grid_vulnerability.parquet`에서 읽음)    
 
 | 격자 | 고령인구율 | 1인가구율 | 기초수급율 | 병원거리(m) | 평균 NDVI | 취약성 |
 |---:|---:|---:|---:|---:|---:|---:|
@@ -602,7 +600,7 @@ python lecture_practice/chapter4/code/4-5-grid-vulnerability-shap.py
 python scripts/submit.py 4 --id 학번 --name 이름
 ```
 
-□ 이 명령이 대신 처리하는 작업: 실습 자료 생성(`4-0-simdata-prep.py`), 대표 실습 `4-2-spatial-cv.py` 실행, 제출용 파일 생성  
+□ 이 명령이 대신 처리하는 작업: 미리 제공한 자료로 대표 실습 `4-2-spatial-cv.py` 실행, 제출용 파일 생성  
   ○ 끝나면 `submissions/` 폴더에 `제출_4장_학번.md` 파일이 생기고, 실행 결과가 이미 붙어 있음  
   ○ **눈여겨볼 곳은 무작위 교차검증 점수와 공간 블록 교차검증 점수의 차이**  
 

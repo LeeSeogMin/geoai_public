@@ -6,7 +6,6 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python lecture_practice/chapter4/code/4-0-simdata-prep.py   # 최초 1회: 데이터 준비
     python lecture_practice/chapter4/code/4-2-spatial-cv.py
 """
 
@@ -24,7 +23,7 @@ POINTS_PATH = DATA_DIR / "spatial_points.geojson"
 if not POINTS_PATH.exists():
     raise SystemExit(
         f"데이터가 없습니다: {POINTS_PATH}\n"
-        "먼저 실행: python 4-0-simdata-prep.py"
+        "저장소의 lecture_practice/chapter4/data/ 자료를 확인하세요."
     )
 
 print("=" * 60)
@@ -206,7 +205,7 @@ if random_scores.mean() > block_scores.mean():
 #   (A) 모델 시드 — RandomForest의 random_state만 교체.
 #   (B) 분할 시드 — 무작위 CV의 shuffle 시드, 블록→폴드 배정 시드,
 #       군집 정의(KMeans) 시드를 함께 교체.
-#   (C) 생성 시드 — 500개 포인트를 다시 뽑는다. 4-0-simdata-prep.py의
+#   (C) 생성 시드 — 500개 포인트를 다시 뽑는다.
 #       prepare_spatial_points()와 같은 식을 메모리에서 다시 계산한다.
 #       시드 42가 저장 자료를 그대로 재현하는지 곧바로 대조한다.
 #
@@ -222,7 +221,7 @@ CENTER_INTENSITY = [30, 25, 35]
 
 
 def regenerate_points(seed):
-    """4-0-simdata-prep.py의 prepare_spatial_points()와 같은 식으로 다시 뽑는다.
+    """기본 포인트 자료와 같은 식으로 포인트를 다시 뽑는다.
 
     원본은 시드 42를 geojson으로 굳혀 두므로, 생성 시드를 바꾸려면 같은 식을
     메모리에서 다시 계산해야 한다. 원본이 전역 np.random.seed()를 쓰지만

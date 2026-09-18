@@ -82,7 +82,7 @@ ASSIGNMENTS: dict[int, dict] = {
     },
     4: {
         "title": "공간 교차검증 — 시험이 쉬웠던 이유",
-        "prep": ["4/4-0-simdata-prep.py"],
+        "prep": [],
         "target": "4/4-2-spatial-cv.py",
         "watch": "무작위 교차검증 점수와 공간 블록 교차검증 점수의 차이",
         "ask": "무작위 교차검증 점수를 그대로 보고서에 실었다면, "
