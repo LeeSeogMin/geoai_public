@@ -192,16 +192,16 @@ if random_scores.mean() > block_scores.mean():
     print(f"  과대 추정 비율: {pct:.1f}%")
 
 # ============================================================
-# 8. 시드 반복 — 위 사다리가 실행마다 얼마나 흔들리는가
+# 8. 시드 반복 — 검증 결과가 실행마다 얼마나 달라지는가
 # ============================================================
 # 7절이 보고한 과대추정 +0.071(Random−Block)과 0.520(Random−Cluster)도
-# 실행 간 변동을 재고 나서 써야 한다. 눈에 걸리는 것이 이미 하나 있다 —
+# 실행 간 차이를 확인한 뒤 해석해야 한다. 먼저 확인할 점이 있다 —
 # Block CV의 폴드 간 표준편차가 0.143으로, 재려는 차이 0.071의 두 배다.
 #
-# 무엇을 흔들지부터 정한다. 이 사다리가 재는 것은 "학습에 쓰인 지역을
-# 통째로 빼면 성능이 얼마나 떨어지는가"이고, 그 답을 정하는 것은
-# ① 포인트가 어디에 찍혔는가(자료) ② 어느 지역이 한 폴드로 묶이는가(분할)다.
-# 그래서 (C) 생성 시드를 주축으로 두고 (A)·(B)를 대조군으로 놓는다.
+# 무엇을 바꿔 반복할지 정한다. 여기서 확인하는 것은 "학습에 쓰지 않은 지역에서
+# 성능이 얼마나 달라지는가"이며, 결과에 영향을 주는 조건은
+# ① 포인트의 위치(자료) ② 어느 지역을 같은 폴드에 배정하는가(분할)다.
+# 그래서 (C) 생성 시드를 주요 비교 조건으로 두고 (A)·(B)를 대조군으로 놓는다.
 #   (A) 모델 시드 — RandomForest의 random_state만 교체.
 #   (B) 분할 시드 — 무작위 CV의 shuffle 시드, 블록→폴드 배정 시드,
 #       군집 정의(KMeans) 시드를 함께 교체.
@@ -209,12 +209,12 @@ if random_scores.mean() > block_scores.mean():
 #       prepare_spatial_points()와 같은 식을 메모리에서 다시 계산한다.
 #       시드 42가 저장 자료를 그대로 재현하는지 곧바로 대조한다.
 #
-# 각 축이 실제로 무언가를 바꾸는지도 함께 확인한다. 난수를 쓰지 않는
-# 설정에 시드만 갈아 끼우면 표는 길어져도 아무것도 반복되지 않는다.
+# 각 조건이 실제로 무언가를 바꾸는지도 함께 확인한다. 난수를 쓰지 않는
+# 설정에 시드만 바꾸고 분석 조건이 달라지지 않으면 반복 결과를 비교할 수 없다.
 #
-# 이 블록은 앞의 계산을 건드리지 않는다. 1~7절이 모두 끝난 뒤에 덧붙으며
+# 이 블록은 앞 절의 계산값을 변경하지 않는다. 1~7절을 마친 뒤 실행하며
 # 자료·분할기·모델을 새로 만들어 쓴다.
-print("\n--- 8. 시드 반복: 위 사다리가 실행마다 얼마나 흔들리는가 ---")
+print("\n--- 8. 시드 반복: 검증 결과가 실행마다 얼마나 달라지는가 ---")
 
 REPEAT_SEEDS = (0, 1, 2, 42)
 CENTER_INTENSITY = [30, 25, 35]
@@ -225,7 +225,7 @@ def regenerate_points(seed):
 
     원본은 시드 42를 geojson으로 굳혀 두므로, 생성 시드를 바꾸려면 같은 식을
     메모리에서 다시 계산해야 한다. 원본이 전역 np.random.seed()를 쓰지만
-    여기서는 앞 절들의 난수 상태를 건드리지 않도록 독립 RandomState를 쓴다
+    여기서는 앞 절들의 난수 상태를 변경하지 않도록 독립 RandomState를 쓴다
     (같은 알고리즘·같은 시드이므로 수열은 동일하다).
     난수 소비 순서(x → y → 잡음)를 원본과 똑같이 유지해야 한다.
     """
@@ -248,10 +248,10 @@ def regenerate_points(seed):
 chk_X, chk_y, _, _ = regenerate_points(42)
 print(f"  생성식 대조: 시드 42로 다시 뽑은 타깃과 저장 자료의 최대 차이 = "
       f"{np.abs(chk_y - y_target).max():.2e}")
-print("    (0에 가까워야 아래 (C) 반복이 원본과 같은 식을 흔든 것이다)")
+print("    (0에 가까우면 아래 (C) 반복이 저장 자료와 같은 생성식을 사용함)")
 
 
-def ladder(X_l, y_l, px, py, model_seed, kf_l, gkf_l, km_seed):
+def compare_cv_scores(X_l, y_l, px, py, model_seed, kf_l, gkf_l, km_seed):
     """한 벌의 자료·분할·모델 시드에서 Random·Block·Cluster R²와 폴드 SD를 낸다."""
     blocks_l = (px // block_size).astype(int) * 10000 + (py // block_size).astype(int)
     clus_l = KMeans(n_clusters=5, random_state=km_seed, n_init=10).fit_predict(
@@ -265,7 +265,7 @@ def ladder(X_l, y_l, px, py, model_seed, kf_l, gkf_l, km_seed):
 
 
 def show(title, runs):
-    """축 하나의 결과를 표로 찍고 두 차이의 범위를 요약한다."""
+    """조건 하나의 결과를 표로 출력하고 두 차이의 범위를 요약한다."""
     print(f"\n  {title}")
     print(f"    {'시드':>4}{'Random':>9}{'Block':>9}{'Cluster':>9}"
           f"{'R−B':>9}{'R−C':>9}{'폴드SD(B/C)':>15}")
@@ -276,11 +276,11 @@ def show(title, runs):
         print(f"    {seed:>4}{r:>9.3f}{b:>9.3f}{c:>9.3f}{r - b:>+9.3f}"
               f"{c - r:>+9.3f}{f'{sb:.3f}/{sc:.3f}':>15}")
     print(f"    R−B 범위 {min(rb):+.3f} ~ {max(rb):+.3f}"
-          f"  (폭 {max(rb) - min(rb):.3f})")
+          f"  (최댓값−최솟값 {max(rb) - min(rb):.3f})")
     print(f"    R−C 범위 {min(rc):+.3f} ~ {max(rc):+.3f}"
-          f"  (폭 {max(rc) - min(rc):.3f})")
+          f"  (최댓값−최솟값 {max(rc) - min(rc):.3f})")
     if max(rb) - min(rb) < 1e-9 and max(rc) - min(rc) < 1e-9:
-        print("    ⚠ 이 축은 아무것도 바꾸지 않았다 — 대조군이 아니라 빈칸이다.")
+        print("    ⚠ 이 조건은 아무것도 바꾸지 않았다 — 비교할 결과가 없다.")
     return rb, rc
 
 
@@ -288,10 +288,10 @@ kf0 = KFold(n_splits=5, shuffle=True, random_state=42)
 gkf0 = GroupKFold(n_splits=5)
 px0, py0 = gdf.geometry.x.values, gdf.geometry.y.values
 
-runs_a = [(s, ladder(X, y_target, px0, py0, s, kf0, gkf0, 42)) for s in REPEAT_SEEDS]
+runs_a = [(s, compare_cv_scores(X, y_target, px0, py0, s, kf0, gkf0, 42)) for s in REPEAT_SEEDS]
 rb_a, rc_a = show("(A) 모델 시드만 교체 — 자료·분할 고정 (42 = 위 실행 재현)", runs_a)
 
-runs_b = [(s, ladder(X, y_target, px0, py0, 42,
+runs_b = [(s, compare_cv_scores(X, y_target, px0, py0, 42,
                      KFold(n_splits=5, shuffle=True, random_state=s),
                      GroupKFold(n_splits=5, shuffle=True, random_state=s), s))
           for s in REPEAT_SEEDS]
@@ -300,14 +300,14 @@ rb_b, rc_b = show("(B) 분할 시드 교체 — 무작위 CV·블록 배정·군
 runs_c = []
 for s in REPEAT_SEEDS:
     gX, gy_t, gpx, gpy = regenerate_points(s)
-    runs_c.append((s, ladder(gX, gy_t, gpx, gpy, 42, kf0, gkf0, 42)))
-rb_c, rc_c = show("(C) 생성 시드 교체 — 포인트를 다시 뽑는다 (주축)", runs_c)
+    runs_c.append((s, compare_cv_scores(gX, gy_t, gpx, gpy, 42, kf0, gkf0, 42)))
+rb_c, rc_c = show("(C) 생성 시드 교체 — 포인트를 다시 뽑는다 (주요 비교 조건)", runs_c)
 
 all_rb = rb_a + rb_b + rb_c
 all_rc = rc_a + rc_b + rc_c
-print(f"\n  → 12번(4시드×3축) 합계 — Random−Block {min(all_rb):+.3f} ~ {max(all_rb):+.3f}, "
+print(f"\n  → 12번(4시드×3조건) 합계 — Random−Block {min(all_rb):+.3f} ~ {max(all_rb):+.3f}, "
       f"Random−Cluster {min(all_rc):+.3f} ~ {max(all_rc):+.3f}")
-print("    두 차이는 같은 사다리에서 나왔지만 판정이 다를 수 있다.")
+print("    두 차이는 같은 검증 방법에서 계산했어도 해석이 다를 수 있다.")
 print("    각각의 범위가 0을 품는지, 폴드 SD와 견주어 어느 쪽인지 따로 본다.")
 
 print("\n[완료] 공간 자기상관 분석 및 공간 CV 비교 실습을 마쳤다.")

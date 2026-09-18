@@ -174,7 +174,7 @@ def prepare_demand() -> tuple[pd.DataFrame, str]:
                         .rename(columns={"pop": "night_pop"}), on="dong_code", how="inner")
 
     # 주간/심야 비율: 1보다 크면 낮에 사람이 들어오는 업무·상업 지역,
-    # 1보다 작으면 낮에 빠져나가는 주거 지역이다.
+    # 1보다 작으면 낮 시간 인구가 줄어드는 주거 지역이다.
     out["day_night_ratio"] = out["day_pop"] / out["night_pop"].replace(0, np.nan)
 
     # 주말/평일 낮 비율: 주말에도 사람이 오는 곳인지 구분한다.
@@ -183,7 +183,7 @@ def prepare_demand() -> tuple[pd.DataFrame, str]:
     out = out.merge((wk["weekend_day"] / wk["weekday_day"].replace(0, np.nan))
                     .rename("weekend_ratio").reset_index(), on="dong_code", how="left")
 
-    # 시간대 변동: 하루 안에서 인구가 얼마나 출렁이는지(체류 vs 통과)
+    # 시간대별 인구 변화: 하루 안에서 인구가 어떻게 달라지는지(체류 vs 통과)
     hourly = df.groupby(["dong_code", "hour"])["pop"].mean()
     swing = (hourly.groupby("dong_code").max() / hourly.groupby("dong_code").mean()).rename("peak_ratio")
     out = out.merge(swing.reset_index(), on="dong_code", how="left")
