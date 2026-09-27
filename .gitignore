@@ -20,7 +20,7 @@ lecture_practice/chapter4/data/*
 # 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
 lecture_practice/**/results/
 
-# 학생이 자기 컴퓨터에서 만든 환경 진단 결과 (lecture_practice/check_env.py가 생성)
+# 자기 컴퓨터에서 만든 환경 진단 결과 (lecture_practice/check_env.py가 생성)
 lecture_practice/env-report.txt
 
 # HTTP 응답 캐시. osmnx는 cache_folder를 지정하지 않으면 현재 작업 디렉터리 아래
