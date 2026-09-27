@@ -37,3 +37,4 @@ lecture_practice/**/cache/
 
 # 주의: submissions/ 는 학생 제출물 경로다(scripts/submit.py 참조).
 # 커밋 대상이므로 여기서 제외하지 않는다.
+.gstack/
