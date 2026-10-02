@@ -12,12 +12,11 @@
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
-- 분석 1의 `data/change_masks.npz`는 저장소에 포함되어 있습니다. 분석 2는 `data/urban_block.npz`가 필요하므로 `6-0b` 준비 스크립트를 먼저 실행해야 합니다.
+- 분석 1의 `data/change_masks.npz`와 분석 2의 `data/urban_block.npz`는 저장소에 포함되어 있습니다. 별도의 데이터 준비 스크립트는 실행하지 않습니다.
 - U-Net 선택 실습에는 PyTorch가 필요합니다. `python lecture_practice/setup_torch.py`로 컴퓨터에 맞는 CUDA·MPS·CPU 빌드를 설치하고, `python lecture_practice/check_env.py`의 `딥러닝 장치` 항목을 확인하세요.
 
 실습 파일 (실행 순서대로)
 
-- `lecture_practice/chapter6/code/6-0b-site-simdata-prep.py` — 분석 2용 도시 블록 래스터 생성 (512×512, 픽셀 1m). 도로·건물·유휴 부지 정답과 오차 3종을 심은 예측 마스크, 대조군 마스크 3종
 - `lecture_practice/chapter6/code/6-0a-unet-change-detection.py` — 선택 실습. 두 시점 NDVI를 입력으로 받는 소형 U-Net 학습, 공간 검증 영역의 IoU·Dice 계산
 - `lecture_practice/chapter6/code/6-1-change-detection-policy.py` — IoU·정밀도·재현율 평가, 거짓변화 필터, 행정구역 집계
 - `lecture_practice/chapter6/code/6-2-site-sourcing.py` — 객체화·형상 피처·3단 요건 필터·면적 편향 보정·대조군 3종·임계값 비용 곡선·실사 순서
@@ -26,7 +25,6 @@
 
 ```bash
 python lecture_practice/chapter6/code/6-1-change-detection-policy.py
-python lecture_practice/chapter6/code/6-0b-site-simdata-prep.py
 python lecture_practice/chapter6/code/6-2-site-sourcing.py
 ```
 
@@ -55,7 +53,7 @@ U-Net 성공 여부 확인
 - 행정구역 우선순위 1위: `구역 9`, 변화 면적 `2.93ha`
 - 탐지된 개발 변화 총 `17.3ha`
 
-> `6-0b`는 별도의 난수 생성기(seed 20260813)를 쓰므로 **위 분석 1 수치는 `6-0b`를 추가·수정해도 바뀌지 않습니다.** 분석 1 값이 달라졌다면 `data/change_masks.npz` 파일을 먼저 확인하세요.
+> 분석 1과 분석 2의 입력 자료는 저장소에 포함되어 있습니다. 값이 달라졌다면 `data/change_masks.npz` 또는 `data/urban_block.npz` 파일을 먼저 확인하세요.
 
 예상 결과(검증 포인트) — 분석 2
 

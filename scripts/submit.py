@@ -98,7 +98,7 @@ ASSIGNMENTS: dict[int, dict] = {
     },
     6: {
         "title": "마스크에서 결정으로 — 후보지 걸러 내기",
-        "prep": ["6/6-0b-site-simdata-prep.py"],
+        "prep": [],
         "target": "6/6-2-site-sourcing.py",
         "watch": "면적 임계별 후보 수와 오탈락 수",
         "ask": "면적 요건이 1,000㎡다. 임계를 그대로 1,000㎡에 두겠는가, "
