@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880">
+  <rect width="1400" height="880" fill="#ffffff"/>
+  <style>
+    .title { font: 700 28px sans-serif; fill: #172033; }
+    .subtitle { font: 600 20px sans-serif; fill: #344054; }
+    .label { font: 600 18px sans-serif; fill: #172033; }
+    .body { font: 16px sans-serif; fill: #344054; }
+    .small { font: 14px sans-serif; fill: #667085; }
+    .code { font: 600 16px monospace; fill: #175cd3; }
+    .skip { font: 700 16px sans-serif; fill: #b42318; }
+    .flow { stroke: #667085; stroke-width: 2.5; fill: none; }
+    .skipline { stroke: #dc2626; stroke-width: 2.5; fill: none; stroke-dasharray: 9 7; }
+    .axis { stroke: #98a2b3; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#667085"/>
+    </marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#dc2626"/>
+    </marker>
+    <marker id="aha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#98a2b3"/>
+    </marker>
+  </defs>
+
+  <text x="700" y="46" text-anchor="middle" class="title">U-Net: 줄였다가 키우고, 잃어버린 위치는 옆에서 받아 온다</text>
+  <text x="700" y="78" text-anchor="middle" class="body">왼쪽 절반이 인코더(해상도를 줄이며 의미를 얻는다), 오른쪽 절반이 디코더(해상도를 키우며 경계를 복원한다)</text>
+
+  <!-- ===== 해상도 축 (좌측) ===== -->
+  <line x1="95" y1="150" x2="95" y2="640" class="axis" marker-end="url(#aha)"/>
+  <text x="78" y="200" text-anchor="end" class="small">해상도</text>
+  <text x="78" y="220" text-anchor="end" class="small">↓</text>
+  <text x="78" y="330" text-anchor="end" class="small">위치 정보</text>
+  <text x="78" y="350" text-anchor="end" class="small">희미해짐</text>
+  <text x="78" y="560" text-anchor="end" class="small">의미 정보</text>
+  <text x="78" y="580" text-anchor="end" class="small">진해짐</text>
+
+  <!-- ===== 인코더 ===== -->
+  <text x="330" y="126" text-anchor="middle" class="subtitle">인코더 (수축 경로)</text>
+
+  <!-- e1 -->
+  <rect x="300" y="160" width="58" height="150" fill="#dbeafe" stroke="#175cd3" stroke-width="3" rx="4"/>
+  <text x="329" y="150" text-anchor="middle" class="code">e1</text>
+  <text x="329" y="330" text-anchor="middle" class="body">256×256 · 64채널</text>
+  <text x="329" y="352" text-anchor="middle" class="small">가장자리·질감 같은 얕은 특징</text>
+
+  <!-- e1 -> e2 -->
+  <path d="M329 372 L360 420" class="flow" marker-end="url(#ah)"/>
+  <text x="310" y="397" text-anchor="end" class="code">pool</text>
+  <text x="310" y="419" text-anchor="end" class="small">해상도 1/2</text>
+
+  <!-- e2 -->
+  <rect x="381" y="440" width="82" height="100" fill="#bfdbfe" stroke="#175cd3" stroke-width="3" rx="4"/>
+  <text x="422" y="430" text-anchor="middle" class="code">e2</text>
+  <text x="422" y="560" text-anchor="middle" class="body">128×128 · 128채널</text>
+
+  <!-- e2 -> e3 -->
+  <path d="M440 578 L590 632" class="flow" marker-end="url(#ah)"/>
+  <text x="470" y="620" class="code">pool</text>
+
+  <!-- e3 = 바닥 -->
+  <rect x="640" y="645" width="120" height="62" fill="#fef3c7" stroke="#d97706" stroke-width="3" rx="4"/>
+  <text x="700" y="635" text-anchor="middle" class="code">e3 (바닥)</text>
+  <text x="700" y="730" text-anchor="middle" class="body">64×64 · 256채널</text>
+  <text x="700" y="754" text-anchor="middle" class="label">“무엇인지”는 가장 잘 알고,</text>
+  <text x="700" y="776" text-anchor="middle" class="label">“어디인지”는 가장 흐릿한 상태</text>
+
+  <!-- ===== 디코더 ===== -->
+  <text x="1055" y="126" text-anchor="middle" class="subtitle">디코더 (확장 경로)</text>
+
+  <!-- e3 -> d2 -->
+  <path d="M760 632 L910 578" class="flow" marker-end="url(#ah)"/>
+  <text x="790" y="662" class="code">up</text>
+  <text x="790" y="684" class="small">해상도 2배</text>
+
+  <!-- d2 -->
+  <rect x="960" y="440" width="118" height="100" fill="#dcfce7" stroke="#15803d" stroke-width="3" rx="4"/>
+  <text x="1019" y="430" text-anchor="middle" class="code">d2 = conv(cat(up(e3), e2))</text>
+  <text x="1019" y="560" text-anchor="middle" class="body">128×128 · 이어 붙여 두꺼워진 채널</text>
+
+  <!-- d2 -> d1 -->
+  <path d="M1019 420 L1050 372" class="flow" marker-end="url(#ah)"/>
+  <text x="1062" y="402" class="code">up</text>
+
+  <!-- d1 -->
+  <rect x="1010" y="160" width="96" height="150" fill="#bbf7d0" stroke="#15803d" stroke-width="3" rx="4"/>
+  <text x="1058" y="150" text-anchor="middle" class="code">d1 = conv(cat(up(d2), e1))</text>
+  <text x="1058" y="330" text-anchor="middle" class="body">256×256 · 원래 해상도 회복</text>
+
+  <!-- d1 -> out -->
+  <path d="M1112 235 L1228 235" class="flow" marker-end="url(#ah)"/>
+  <text x="1173" y="222" text-anchor="middle" class="code">final_conv</text>
+
+  <!-- out -->
+  <rect x="1240" y="160" width="34" height="150" fill="#f8fafc" stroke="#98a2b3" stroke-width="3" rx="4"/>
+  <text x="1257" y="150" text-anchor="middle" class="code">out</text>
+  <text x="1290" y="330" text-anchor="middle" class="body">픽셀별 클래스 예측</text>
+  <text x="1290" y="352" text-anchor="middle" class="small">256×256 · 클래스 수</text>
+
+  <!-- ===== 스킵 연결 ===== -->
+  <path d="M364 200 L1004 200" class="skipline" marker-end="url(#ahr)"/>
+  <text x="684" y="188" text-anchor="middle" class="skip">스킵 연결 ①  cat(up(d2), e1) — 위치가 정확한 얕은 특징을 그대로 건넨다</text>
+
+  <path d="M469 470 L954 470" class="skipline" marker-end="url(#ahr)"/>
+  <text x="711" y="458" text-anchor="middle" class="skip">스킵 연결 ②  cat(up(e3), e2)</text>
+
+  <!-- ===== 하단 해설 ===== -->
+  <rect x="95" y="800" width="1210" height="58" fill="#fef2f2" stroke="#fca5a5" stroke-width="2" rx="12"/>
+  <text x="700" y="826" text-anchor="middle" class="body">붉은 점선을 지우면 디코더는 바닥의 64×64 특징만 들고 256×256을 추측해야 한다.</text>
+  <text x="700" y="848" text-anchor="middle" class="body">건물이 어디에 있는지는 맞히지만 윤곽이 뭉개진다 — 스킵 연결은 그 뭉개짐을 막는 장치다.</text>
+</svg>
