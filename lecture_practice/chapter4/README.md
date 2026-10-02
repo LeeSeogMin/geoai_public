@@ -1,6 +1,6 @@
 # 4장 실습: 공간 피처·공간 교차검증·앙상블·군집·취약성 예측·상권 기대 공급량
 
-이 실습은 `docs/ch04.md`와 `lecture/chapter4.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter4/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch04.md`와 `lecture/ch04.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter4/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -82,7 +82,7 @@ python lecture_practice/chapter4/code/4-6-store-location-supply.py
 연관 자료
 
 - 교재: `docs/ch04.md` — 공간단위 머신러닝과 지역 분석
-- 강의: `lecture/chapter4.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch04.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

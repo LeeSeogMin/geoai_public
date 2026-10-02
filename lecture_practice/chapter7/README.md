@@ -1,6 +1,6 @@
 # 7장 실습: 자율 GIS 질의 검증, 시공간 예측 불확실성, 그리고 발주 결정
 
-이 실습은 `docs/ch07.md`와 `lecture/chapter7.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter7/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch07.md`와 `lecture/ch07.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter7/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -70,7 +70,7 @@ python lecture_practice/chapter7/code/7-3-demand-newsvendor.py
 연관 자료
 
 - 교재: `docs/ch07.md` — LLM·자율 GIS·시공간 예측
-- 강의: `lecture/chapter7.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch07.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

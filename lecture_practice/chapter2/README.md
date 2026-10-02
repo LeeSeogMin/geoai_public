@@ -1,6 +1,6 @@
 # 2장 실습: 좌표계 변환, 공간 연산과 서비스 권역 계산
 
-이 실습은 `docs/ch02.md`와 `lecture/chapter2.md`의 내용을 코드로 확인하는 목적입니다. 실습은 로컬에서 실행되며, 결과 로그는 `lecture_practice/chapter2/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch02.md`와 `lecture/ch02.md`의 내용을 코드로 확인하는 목적입니다. 실습은 로컬에서 실행되며, 결과 로그는 `lecture_practice/chapter2/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -73,7 +73,7 @@ python lecture_practice/chapter2/code/2-3-delivery-service-area.py
 연관 자료
 
 - 교재: `docs/ch02.md` — 좌표계·투영·전처리 이론과 배달 권역 분석 예제
-- 강의: `lecture/chapter2.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch02.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

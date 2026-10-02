@@ -19,12 +19,12 @@
 
 ## 0. 내 컴퓨터 확인
 
-| 항목 | 최소 조건 | 비고 |
-|---|---|---|
-| 운영체제 | Windows 10/11 또는 macOS 12 이상 | 둘 다 지원한다 |
-| 저장 공간 | 5GB 이상 여유 | 5-7장 딥러닝까지 하면 더 필요하다 |
-| 메모리 | 8GB 이상 | 16GB면 넉넉하다 |
-| 인터넷 | 필요 | 실습 데이터를 내려받는다 |
+| 항목      | 최소 조건                        | 비고                              |
+| --------- | -------------------------------- | --------------------------------- |
+| 운영체제  | Windows 10/11 또는 macOS 12 이상 | 둘 다 지원한다                    |
+| 저장 공간 | 5GB 이상 여유                    | 5-7장 딥러닝까지 하면 더 필요하다 |
+| 메모리    | 8GB 이상                         | 16GB면 넉넉하다                   |
+| 인터넷    | 필요                             | 실습 데이터를 내려받는다          |
 
 그래픽카드(GPU)는 없어도 된다. 딥러닝 실습은 CPU만으로 돌아가도록 크기를 줄여 두었다.
 
@@ -82,12 +82,14 @@ VS Code에서 `File > Open Folder`로 방금 받은 `geoAI` 폴더를 연다. �
 VS Code에서 터미널을 연다(`Ctrl + \`` 또는 `Terminal > New Terminal`). 폴더 위치가 `geoAI`인지 확인하고 아래를 실행한다.
 
 **Windows (PowerShell)**
+
 ```
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
 **macOS**
+
 ```
 python3 -m venv .venv
 source .venv/bin/activate
@@ -96,6 +98,7 @@ source .venv/bin/activate
 성공하면 터미널 줄 앞에 `(.venv)`가 붙는다. 이게 붙어 있어야 이 방 안에 있는 것이다. **터미널을 새로 열 때마다 활성화 명령을 다시 쳐야 한다.**
 
 > **Windows에서 "이 시스템에서 스크립트를 실행할 수 없으므로"라는 오류가 날 때**: PowerShell이 스크립트 실행을 막고 있다. 아래를 한 번 실행하고 다시 시도한다.
+>
 > ```
 > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 > ```
@@ -158,12 +161,12 @@ python lecture_practice/chapter1/code/1-1-geoai-tools-preview.py
 
 아래 넷 중 **하나만** 준비하면 된다. 어느 것을 써도 수업 진행에 차이가 없다. 규칙 파일을 도구별로 맞춰 두었기 때문에, 어떤 도구를 쓰든 같은 규칙 아래에서 움직인다.
 
-| 도구 | 형태 | 비용 |
-|---|---|---|
-| **GitHub Copilot** | VS Code 확장 | 학생 인증 시 무료 |
-| **OpenAI Codex** | VS Code 확장 / 터미널 | 유료 구독 |
-| **Claude Code** | 터미널 (VS Code 확장도 있음) | 유료 구독 |
-| **Google Antigravity** | 독립 에디터 | 무료 구간 있음 |
+| 도구                   | 형태                         | 비용              |
+| ---------------------- | ---------------------------- | ----------------- |
+| **GitHub Copilot**     | VS Code 확장                 | 학생 인증 시 무료 |
+| **OpenAI Codex**       | VS Code 확장 / 터미널        | 유료 구독         |
+| **Claude Code**        | 터미널 (VS Code 확장도 있음) | 유료 구독         |
+| **Google Antigravity** | 독립 에디터                  | 무료 구간 있음    |
 
 ### GitHub Copilot
 
@@ -295,11 +298,11 @@ submissions/제출_11장_201912345.md
 
 ### 1) 명령어 차이
 
-| 하는 일 | Windows | macOS |
-|---|---|---|
+| 하는 일         | Windows                  | macOS                       |
+| --------------- | ------------------------ | --------------------------- |
 | 가상환경 활성화 | `.venv\Scripts\activate` | `source .venv/bin/activate` |
-| 파이썬 실행 | `python` | `python3` (또는 `python`) |
-| 경로 구분자 | `\` | `/` |
+| 파이썬 실행     | `python`                 | `python3` (또는 `python`)   |
+| 경로 구분자     | `\`                      | `/`                         |
 
 문서에 나오는 경로는 `/`로 적었다. Windows에서도 파이썬 코드 안에서는 `/`가 그대로 동작하므로 바꿀 필요가 없다.
 
@@ -326,17 +329,17 @@ VS Code 터미널을 닫았다 다시 열고 `python lecture_practice/check_env.
 
 ## 잘 안 될 때
 
-| 증상 | 원인과 해결 |
-|---|---|
-| `python: command not found` | Windows: Python 설치 때 "Add to PATH"를 놓쳤다. Python을 지우고 그 항목에 체크해 다시 설치한다. macOS: `python3`로 쳐 본다. |
-| `pip install`이 중간에 멈추거나 실패 | 인터넷 문제이거나 학교 방화벽이 막는 경우가 많다. 다른 네트워크에서 다시 시도한다. 그래도 안 되면 오류 메시지 전체를 에이전트에게 붙여넣는다. |
-| `ModuleNotFoundError: No module named 'geopandas'` | 가상환경이 꺼져 있다. 터미널 앞에 `(.venv)`가 있는지 보고, 없으면 3단계의 활성화 명령을 다시 친다. |
-| 활성화했는데도 같은 오류 | VS Code가 다른 파이썬을 보고 있다. `Ctrl+Shift+P` → `Python: Select Interpreter`에서 `.venv`를 고른다. |
-| `UnicodeEncodeError` / 결과 파일의 한글이 깨짐 | 위 "Windows 한글 인코딩"을 적용한다. |
-| 그림의 한글이 네모로 나옴 | 위 "한글 폰트"를 적용한다. |
-| 데이터 파일이 없다는 메시지 | 각 장 폴더의 `-0-`으로 시작하는 데이터 준비 코드를 먼저 돌린다. 메시지에 어느 파일을 돌리라고 나온다. |
-| 그래픽카드가 있는데 학습이 느림 | CPU 빌드가 깔린 것이다. `python lecture_practice/setup_torch.py`를 실행하면 맞는 빌드로 바꿔 준다. `python lecture_practice/check_env.py`의 "딥러닝 장치" 항목에서 지금 무엇으로 도는지 볼 수 있다. |
-| `CUDA error` / GPU 연산에서 오류 | 그래픽카드가 너무 오래됐거나 드라이버가 낮다. `python lecture_practice/setup_torch.py`가 이 경우를 감지해 CPU 빌드로 바꾸는 명령을 알려준다. CPU로도 실습은 모두 된다. |
+| 증상                                               | 원인과 해결                                                                                                                                                                                         |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `python: command not found`                        | Windows: Python 설치 때 "Add to PATH"를 놓쳤다. Python을 지우고 그 항목에 체크해 다시 설치한다. macOS: `python3`로 쳐 본다.                                                                         |
+| `pip install`이 중간에 멈추거나 실패               | 인터넷 문제이거나 학교 방화벽이 막는 경우가 많다. 다른 네트워크에서 다시 시도한다. 그래도 안 되면 오류 메시지 전체를 에이전트에게 붙여넣는다.                                                       |
+| `ModuleNotFoundError: No module named 'geopandas'` | 가상환경이 꺼져 있다. 터미널 앞에 `(.venv)`가 있는지 보고, 없으면 3단계의 활성화 명령을 다시 친다.                                                                                                  |
+| 활성화했는데도 같은 오류                           | VS Code가 다른 파이썬을 보고 있다. `Ctrl+Shift+P` → `Python: Select Interpreter`에서 `.venv`를 고른다.                                                                                              |
+| `UnicodeEncodeError` / 결과 파일의 한글이 깨짐     | 위 "Windows 한글 인코딩"을 적용한다.                                                                                                                                                                |
+| 그림의 한글이 네모로 나옴                          | 위 "한글 폰트"를 적용한다.                                                                                                                                                                          |
+| 데이터 파일이 없다는 메시지                        | 각 장 폴더의 `-0-`으로 시작하는 데이터 준비 코드를 먼저 돌린다. 메시지에 어느 파일을 돌리라고 나온다.                                                                                               |
+| 그래픽카드가 있는데 학습이 느림                    | CPU 빌드가 깔린 것이다. `python lecture_practice/setup_torch.py`를 실행하면 맞는 빌드로 바꿔 준다. `python lecture_practice/check_env.py`의 "딥러닝 장치" 항목에서 지금 무엇으로 도는지 볼 수 있다. |
+| `CUDA error` / GPU 연산에서 오류                   | 그래픽카드가 너무 오래됐거나 드라이버가 낮다. `python lecture_practice/setup_torch.py`가 이 경우를 감지해 CPU 빌드로 바꾸는 명령을 알려준다. CPU로도 실습은 모두 된다.                              |
 
 ### 그래도 안 될 때 — 어디까지 혼자 하고, 언제 물어보나
 
@@ -385,7 +388,7 @@ geoAI/
 ├── CLAUDE.md                 위 파일을 Claude Code가 읽도록 연결
 ├── context.md                내 작업 맥락 (직접 쓴다)
 ├── todo.md                   내 할 일 목록 (직접 쓴다)
-├── lecture/                  강의 교재 (chapter1.md ~ chapter14.md)
+├── lecture/                  강의 교재 (ch01.md ~ ch15.md)
 └── lecture_practice/                 실습
     ├── README.md             이 문서
     ├── check_env.py          환경 자가진단

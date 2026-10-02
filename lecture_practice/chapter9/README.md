@@ -1,6 +1,6 @@
 # 9장 실습: 보호구역 효과 추정, 이질적 처치효과 기반 배분, 그리고 실사 컷오프 결정
 
-이 실습은 `docs/ch09.md`와 `lecture/chapter9.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter9/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch09.md`와 `lecture/ch09.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter9/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -61,7 +61,7 @@ python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
 연관 자료
 
 - 교재: `docs/ch09.md` — 환경·기후 정책과 GeoAI
-- 강의: `lecture/chapter9.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch09.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

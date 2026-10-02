@@ -1,6 +1,6 @@
 # 11장 실습: 침수위험 우선순위, 예측적 치안의 되먹임 편향, 보험 리스크 등급
 
-이 실습은 `docs/ch11.md`와 `lecture/chapter11.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter11/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch11.md`와 `lecture/ch11.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter11/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -54,7 +54,7 @@ python lecture_practice/chapter11/code/11-3-insurance-risk-grading.py
 연관 자료
 
 - 교재: `docs/ch11.md` — 재난안전·치안과 GeoAI
-- 강의: `lecture/chapter11.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch11.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

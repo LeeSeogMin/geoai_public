@@ -1,6 +1,6 @@
 # 6장 실습: 변화 탐지 결과의 정책 집계와 개발 가능 부지 탐색
 
-이 실습은 `docs/ch06.md`와 `lecture/chapter6.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter6/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch06.md`와 `lecture/ch06.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter6/results/`에 저장되어 있습니다.
 
 두 개의 분석이 들어 있습니다.
 
@@ -68,7 +68,7 @@ python lecture_practice/chapter6/code/6-2-site-sourcing.py
 연관 자료
 
 - 교재: `docs/ch06.md` — 세그멘테이션·파운데이션 모델·SAM
-- 강의: `lecture/chapter6.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch06.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

@@ -1,6 +1,6 @@
 # 12장 실습: 복지 사각지대·감염병 확산·DML·공간 스캔 통계·동물병원 입지
 
-이 실습은 `docs/ch12.md`와 `lecture/chapter12.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter12/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch12.md`와 `lecture/ch12.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter12/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -64,7 +64,7 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 연관 자료
 
 - 교재: `docs/ch12.md` — 사회복지·보건·감염병 정책과 GeoAI
-- 강의: `lecture/chapter12.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch12.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

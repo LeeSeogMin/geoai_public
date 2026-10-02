@@ -77,7 +77,7 @@ python lecture_practice/chapter5/code/5-3-adoption-cost-breakeven.py
 연관 자료
 
 - 교재: `docs/ch05.md` — 딥러닝과 위성영상 분석
-- 강의: `lecture/chapter5.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch05.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

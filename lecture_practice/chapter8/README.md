@@ -61,7 +61,7 @@ python lecture_practice/chapter8/code/8-3-store-opening-donut-did.py
 연관 자료
 
 - 교재: `docs/ch08.md` — 국내 공간정책 분석·평가 방법론
-- 강의: `lecture/chapter8.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch08.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

@@ -1,6 +1,6 @@
 # 13장 실습: 지역 쇠퇴 유형화·야간조명 프록시·합성통제법·상권 세분화와 철수 결정
 
-이 실습은 `docs/ch13.md`와 `lecture/chapter13.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter13/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch13.md`와 `lecture/ch13.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter13/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -74,7 +74,7 @@ python lecture_practice/chapter13/code/13-4-trade-area-exit-decision.py
 연관 자료
 
 - 교재: `docs/ch13.md` — 지역균형발전·인구감소와 GeoAI
-- 강의: `lecture/chapter13.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch13.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 

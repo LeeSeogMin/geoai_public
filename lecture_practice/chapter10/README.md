@@ -1,6 +1,6 @@
 # 10장 실습: 생활SOC 접근성·민원 예측·규제경계 RDD·배달 권역 최적화
 
-이 실습은 `docs/ch10.md`와 `lecture/chapter10.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter10/results/`에 저장되어 있습니다.
+이 실습은 `docs/ch10.md`와 `lecture/ch10.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter10/results/`에 저장되어 있습니다.
 
 요구사항
 
@@ -76,7 +76,7 @@ python lecture_practice/chapter10/code/10-4-delivery-zone-optimization.py
 연관 자료
 
 - 교재: `docs/ch10.md` — 도시·생활권·민원 행정과 GeoAI
-- 강의: `lecture/chapter10.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/ch10.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 
