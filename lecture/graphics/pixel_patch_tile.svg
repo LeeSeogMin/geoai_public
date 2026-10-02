@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="sans-serif">
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle">영상 분석의 공간 단위: 타일, 패치, 픽셀</text>
+
+  <!-- Tile -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="200" height="200" fill="#f0f8ff" stroke="#333" stroke-width="2"/>
+    <text x="100" y="-10" font-size="16" font-weight="bold" text-anchor="middle">타일 (Tile)</text>
+    <text x="100" y="30" font-size="14" fill="#555" text-anchor="middle">자료 배포·저장 단위</text>
+    <text x="100" y="50" font-size="12" fill="#555" text-anchor="middle">(예: 10000 × 10000)</text>
+    
+    <!-- Grid inside Tile to represent patches -->
+    <path d="M 0 66 L 200 66 M 0 133 L 200 133" stroke="#ccc" stroke-dasharray="4"/>
+    <path d="M 66 0 L 66 200 M 133 0 L 133 200" stroke="#ccc" stroke-dasharray="4"/>
+    
+    <!-- Highlight one patch -->
+    <rect x="133" y="133" width="67" height="67" fill="#ffe4e1" stroke="#e74c3c" stroke-width="2"/>
+  </g>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow -->
+  <path d="M 260 170 C 290 170, 310 170, 340 170" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Patch -->
+  <g transform="translate(360, 70)">
+    <rect x="0" y="0" width="200" height="200" fill="#ffe4e1" stroke="#e74c3c" stroke-width="2"/>
+    <text x="100" y="-10" font-size="16" font-weight="bold" text-anchor="middle" fill="#c0392b">패치 (Patch)</text>
+    <text x="100" y="30" font-size="14" fill="#555" text-anchor="middle">AI 모델 입력 단위</text>
+    <text x="100" y="50" font-size="12" fill="#555" text-anchor="middle">(예: 256 × 256)</text>
+    
+    <!-- Grid inside patch to represent pixels -->
+    <path d="M 0 20 L 200 20 M 0 40 L 200 40 M 0 60 L 200 60 M 0 80 L 200 80 M 0 100 L 200 100 M 0 120 L 200 120 M 0 140 L 200 140 M 0 160 L 200 160 M 0 180 L 200 180" stroke="#f5b7b1" stroke-width="1"/>
+    <path d="M 20 0 L 20 200 M 40 0 L 200 200 M 40 0 L 40 200 M 60 0 L 60 200 M 80 0 L 80 200 M 100 0 L 100 200 M 120 0 L 120 200 M 140 0 L 140 200 M 160 0 L 160 200 M 180 0 L 180 200" stroke="#f5b7b1" stroke-width="1"/>
+
+    <!-- Highlight one pixel -->
+    <rect x="140" y="60" width="20" height="20" fill="#4a90e2" stroke="#2980b9" stroke-width="2"/>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 570 140 C 600 140, 620 140, 650 140" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Pixel -->
+  <g transform="translate(670, 70)">
+    <rect x="0" y="40" width="100" height="100" fill="#4a90e2" stroke="#2980b9" stroke-width="2"/>
+    <text x="50" y="-10" font-size="16" font-weight="bold" text-anchor="middle" fill="#2980b9">픽셀 (Pixel)</text>
+    <text x="50" y="30" font-size="14" fill="#555" text-anchor="middle">최소 데이터 단위</text>
+    <text x="50" y="90" font-size="14" fill="#fff" text-anchor="middle">1개의</text>
+    <text x="50" y="110" font-size="14" fill="#fff" text-anchor="middle">단일 값</text>
+    <text x="50" y="165" font-size="12" fill="#555" text-anchor="middle">(예: 10m × 10m)</text>
+  </g>
+
+  <text x="400" y="320" font-size="14" fill="#333" text-anchor="middle">타일(전체 영상) ⊃ 패치(AI 모델 입력) ⊃ 픽셀(최소 화소) 순으로 공간 포함 관계가 성립합니다.</text>
+</svg>
