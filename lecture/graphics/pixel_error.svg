@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="sans-serif">
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle">대상의 픽셀 크기에 따른 경계 1픽셀 오차의 영향</text>
+
+  <g transform="translate(100, 80)">
+    <text x="100" y="-20" font-size="16" font-weight="bold" text-anchor="middle">작은 대상 (4x4 픽셀)</text>
+    <text x="100" y="0" font-size="14" text-anchor="middle">전체 면적: 16픽셀</text>
+    <rect x="20" y="20" width="160" height="160" fill="#e0e0e0" />
+    <rect x="20" y="20" width="160" height="160" fill="#ff9999" stroke="white" stroke-width="2"/>
+    <rect x="60" y="60" width="80" height="80" fill="#4a90e2" stroke="white" stroke-width="2"/>
+    <path d="M 60 20 L 60 180 M 100 20 L 100 180 M 140 20 L 140 180" stroke="white" stroke-width="2"/>
+    <path d="M 20 60 L 180 60 M 20 100 L 180 100 M 20 140 L 180 140" stroke="white" stroke-width="2"/>
+    <text x="100" y="210" font-size="14" text-anchor="middle" fill="#d0021b">경계 1픽셀 오차 손실: 12픽셀</text>
+    <text x="100" y="235" font-size="16" font-weight="bold" text-anchor="middle" fill="#d0021b">상대 오차율: 75%</text>
+  </g>
+
+  <g transform="translate(450, 80)">
+    <text x="120" y="-20" font-size="16" font-weight="bold" text-anchor="middle">큰 대상 (8x8 픽셀)</text>
+    <text x="120" y="0" font-size="14" text-anchor="middle">전체 면적: 64픽셀</text>
+    <rect x="20" y="20" width="200" height="200" fill="#ff9999" stroke="white" stroke-width="1"/>
+    <rect x="45" y="45" width="150" height="150" fill="#4a90e2" stroke="white" stroke-width="1"/>
+    <path d="M 45 20 L 45 220 M 70 20 L 70 220 M 95 20 L 95 220 M 120 20 L 120 220 M 145 20 L 145 220 M 170 20 L 170 220 M 195 20 L 195 220" stroke="white" stroke-width="1"/>
+    <path d="M 20 45 L 220 45 M 20 70 L 220 70 M 20 95 L 220 95 M 20 120 L 220 120 M 20 145 L 220 145 M 20 170 L 220 170 M 20 195 L 220 195" stroke="white" stroke-width="1"/>
+    <text x="120" y="250" font-size="14" text-anchor="middle" fill="#d0021b">경계 1픽셀 오차 손실: 28픽셀</text>
+    <text x="120" y="275" font-size="16" font-weight="bold" text-anchor="middle" fill="#d0021b">상대 오차율: 43.75%</text>
+  </g>
+  
+  <g transform="translate(250, 350)">
+    <rect x="0" y="0" width="20" height="20" fill="#4a90e2" />
+    <text x="25" y="15" font-size="14">남은 객체 면적</text>
+    <rect x="150" y="0" width="20" height="20" fill="#ff9999" />
+    <text x="175" y="15" font-size="14">손실된 경계(오차)</text>
+  </g>
+</svg>

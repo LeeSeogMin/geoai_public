@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 350" font-family="sans-serif">
+  <text x="425" y="30" font-size="20" font-weight="bold" text-anchor="middle">폭 12m 주택을 다른 해상도로 관측할 때 발생하는 경계 오차의 결과</text>
+
+  <!-- Left: 10m Grid -->
+  <g transform="translate(30, 80)">
+    <rect x="0" y="0" width="370" height="230" fill="#f9f9f9" stroke="#ddd" rx="10"/>
+    <text x="185" y="30" font-size="18" font-weight="bold" text-anchor="middle">10m 해상도 (픽셀 폭 = 1.2픽셀)</text>
+    
+    <g transform="translate(15, 70)">
+      <!-- Original -->
+      <g transform="translate(0, 0)">
+        <text x="40" y="-10" font-size="14" text-anchor="middle">원래 예측 (약 1픽셀)</text>
+        <rect x="0" y="0" width="80" height="80" fill="#e0e0e0" />
+        <rect x="20" y="20" width="40" height="40" fill="#4a90e2" />
+        <path d="M 0 40 L 80 40 M 40 0 L 40 80" stroke="white" stroke-width="2"/>
+      </g>
+      <!-- Arrow -->
+      <text x="100" y="45" font-size="20" fill="#999">→</text>
+      <!-- Erosion -->
+      <g transform="translate(120, 0)">
+        <text x="40" y="-10" font-size="14" text-anchor="middle">침식 오차 (1겹)</text>
+        <rect x="0" y="0" width="80" height="80" fill="#e0e0e0" />
+        <path d="M 0 40 L 80 40 M 40 0 L 40 80" stroke="white" stroke-width="2"/>
+        <text x="40" y="45" font-size="12" fill="#d0021b" font-weight="bold" text-anchor="middle">대상 소멸!</text>
+      </g>
+      <!-- Arrow -->
+      <text x="220" y="45" font-size="20" fill="#999">→</text>
+      <!-- Dilation -->
+      <g transform="translate(240, 0)">
+        <text x="40" y="-10" font-size="14" text-anchor="middle">팽창 오차 (1겹)</text>
+        <rect x="0" y="0" width="80" height="80" fill="#e0e0e0" />
+        <rect x="0" y="0" width="80" height="80" fill="#ff9999" />
+        <path d="M 0 40 L 80 40 M 40 0 L 40 80" stroke="white" stroke-width="2"/>
+        <text x="40" y="45" font-size="12" fill="#d0021b" font-weight="bold" text-anchor="middle">2배 이상 팽창!</text>
+      </g>
+    </g>
+    <text x="185" y="200" font-size="15" fill="#d0021b" text-anchor="middle">"경계 오차 한 겹이 대상 전체를 지우거나 두 배로 만듦"</text>
+  </g>
+
+  <!-- Right: 0.5m Grid -->
+  <g transform="translate(420, 80)">
+    <rect x="0" y="0" width="400" height="230" fill="#f9f9f9" stroke="#ddd" rx="10"/>
+    <text x="200" y="30" font-size="18" font-weight="bold" text-anchor="middle">0.5m 해상도 (픽셀 폭 = 24픽셀)</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Original -->
+      <g transform="translate(0, 0)">
+        <text x="50" y="-10" font-size="14" text-anchor="middle">원래 예측 (24픽셀)</text>
+        <rect x="0" y="0" width="100" height="100" fill="#e0e0e0" />
+        <rect x="10" y="10" width="80" height="80" fill="#4a90e2" />
+        <text x="50" y="55" font-size="12" fill="#fff" text-anchor="middle">면적: 충분</text>
+      </g>
+      <!-- Arrow -->
+      <text x="115" y="55" font-size="20" fill="#999">→</text>
+      <!-- Erosion -->
+      <g transform="translate(130, 0)">
+        <text x="50" y="-10" font-size="14" text-anchor="middle">침식 오차 (1겹)</text>
+        <rect x="0" y="0" width="100" height="100" fill="#e0e0e0" />
+        <rect x="10" y="10" width="80" height="80" fill="#ff9999" />
+        <rect x="15" y="15" width="70" height="70" fill="#4a90e2" />
+        <text x="50" y="55" font-size="12" fill="#fff" text-anchor="middle">22픽셀 유지</text>
+      </g>
+      <!-- Arrow -->
+      <text x="245" y="55" font-size="20" fill="#999">→</text>
+      <!-- Dilation -->
+      <g transform="translate(260, 0)">
+        <text x="50" y="-10" font-size="14" text-anchor="middle">팽창 오차 (1겹)</text>
+        <rect x="0" y="0" width="100" height="100" fill="#e0e0e0" />
+        <rect x="5" y="5" width="90" height="90" fill="#ff9999" />
+        <rect x="10" y="10" width="80" height="80" fill="#4a90e2" />
+        <text x="50" y="55" font-size="12" fill="#fff" text-anchor="middle">26픽셀 유지</text>
+      </g>
+    </g>
+    <text x="200" y="200" font-size="15" fill="#333" text-anchor="middle">대상의 형태와 면적이 안정적으로 거의 일정하게 유지됨</text>
+  </g>
+</svg>
