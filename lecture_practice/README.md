@@ -117,7 +117,7 @@ pip install -r lecture_practice/requirements-student.txt
 
 5분에서 15분쯤 걸린다. 이 설치분 하나로 1장부터 15장까지 진행한다.
 
-딥러닝(PyTorch)을 쓰는 **5장과 7장은 학기 중반에** 추가로 깐다(6장은 PyTorch 없이 돌아간다). 용량이 크고, 컴퓨터마다 받아야 할 파일이 달라서 아래 명령 하나로 처리한다.
+딥러닝(PyTorch)을 쓰는 **5장과 7장은 학기 중반에** 추가로 깐다(6장 기본 실습은 PyTorch 없이 돌아가고, GPU로 U-Net을 학습하는 선택 실습 `6-0a`에만 필요하다). 용량이 크고, 컴퓨터마다 받아야 할 파일이 달라서 아래 명령 하나로 처리한다.
 
 ```
 python lecture_practice/setup_torch.py
