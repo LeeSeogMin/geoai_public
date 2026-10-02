@@ -16,6 +16,8 @@ lecture_practice/chapter4/data/*
 !lecture_practice/chapter4/data/stations.geojson
 !lecture_practice/chapter4/data/spatial_points.geojson
 !lecture_practice/chapter4/data/grid_vulnerability.parquet
+!lecture_practice/chapter6/data/
+!lecture_practice/chapter6/data/change_masks.npz
 
 # 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
 lecture_practice/**/results/

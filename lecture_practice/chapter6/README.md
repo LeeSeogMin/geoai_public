@@ -7,26 +7,45 @@
 - **분석 1 (공공)** — 변화 마스크를 평가·필터링해 행정구역별 우선순위표로 옮긴다.
 - **분석 2 (비즈니스)** — 유휴 부지 마스크에서 형상 피처를 뽑아 개발 실사 후보 목록을 자른다.
 
+기본 실습은 지금처럼 CPU에서 실행합니다. GPU가 있는 수강생은 선택 실습 `6-0a`에서 작은 U-Net을 직접 학습해 변화 마스크를 만들 수 있습니다. 두 경로는 같은 입력 자료를 쓰지만, 선택 실습은 기존 마스크나 기본 실습의 결과를 덮어쓰지 않습니다.
+
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
-- `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **준비 스크립트(`6-0`, `6-0b`)를 먼저 실행**해야 나머지가 돌아갑니다. 두 준비 스크립트는 서로 독립이며, 각각 `data/change_masks.npz`와 `data/urban_block.npz`를 만듭니다.
+- 분석 1의 `data/change_masks.npz`는 저장소에 포함되어 있습니다. 분석 2는 `data/urban_block.npz`가 필요하므로 `6-0b` 준비 스크립트를 먼저 실행해야 합니다.
+- U-Net 선택 실습에는 PyTorch가 필요합니다. `python lecture_practice/setup_torch.py`로 컴퓨터에 맞는 CUDA·MPS·CPU 빌드를 설치하고, `python lecture_practice/check_env.py`의 `딥러닝 장치` 항목을 확인하세요.
 
 실습 파일 (실행 순서대로)
 
-- `lecture_practice/chapter6/code/6-0-simdata-prep.py` — 분석 1용 두 시점 NDVI 래스터·변화 마스크 생성 (128×128, 픽셀 10m)
 - `lecture_practice/chapter6/code/6-0b-site-simdata-prep.py` — 분석 2용 도시 블록 래스터 생성 (512×512, 픽셀 1m). 도로·건물·유휴 부지 정답과 오차 3종을 심은 예측 마스크, 대조군 마스크 3종
+- `lecture_practice/chapter6/code/6-0a-unet-change-detection.py` — 선택 실습. 두 시점 NDVI를 입력으로 받는 소형 U-Net 학습, 공간 검증 영역의 IoU·Dice 계산
 - `lecture_practice/chapter6/code/6-1-change-detection-policy.py` — IoU·정밀도·재현율 평가, 거짓변화 필터, 행정구역 집계
 - `lecture_practice/chapter6/code/6-2-site-sourcing.py` — 객체화·형상 피처·3단 요건 필터·면적 편향 보정·대조군 3종·임계값 비용 곡선·실사 순서
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python lecture_practice/chapter6/code/6-0-simdata-prep.py
-python lecture_practice/chapter6/code/6-0b-site-simdata-prep.py
 python lecture_practice/chapter6/code/6-1-change-detection-policy.py
+python lecture_practice/chapter6/code/6-0b-site-simdata-prep.py
 python lecture_practice/chapter6/code/6-2-site-sourcing.py
 ```
+
+GPU U-Net 선택 실습 (NVIDIA GPU)
+
+```bash
+python lecture_practice/setup_torch.py
+python lecture_practice/check_env.py
+python lecture_practice/chapter6/code/6-0a-unet-change-detection.py --device cuda
+```
+
+Apple Silicon Mac은 마지막 명령의 `cuda`를 `mps`로 바꿉니다. 장치를 자동 선택하려면 `--device auto`를 쓰며, GPU가 없는 컴퓨터에서도 `--device cpu`로 구조를 확인할 수 있습니다. `cuda`나 `mps`를 명시했는데 해당 장치를 사용할 수 없으면 코드는 CPU로 전환하지 않고 중단합니다.
+
+U-Net 성공 여부 확인
+
+- 첫 출력의 `장치`가 NVIDIA에서는 `cuda`, Apple Silicon에서는 `mps`인지 확인합니다.
+- 학습 중 `train loss`가 출력되고 마지막에 검증 영역의 `IoU`와 `Dice`가 나오면 학습과 추론을 모두 실행한 것입니다.
+- `results/6-0a-unet-cuda.png` 또는 `results/6-0a-unet-mps.png`에서 두 시점 NDVI, 정답, U-Net 확률 지도를 비교합니다.
+- 이 값은 한 개의 합성 장면을 공간 분할해 얻으므로 실제 위성영상 성능으로 해석하지 않습니다.
 
 예상 결과(검증 포인트) — 분석 1
 
@@ -36,7 +55,7 @@ python lecture_practice/chapter6/code/6-2-site-sourcing.py
 - 행정구역 우선순위 1위: `구역 9`, 변화 면적 `2.93ha`
 - 탐지된 개발 변화 총 `17.3ha`
 
-> `6-0b`는 별도의 난수 생성기(seed 20260813)를 쓰므로 **위 분석 1 수치는 `6-0b`를 추가·수정해도 바뀌지 않습니다.** 값이 달라졌다면 `6-0-simdata-prep.py` 쪽이 변경된 것이니 먼저 확인하세요.
+> `6-0b`는 별도의 난수 생성기(seed 20260813)를 쓰므로 **위 분석 1 수치는 `6-0b`를 추가·수정해도 바뀌지 않습니다.** 분석 1 값이 달라졌다면 `data/change_masks.npz` 파일을 먼저 확인하세요.
 
 예상 결과(검증 포인트) — 분석 2
 

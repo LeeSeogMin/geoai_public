@@ -8,8 +8,8 @@
   세그멘테이션 출력(변화 마스크) → IoU/정밀도 평가 → 거짓변화 필터링 →
   행정구역별 변화 면적 집계 → 복구·규제 우선순위
 
-재현성 원칙: 무거운 U-Net/SAM 학습 대신, 그 '출력(변화 마스크)'을 미리 준비한
-  데이터(6-0-simdata-prep.py가 생성·저장)에서 불러온다
+재현성 원칙: 무거운 U-Net/SAM 학습 대신, 그 '출력(변화 마스크)'을 저장소에
+    포함한 사전 생성 데이터에서 불러온다
   (모델 자체는 5장 CNN·6.1~6.3 본문에서 다룸). 평가·필터링·집계는 실제 계산값.
 
 거짓 변화(false change): 구름·그림자·계절·센서 차이로 생기는 가짜 변화.
@@ -17,7 +17,6 @@
 
 데이터: 교육용 시뮬레이션(128×128 래스터, 픽셀 10m=0.01ha). seed 42.
 실행:
-    python 6-0-simdata-prep.py            # 최초 1회: 데이터 준비
     python 6-1-change-detection-policy.py
 """
 
@@ -36,7 +35,7 @@ MASKS_PATH = DATA_DIR / "change_masks.npz"
 if not MASKS_PATH.exists():
     raise SystemExit(
         f"데이터가 없습니다: {MASKS_PATH}\n"
-        "먼저 실행: python 6-0-simdata-prep.py"
+        "저장소를 다시 내려받아 data/change_masks.npz 파일을 확인하세요."
     )
 
 H = W = 128                         # 래스터 크기
@@ -58,7 +57,7 @@ def iou_prf(pred, true):
 
 
 def load_masks():
-    """미리 준비한 NDVI 래스터와 변화 마스크를 불러온다(6-0-simdata-prep.py 생성)."""
+    """저장소에 포함한 NDVI 래스터와 변화 마스크를 불러온다."""
     d = np.load(MASKS_PATH)
     return d["ndvi_t1"], d["ndvi_t2"], d["true_change"], d["pred"]
 
