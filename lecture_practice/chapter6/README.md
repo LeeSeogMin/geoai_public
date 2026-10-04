@@ -1,6 +1,6 @@
 # 6장 실습: 변화 탐지 결과의 정책 집계와 개발 가능 부지 탐색
 
-이 실습은 `docs/ch06.md`와 `lecture/ch06.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter6/results/`에 저장되어 있습니다.
+이 실습은 `docs/chapter6.md`와 `lecture/ch06.md`의 내용을 코드로 확인하는 목적입니다. 아래 코드를 실행하면 결과 로그와 CSV가 `lecture_practice/chapter6/results/`에 생성됩니다. 이 폴더는 공개 저장소에 포함하지 않으므로, 내려받은 직후에는 비어 있는 것이 정상입니다.
 
 두 개의 분석이 들어 있습니다.
 
@@ -84,7 +84,7 @@ U-Net 성공 여부 확인
 
 연관 자료
 
-- 교재: `docs/ch06.md` — 세그멘테이션·파운데이션 모델·SAM
+- 교재: `docs/chapter6.md` — 세그멘테이션과 변화 탐지
 - 강의: `lecture/ch06.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
