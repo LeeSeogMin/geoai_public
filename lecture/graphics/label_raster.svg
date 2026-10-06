@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" font-family="sans-serif">
+  <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle">같은 격자에 참·거짓을 적을 때와 덩어리 번호를 적을 때</text>
+
+  <text x="224" y="78" font-size="15" font-weight="bold" text-anchor="middle">① 참·거짓 마스크</text>
+  <g>
+    <rect x="112" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="128.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="144" y="92" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="160.0" y="112.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="176" y="92" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="192.0" y="112.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="208" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="224.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="240" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="272" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="288.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="304" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="112" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="128.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="144" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="160.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="176" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="192.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="208" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="224.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="240" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="256.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="272" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="288.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="304" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="112" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="128.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="144" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="160.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="176" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="192.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="208" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="224.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="240" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="272" y="156" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="288.0" y="176.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="304" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="112" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="128.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="144" y="188" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="160.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="176" y="188" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="192.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="208" y="188" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="224.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="240" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="272" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="288.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="304" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="112" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="128.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="144" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="160.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="176" y="220" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="192.0" y="240.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">T</text>
+    <rect x="208" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="224.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="240" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="256.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="272" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="288.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+    <rect x="304" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">F</text>
+  </g>
+  <text x="224" y="276" font-size="12" text-anchor="middle" fill="#667085">픽셀마다 답이 하나 — 대상 픽셀 11개</text>
+  <text x="224" y="294" font-size="12" text-anchor="middle" fill="#dc2626">어느 픽셀이 어느 덩어리인지 알 수 없음</text>
+
+  <line x1="346" y1="172" x2="406" y2="172" stroke="#667085" stroke-width="2"/>
+  <path d="M 406 172 l -9 -5 l 0 10 z" fill="#667085"/>
+  <text x="376" y="160" font-size="12" text-anchor="middle" fill="#667085">연결요소</text>
+  <text x="376" y="196" font-size="11" text-anchor="middle" fill="#667085">label()</text>
+
+  <text x="536" y="78" font-size="15" font-weight="bold" text-anchor="middle">② 덩어리 번호 격자</text>
+  <g>
+    <rect x="424" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="440.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="456" y="92" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="472.0" y="112.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="488" y="92" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="504.0" y="112.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="520" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="536.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="552" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="568.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="584" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="600.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="616" y="92" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="632.0" y="112.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="424" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="440.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="456" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="472.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="488" y="124" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="504.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="520" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="536.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="552" y="124" width="32" height="32" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <text x="568.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">2</text>
+    <rect x="584" y="124" width="32" height="32" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <text x="600.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">2</text>
+    <rect x="616" y="124" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="632.0" y="144.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="424" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="440.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="456" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="472.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="488" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="504.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="520" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="536.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="552" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="568.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="584" y="156" width="32" height="32" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <text x="600.0" y="176.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">2</text>
+    <rect x="616" y="156" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="632.0" y="176.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="424" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="440.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="456" y="188" width="32" height="32" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+    <text x="472.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#d97706">3</text>
+    <rect x="488" y="188" width="32" height="32" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+    <text x="504.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#d97706">3</text>
+    <rect x="520" y="188" width="32" height="32" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+    <text x="536.0" y="208.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#d97706">3</text>
+    <rect x="552" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="568.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="584" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="600.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="616" y="188" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="632.0" y="208.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="424" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="440.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="456" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="472.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="488" y="220" width="32" height="32" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+    <text x="504.0" y="240.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#d97706">3</text>
+    <rect x="520" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="536.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="552" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="568.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="584" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="600.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+    <rect x="616" y="220" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="632.0" y="240.0" font-size="13" font-weight="normal" text-anchor="middle" fill="#aab4c0">0</text>
+  </g>
+  <text x="536" y="276" font-size="12" text-anchor="middle" fill="#667085">덩어리마다 다른 번호, 배경은 0</text>
+  <text x="536" y="294" font-size="12" text-anchor="middle" fill="#15803d">번호별로 세면 1번 4픽셀 · 2번 3픽셀 · 3번 4픽셀</text>
+
+  <line x1="60" y1="318" x2="700" y2="318" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="380" y="344" font-size="15" font-weight="bold" text-anchor="middle">③ 무엇을 "맞닿았다"고 볼지에 따라 번호가 갈린다</text>
+  <text x="234" y="372" font-size="13" font-weight="bold" text-anchor="middle">4-이웃 (상하좌우만)</text>
+  <g>
+    <rect x="170" y="384" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="186.0" y="404.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="202" y="384" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="218.0" y="404.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="234" y="384" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="266" y="384" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="170" y="416" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="202" y="416" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="234" y="416" width="32" height="32" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <text x="250.0" y="436.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">2</text>
+    <rect x="266" y="416" width="32" height="32" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <text x="282.0" y="436.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">2</text>
+  </g>
+  <text x="234" y="472" font-size="12" text-anchor="middle" fill="#667085">모서리만 닿은 두 덩어리 → 번호 1과 2</text>
+  <text x="234" y="490" font-size="12" text-anchor="middle" fill="#2563eb">두 객체로 셈</text>
+  <text x="514" y="372" font-size="13" font-weight="bold" text-anchor="middle">8-이웃 (대각선도 포함)</text>
+  <g>
+    <rect x="450" y="384" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="466.0" y="404.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="482" y="384" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="498.0" y="404.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="514" y="384" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="546" y="384" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="450" y="416" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="482" y="416" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="514" y="416" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="530.0" y="436.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+    <rect x="546" y="416" width="32" height="32" fill="#bfdbfe" stroke="#2563eb" stroke-width="1"/>
+    <text x="562.0" y="436.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#2563eb">1</text>
+  </g>
+  <text x="514" y="472" font-size="12" text-anchor="middle" fill="#667085">같은 그림 → 모두 번호 1</text>
+  <text x="514" y="490" font-size="12" text-anchor="middle" fill="#2563eb">한 객체로 셈</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="sans-serif">
+  <text x="450" y="28" font-size="18" font-weight="bold" text-anchor="middle">마스크를 결정 단위로 옮기는 세 경로</text>
+
+  <rect x="350" y="52" width="200" height="61" rx="6" fill="#f8fafc" stroke="#667085" stroke-width="1.5"/>
+  <text x="450" y="76" font-size="14" font-weight="bold" text-anchor="middle">마스크</text>
+  <text x="450" y="98" font-size="11.5" text-anchor="middle" fill="#667085">픽셀마다 대상인지 아닌지를 적은 격자</text>
+
+    <rect x="15" y="165" width="270" height="180" rx="6" fill="#ffffff" stroke="#175cd3" stroke-width="1.5"/>
+  <path d="M 15 171 a 6 6 0 0 1 6 -6 h 258 a 6 6 0 0 1 6 6 v 26 h -270 z" fill="#dbeafe"/>
+  <text x="150.0" y="189" font-size="15" font-weight="bold" text-anchor="middle" fill="#175cd3">구역별 면적</text>
+  <text x="150.0" y="221" font-size="12" text-anchor="middle" fill="#334155">마스크를 행정구역 격자에 포개어</text>
+  <text x="150.0" y="239" font-size="12" text-anchor="middle" fill="#334155">구역마다 변화 픽셀을 합산</text>
+  <text x="150.0" y="267" font-size="12" text-anchor="middle" fill="#667085">16구역(4×4) 중 15구역에서 변화</text>
+  <text x="150.0" y="285" font-size="12" text-anchor="middle" fill="#667085">합계 17.3ha · 1위 구역 9 = 2.93ha</text>
+  <text x="150.0" y="315" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#175cd3">→ 어느 구역을 먼저 점검할까</text>
+  <text x="150.0" y="333" font-size="11.5" text-anchor="middle" fill="#667085">(2절)</text>
+  <path d="M 450 113 V 138 H 150.0 V 161" fill="none" stroke="#667085" stroke-width="1.5"/>
+  <path d="M 150.0 165 l -5 -9 l 10 0 z" fill="#667085"/>
+  <rect x="315" y="165" width="270" height="180" rx="6" fill="#ffffff" stroke="#15803d" stroke-width="1.5"/>
+  <path d="M 315 171 a 6 6 0 0 1 6 -6 h 258 a 6 6 0 0 1 6 6 v 26 h -270 z" fill="#dcfce7"/>
+  <text x="450.0" y="189" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">객체 목록</text>
+  <text x="450.0" y="221" font-size="12" text-anchor="middle" fill="#334155">맞닿은 픽셀을 연결요소로 묶고</text>
+  <text x="450.0" y="239" font-size="12" text-anchor="middle" fill="#334155">덩어리마다 면적·최소폭·접도를 잼</text>
+  <text x="450.0" y="267" font-size="12" text-anchor="middle" fill="#667085">연결요소 949개 중 909개는 얼룩</text>
+  <text x="450.0" y="285" font-size="12" text-anchor="middle" fill="#667085">제외하고 분석 대상 40건</text>
+  <text x="450.0" y="315" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#15803d">→ 무엇을 하나로 셀까</text>
+  <text x="450.0" y="333" font-size="11.5" text-anchor="middle" fill="#667085">(7절)</text>
+  <path d="M 450 113 V 138 H 450.0 V 161" fill="none" stroke="#667085" stroke-width="1.5"/>
+  <path d="M 450.0 165 l -5 -9 l 10 0 z" fill="#667085"/>
+  <rect x="615" y="165" width="270" height="180" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <path d="M 615 171 a 6 6 0 0 1 6 -6 h 258 a 6 6 0 0 1 6 6 v 26 h -270 z" fill="#fef3c7"/>
+  <text x="750.0" y="189" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">후보표</text>
+  <text x="750.0" y="221" font-size="12" text-anchor="middle" fill="#334155">객체 목록에 개발 요건 부등식을</text>
+  <text x="750.0" y="239" font-size="12" text-anchor="middle" fill="#334155">걸어 통과한 것만 남김</text>
+  <text x="750.0" y="267" font-size="12" text-anchor="middle" fill="#667085">40건 → 면적 20건 → 접도 9건</text>
+  <text x="750.0" y="285" font-size="12" text-anchor="middle" fill="#667085">→ 최소폭 8건</text>
+  <text x="750.0" y="315" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#b45309">→ 현장 실사를 어디로 보낼까</text>
+  <text x="750.0" y="333" font-size="11.5" text-anchor="middle" fill="#667085">(10절)</text>
+  <path d="M 450 113 V 138 H 750.0 V 161" fill="none" stroke="#667085" stroke-width="1.5"/>
+  <path d="M 750.0 165 l -5 -9 l 10 0 z" fill="#667085"/>
+
+  <text x="450" y="378" font-size="12" text-anchor="middle" fill="#667085">셋 모두 픽셀을 세어 사람이 세는 단위로 바꾸는 계산임. 어느 경로를 쓸지 착수 시점에 정함(3.2)</text>
+</svg>
