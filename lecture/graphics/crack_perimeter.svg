@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" font-family="sans-serif">
+  <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle">크랙 둘레는 경계 칸의 개수가 아니라 경계선 토막의 길이다</text>
+  <text x="380" y="52" font-size="12" text-anchor="middle" fill="#667085">가로 4m × 세로 3m 블록, 픽셀 한 변 1m</text>
+
+  <text x="168" y="80" font-size="15" font-weight="bold" text-anchor="middle">① 경계에 놓인 칸을 세면</text>
+  <rect x="60" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="96" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="132" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="168" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="204" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="240" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="60" y="131" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="96" y="131" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="132" y="131" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="168" y="131" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="204" y="131" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="240" y="131" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="60" y="167" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="96" y="167" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="132" y="167" width="36" height="36" fill="#bfdbfe" stroke="#d97706"/>
+    <rect x="168" y="167" width="36" height="36" fill="#bfdbfe" stroke="#d97706"/>
+    <rect x="204" y="167" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="240" y="167" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="60" y="203" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="96" y="203" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="132" y="203" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="168" y="203" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="204" y="203" width="36" height="36" fill="#fde68a" stroke="#d97706"/>
+    <rect x="240" y="203" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="60" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="96" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="132" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="168" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="204" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="240" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="168" y="303" font-size="13" font-weight="bold" text-anchor="middle" fill="#d97706">경계 칸 10개 · 안쪽 칸 2개</text>
+  <text x="168" y="323" font-size="12" text-anchor="middle" fill="#667085">모퉁이 칸도 한 칸으로 셈</text>
+
+  <text x="528" y="80" font-size="15" font-weight="bold" text-anchor="middle">② 칸 사이 경계선 토막을 세면</text>
+  <rect x="420" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="456" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="492" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="528" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="564" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="600" y="95" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="420" y="131" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="456" y="131" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="492" y="131" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="528" y="131" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="564" y="131" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="131" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="420" y="167" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="456" y="167" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="492" y="167" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="528" y="167" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="564" y="167" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="167" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="420" y="203" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="456" y="203" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="492" y="203" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="528" y="203" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="564" y="203" width="36" height="36" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="203" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="420" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="456" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="492" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="528" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="564" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <rect x="600" y="239" width="36" height="36" fill="#ffffff" stroke="#cbd5e1"/>
+    <line x1="460" y1="131" x2="488" y2="131" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="460" y1="239" x2="488" y2="239" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="496" y1="131" x2="524" y2="131" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="496" y1="239" x2="524" y2="239" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="532" y1="131" x2="560" y2="131" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="532" y1="239" x2="560" y2="239" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="568" y1="131" x2="596" y2="131" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="568" y1="239" x2="596" y2="239" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="456" y1="135" x2="456" y2="163" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="600" y1="135" x2="600" y2="163" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="456" y1="171" x2="456" y2="199" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="600" y1="171" x2="600" y2="199" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="456" y1="207" x2="456" y2="235" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <line x1="600" y1="207" x2="600" y2="235" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+  <text x="528" y="303" font-size="13" font-weight="bold" text-anchor="middle" fill="#dc2626">토막 14개 = 2 × (4 + 3) = 14m</text>
+  <text x="528" y="323" font-size="12" text-anchor="middle" fill="#667085">모퉁이 칸은 두 변이 드러나 토막이 둘</text>
+
+  <line x1="60" y1="352" x2="700" y2="352" stroke="#cbd5e1"/>
+  <text x="380" y="376" font-size="12.5" text-anchor="middle" fill="#667085">같은 도형을 두 방식으로 세면 10과 14로 갈림</text>
+  <text x="380" y="396" font-size="12.5" text-anchor="middle" fill="#667085">40m × 25m 필지라면 크랙 둘레는 2 × (40 + 25) = 130m</text>
+</svg>

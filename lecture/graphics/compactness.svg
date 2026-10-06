@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" font-family="sans-serif">
+  <text x="410" y="30" font-size="18" font-weight="bold" text-anchor="middle">조밀도 4πA/P² — 면적이 같아도 길쭉할수록 값이 0에 가까워진다</text>
+  <text x="410" y="52" font-size="12" text-anchor="middle" fill="#667085">넷 모두 면적 100㎡로 같고 모양만 다름. 그림은 실제 비율대로 그림</text>
+  <circle cx="110" cy="150" r="20.3" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="110" y="78" font-size="14" font-weight="bold" text-anchor="middle">원</text>
+  <text x="110" y="96" font-size="11.5" text-anchor="middle" fill="#667085">지름 11.3m</text>
+  <text x="110" y="228" font-size="12" text-anchor="middle" fill="#667085">둘레 35.4m</text>
+  <text x="110" y="252" font-size="17" font-weight="bold" text-anchor="middle" fill="#2563eb">1.000</text>
+  <rect x="287.0" y="132.0" width="36.0" height="36.0" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+  <text x="305" y="78" font-size="14" font-weight="bold" text-anchor="middle">정사각형</text>
+  <text x="305" y="96" font-size="11.5" text-anchor="middle" fill="#667085">10m × 10m</text>
+  <text x="305" y="228" font-size="12" text-anchor="middle" fill="#667085">둘레 40.0m</text>
+  <text x="305" y="252" font-size="17" font-weight="bold" text-anchor="middle" fill="#15803d">0.785</text>
+  <rect x="455.0" y="142.8" width="90.0" height="14.4" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <text x="500" y="78" font-size="14" font-weight="bold" text-anchor="middle">직사각형</text>
+  <text x="500" y="96" font-size="11.5" text-anchor="middle" fill="#667085">25m × 4m</text>
+  <text x="500" y="228" font-size="12" text-anchor="middle" fill="#667085">둘레 58.0m</text>
+  <text x="500" y="252" font-size="17" font-weight="bold" text-anchor="middle" fill="#d97706">0.374</text>
+  <rect x="605.0" y="146.4" width="180.0" height="7.2" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+  <text x="695" y="78" font-size="14" font-weight="bold" text-anchor="middle">직사각형</text>
+  <text x="695" y="96" font-size="11.5" text-anchor="middle" fill="#667085">50m × 2m</text>
+  <text x="695" y="228" font-size="12" text-anchor="middle" fill="#667085">둘레 104.0m</text>
+  <text x="695" y="252" font-size="17" font-weight="bold" text-anchor="middle" fill="#dc2626">0.116</text>
+  <line x1="60" y1="272" x2="760" y2="272" stroke="#cbd5e1"/>
+  <text x="410" y="296" font-size="13" text-anchor="middle" fill="#667085">면적이 분자에 한 번, 둘레가 분모에 제곱으로 들어가므로 둘레만 길어지면 값이 빠르게 떨어짐</text>
+</svg>

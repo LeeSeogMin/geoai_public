@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="sans-serif">
+  <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle">최소폭은 객체 안에 들어가는 가장 큰 원의 지름으로 잰다</text>
+  <text x="380" y="52" font-size="12" text-anchor="middle" fill="#667085">가로 7m × 세로 5m 블록, 픽셀 한 변 1m</text>
+
+  <text x="167.0" y="86" font-size="14.5" font-weight="bold" text-anchor="middle">① 거리변환 — 가장 가까운 배경까지 몇 칸인가</text>
+  <rect x="55" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="71.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="87" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="103.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="119" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="135.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="151" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="167.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="183" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="199.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="215" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="231.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="247" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="263.0" y="121.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="55" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="71.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="87" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="103.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="119" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="135.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="151" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="167.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="183" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="199.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="215" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="231.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="247" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="263.0" y="153.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="55" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="71.0" y="185.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="87" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="103.0" y="185.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="119" y="164" width="32" height="32" fill="#fecaca" stroke="#dc2626"/>
+    <text x="135.0" y="185.0" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#dc2626">3</text>
+    <rect x="151" y="164" width="32" height="32" fill="#fecaca" stroke="#dc2626"/>
+    <text x="167.0" y="185.0" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#dc2626">3</text>
+    <rect x="183" y="164" width="32" height="32" fill="#fecaca" stroke="#dc2626"/>
+    <text x="199.0" y="185.0" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#dc2626">3</text>
+    <rect x="215" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="231.0" y="185.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="247" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="263.0" y="185.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="55" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="71.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="87" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="103.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="119" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="135.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="151" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="167.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="183" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="199.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="215" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="231.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">2</text>
+    <rect x="247" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="263.0" y="217.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="55" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="71.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="87" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="103.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="119" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="135.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="151" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="167.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="183" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="199.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="215" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="231.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+    <rect x="247" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <text x="263.0" y="249.0" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#667085">1</text>
+  <text x="167.0" y="286" font-size="12" text-anchor="middle" fill="#667085">가장자리는 1, 안으로 갈수록 커짐</text>
+  <text x="167.0" y="305" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#dc2626">최댓값 3 — 가장 깊은 칸</text>
+
+  <text x="552.0" y="86" font-size="14.5" font-weight="bold" text-anchor="middle">② 그 값을 반지름으로 삼은 원</text>
+  <rect x="440" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="472" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="504" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="536" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="568" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="632" y="100" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="440" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="472" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="504" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="536" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="568" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="632" y="132" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="440" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="472" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="504" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="536" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="568" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="632" y="164" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="440" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="472" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="504" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="536" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="568" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="632" y="196" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="440" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="472" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="504" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="536" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="568" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="600" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+    <rect x="632" y="228" width="32" height="32" fill="#bfdbfe" stroke="#2563eb"/>
+  <ellipse cx="552.0" cy="180.0" rx="80.0" ry="80.0" fill="none" stroke="#667085" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="552.0" cy="180.0" r="96.0" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <circle cx="552.0" cy="180.0" r="4" fill="#dc2626"/>
+  <text x="552.0" y="286" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#dc2626">격자가 낸 원 — 지름 2 × 3 = 6m</text>
+  <text x="552.0" y="305" font-size="12" text-anchor="middle" fill="#667085">점선은 실제로 들어가는 가장 큰 원 — 지름 5m</text>
+
+  <line x1="55" y1="356" x2="705" y2="356" stroke="#cbd5e1"/>
+  <text x="380" y="380" font-size="12.5" text-anchor="middle" fill="#667085">블록의 좁은 변이 5m인데 이렇게 재면 6m가 나옴. 거리를 칸 단위로만 셀 수 있어 생기는 차이임</text>
+  <text x="380" y="402" font-size="12.5" text-anchor="middle" fill="#667085">코드 주석의 "격자 이산화로 약 1m 과대"가 이 차이를 가리킴</text>
+</svg>
