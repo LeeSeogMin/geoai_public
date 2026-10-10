@@ -13,10 +13,9 @@
 
 평가: RMSE(점추정 정확도), 구간 포함률(coverage, 90% 목표), 평균 구간 폭.
 
-데이터: 미리 준비한 교육용 합성 교통 시계열(일·주 주기 + 이분산 잡음)을
-  불러와 쓴다. 분석·예측은 실제 계산값.
+데이터: 저장소에 포함된 교통량 시계열(lecture_practice/chapter7/data/,
+  일·주 주기 + 이분산 잡음)을 불러와 쓴다. 분석·예측은 실제 계산값.
 실행:
-    python 7-0-simdata-prep.py            # 최초 1회: 데이터 준비
     python 7-2-spatiotemporal-uncertainty.py
 """
 
@@ -42,7 +41,7 @@ MC_SAMPLES = 50                      # MC Dropout 표본 수
 
 
 def load_traffic():
-    """미리 준비한 합성 교통량 시계열을 불러온다.
+    """저장소에 포함된 교통량 시계열을 불러온다.
 
     일 주기(24h) + 주 주기(168h)에 낮 피크 시간대일수록 큰 이분산 잡음이
     더해진 구조다. 시간대에 따라 잡음 크기가 달라져 불확실성 구조를 담는다.
@@ -50,7 +49,9 @@ def load_traffic():
     path = DATA_DIR / "traffic_volume.npy"
     if not path.exists():
         raise SystemExit(
-            f"데이터가 없습니다: {path}\n먼저 실행: python 7-0-simdata-prep.py")
+            f"데이터가 없습니다: {path}\n이 데이터는 저장소에 포함되어 있습니다."
+            " lecture_practice/chapter7/data/ 폴더를 확인하고,"
+            " 없으면 저장소를 다시 받으세요.")
     return np.load(path)
 
 

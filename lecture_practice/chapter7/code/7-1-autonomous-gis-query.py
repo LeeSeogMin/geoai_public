@@ -17,10 +17,9 @@
   ② hallucinated layer — 존재하지 않는 레이어("지하철역") 참조
   ③ 모호한 질의 — 의도를 파싱할 수 없음
 
-데이터: 미리 준비한 교육용 합성 카탈로그를 불러와 쓴다(개인 식별 불가,
-  격자·시설 좌표). 계산은 실제값.
+데이터: 저장소에 포함된 레이어 카탈로그(lecture_practice/chapter7/data/)를
+  불러와 쓴다(개인 식별 불가, 격자·시설 좌표). 계산은 실제값.
 실행:
-    python 7-0-simdata-prep.py   # 최초 1회: 데이터 준비
     python 7-1-autonomous-gis-query.py
 """
 
@@ -39,10 +38,10 @@ DATA_CRS = "EPSG:5179"          # 데이터 좌표계(한국 미터좌표)
 
 
 def load_catalog():
-    """미리 준비한 레이어 카탈로그를 불러온다.
+    """저장소에 포함된 레이어 카탈로그를 불러온다.
 
-    미터좌표(EPSG:5179) 가상의 도시(0~10000m 범위)의 세 레이어 —
-    인구격자·도서관·학교 — 를 저장 파일에서 읽어 카탈로그 딕셔너리로 만든다.
+    미터좌표(EPSG:5179) 도시(0~10000m 범위)의 세 레이어 —
+    인구격자·도서관·학교 — 를 data/ 폴더에서 읽어 카탈로그 딕셔너리로 만든다.
     """
     paths = {
         "인구격자": (DATA_DIR / "pop_grid.parquet", "grid"),
@@ -53,7 +52,9 @@ def load_catalog():
     if missing:
         raise SystemExit(
             "데이터가 없습니다: " + ", ".join(missing)
-            + "\n먼저 실행: python 7-0-simdata-prep.py"
+            + "\n이 데이터는 저장소에 포함되어 있습니다."
+            + " lecture_practice/chapter7/data/ 폴더를 확인하고,"
+            + " 없으면 저장소를 다시 받으세요."
         )
     return {
         name: {"crs": DATA_CRS, "data": pd.read_parquet(path), "kind": kind}

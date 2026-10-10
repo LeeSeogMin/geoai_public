@@ -5,26 +5,25 @@
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
-- `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`7-0-simdata-prep.py`와 `7-0b-demand-simdata.py`를 먼저 실행**해야 나머지가 돌아갑니다. 두 준비 스크립트는 서로 다른 난수열을 쓰므로 실행 순서를 바꿔도 결과가 흔들리지 않습니다.
+- 7-1·7-2가 쓰는 데이터(`pop_grid.parquet`, `libraries.parquet`, `schools.parquet`, `traffic_volume.npy`)는 **저장소의 `data/` 폴더에 포함되어 있습니다.** 저장소를 받으면 함께 내려오므로 따로 만들 것이 없습니다. 7-3이 쓰는 수요 패널만 **`7-0b-demand-simdata.py`를 먼저 실행**해 만듭니다.
 - `7-2`는 LSTM을 학습합니다. CPU로 1~2분이면 끝납니다.
 - `7-3`은 품목 2개 × 데이터셋 2종으로 LSTM을 네 번 학습합니다. CPU로 40초쯤 걸립니다. 가속기(CUDA·MPS)를 쓰면 커널 차이로 소수점 아래가 달라지므로, 본문 수치와 맞추기 위해 **CPU로 고정**해 두었습니다(`PIN_CPU = True`).
 - **외부 LLM API를 호출하지 않습니다.** `7-1`은 자연어 질의를 규칙으로 파싱하고 검증 관문이 어떻게 작동하는지를 보여 주는 시연이며, API 키가 필요 없습니다.
 
 실습 파일 (실행 순서대로)
 
-- `lecture_practice/chapter7/code/7-0-simdata-prep.py` — 레이어 카탈로그·교통량 시계열 생성 (7-1·7-2용)
-- `lecture_practice/chapter7/code/7-0b-demand-simdata.py` — 점포 6곳 × 두 품목 × 1,460일 수요 패널 생성 (7-3용). 이분산 패널과 대조군 C1(등분산) 패널을 함께 저장
-- `lecture_practice/chapter7/code/7-1-autonomous-gis-query.py` — 자연어 공간 질의와 검증 관문의 차단 사례
-- `lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` — LSTM + MC Dropout 시공간 예측과 예측구간
+- `lecture_practice/chapter7/code/7-1-autonomous-gis-query.py` — 자연어 공간 질의와 검증 관문의 차단 사례 (`data/`의 레이어 카탈로그 사용)
+- `lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py` — LSTM + MC Dropout 시공간 예측과 예측구간 (`data/`의 교통량 시계열 사용)
+- `lecture_practice/chapter7/code/7-0b-demand-simdata.py` — 점포 6곳 × 두 품목 × 1,460일 수요 패널 준비 (7-3용). 이분산 패널과 대조군 C1(등분산) 패널을 함께 저장
 - `lecture_practice/chapter7/code/7-3-demand-newsvendor.py` — LSTM + 3분할 정규화 conformal → 임계비 발주 결정과 세 정책의 실현 손익
+- `lecture_practice/chapter7/code/7-0-simdata-prep.py` — `data/` 폴더의 7-1·7-2용 데이터를 다시 만드는 스크립트(교수자용). 학생은 실행할 필요가 없습니다
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python lecture_practice/chapter7/code/7-0-simdata-prep.py
-python lecture_practice/chapter7/code/7-0b-demand-simdata.py
 python lecture_practice/chapter7/code/7-1-autonomous-gis-query.py
 python lecture_practice/chapter7/code/7-2-spatiotemporal-uncertainty.py
+python lecture_practice/chapter7/code/7-0b-demand-simdata.py
 python lecture_practice/chapter7/code/7-3-demand-newsvendor.py
 ```
 
@@ -55,7 +54,7 @@ python lecture_practice/chapter7/code/7-3-demand-newsvendor.py
 - 7-2는 신경망 학습이라 RMSE와 구간 폭이 실행마다 소폭 흔들립니다. 확인해야 할 방향은 **포함률이 목표 90% 근처**, **aleatoric이 epistemic보다 큼** 두 가지입니다.
 - 7-3도 마찬가지로 금액의 절대값보다 **방향**이 중요합니다. 두 품목의 임계비가 0.5의 반대편에 있고, 그래서 발주가 점추정의 위아래로 갈리는 것이 요점입니다.
 - 7-3의 원가·판가는 **설명을 위해 정한 가정값**입니다. 어느 업종의 실제 원가율도 나타내지 않습니다.
-- 세 실습 모두 **시뮬레이션 데이터**를 씁니다. 교통량과 수요 패널은 합성 시계열이고, 레이어 카탈로그도 실습용으로 만든 것입니다.
+- 실습 데이터는 교육용으로 준비된 것입니다. 레이어 카탈로그·교통량 시계열은 저장소의 `data/` 폴더로 제공되고, 수요 패널은 `7-0b`가 만듭니다. 어느 지역의 실제 통계도 나타내지 않습니다.
 
 결과 파일
 
