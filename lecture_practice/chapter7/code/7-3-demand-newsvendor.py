@@ -94,7 +94,10 @@ DEVICE = torch.device("cpu") if PIN_CPU else get_device()
 def load_panel(name):
     path = DATA_DIR / name
     if not path.exists():
-        raise SystemExit(f"데이터가 없습니다: {path}\n먼저 실행: python 7-0b-demand-simdata.py")
+        raise SystemExit(
+            f"데이터가 없습니다: {path}\n이 데이터는 저장소에 포함되어 있습니다."
+            " lecture_practice/chapter7/data/ 폴더를 확인하고,"
+            " 없으면 저장소를 다시 받으세요.")
     return pd.read_parquet(path)
 
 

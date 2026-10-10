@@ -25,6 +25,8 @@ lecture_practice/chapter7/data/*
 !lecture_practice/chapter7/data/libraries.parquet
 !lecture_practice/chapter7/data/schools.parquet
 !lecture_practice/chapter7/data/traffic_volume.npy
+!lecture_practice/chapter7/data/store_demand.parquet
+!lecture_practice/chapter7/data/store_demand_homoskedastic.parquet
 
 # 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
 lecture_practice/**/results/
