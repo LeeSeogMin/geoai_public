@@ -1,5 +1,5 @@
 """
-13장 실습 4(비즈니스): 상권 세분화와 점포 철수 결정
+12장 실습 4(비즈니스): 상권 세분화와 점포 철수 결정
 ====================================================
 비즈니스 질문: "인구감소지역에 흩어진 점포망에서 (a) 상권 유형이 생활서비스의
 존속을 실제로 가르는가, (b) 어느 점포를 언제 닫아야 하는가."
@@ -21,8 +21,8 @@
     센다. 공백은 "원래 없던 곳"과 "있었는데 사라진 곳"을 구분하지 못한다.
 
 실행:
-    python 13-0b-trade-area-data-prep.py      # 최초 1회: 실데이터 준비
-    python 13-4-trade-area-exit-decision.py
+    python 12-0b-trade-area-data-prep.py      # 최초 1회: 실데이터 준비
+    python 12-4-trade-area-exit-decision.py
 """
 
 from pathlib import Path
@@ -56,7 +56,7 @@ SEED = 42
 K_RANGE = range(2, 9)
 N_PERM = 1000
 N_TOP_MAJOR = 6          # 군집 피처에 쓸 업종 대분류 개수(점포 수 상위)
-LIFE_LABEL = "수리·개인"  # 배후 인구 대리로 쓰는 업종 대분류(13-0b의 n_personal)
+LIFE_LABEL = "수리·개인"  # 배후 인구 대리로 쓰는 업종 대분류(12-0b의 n_personal)
 
 # ── 단위 경제 파라미터 (전부 가정값. 고정비 F = 1 기준의 무차원 비율) ──────────
 # 공표된 업종별 매출·임대료·원상복구비 수치를 확인하지 못했으므로 금액을 쓰지 않는다.
@@ -77,7 +77,7 @@ def load_inputs() -> tuple[pd.DataFrame, pd.DataFrame]:
     if not (up.exists() and sp.exists()):
         raise SystemExit(
             f"데이터가 없습니다: {up.name} / {sp.name}\n"
-            "먼저 실행: python 13-0b-trade-area-data-prep.py")
+            "먼저 실행: python 12-0b-trade-area-data-prep.py")
     return pd.read_parquet(up), pd.read_parquet(sp)
 
 
@@ -224,7 +224,7 @@ def draw_map(units: pd.DataFrame, stores: pd.DataFrame, dec: np.ndarray,
 
     fig.suptitle("인구감소지역과 비지정 군의 상권 유형, 그리고 철수 후보의 분포", y=0.97)
     fig.tight_layout()
-    out = RESULTS_DIR / "13-4-trade-area-exit-map.png"
+    out = RESULTS_DIR / "12-4-trade-area-exit-map.png"
     fig.savefig(out, dpi=150, bbox_inches="tight")
     plt.close(fig)
     return out
@@ -241,7 +241,7 @@ def jaccard(a: np.ndarray, b: np.ndarray) -> float:
 def main() -> None:
     rng = np.random.default_rng(SEED)
     print("=" * 76)
-    print("상권 세분화와 점포 철수 결정 (13-4, 실데이터 + 단위 경제)")
+    print("상권 세분화와 점포 철수 결정 (12-4, 실데이터 + 단위 경제)")
     print("=" * 76)
 
     units, stores = load_inputs()

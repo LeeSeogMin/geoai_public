@@ -388,7 +388,7 @@ geoAI/
 ├── CLAUDE.md                 위 파일을 Claude Code가 읽도록 연결
 ├── context.md                내 작업 맥락 (직접 쓴다)
 ├── todo.md                   내 할 일 목록 (직접 쓴다)
-├── lecture/                  강의 교재 (ch01.md ~ ch15.md)
+├── lecture/                  강의 교재 (ch01.md ~ ch14.md, 보론 2편)
 └── lecture_practice/                 실습
     ├── README.md             이 문서
     ├── check_env.py          환경 자가진단
@@ -397,10 +397,11 @@ geoAI/
     ├── agent-setup/          규칙 파일 배치 도구
     ├── requirements-student.txt      전 장 공통 패키지
     ├── requirements-student-dl.txt   5·7장 딥러닝 패키지
-    └── chapter1/ ~ chapter15/
-        ├── code/             실행할 코드 ({장}-{절}-{주제}.py)
-        ├── data/             실습 데이터 (준비 코드가 만들어 넣는다)
-        └── results/          실행 결과 (로그·표·그림)
+    ├── chapter1/ ~ chapter14/    (8·15장은 중간·기말고사라 폴더가 없다)
+    │   ├── code/             실행할 코드 ({장}-{절}-{주제}.py)
+    │   ├── data/             실습 데이터 (준비 코드가 만들어 넣는다)
+    │   └── results/          실행 결과 (로그·표·그림)
+    └── bonus-env-climate/, bonus-welfare-health/   선택 읽기 보론(진도 제외, 구조는 위와 같다)
 ```
 
 코드 파일 이름 규칙은 이렇다.

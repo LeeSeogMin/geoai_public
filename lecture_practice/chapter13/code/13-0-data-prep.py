@@ -1,8 +1,8 @@
 """
-14장 준비: 국내 공개 데이터를 입지 분석용 파일로 정리
+13장 준비: 국내 공개 데이터를 입지 분석용 파일로 정리
 =====================================================
 원자료 두 개(소상공인 상가정보, 서울 생활인구 행정동)를 읽어 한 자치구·한 업종으로
-좁힌 분석용 파일을 만든다. 분석 코드(14-1)는 이 결과만 읽는다.
+좁힌 분석용 파일을 만든다. 분석 코드(13-1)는 이 결과만 읽는다.
 
 내려받는 방법은 ../data/raw/README.md 참조. 두 포털 모두 자동 다운로드가 막혀
 있어 한 번은 직접 받아야 한다.
@@ -14,7 +14,7 @@
 결과가 달라지므로, 본문 수치는 이 기준과 함께 인용한다.
 
 실행:
-    python 14-0-data-prep.py
+    python 13-0-data-prep.py
 """
 
 from pathlib import Path
@@ -151,7 +151,7 @@ def prepare_demand() -> tuple[pd.DataFrame, str]:
 
 def main() -> None:
     print("=" * 64)
-    print("14장 준비: 국내 공개 데이터 → 입지 분석용 파일")
+    print("13장 준비: 국내 공개 데이터 → 입지 분석용 파일")
     print("=" * 64)
 
     print("\n[1/2] 상가(상권)정보")
@@ -174,7 +174,7 @@ def main() -> None:
 
     stamp = pd.Timestamp.now().strftime("%Y-%m-%d")
     (DATA_DIR / "SOURCES.txt").write_text(
-        "14장 분석용 파일의 출처\n"
+        "13장 분석용 파일의 출처\n"
         f"- 상가(상권)정보: {stores_src}\n"
         f"- 생활인구(행정동): {demand_src}\n"
         f"- 처리 일자: {stamp}\n"
@@ -186,7 +186,7 @@ def main() -> None:
     print("-" * 64)
     print(f"저장: cafes.parquet({len(stores)}행), demand_dong.parquet({len(demand)}행), SOURCES.txt")
     print("=" * 64)
-    print("[완료] 다음: python 14-1-huff-location-cannibalization.py")
+    print("[완료] 다음: python 13-1-huff-location-cannibalization.py")
 
 
 if __name__ == "__main__":

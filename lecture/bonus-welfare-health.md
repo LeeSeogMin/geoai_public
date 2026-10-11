@@ -1,6 +1,8 @@
-# 12장 복지·보건 수요 분석, 라벨에서 배분까지
+# 보론(복지·보건) 복지·보건 수요 분석, 라벨에서 배분까지
 
-> - 이 장에 나오는 예측 위험, 접근성, 검정통계량, 처치효과, 입지 선택 결과는 모두 `lecture_practice/chapter12/`의 코드를 실제로 실행해 얻은 값
+> **성격**: 선택 읽기. 2026-2 학기 진도에서 제외한 원고(구 12장)다. 본문의 그림·제출물 번호와 실습 경로(`lecture_practice/bonus-welfare-health/`)는 구 번호를 그대로 쓴다.
+
+> - 이 장에 나오는 예측 위험, 접근성, 검정통계량, 처치효과, 입지 선택 결과는 모두 `lecture_practice/bonus-welfare-health/`의 코드를 실제로 실행해 얻은 값
 > - 예시를 위해 지어낸 숫자는 없음(신호 결합의 조건부확률 계산 하나만 예외이며, 그 자리에서 "예시 계산"이라고 표시함)
 
 ## 1. 이 장의 핵심 질문
@@ -125,7 +127,7 @@ cd geoai_public   # 저장소 루트 — 이 장의 명령은 모두 여기서 �
 pip install -r lecture_practice/requirements-student.txt
 ```
 
-○ 12장이 쓰는 패키지만 따로 보려면 `lecture_practice/chapter12/code/requirements.txt`에 적혀 있으나, 설치는 위 공통 파일 하나로 끝남  
+○ 이 보론이 쓰는 패키지만 따로 보려면 `lecture_practice/bonus-welfare-health/code/requirements.txt`에 적혀 있으나, 설치는 위 공통 파일 하나로 끝남  
 ○ 공간 블록 교차검증과 999회 순열검정은 수 분이 걸리므로 여유를 두고 실행함  
 
 □ 이 장에서 실행할 코드는 일곱 개이며 순서가 정해져 있음  
@@ -141,19 +143,19 @@ pip install -r lecture_practice/requirements-student.txt
 | 7 | `12-3-dml-highdim-confounding.py` | 개입효과 DML 추정 | 10 |
 
 ○ 3번은 2번이 만든 파일을, 4~7번은 1번이 만든 파일을 입력으로 받으므로 **1·2번을 먼저 실행**해야 함  
-○ 2번만 원자료를 따로 내려받아야 하고(`lecture_practice/chapter12/data/raw/README.md` 참고), 나머지는 인터넷 없이 돌아감  
+○ 2번만 원자료를 따로 내려받아야 하고(`lecture_practice/bonus-welfare-health/data/raw/README.md` 참고), 나머지는 인터넷 없이 돌아감  
 ○ 3~7번끼리는 서로 의존하지 않음. 위 순서는 본문이 결과를 인용하는 순서임  
-○ 본문에 인용한 출력은 모두 `lecture_practice/chapter12/results/`의 실행 로그에서 그대로 가져온 것이며, 어느 파일에서 왔는지를 출력 블록 첫 줄에 적어 두었음  
+○ 본문에 인용한 출력은 모두 `lecture_practice/bonus-welfare-health/results/`의 실행 로그에서 그대로 가져온 것이며, 어느 파일에서 왔는지를 출력 블록 첫 줄에 적어 두었음  
 
 □ 준비 단계 두 개를 지금 실행함. 여기서 만든 파일을 6절부터 12절까지 계속 씀  
 
 ```bash
-python lecture_practice/chapter12/code/12-0-simdata-prep.py
-python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py
+python lecture_practice/bonus-welfare-health/code/12-0-simdata-prep.py
+python lecture_practice/bonus-welfare-health/code/12-0b-vetcare-data-prep.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-0-simdata-prep.log
+# 출처: lecture_practice/bonus-welfare-health/results/12-0-simdata-prep.log
   복지 사각지대 읍면동 300개(20×15 격자) → welfare_units.parquet
   감염병 시공간 발생 16×16격자×40주(총 14345건) → infectious_incidence.parquet, infectious_pop.parquet
   DML 합성 표본 N=6000, 위기지표 p=20(+D,Y,m,ey_true) → dml_sample.parquet
@@ -161,7 +163,7 @@ python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-0b-vetcare-data-prep.log
+# 출처: lecture_practice/bonus-welfare-health/results/12-0b-vetcare-data-prep.log
   서울 전체 점포 554,092개, 자치구 25개
   좌표 결측률(전 업종) 0.000%
   동물병원(소분류 '동물병원') 905개 | 자치구 25개 | 행정동 344개
@@ -253,11 +255,11 @@ python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py
 □ 세 번째 코드를 실행함. 서울 동물병원 자료로 2SFCA 접근성부터 순차 입지 선택까지 한 번에 계산하며, 이 절과 12절의 모든 수치가 이 한 번의 실행에서 나옴  
 
 ```bash
-python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
+python lecture_practice/bonus-welfare-health/code/12-5-unmet-demand-siting.py
 ```
 
 ```python
-# 주석에 붙인 출력의 출처: lecture_practice/chapter12/results/12-5-unmet-demand-siting.log [1]
+# 주석에 붙인 출력의 출처: lecture_practice/bonus-welfare-health/results/12-5-unmet-demand-siting.log [1]
 def two_sfca(D, d_dc, capacity, radius):
     inside = d_dc <= radius                        # 권역 안인가
     served = inside.T @ D                          # 병원별 권역 안 수요 합
@@ -291,11 +293,11 @@ Uᵢ = Dᵢ × max(0, 1 − Aᵢ / A*)
 □ 네 번째 코드를 실행함. 접근성 하나로 사각지대 위험이 얼마나 설명되는지 재는 것이 첫 출력이고, 7.1·8절·11.1절의 표도 모두 이 한 번의 실행에서 나옴  
 
 ```bash
-python lecture_practice/chapter12/code/12-1-welfare-blindspot-priority.py
+python lecture_practice/bonus-welfare-health/code/12-1-welfare-blindspot-priority.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-1-welfare-blindspot-priority.log [1층 GIS]
+# 출처: lecture_practice/bonus-welfare-health/results/12-1-welfare-blindspot-priority.log [1층 GIS]
 분석 단위: 300개 읍면동(20×15 격자), 개인 식별 불가 집계
 
 [1층 GIS] 의료 접근성 취약지 (이동시간 > 30분)
@@ -318,7 +320,7 @@ python lecture_practice/chapter12/code/12-1-welfare-blindspot-priority.py
 □ 6.3에서 실행한 코드의 `[2층 AI]` 구간이 두 피처 구성을 같은 분할로 비교함  
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-1-welfare-blindspot-priority.log [2층 AI]
+# 출처: lecture_practice/bonus-welfare-health/results/12-1-welfare-blindspot-priority.log [2층 AI]
 [2층 AI] 사각지대 위험 예측: 공간 피처 유무 + 검증 방식 비교
   공간 블록 CV | 비공간 피처     R² =  0.681
   공간 블록 CV | +공간 시차 피처 R² =  0.737  (개선 +0.056)
@@ -350,11 +352,11 @@ python lecture_practice/chapter12/code/12-1-welfare-blindspot-priority.py
 □ 다섯 번째 코드를 실행함. 16×16 격자 40주 자료에서 다음 주 발생을 예측함  
 
 ```bash
-python lecture_practice/chapter12/code/12-2-infectious-spatiotemporal-risk.py
+python lecture_practice/bonus-welfare-health/code/12-2-infectious-spatiotemporal-risk.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-2-infectious-spatiotemporal-risk.log
+# 출처: lecture_practice/bonus-welfare-health/results/12-2-infectious-spatiotemporal-risk.log
 분석 단위: 256개 격자 × 40주, 보건소 권역 8개 (집계, 개인 식별 불가)
 총 발생: 14345건, 피크 주 발생: 1279건
 
@@ -397,7 +399,7 @@ python lecture_practice/chapter12/code/12-2-infectious-spatiotemporal-risk.py
 □ 6.3에서 실행한 코드의 `[불확실성]` 구간이 그 폭을 찍음  
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-1-welfare-blindspot-priority.log [불확실성]
+# 출처: lecture_practice/bonus-welfare-health/results/12-1-welfare-blindspot-priority.log [불확실성]
 [불확실성] 정규화 conformal 예측구간(90%, OOF 근사)과 신뢰등급
   90% 예측구간 경험적 포함률(OOF) = 0.903  (목표 0.90)
   구간 반폭(%p): 중앙값 1.53, 범위 [0.59, 4.19]
@@ -444,11 +446,11 @@ python lecture_practice/chapter12/code/12-2-infectious-spatiotemporal-risk.py
 □ 여섯 번째 코드를 실행함. 이 절의 수치는 전부 이 명령의 출력임  
 
 ```bash
-python lecture_practice/chapter12/code/12-4-satscan-cluster.py
+python lecture_practice/bonus-welfare-health/code/12-4-satscan-cluster.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-4-satscan-cluster.log
+# 출처: lecture_practice/bonus-welfare-health/results/12-4-satscan-cluster.log
 분석 단위: 300개 격자(20×15), 총발생 C=10371건, 총인구 P=443692명
 참 군집(심은 신호): 중심 (6.0, 4.0), 반경 2.6, 단위 21개, 상대위험 RR=3.0
 
@@ -517,11 +519,11 @@ python lecture_practice/chapter12/code/12-4-satscan-cluster.py
 □ 일곱 번째 코드를 실행함. 참 처치효과를 아는 합성자료에 세 추정량을 같은 표본으로 적용함  
 
 ```bash
-python lecture_practice/chapter12/code/12-3-dml-highdim-confounding.py
+python lecture_practice/bonus-welfare-health/code/12-3-dml-highdim-confounding.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-3-dml-highdim-confounding.log
+# 출처: lecture_practice/bonus-welfare-health/results/12-3-dml-highdim-confounding.log
 참 처치효과 θ(설계값) = -2.00  (개입이 위기점수를 낮춤)
 표본 N = 6000,  위기지표 차원 p = 20
 처치비율 = 0.625  (성향점수 범위 0.047~0.953, positivity 대략 성립)
@@ -554,7 +556,7 @@ DML(교차적합 K=5)            |   -1.874 |   +0.126 |   0.036
 3. **교차적합으로 학습 표본과 평가 표본을 분리함.** 같은 자료로 보조 함수를 학습하고 그 자료에서 잔차를 구하면 모형이 과적합해 잔차를 실제보다 작게 만들고, 그 축소가 θ̂에 편향으로 남음
 
 ```python
-# 주석에 붙인 출력의 출처: lecture_practice/chapter12/results/12-3-dml-highdim-confounding.log [2]
+# 주석에 붙인 출력의 출처: lecture_practice/bonus-welfare-health/results/12-3-dml-highdim-confounding.log [2]
 resid_y = Y - ghat                                       # 결과 잔차 Ỹ
 resid_d = D - mhat                                       # 처치 잔차 D̃
 denom = float(resid_d @ resid_d)
@@ -581,7 +583,7 @@ psi = resid_d * (resid_y - theta * resid_d)              # 강건 표준오차 �
   ○ **교차적합의 몫도 표에서 드러남.** 직교화는 하되 교차적합을 빼면 θ̂가 −1.754로, 교차적합을 넣은 −1.874보다 참값에서 멂  
   ○ 이 대비가 정책 판단에 주는 함의는 **방법 선택이 결론을 바꾼다는 점**임. 전자를 근거로 삼으면 효과가 미미한 사업으로 판정되어 예산이 줄고, 후자를 근거로 삼으면 효과가 확인된 사업으로 판정됨  
 
-![직교화 잔차회귀와 추정량별 편향](../lecture_practice/chapter12/results/12-3-dml-orthogonal-residual.png)
+![직교화 잔차회귀와 추정량별 편향](../lecture_practice/bonus-welfare-health/results/12-3-dml-orthogonal-residual.png)
 
 **그림 12.1** 왼쪽은 처치 잔차를 가로축, 결과 잔차를 세로축에 놓고 그린 산점도임. 빨간 직선의 기울기 −1.87이 DML 추정치이고 검은 점선이 참값 −2.00임 — **10.2의 2단계(두 잔차의 관계에서 처치효과를 뽑는다)가 실제로 하는 계산이 이 직선 하나임.** 오른쪽은 세 추정량의 편향 비교로, 순진 OLS만 참값에서 크게 떨어져 있음
 
@@ -655,11 +657,11 @@ psi = resid_d * (resid_y - theta * resid_d)              # 강건 표준오차 �
 □ 이 절의 표는 6.2에서 실행한 코드가 함께 만든 것임. 다시 실행해도 같은 결과가 나옴  
 
 ```bash
-python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
+python lecture_practice/bonus-welfare-health/code/12-5-unmet-demand-siting.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-5-unmet-demand-siting.log [0]
+# 출처: lecture_practice/bonus-welfare-health/results/12-5-unmet-demand-siting.log [0]
 [0] 자료와 가정
   기존 동물병원 905개 | 수요 단위(행정동) 415개 | 후보지 5,462개
   심야 생활인구 합계 9,617,177명 (상주 인구의 대리)
@@ -721,7 +723,7 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 □ 같은 실행의 `[3]` 구간이 열 지점을 순서대로 찍음  
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-5-unmet-demand-siting.log [3]
+# 출처: lecture_practice/bonus-welfare-health/results/12-5-unmet-demand-siting.log [3]
   순서 | 후보ID | 자치구 | 단독배분 | 배분 | 실현 | 용량소진 | 한계순증 | 한계기여이익(백만) | 컷라인 | 동점
      1 |   1515 | 은평구    |    3,228 |  3,208 |  1,989 |   100.0% |    1,989 |               44.2 | 통과     |    72
      2 |    687 | 금천구    |    2,738 |  2,700 |  1,989 |   100.0% |    1,989 |               44.2 | 통과     |    69
@@ -764,7 +766,7 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 □ 같은 실행의 `[5]` 구간이 격차를 세 항으로 갈라 놓음  
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-5-unmet-demand-siting.log [5]
+# 출처: lecture_practice/bonus-welfare-health/results/12-5-unmet-demand-siting.log [5]
   → 탐욕 − N1: 실현 +6,494마리 (+48.5%), 자기잠식 -16.8%p, 영업이익 +144.2백만원/월
   격차 분해 (탐욕 − 미충족수요 순위, 마리):
     ① 자리 자체의 포획력(단독 합 차이)     +8,770
@@ -784,7 +786,7 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 □ 같은 실행의 `[8]` 구간이 가정값을 하나씩 흔들어 본 결과임  
 
 ```text
-# 출처: lecture_practice/chapter12/results/12-5-unmet-demand-siting.log [8]
+# 출처: lecture_practice/bonus-welfare-health/results/12-5-unmet-demand-siting.log [8]
   시나리오 | 미충족합계 | G실현포획 | 개설가능 | 기준 대비 Jaccard | G−N1 실현차
   기준                   108,080    19,893        10              1.00      +6,494
   β 1.5                108,080    16,399        10              0.43      +3,257
@@ -801,7 +803,7 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 □ 다만 결론의 부호는 바뀌지 않음. 탐욕 선택이 순위표를 앞서는 정도는 모든 시나리오에서 0 이상이며 부호가 뒤집힌 적이 없음. **순위표를 그대로 결정으로 쓰면 손해라는 결론은 가정에 견고하고, 손해의 크기만 가정에 달려 있음**  
   ○ 확인 못 한 사육률 ρ는 선택 자체를 바꾸지 않음(ρ를 ±30% 바꿔도 Jaccard 1.00). 6.3에서 A\*를 수요가중 평균으로 정의한 덕분에 접근성 비율이 ρ에 불변이기 때문임  
 
-![미충족 수요와 순차 선택 입지의 공간 분포](../lecture_practice/chapter12/results/12-5-vet-siting-map.png)
+![미충족 수요와 순차 선택 입지의 공간 분포](../lecture_practice/bonus-welfare-health/results/12-5-vet-siting-map.png)
 
 **그림 12.2** 서울 동물병원의 미충족 수요와 제약 하 순차 입지 선택. 점 크기는 미충족 수요, 색은 접근성 비율임
 
@@ -821,26 +823,24 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 ○ **예측과 처분 사이에 사람의 검토를 둠.** 오탐이 불이익 처분으로 직결되면 예측 체계가 없었으면 생기지 않았을 피해가 새로 생기고, 그 피해는 이의제기 자원이 가장 적은 집단에 감 (11.2)  
 ○ **진단 지표의 상위가 곧 좋은 입지는 아님.** 탐욕 순차 선택이 미충족 수요 순위표보다 실현 포획 48.5% 많았고, 격차의 주된 출처는 자기잠식이 아니라 자리 자체의 포획력이었음 (12.6)  
 
-## 14. 과제
+## 14. 직접 돌려보기 (선택, 제출 없음)
+
+> 이 장은 2026-2 학기 진도에서 빠졌으므로 `scripts/submit.py`로 제출하는 과제가 없다. 직접 돌려 보고 싶으면 아래 명령을 그대로 실행한다(동물병원 실습은 실제 서울 자료를 쓰므로 `12-0b-vetcare-data-prep.py`를 먼저 실행해 원자료를 준비해야 함 — `lecture_practice/bonus-welfare-health/data/raw/README.md` 참고).
 
 ```bash
-python scripts/submit.py 12 --id 학번 --name 이름
+python lecture_practice/bonus-welfare-health/code/12-0b-vetcare-data-prep.py
+python lecture_practice/bonus-welfare-health/code/12-5-unmet-demand-siting.py
 ```
 
-□ 실행하면 `submissions/` 폴더에 `제출_12장_학번.md`가 생성되고 `12-5-unmet-demand-siting.py`의 실행 결과가 붙어 있음  
+□ 실행하면 미충족 수요 분석과 순차 입지 선택이 돌아감  
   ○ **눈여겨볼 곳은 미충족 수요 상위 목록과 탐욕적 순차 선택 결과가 어긋나는 지점**  
 
-○ 빈칸 세 개를 채움  
+○ 스스로 점검할 질문 세 개
 
 1. 눈에 띈 숫자 하나를 그대로 옮겨 적고, 왜 눈에 띄었는지 한 문장으로
 2. 그 숫자가 왜 그렇게 나왔는가 — 12.6의 격차 분해(자리 포획력·자기잠식·용량)를 근거로 설명하라
 3. **"가장 부족한 곳 10군데"와 "순서대로 고른 10군데"가 다르다. 예산을 어느 쪽에 쓰겠는가? 왜 두 목록이 갈리는가?**
 
-○ **3번이 이 과제의 핵심.** 1·2번은 로그와 표를 읽으면 나오지만 3번은 판단이 필요함  
+○ **3번이 핵심.** 1·2번은 로그와 표를 읽으면 나오지만 3번은 판단이 필요함  
 
-> - **막혀도 제출함**
-> - 실행이 실패하면 오류 메시지가 파일에 담기고, 질문이 "어디서 막혔나"로 바뀜
-
-> - **이 장의 동물병원 실습은 실제 서울 자료를 씀**
-> - `12-0b-vetcare-data-prep.py`를 먼저 실행해 원자료를 준비해야 함(`lecture_practice/chapter12/data/raw/README.md` 참고)
 > - 사각지대·감염병·DML·SaTScan 네 실습은 합성자료이므로 결과가 항상 같지만, 동물병원 실습은 실데이터 갱신 시점에 따라 값이 달라질 수 있음

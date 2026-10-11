@@ -1,5 +1,5 @@
 """
-8장 분석 예제: 야간조명 + 이중차분법(DID)/이중기계학습(DML)으로 개발사업 효과 측정
+9장 분석 예제: 야간조명 + 이중차분법(DID)/이중기계학습(DML)으로 개발사업 효과 측정
 ======================================================================
 정책 질문: "개발사업(예: 산업단지·교통망 투자)이 지역 경제활동을 실제로 높였는가?"
 
@@ -20,8 +20,8 @@
         야간조명 + 행정 개발사업 자료를 결합한다.
 
 실행:
-    python 8-0-simdata-prep.py            # 최초 1회: 데이터 준비
-    python 8-1-nightlight-did-dml.py
+    python 9-0-simdata-prep.py            # 최초 1회: 데이터 준비
+    python 9-1-nightlight-did-dml.py
 """
 
 from pathlib import Path
@@ -40,7 +40,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
-# 데이터 설계 파라미터(준비 스크립트 8-0과 동일 값 — 분석·해석에 사용)
+# 데이터 설계 파라미터(준비 스크립트 9-0과 동일 값 — 분석·해석에 사용)
 GRID_COLS = 15
 N_REGIONS = 300                       # 20행 × 15열 격자(읍면동 가정)
 YEARS = np.arange(2016, 2024)         # 8년
@@ -60,7 +60,7 @@ def load_nightlight():
     cov_path = DATA_DIR / "nightlight_covariates.parquet"
     if not panel_path.exists() or not cov_path.exists():
         raise SystemExit(
-            f"데이터가 없습니다: {panel_path}\n먼저 실행: python 8-0-simdata-prep.py")
+            f"데이터가 없습니다: {panel_path}\n먼저 실행: python 9-0-simdata-prep.py")
     panel = pd.read_parquet(panel_path)
     X = pd.read_parquet(cov_path)
     treated = panel.groupby("region")["treated"].first().to_numpy()
@@ -208,7 +208,7 @@ def plot_event_study(es):
     ax.set_title("Event-study: pre-trend check (pre coefs near 0 = parallel)")
     ax.legend()
     fig.tight_layout()
-    out = DATA_DIR / "fig_8_1_event_study.png"
+    out = DATA_DIR / "fig_9_1_event_study.png"
     fig.savefig(out, dpi=150)
     plt.close(fig)
     print(f"\n그림 저장: {out.relative_to(SCRIPT_DIR.parent.parent.parent)}")

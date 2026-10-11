@@ -1,5 +1,5 @@
 """
-8장 심화 예제: 시차 도입(staggered adoption) DID — TWFE는 언제 편향되는가
+9장 심화 예제: 시차 도입(staggered adoption) DID — TWFE는 언제 편향되는가
 ======================================================================
 정책 맥락: 국내 정책은 지자체마다 도입 시점이 다른 경우가 흔하다(예: 사업의
 단계적 확대, 조례의 순차 시행). 이때 표준 양방향고정효과(TWFE) DID를 그대로
@@ -20,8 +20,8 @@
         으로 심어 진짜 ATT를 알고 추정량을 비교한다(진짜 overall ATT = 0.7875).
 
 실행:
-    python 8-0-simdata-prep.py            # 최초 1회: 데이터 준비
-    python 8-2-staggered-did.py
+    python 9-0-simdata-prep.py            # 최초 1회: 데이터 준비
+    python 9-2-staggered-did.py
 """
 
 from pathlib import Path
@@ -37,7 +37,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
-# 데이터 설계 파라미터(준비 스크립트 8-0과 동일 값 — 분석·해석에 사용)
+# 데이터 설계 파라미터(준비 스크립트 9-0과 동일 값 — 분석·해석에 사용)
 # 코호트: 조기 도입(g=3), 후기 도입(g=5), 미도입(never=99). 각 100단위.
 # 기간 t = 0..7 (예: 2016~2023).
 N_PER = 100
@@ -50,7 +50,7 @@ THETA = 0.30  # 처치 후 1기당 효과 증가분(동적 효과) — 두 코�
 panel_path = DATA_DIR / "staggered_panel.parquet"
 if not panel_path.exists():
     raise SystemExit(
-        f"데이터가 없습니다: {panel_path}\n먼저 실행: python 8-0-simdata-prep.py")
+        f"데이터가 없습니다: {panel_path}\n먼저 실행: python 9-0-simdata-prep.py")
 panel = pd.read_parquet(panel_path)
 
 # 진짜 overall ATT = 처치된 관측의 결정론적 효과 평균
@@ -128,6 +128,6 @@ ax.set_ylabel("treatment effect (ATT)")
 ax.set_title("Staggered DID: TWFE bias vs CS group-time ATT")
 ax.legend(fontsize=8)
 fig.tight_layout()
-fig_path = DATA_DIR / "fig_8_2_staggered_did.png"
+fig_path = DATA_DIR / "fig_9_2_staggered_did.png"
 fig.savefig(fig_path, dpi=110)
 print(f"\n[그림] {fig_path}")

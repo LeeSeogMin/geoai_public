@@ -41,7 +41,7 @@
 
 실행 방법 (프로젝트 루트, 통합 .venv):
     source .venv/bin/activate
-    python lecture_practice/chapter12/code/12-0-simdata-prep.py
+    python lecture_practice/bonus-welfare-health/code/12-0-simdata-prep.py
 """
 
 from pathlib import Path
@@ -108,7 +108,7 @@ def prepare_welfare_units():
     true_risk = (
         0.12 * crisis + 0.22 * neigh_crisis          # spillover 항(이웃)이 더 큼
         + 0.04 * medical_access + 0.10 * neigh_access
-        + 14.0 * elderly + 8.0 * single
+        + 13.0 * elderly + 8.0 * single
         + 0.004 * np.maximum(neigh_crisis - 15, 0) * neigh_access  # 비선형 권역 상호작용
         + rng.normal(0, 1.2, N)
     )

@@ -112,21 +112,13 @@ ASSIGNMENTS: dict[int, dict] = {
         "ask": "점장에게 '내일 90% 확률로 70~130개'라고만 전하면 무엇이 남는가? "
                "숫자 하나를 정해 준다면 몇 개이고, 그 근거는 무엇인가?",
     },
-    8: {
+    9: {
         "title": "그 사업, 정말 효과가 있었나",
-        "prep": ["8/8-0-simdata-prep.py"],
-        "target": "8/8-1-nightlight-did-dml.py",
+        "prep": ["9/9-0-simdata-prep.py"],
+        "target": "9/9-1-nightlight-did-dml.py",
         "watch": "단순 비교 추정치와 이중차분·이중강건 추정치의 격차",
         "ask": "단순 비교 값을 사업 성과로 보고하면 무엇이 부풀려지는가? "
                "추정치와 함께 반드시 적어야 할 것을 하나 들어라.",
-    },
-    9: {
-        "title": "어디를 검사할 것인가",
-        "prep": ["9/9-0-simdata-prep.py"],
-        "target": "9/9-3-supply-chain-due-diligence.py",
-        "watch": "비용비에 따라 달라지는 컷오프와 실사 대상 구역 수",
-        "ask": "데이터도 예측도 그대로인데 검사 대상 수가 크게 움직인다. "
-               "무엇이 그것을 움직이는가? 당신이라면 몇 곳을 검사하겠는가?",
     },
     10: {
         "title": "경계선의 마법 — 규제가 집값을 낮췄나",
@@ -145,35 +137,26 @@ ASSIGNMENTS: dict[int, dict] = {
                "그 지역에 대한 처방은 '즉시 집행'인가 다른 무엇인가?",
     },
     12: {
-        "title": "부족한 곳을 찾은 다음의 질문",
-        "prep": ["12/12-0b-vetcare-data-prep.py"],
-        "target": "12/12-5-unmet-demand-siting.py",
-        "watch": "미충족 수요 상위 목록과 순차 선택 결과가 어긋나는 지점",
-        "fixed_seed": True,
-        "ask": "'가장 부족한 곳 10군데'와 '순서대로 고른 10군데'가 다르다. "
-               "예산을 어느 쪽에 쓰겠는가? 왜 두 목록이 갈리는가?",
-    },
-    13: {
         "title": "남을 것인가 철수할 것인가",
-        "prep": ["13/13-0b-trade-area-data-prep.py"],
-        "target": "13/13-4-trade-area-exit-decision.py",
+        "prep": ["12/12-0b-trade-area-data-prep.py"],
+        "target": "12/12-4-trade-area-exit-decision.py",
         "watch": "상권 유형별 단위 경제와 철수 판정이 갈리는 경계",
         "ask": "철수로 판정된 지역 하나를 골라라. "
                "그 판정을 뒤집으려면 어떤 값이 얼마나 달라져야 하는가?",
     },
-    14: {
+    13: {
         "title": "어디에 낼 것인가 — 손님을 나눠 갖는 계산",
-        "prep": ["14/14-0-data-prep.py"],
-        "target": "14/14-1-huff-location-cannibalization.py",
+        "prep": ["13/13-0-data-prep.py"],
+        "target": "13/13-1-huff-location-cannibalization.py",
         "watch": "후보지별 배후 수요와 기존 점포에서 옮겨 오는 몫(전이율)",
         "fixed_seed": True,
         "ask": "순증이 가장 큰 후보가 곧 최선인가? "
                "이 계산에 학습 모델이 하나도 쓰이지 않았다는 사실은 무엇을 말하는가?",
     },
-    15: {
+    14: {
         "title": "통계가 통과시킨 것을 산수가 잡는다",
-        "prep": ["15/15-0-simdata-prep.py"],
-        "target": "15/15-2-market-synthetic-control.py",
+        "prep": ["14/14-0-simdata-prep.py"],
+        "target": "14/14-2-market-synthetic-control.py",
         "watch": "합성통제 추정치와 참값의 격차, 그리고 통계 진단을 통과했는지",
         "ask": "이 추정치는 통계 진단을 통과했다. "
                "그대로 결정에 넣겠는가, 한 칸을 더 두겠는가? 그 한 칸은 무엇인가?",
@@ -386,7 +369,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="과제 제출 파일을 만든다 (실습 실행 + 제출용 파일 1개 생성)",
     )
-    parser.add_argument("chapter", type=int, help="장 번호 (1~15)")
+    parser.add_argument("chapter", type=int, help="장 번호 (1~14, 8·15는 중간·기말고사라 과제 없음)")
     parser.add_argument("--id", required=True, help="학번")
     parser.add_argument("--name", default="", help="이름 (선택)")
     parser.add_argument("--timeout", type=int, default=900, help="스크립트별 제한 시간(초)")

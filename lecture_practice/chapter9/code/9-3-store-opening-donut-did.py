@@ -1,9 +1,9 @@
 """
-8장 비즈니스 분석 예제: 신규 출점의 상권 효과 — IPW-DID와 도넛 설계
+9장 비즈니스 분석 예제: 신규 출점의 상권 효과 — IPW-DID와 도넛 설계
 ====================================================================
 경영 질문: "신규점이 만든 매출 중 순증은 얼마이고, 기존 매장에서 옮겨온 몫은 얼마인가?"
 
-8-1(공공 개발사업)과 갈라지는 지점이 둘이다.
+9-1(공공 개발사업)과 갈라지는 지점이 둘이다.
   ① 처치가 내생적이다 — 사업 지정과 달리 출점은 "잘될 곳"에 배치된다.
   ② 대조군이 오염된다 — 신규점 인근 기존점 상권은 처치도 대조도 아니다(SUTVA 위반).
 
@@ -33,8 +33,8 @@
         없어 도넛이 오염을 실제로 걷어냈는지 검증할 수 없다.
 
 실행:
-    python 8-0-simdata-prep.py                    # 최초 1회: 데이터 준비
-    python 8-3-store-opening-donut-did.py
+    python 9-0-simdata-prep.py                    # 최초 1회: 데이터 준비
+    python 9-3-store-opening-donut-did.py
 """
 
 import json
@@ -73,7 +73,7 @@ GROWTH_NOISE_SD = NOISE_SD * np.sqrt(1.0 / POST_START + 1.0 / (MONTHS - POST_STA
 def load_all():
     cells_path = DATA_DIR / "store_opening_cells.parquet"
     if not cells_path.exists():
-        raise SystemExit(f"데이터가 없습니다: {cells_path}\n먼저 실행: python 8-0-simdata-prep.py")
+        raise SystemExit(f"데이터가 없습니다: {cells_path}\n먼저 실행: python 9-0-simdata-prep.py")
     cells = pd.read_parquet(cells_path)
     truth = json.loads((DATA_DIR / "store_opening_truth.json").read_text(encoding="utf-8"))
     panels = {tag: pd.read_parquet(DATA_DIR / f"store_opening_panel_{tag}.parquet")
@@ -138,7 +138,7 @@ def propensity(X, D, seed=SEED, n_trees=N_TREES):
     같은 데이터로 학습하고 예측하면 ê가 처치 여부를 외워 가중치가 붕괴한다.
     그래서 fold 밖 예측만 쓴다. 다만 처치 격자가 신규점 3곳에 뭉쳐 있어 공간 블록
     fold로는 처치가 하나도 없는 fold가 생긴다 — 여기서는 계층 무작위 fold를 쓰고,
-    그 한계를 본문에 적는다(8-1의 공간 블록 CV와 대비되는 지점이다).
+    그 한계를 본문에 적는다(9-1의 공간 블록 CV와 대비되는 지점이다).
     """
     model = RandomForestClassifier(n_estimators=n_trees, min_samples_leaf=5,
                                    random_state=seed, n_jobs=1)
@@ -640,7 +640,7 @@ def main():
     print("[4] 링별 노출-반응 프로파일 — 이분법을 버린다")
     print("-" * 84)
     prof = ring_profile(growth, cells)
-    plot_profile(prof, DATA_DIR / "fig_8_3_ring_profile.png")
+    plot_profile(prof, DATA_DIR / "fig_9_3_ring_profile.png")
 
     print("\n" + "-" * 84)
     print("[5] 반복 실험 — 배치를 다시 뽑아 평균 편향을 잰다")

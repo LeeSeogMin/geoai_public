@@ -16,7 +16,7 @@
    그 시간에 그곳에 있는 사람은 대체로 그곳에 사는 사람이다.
 
 원자료는 저장소에 포함하지 않는다. `../data/raw/README.md`의 절차를 한 번 밟으면
-되고, 같은 원자료를 쓰는 14장 폴더에 이미 있으면 그쪽을 자동으로 찾아 쓴다.
+되고, 같은 원자료를 쓰는 13장 폴더에 이미 있으면 그쪽을 자동으로 찾아 쓴다.
 
 만드는 파일 세 개:
   - vet_clinics.parquet       기존 동물병원 (좌표, 자치구, 행정동)
@@ -27,7 +27,7 @@
 갱신되면 결과가 달라지므로 본문 수치는 이 기준과 함께 인용한다.
 
 실행 방법 (프로젝트 루트, 통합 .venv):
-    python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py
+    python lecture_practice/bonus-welfare-health/code/12-0b-vetcare-data-prep.py
 """
 
 from pathlib import Path
@@ -41,10 +41,10 @@ from pyproj import Transformer
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
 
-# 원자료 탐색 순서: 12장 폴더 → 14장 폴더(같은 원자료를 쓰는 장).
+# 원자료 탐색 순서: 12장 폴더 → 13장 폴더(같은 원자료를 쓰는 장).
 # 480MB 원자료를 저장소에 두 벌 두지 않기 위한 장치다. 어느 쪽을 썼는지 로그에 남긴다.
 RAW_ROOTS = (DATA_DIR / "raw",
-             SCRIPT_DIR.parents[1] / "chapter14" / "data" / "raw")
+             SCRIPT_DIR.parents[1] / "chapter13" / "data" / "raw")
 
 TARGET_SIDO_KEYS = ("서울",)      # 원본 파일명으로 서울 파일을 고른다
 NIGHT_HOURS = (0, 5)              # 심야 재실 = 상주 인구의 대리
@@ -84,7 +84,7 @@ def find_raw(patterns: tuple[str, ...], label: str, prefer: str | None = None) -
     sys.exit(f"[중단] {label} 파일을 찾지 못했다.\n"
              f"  찾는 이름: {' 또는 '.join(patterns)} 가 들어간 .csv\n"
              f"  찾아본 폴더:\n{searched}\n"
-             f"  → lecture_practice/chapter12/data/raw/README.md 의 내려받기 절차를 먼저 밟는다.")
+             f"  → lecture_practice/bonus-welfare-health/data/raw/README.md 의 내려받기 절차를 먼저 밟는다.")
 
 
 def require_columns(cols, needed: dict[str, tuple[str, ...]], label: str) -> dict[str, str]:

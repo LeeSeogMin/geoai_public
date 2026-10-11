@@ -49,7 +49,7 @@ PRACTICE_DIR = SCRIPT_DIR.parent.parent
 
 # 상가(상권)정보 원자료를 찾을 폴더 후보. 3장 아래에 두어도 되고, 14장이 받아 둔
 # 것을 그대로 써도 된다.
-SBIZ_RAW_CANDIDATES = (RAW_DIR, PRACTICE_DIR / "chapter14" / "data" / "raw")
+SBIZ_RAW_CANDIDATES = (RAW_DIR, PRACTICE_DIR / "chapter13" / "data" / "raw")
 SBIZ_PATTERNS = ("상가", "소상공인", "상권정보")
 ENCODINGS = ("utf-8-sig", "utf-8", "cp949")
 

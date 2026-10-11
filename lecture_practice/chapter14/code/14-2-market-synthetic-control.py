@@ -1,5 +1,5 @@
 """
-15장 실습 2: 실험이 불가능할 때 — 시장 단위 합성통제로 출점 효과 추정
+14장 실습 2: 실험이 불가능할 때 — 시장 단위 합성통제로 출점 효과 추정
 ================================================================================
 결정할 문제
 --------------------------------------------------------------------------------
@@ -16,14 +16,14 @@
   [1층 GIS]  시장 격자·인접 관계, 시장별 매출 시계열 집계
   [2층 AI ]  **없다.** 이 문제의 핵심은 예측이 아니라 반사실 구성이다. 볼록조합
              최적화로 여러 대조 시장을 가중결합해 합성 대조군을 만든다.
-  [3층 결정] (실제 − 합성) 격차 = 출점의 효과. 이 값이 15-3의 NPV 계산에 들어간다.
+  [3층 결정] (실제 − 합성) 격차 = 출점의 효과. 이 값이 14-3의 NPV 계산에 들어간다.
 
-방법 홈: SCM의 정식 설명은 8.2·8.4절. 공공 실증은 13장 분석 3. 이 절은 **비즈니스
+방법 홈: SCM의 정식 설명은 8.2·8.4절. 공공 실증은 12장 분석 3. 이 절은 **비즈니스
 조건에서 무엇이 달라지는가**만 다룬다.
 
 이 예제의 핵심 긴장 — 좋은 기증 단위가 곧 오염된 시장이다
 --------------------------------------------------------------------------------
-15-0의 DGP는 시장의 성질을 공간적으로 매끄럽게 만들었다(공간 자기상관). 그래서 사전
+14-0의 DGP는 시장의 성질을 공간적으로 매끄럽게 만들었다(공간 자기상관). 그래서 사전
 궤적이 가장 닮은 시장이 바로 지리적 이웃이고, SCM이 높은 가중치를 주는 기증 단위가
 바로 파급으로 오염된 시장이다. 오염을 피하려고 이웃을 빼면 좋은 합성이 어려워진다.
 **교환이 설계에서 자동으로 발생한다.**
@@ -44,8 +44,8 @@
                        안 줄면 격차의 원인이 내생성이 아니다
 
 실행:
-    python 15-0-simdata-prep.py       # 최초 1회
-    python 15-2-market-synthetic-control.py
+    python 14-0-simdata-prep.py       # 최초 1회
+    python 14-2-market-synthetic-control.py
 """
 
 import json
@@ -80,7 +80,7 @@ def load_data():
               "geoexp_adjacency.npy", "geoexp_truth.json"]:
         if not (DATA_DIR / p).exists():
             raise SystemExit(f"데이터가 없습니다: {DATA_DIR / p}\n"
-                             "먼저 실행: python 15-0-simdata-prep.py")
+                             "먼저 실행: python 14-0-simdata-prep.py")
     panel = pd.read_parquet(DATA_DIR / "geoexp_panel.parquet")
     Y = panel.drop(columns=["market_id"]).to_numpy()
     markets = pd.read_parquet(DATA_DIR / "geoexp_markets.parquet")
@@ -307,7 +307,7 @@ def main():
     rng = np.random.default_rng(SEED)
 
     log("=" * 78)
-    log("15-2 실험이 불가능할 때 — 시장 단위 합성통제로 출점 효과 추정")
+    log("14-2 실험이 불가능할 때 — 시장 단위 합성통제로 출점 효과 추정")
     log("=" * 78)
     log(f"시장 {Y0.shape[0]}개 · 주 {Y0.shape[1]}개(사전 {n_pre}) · "
         f"참 효과 로그 {effect:+.4f} ({truth['true_effect_pct']:+.2f}%)")
@@ -536,9 +536,9 @@ def main():
     ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(RESULTS_DIR / "15-2-scm-placebo.png", dpi=140)
+    fig.savefig(RESULTS_DIR / "14-2-scm-placebo.png", dpi=140)
     plt.close(fig)
-    log("그림 저장: 15-2-scm-placebo.png")
+    log("그림 저장: 14-2-scm-placebo.png")
 
     # ---- 산출물 저장 ------------------------------------------------------
     rows = []
@@ -549,12 +549,12 @@ def main():
                          "사후 격차 기울기": v["gap_slope"],
                          "기증 수": v["n_donors"], "가중 집중도": v["hhi"],
                          "인접 가중 합": v["w_adjacent"]})
-    pd.DataFrame(rows).to_csv(RESULTS_DIR / "15-2-ladder.csv", index=False,
+    pd.DataFrame(rows).to_csv(RESULTS_DIR / "14-2-ladder.csv", index=False,
                               encoding="utf-8-sig")
-    sweep.to_csv(RESULTS_DIR / "15-2-null-random-selection.csv", index=False,
+    sweep.to_csv(RESULTS_DIR / "14-2-null-random-selection.csv", index=False,
                  encoding="utf-8-sig")
 
-    # 15-3(의사결정)이 쓰는 추정 결과를 남긴다
+    # 14-3(의사결정)이 쓰는 추정 결과를 남긴다
     handoff = {
         "treated_market": int(wA["treat"]),
         "att_log_scm_clean": float(t4["att"]),
@@ -567,11 +567,11 @@ def main():
         "pre_gap_sd": float(np.std(scm4["gap"][:n_pre], ddof=1)),
         "n_donors_clean": int(t4["n_donors"]),
     }
-    (RESULTS_DIR / "15-2-estimate.json").write_text(
+    (RESULTS_DIR / "14-2-estimate.json").write_text(
         json.dumps(handoff, ensure_ascii=False, indent=2), encoding="utf-8")
-    log("표 저장: 15-2-ladder.csv · 추정 결과 인계: 15-2-estimate.json")
+    log("표 저장: 14-2-ladder.csv · 추정 결과 인계: 14-2-estimate.json")
 
-    (RESULTS_DIR / "15-2-summary.txt").write_text("\n".join(lines), encoding="utf-8")
+    (RESULTS_DIR / "14-2-summary.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

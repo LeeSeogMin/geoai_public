@@ -1,6 +1,6 @@
-# 14장 실습: 입지 점수와 자기잠식 제약 (Huff 흡인 모형)
+# 13장 실습: 입지 점수와 자기잠식 제약 (Huff 흡인 모형)
 
-이 실습은 `docs/ch14.md` 14.6절의 분석을 코드로 확인합니다. 결과 로그는 `lecture_practice/chapter14/results/`에 있습니다.
+이 실습은 `docs/ch14.md` 14.6절의 분석을 코드로 확인합니다. 결과 로그는 `lecture_practice/chapter13/results/`에 있습니다.
 
 **이 장은 이 책에서 드물게 시뮬레이션이 아니라 국내 공개 데이터를 씁니다.** 그래서 원자료를 한 번 직접 내려받아야 합니다.
 
@@ -11,14 +11,14 @@
 
 ## 실습 파일 (실행 순서대로)
 
-- `code/14-0-data-prep.py` — 상가(상권)정보와 서울 생활인구를 읽어 강남구 카페와 행정동 수요로 정리
-- `code/14-1-huff-location-cannibalization.py` — Huff 흡인 모형으로 후보지별 배분·자기잠식·순증 계산, 제약과 민감도 검토
+- `code/13-0-data-prep.py` — 상가(상권)정보와 서울 생활인구를 읽어 강남구 카페와 행정동 수요로 정리
+- `code/13-1-huff-location-cannibalization.py` — Huff 흡인 모형으로 후보지별 배분·자기잠식·순증 계산, 제약과 민감도 검토
 
 ## 실행 방법
 
 ```bash
-python lecture_practice/chapter14/code/14-0-data-prep.py
-python lecture_practice/chapter14/code/14-1-huff-location-cannibalization.py
+python lecture_practice/chapter13/code/13-0-data-prep.py
+python lecture_practice/chapter13/code/13-1-huff-location-cannibalization.py
 ```
 
 원자료가 큽니다(서울 상가정보 약 300MB, 생활인구 약 180MB). 준비 단계는 필요한 열만 읽어 10초 안팎이면 끝납니다.
@@ -45,7 +45,7 @@ python lecture_practice/chapter14/code/14-1-huff-location-cannibalization.py
 
 ## 결과 파일
 
-- `results/14-0-data-prep.log`, `results/14-1-huff-location-cannibalization.log` — 실행 로그
+- `results/13-0-data-prep.log`, `results/13-1-huff-location-cannibalization.log` — 실행 로그
 - `results/location_candidates.csv` — 후보지 540개의 배분·자기잠식·순증·전이율
 - `data/SOURCES.txt` — 원본 파일명과 처리 일자(재현 기준)
 

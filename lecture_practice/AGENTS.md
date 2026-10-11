@@ -33,7 +33,7 @@
 ## 3. 환경
 
 - 실행은 항상 프로젝트 루트의 가상환경 `.venv`에서 한다. 전역 파이썬에 설치하라고 안내하지 않는다.
-- 패키지 설치는 `lecture_practice/requirements-student.txt`(1-4장, 8-13장)와 `lecture_practice/requirements-student-dl.txt`(5-7장)를 쓴다. 버전을 못 박아 둔 파일이므로, 특별한 이유 없이 다른 버전을 설치하라고 하지 않는다.
+- 패키지 설치는 `lecture_practice/requirements-student.txt`(1-4장, 9-14장)와 `lecture_practice/requirements-student-dl.txt`(5-7장)를 쓴다. 버전을 못 박아 둔 파일이므로, 특별한 이유 없이 다른 버전을 설치하라고 하지 않는다.
 - 환경 문제가 의심되면 먼저 `python lecture_practice/check_env.py`를 돌려 보라고 안내한다.
 - PyTorch 설치와 GPU 문제는 `python lecture_practice/setup_torch.py`로 처리한다. `pip install torch`를 직접 알려주지 않는다. 컴퓨터마다 받아야 할 빌드가 다르고(NVIDIA면 CUDA 빌드, 애플 실리콘이면 기본 빌드, 그 외 CPU 빌드), 버전 번호만 보면 CPU 빌드와 CUDA 빌드가 같아 보여서 잘못 깔린 것을 알아채기 어렵다.
 - 학생이 GPU를 쓰는지 CPU를 쓰는지 모른 채 학습 시간을 예상하지 않는다. `python lecture_practice/check_env.py`의 "딥러닝 장치" 항목을 확인하라고 한다.

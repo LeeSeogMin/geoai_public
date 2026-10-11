@@ -30,7 +30,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
 # 14장이 같은 원자료를 쓴다. 이미 받아 두었으면 재사용한다.
 RAW_DIRS = (DATA_DIR / "raw",
-            SCRIPT_DIR.parent.parent / "chapter14" / "data" / "raw")
+            SCRIPT_DIR.parent.parent / "chapter13" / "data" / "raw")
 
 TARGET_SIDO = "서울"
 CAFE_SUBCATEGORY = "카페"      # 소분류. '독서실/스터디 카페'는 성격이 달라 제외된다

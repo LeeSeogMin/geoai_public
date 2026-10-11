@@ -1,6 +1,8 @@
-# 9장 환경·기후 정책평가, 위성 관측을 정책 결정으로 바꾸기
+# 보론(환경·기후) 환경·기후 정책평가, 위성 관측을 정책 결정으로 바꾸기
 
-> - 이 장에 나오는 손실률, 추정치, 표준오차, 컷오프, 비용은 모두 `lecture_practice/chapter9/`의 코드를 실제로 실행해 얻은 값
+> **성격**: 선택 읽기. 2026-2 학기 진도에서 제외한 원고(구 9장)다. 본문의 그림·제출물 번호와 실습 경로(`lecture_practice/bonus-env-climate/`)는 구 번호를 그대로 쓴다.
+
+> - 이 장에 나오는 손실률, 추정치, 표준오차, 컷오프, 비용은 모두 `lecture_practice/bonus-env-climate/`의 코드를 실제로 실행해 얻은 값
 > - 예시를 위해 지어낸 숫자는 없음(계산 구조를 보이려고 임의로 넣은 값은 문장 안에서 "임의 입력"이라고 밝힘)
 
 ## 1. 이 장의 핵심 질문
@@ -130,14 +132,14 @@ pip install -r lecture_practice/requirements-student.txt
 ○ 1번이 만드는 자료는 세 벌이며, 어느 절이 어느 자료를 쓰는지는 파일 이름으로 갈림  
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-0-simdata-prep.log
+# 출처: lecture_practice/bonus-env-climate/results/9-0-simdata-prep.log
   산림손실 패널 6000행(300단위×20년, 보호 150) → forest_loss_panel.parquet
   참 CATE 격자 1600개(40×40, 보호 692) → cate_grid.parquet
   조달 구역 240개(참 위반확률 평균 0.128, 실현 위반 25건) → sourcing_districts.parquet
 ```
 
 ○ **6·7·10절이 쓰는 자료(300단위 20년 패널)와 8절이 쓰는 자료(40×40 격자)는 서로 다른 합성 자료임.** 패널에는 모든 격자에 같은 정책효과가 심겨 있어 이질성을 물을 수 없고, 8절은 이질성을 채점하려고 효과 크기가 격자마다 다르게 심긴 별도 자료를 씀. **두 자료의 수치를 같은 표본의 분해로 읽으면 안 됨**  
-○ 본문에 인용한 출력은 모두 `lecture_practice/chapter9/results/`의 실행 로그에서 그대로 가져온 것이며, 어느 파일에서 왔는지를 출력 블록 첫 줄에 적어 두었음 — 화면에 나온 값과 그 파일을 한 줄씩 대조하면 됨  
+○ 본문에 인용한 출력은 모두 `lecture_practice/bonus-env-climate/results/`의 실행 로그에서 그대로 가져온 것이며, 어느 파일에서 왔는지를 출력 블록 첫 줄에 적어 두었음 — 화면에 나온 값과 그 파일을 한 줄씩 대조하면 됨  
 
 ## 6. 정책효과를 추정한다
 
@@ -146,8 +148,8 @@ pip install -r lecture_practice/requirements-student.txt
 □ 먼저 실행함. 2절의 표와 이 절의 추정치, 7절의 위험 예측, 10절의 우선순위표가 모두 이 두 명령의 출력임  
 
 ```bash
-python lecture_practice/chapter9/code/9-0-simdata-prep.py
-python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
+python lecture_practice/bonus-env-climate/code/9-0-simdata-prep.py
+python lecture_practice/bonus-env-climate/code/9-1-protected-area-forest-loss.py
 ```
 
 □ 2절에서 본 것처럼 사후 시점의 단순 비교는 선택 편향을 그대로 안고 있음  
@@ -162,7 +164,7 @@ python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
 lossᵢₜ = β₀ + β₁·treatedᵢ + β₂·postₜ + δ·(treatedᵢ × postₜ) + εᵢₜ
 
 ```python
-# 주석에 붙인 출력의 출처: lecture_practice/chapter9/results/9-1-protected-area-forest-loss.log
+# 주석에 붙인 출력의 출처: lecture_practice/bonus-env-climate/results/9-1-protected-area-forest-loss.log
 import statsmodels.formula.api as smf
 
 # [1] 사후 시점만 놓고 안-밖을 뺀 값 — 2절이 보여 준 잘못된 비교
@@ -207,7 +209,7 @@ matched = df[(df.pressure >= low) & (df.pressure <= high)]
 
 ### 6.3 평행추세를 눈으로 먼저 본다
 
-![보호구역 안팎의 산림 손실률 추세](../lecture_practice/chapter9/data/fig_9_1_forest_loss_trends.png)
+![보호구역 안팎의 산림 손실률 추세](../lecture_practice/bonus-env-climate/data/fig_9_1_forest_loss_trends.png)
 
 **그림 9.1** 보호구역 안팎의 연도별 산림 손실률 추세와 정책 발효 시점
 
@@ -220,7 +222,7 @@ matched = df[(df.pressure >= low) & (df.pressure <= high)]
 □ 이 절의 수치는 6.1에서 실행한 `9-1-protected-area-forest-loss.py`의 뒷부분 출력임. 6절을 건너뛰었다면 여기서 실행함  
 
 ```bash
-python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
+python lecture_practice/bonus-env-climate/code/9-1-protected-area-forest-loss.py
 ```
 
 ### 7.1 학습 표본을 통제구역으로 제한한다
@@ -238,7 +240,7 @@ python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
   ○ 검증도 무작위가 아니라 공간 분할로 함. 이웃 격자는 값이 서로 비슷하므로, 무작위로 나누면 "새 구역으로 일반화하는 능력"이 아니라 "**바로 옆 값을 보간하는 능력**"을 재게 됨. 이 실습은 격자를 좌우로 나누어 학습·검증하는 2겹 공간 블록 교차검증을 씀  
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-1-protected-area-forest-loss.log
+# 출처: lecture_practice/bonus-env-climate/results/9-1-protected-area-forest-loss.log
 === [2층 AI] 공간 명시적 ML 벌채위험 예측 (2겹 공간 블록 CV, 통제구역 학습) ===
 공간 피처 포함 : R²=0.307, RMSE=0.459
 공간 피처 제외 : R²=-0.080, RMSE=0.570
@@ -266,7 +268,7 @@ python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
 ○ 반폭이 격자마다 달라지는 이유가 여기에 있음. 같은 분위수라도 난이도가 낮은 격자는 반폭이 좁고, 높은 격자는 넓어짐  
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-1-protected-area-forest-loss.log
+# 출처: lecture_practice/bonus-env-climate/results/9-1-protected-area-forest-loss.log
 === [불확실성] 정규화 conformal 예측구간(90%, OOF 근사)과 신뢰등급 ===
 통제구역 보정표본 n=150 · 목표 포함확률 0.90 conformal 계열(교육용 OOF 근사)
 OOF 경험적 포함률 = 0.907 (목표 0.90)
@@ -290,11 +292,11 @@ OOF 경험적 포함률 = 0.907 (목표 0.90)
 □ 세 번째 코드를 실행함. 8절의 표 세 개와 그림 9.2가 모두 이 한 번의 실행에서 나옴  
 
 ```bash
-python lecture_practice/chapter9/code/9-2-causal-heterogeneity.py
+python lecture_practice/bonus-env-climate/code/9-2-causal-heterogeneity.py
 ```
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-2-causal-heterogeneity.log
+# 출처: lecture_practice/bonus-env-climate/results/9-2-causal-heterogeneity.log
 표본 N = 1600 (40×40 격자),  보호구역(처치) = 692개
 참 CATE 범위 = [-1.60, -0.20] %p, 참 ATE = -0.891 %p
 공변량: ['pressure', 'enforce', 'habitat', 'elevation', 'slope']  (elevation·slope는 CATE와 무관한 잡음 대조군)
@@ -313,7 +315,7 @@ python lecture_practice/chapter9/code/9-2-causal-heterogeneity.py
   3. Ỹ/D̃를 목표로, D̃²를 가중치로 하는 가중 회귀로 τ(x)를 적합함
 
 ```python
-# 주석에 붙인 출력의 출처: lecture_practice/chapter9/results/9-2-causal-heterogeneity.log
+# 주석에 붙인 출력의 출처: lecture_practice/bonus-env-climate/results/9-2-causal-heterogeneity.log
 # [1] 누이선스 교차적합 — 자기 자신을 학습한 모형으로 자기를 예측하지 않음
 rf_m = RandomForestRegressor(n_estimators=300, min_samples_leaf=5,
                              random_state=42, n_jobs=1).fit(X[tr], y[tr])
@@ -388,7 +390,7 @@ rf.fit(X, pseudo, sample_weight=d_res ** 2)
   ○ 손실 수준(개발 압력이 정함)과 보호효과(집행역량이 정함)가 **서로 다른 변수**이므로, 손실이 큰 구역이 곧 보호가 잘 듣는 구역이 아니기 때문임  
   ○ "위중도가 높은 곳부터 손댄다"는 관행이 이 조건에서는 성립하지 않음. 두 변수가 같은 방향으로 움직이는 지역에서는 결과가 달라질 수 있으며, 그 여부는 자료로 확인해야 함  
 
-![CATE 산점도·공간 지도·GATES 분위별 효과](../lecture_practice/chapter9/results/9-2-cate-heterogeneity.png)
+![CATE 산점도·공간 지도·GATES 분위별 효과](../lecture_practice/bonus-env-climate/results/9-2-cate-heterogeneity.png)
 
 **그림 9.2** 참·추정 CATE 산점도(왼쪽), 공간 지도(가운데), GATES 분위별 효과(오른쪽)
 
@@ -427,11 +429,11 @@ p\* = C_FP / (C_FP + C_FN)
 □ 네 번째 코드를 실행함. 이 절의 두 표와 그림 9.3, 11절의 규칙 비교표가 모두 이 한 번의 실행에서 나옴  
 
 ```bash
-python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
+python lecture_practice/bonus-env-climate/code/9-3-supply-chain-due-diligence.py
 ```
 
 ```python
-# 주석에 붙인 출력의 출처: lecture_practice/chapter9/results/9-3-supply-chain-due-diligence.log
+# 주석에 붙인 출력의 출처: lecture_practice/bonus-env-climate/results/9-3-supply-chain-due-diligence.log
 # [1] 비용 최적 확률 컷오프 p* = C_FP/(C_FP+C_FN) = 1 − 임계비
 def prob_cutoff(cost_ratio):
     return 1.0 / (1.0 + cost_ratio)
@@ -488,7 +490,7 @@ for R in [1, 3, 5, 10, 20, 50, 100]:
 □ **절감의 대부분은 앞쪽에서 나옴.** K = 66건에서 이미 달성 가능한 절감의 90%를 얻고, 그 뒤로는 한 건당 절감이 빠르게 줄어듦  
   ○ 이 표는 예산 요청서에 그대로 쓸 수 있는 형태임. "실사를 더 해야 한다"가 아니라 "**현재 30건에서 잔여 기대손실이 205.7이고, 60건으로 늘리면 170.1로 내려가 절감의 87%에 이른다**"로 진술할 수 있음  
 
-![위험함수와 컷오프, 실사 예산별 잔여 기대손실](../lecture_practice/chapter9/results/9-3-due-diligence-cutoff.png)
+![위험함수와 컷오프, 실사 예산별 잔여 기대손실](../lecture_practice/bonus-env-climate/results/9-3-due-diligence-cutoff.png)
 
 **그림 9.3** 위험함수와 세 가지 컷오프(왼쪽), 실사 예산에 따른 잔여 기대손실 곡선(오른쪽)
 
@@ -543,7 +545,7 @@ for R in [1, 3, 5, 10, 20, 50, 100]:
 □ 이 절의 수치는 9.3에서 실행한 `9-3-supply-chain-due-diligence.py`의 뒷부분 출력임. 9절을 건너뛰었다면 여기서 실행함  
 
 ```bash
-python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
+python lecture_practice/bonus-env-climate/code/9-3-supply-chain-due-diligence.py
 ```
 
 ○ 앞 절들의 결정 주체는 정부였음. 이 사례는 결정 주체가 **기업**으로 바뀜  
@@ -562,7 +564,7 @@ python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
 ○ 국내 식품·목재 기업이 표준위험 생산국 4개국의 하위 행정구역 240곳에서 원료를 조달하는 상황을 둠  
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-3-supply-chain-due-diligence.log [1단계 관측]
+# 출처: lecture_practice/bonus-env-climate/results/9-3-supply-chain-due-diligence.log [1단계 관측]
   분위    p50   p75   p90   p95   p99
   손실률% 0.51   0.89   1.58   2.28   4.19
   평균 0.780% · 최대 8.761%
@@ -609,7 +611,7 @@ python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
 □ 이 절차가 옳게 작동하는지는 **대조군**으로 확인함. 위반이 손실률과 무관하게 발생하는 세계에서는 위험순위로 고른 30건과 무작위 30건의 성적이 같아야 함  
 
 ```text
-# 출처: lecture_practice/chapter9/results/9-3-supply-chain-due-diligence.log [7단계 대조군]
+# 출처: lecture_practice/bonus-env-climate/results/9-3-supply-chain-due-diligence.log [7단계 대조군]
   (a) 신호 0 대조군 — 위반을 300회 다시 뽑아 실현 비용으로 채점
       세계                     위험순위        무작위         차이(순위−무작위)
       신호 있음                 208.2      297.3       -89.0 (SD 32.0)
@@ -634,27 +636,22 @@ python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
 ○ **문턱은 자료가 아니라 두 오류의 비용이 정함.** 자료도 예측도 그대로인데 실사 대상이 7건에서 237건까지 움직이며, 움직인 것은 비용비뿐임 (9.2, 9.3)  
 ○ **예산이 구속되면 문턱 문제가 순위 문제로 바뀜.** 제도가 제시하는 점검률은 감독 당국의 자원 배분 결과이지 기업의 목표율이 아니며, 표준위험 점검률 3%를 그대로 쓰면 비용 최적보다 123.0단위, 고위험 9%를 써도 83.8단위를 더 씀 (9.4, 11절)  
 
-## 13. 과제
+## 13. 직접 돌려보기 (선택, 제출 없음)
+
+> 이 장은 2026-2 학기 진도에서 빠졌으므로 `scripts/submit.py`로 제출하는 과제가 없다. 직접 돌려 보고 싶으면 아래 명령을 그대로 실행한다.
 
 ```bash
-python scripts/submit.py 9 --id 학번 --name 이름
+python lecture_practice/bonus-env-climate/code/9-0-simdata-prep.py
+python lecture_practice/bonus-env-climate/code/9-3-supply-chain-due-diligence.py
 ```
 
-□ 실행하면 `9-0-simdata-prep.py`로 자료를 먼저 만들고, `9-3-supply-chain-due-diligence.py`(공급망 산림 리스크 실사)를 학번 시드로 돌려 `submissions/` 폴더에 `제출_9장_학번.md`를 생성함  
+□ 실행하면 자료를 먼저 만들고 공급망 산림 리스크 실사 분석이 돌아감  
   ○ **눈여겨볼 곳은 비용비(R)에 따라 달라지는 확률 컷오프와 실사 대상 구역 수**  
 
-○ 제출 파일 안의 빈칸 세 개를 채움  
+○ 스스로 점검할 질문 세 개
 
 1. 로그에서 눈에 띈 숫자 하나를 그대로 옮겨 적고, 왜 눈에 띄었는지 한 문장으로 적음
 2. 그 숫자가 왜 그렇게 나왔는지 이 장에서 배운 개념으로 한두 문장 설명함
 3. **데이터도 예측도 그대로인데 실사 대상 구역 수가 크게 움직인다. 무엇이 그것을 움직이는가? 당신이 리스크 담당자라면 몇 곳을 검사하겠는가?**
 
-○ **3번이 이 과제의 핵심임**. 1·2번은 로그를 보면 답이 나오지만 3번은 판단이 필요함  
-
-> - **막혀도 제출함**
-> - 실행이 실패하면 오류 메시지가 파일에 담기고, 질문이 "어디서 막혔나"로 바뀜
-> - 실행 성공 여부로 점수를 매기지 않음
-
-> - **이 장의 실습은 학번을 시드로 씀**
-> - 비용비·실사 건수 등 구체적인 숫자가 이 문서의 표와 정확히 같지 않을 수 있음
-> - 중요한 것은 방향임 — 비용비 R이 커지면 실사 건수도 늘어나는지 확인
+○ **3번이 핵심임**. 1·2번은 로그를 보면 답이 나오지만 3번은 판단이 필요함

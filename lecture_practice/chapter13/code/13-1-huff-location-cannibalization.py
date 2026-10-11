@@ -1,5 +1,5 @@
 """
-14장 분석: 입지 점수와 자기잠식 제약 (Huff 흡인 모형)
+13장 분석: 입지 점수와 자기잠식 제약 (Huff 흡인 모형)
 ======================================================
 비즈니스 질문: "강남구에 매장을 하나 더 낸다면 어디인가, 그리고 그 선택이 기존
 자사 매장을 얼마나 잡아먹는가?"
@@ -7,10 +7,10 @@
 산출물은 순위표가 아니라 결정이다. 후보지마다 신규 배분 수요와 기존점 감소분을
 계산해 순증(net gain)을 구하고, 자기잠식이 임계를 넘는 후보를 걸러 낸다.
 
-데이터: 14-0이 만든 cafes.parquet + demand_dong.parquet (국내 공개 데이터)
+데이터: 13-0이 만든 cafes.parquet + demand_dong.parquet (국내 공개 데이터)
 실행:
-    python 14-0-data-prep.py                     # 최초 1회
-    python 14-1-huff-location-cannibalization.py
+    python 13-0-data-prep.py                     # 최초 1회
+    python 13-1-huff-location-cannibalization.py
 
 설계에서 미리 밝힐 세 가지.
   (1) 매력도 A는 상수에서 출발한다. 상가정보에는 매장 규모·매출이 없어 A를 직접
@@ -50,7 +50,7 @@ def to_meters(lon, lat):
 def load():
     f1, f2 = DATA_DIR / "cafes.parquet", DATA_DIR / "demand_dong.parquet"
     if not (f1.exists() and f2.exists()):
-        sys.exit("[중단] 분석용 파일이 없다. 먼저 python 14-0-data-prep.py 를 실행한다.")
+        sys.exit("[중단] 분석용 파일이 없다. 먼저 python 13-0-data-prep.py 를 실행한다.")
     return pd.read_parquet(f1), pd.read_parquet(f2)
 
 

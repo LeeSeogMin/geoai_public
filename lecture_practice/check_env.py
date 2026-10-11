@@ -52,7 +52,7 @@ class _Tee:
 
 # ----------------------------------------------------------------------
 # 점검 대상 패키지
-#   core: 1-4장, 8-13장에서 쓴다. 학기 대부분을 이것만으로 진행한다.
+#   core: 1-4장, 9-14장에서 쓴다. 학기 대부분을 이것만으로 진행한다.
 #   dl  : 5-7장 딥러닝에서만 쓴다. 용량이 크므로 필요할 때 설치해도 된다.
 # ----------------------------------------------------------------------
 CORE_PACKAGES = [
@@ -290,7 +290,7 @@ def main():
     problems = []
     problems += check_python()
     problems += check_encoding()
-    problems += check_packages(CORE_PACKAGES, "기본(1-4장, 8-13장)", required=True)
+    problems += check_packages(CORE_PACKAGES, "기본(1-4장, 9-14장)", required=True)
     problems += check_packages(DL_PACKAGES, "딥러닝(5-7장)", required=False)
     problems += check_gpu()
     problems += check_korean_font()

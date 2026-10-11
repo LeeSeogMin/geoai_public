@@ -1,5 +1,5 @@
 """
-13장 실습 3: 지방소멸대응기금 집중 투입의 효과 — 합성통제법(SCM) (인과 척추)
+12장 실습 3: 지방소멸대응기금 집중 투입의 효과 — 합성통제법(SCM) (인과 척추)
 ================================================================================
 지역균형발전 정책 질문: "한 지자체에 집중 투입된 지방소멸대응기금(거점 조성·정주여건
 대규모 투자)이 그 지역의 경제활동을 실제로 끌어올렸는가? 아니면 원래 회복하던 참이었나?"
@@ -29,8 +29,8 @@
   위성 야간조명(VIIRS)·생활인구·사업체 시계열 + 집중 투입 사업 지정 자료를 사용한다.
 
 실행:
-    python 13-0-simdata-prep.py        # 최초 1회: 데이터 준비
-    python 13-3-synthetic-control.py
+    python 12-0-simdata-prep.py        # 최초 1회: 데이터 준비
+    python 12-3-synthetic-control.py
 """
 
 import warnings
@@ -63,7 +63,7 @@ RESULTS_DIR.mkdir(exist_ok=True)
 # ===========================================================
 # 단위 J+1개(처치 1 + 기증 풀 J). 시점 T개, 처치 시점 T0 이후 처치 단위에 참 효과 α.
 # 결과 Y = 기저 + λ(단위 적재)·μ(공통요인) + 잡음. 단위: 야간조명 경제지수(기준 100).
-# 실제 패널 데이터는 13-0-simdata-prep.py가 이 설계로 생성해 data/에 저장한다.
+# 실제 패널 데이터는 12-0-simdata-prep.py가 이 설계로 생성해 data/에 저장한다.
 J = 30                  # 기증 풀(통제 지자체) 수
 N_UNITS = J + 1         # 처치 단위 1 + 기증 풀 J
 T = 30                  # 총 연도 수
@@ -93,7 +93,7 @@ def load_panel():
     a_path = DATA_DIR / "scm_alpha.parquet"
     if not (y_path.exists() and u_path.exists() and a_path.exists()):
         raise SystemExit(
-            f"데이터가 없습니다: {y_path}\n먼저 실행: python 13-0-simdata-prep.py")
+            f"데이터가 없습니다: {y_path}\n먼저 실행: python 12-0-simdata-prep.py")
     Y = pd.read_parquet(y_path).to_numpy()
     units = pd.read_parquet(u_path)
     cov = units[["cov_aging", "cov_youth"]].to_numpy()
@@ -102,7 +102,7 @@ def load_panel():
     if Y.shape != (N_UNITS, T):
         raise SystemExit(
             f"패널 형태 불일치: {Y.shape} ≠ ({N_UNITS}, {T}). "
-            "13-0-simdata-prep.py로 데이터를 다시 준비하세요.")
+            "12-0-simdata-prep.py로 데이터를 다시 준비하세요.")
     return Y, cov, alpha_t, w_true
 
 
@@ -191,7 +191,7 @@ def main():
         lines.append(s)
 
     log("=" * 68)
-    log("13-3 지방소멸대응기금 집중 투입 SCM — 합성 반사실로 정책효과 식별")
+    log("12-3 지방소멸대응기금 집중 투입 SCM — 합성 반사실로 정책효과 식별")
     log("=" * 68)
     Y, cov, alpha_t, w_true = load_panel()
     true_post_mean = float(alpha_t[T0:].mean())
@@ -310,7 +310,7 @@ def main():
     ax2.set_title("Placebo 격차 분포 (회색=기증 풀)")
     ax2.legend(loc="upper left")
 
-    fig_path = RESULTS_DIR / "13-3-synthetic-control.png"
+    fig_path = RESULTS_DIR / "12-3-synthetic-control.png"
     fig.tight_layout()
     fig.savefig(fig_path, dpi=120)
     plt.close(fig)
@@ -326,7 +326,7 @@ def main():
     log("=" * 68)
 
     # 텍스트 로그도 남김(하네스 stdout 캡처와 별개로 재확인용)
-    (RESULTS_DIR / "13-3-scm-summary.txt").write_text("\n".join(lines), encoding="utf-8")
+    (RESULTS_DIR / "12-3-scm-summary.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

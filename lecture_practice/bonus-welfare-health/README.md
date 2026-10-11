@@ -1,12 +1,14 @@
-# 12장 실습: 복지 사각지대·감염병 확산·DML·공간 스캔 통계·동물병원 입지
+# 보론(복지·보건) 실습: 복지 사각지대·감염병 확산·DML·공간 스캔 통계·동물병원 입지
 
-이 실습은 `docs/ch12.md`와 `lecture/ch12.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter12/results/`에 저장되어 있습니다.
+> 2026-2 학기 진도에서 제외된 선택 읽기 보론이다. 내부 번호(12-0 등)는 원래 번호를 그대로 쓴다.
+
+이 실습은 `docs/ch12.md`와 `lecture/bonus-welfare-health.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/bonus-welfare-health/results/`에 저장되어 있습니다.
 
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
 - `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`12-0-simdata-prep.py`를 먼저 실행**해야 12-1~12-4가 돌아갑니다.
-- **12-5만 국내 공개 실데이터를 씁니다.** 원자료를 한 번 직접 내려받아야 하며, 절차는 `data/raw/README.md`에 있습니다. 14장 원자료를 이미 받아 두었다면 다시 받지 않아도 됩니다(준비 스크립트가 자동으로 찾습니다).
+- **12-5만 국내 공개 실데이터를 씁니다.** 원자료를 한 번 직접 내려받아야 하며, 절차는 `data/raw/README.md`에 있습니다. 13장 원자료를 이미 받아 두었다면 다시 받지 않아도 됩니다(준비 스크립트가 자동으로 찾습니다).
 
 실습 파일 (실행 순서대로)
 
@@ -21,13 +23,13 @@
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python lecture_practice/chapter12/code/12-0-simdata-prep.py
-python lecture_practice/chapter12/code/12-1-welfare-blindspot-priority.py
-python lecture_practice/chapter12/code/12-2-infectious-spatiotemporal-risk.py
-python lecture_practice/chapter12/code/12-3-dml-highdim-confounding.py
-python lecture_practice/chapter12/code/12-4-satscan-cluster.py
-python lecture_practice/chapter12/code/12-0b-vetcare-data-prep.py   # 원자료 필요
-python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
+python lecture_practice/bonus-welfare-health/code/12-0-simdata-prep.py
+python lecture_practice/bonus-welfare-health/code/12-1-welfare-blindspot-priority.py
+python lecture_practice/bonus-welfare-health/code/12-2-infectious-spatiotemporal-risk.py
+python lecture_practice/bonus-welfare-health/code/12-3-dml-highdim-confounding.py
+python lecture_practice/bonus-welfare-health/code/12-4-satscan-cluster.py
+python lecture_practice/bonus-welfare-health/code/12-0b-vetcare-data-prep.py   # 원자료 필요
+python lecture_practice/bonus-welfare-health/code/12-5-unmet-demand-siting.py
 ```
 
 예상 결과(검증 포인트)
@@ -64,9 +66,9 @@ python lecture_practice/chapter12/code/12-5-unmet-demand-siting.py
 연관 자료
 
 - 교재: `docs/ch12.md` — 사회복지·보건·감염병 정책과 GeoAI
-- 강의: `lecture/ch12.md` — 강의용 설명과 활동 지침
+- 강의: `lecture/bonus-welfare-health.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 
-- 실행 로그와 `lecture_practice/chapter12/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/bonus-welfare-health/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
 - 12-0b가 "[중단] 상가(상권)정보 파일을 찾지 못했다"로 멈추면 `data/raw/README.md`의 내려받기 절차를 먼저 밟으세요.

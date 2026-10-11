@@ -1,8 +1,8 @@
 """
-13장 준비(비즈니스): 상가(상권)정보 → 읍면동 상권 지표와 편의점 점포 목록
+12장 준비(비즈니스): 상가(상권)정보 → 읍면동 상권 지표와 편의점 점포 목록
 =========================================================================
-13-0-simdata-prep.py가 공공 분석 1~3의 교육용 시뮬레이션을 만드는 것과 달리,
-이 스크립트는 **국내 공개 실데이터**를 읽어 비즈니스 분석(13-4)의 입력을 만든다.
+12-0-simdata-prep.py가 공공 분석 1~3의 교육용 시뮬레이션을 만드는 것과 달리,
+이 스크립트는 **국내 공개 실데이터**를 읽어 비즈니스 분석(12-4)의 입력을 만든다.
 
 만드는 것 두 개:
   1) trade_area_units.parquet — 인구감소지역 + 비지정 군 지역의 읍면동별 상권 지표
@@ -11,13 +11,13 @@
 
 원자료: 소상공인시장진흥공단 상가(상권)정보(공공데이터포털 15083033, 분기 갱신).
   포털이 스크립트로 다운로드를 처리해 자동 내려받기가 막히므로 한 번은 직접 받아야
-  한다. 내려받는 절차는 lecture_practice/chapter14/data/raw/README.md와 같다.
-  14장이 이미 받아 둔 폴더가 있으면 그대로 읽는다(1.6GB를 두 벌 두지 않는다).
+  한다. 내려받는 절차는 lecture_practice/chapter13/data/raw/README.md와 같다.
+  13장이 이미 받아 둔 폴더가 있으면 그대로 읽는다(1.6GB를 두 벌 두지 않는다).
 
-주의: 이 데이터에는 **매출도 인구도 없다.** 13-4는 그 사실을 전제로 설계되어 있다.
+주의: 이 데이터에는 **매출도 인구도 없다.** 12-4는 그 사실을 전제로 설계되어 있다.
 
 실행:
-    python 13-0b-trade-area-data-prep.py
+    python 12-0b-trade-area-data-prep.py
 """
 
 from pathlib import Path
@@ -31,10 +31,10 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
 PRACTICE_DIR = SCRIPT_DIR.parent.parent
 
-# 원자료를 찾을 폴더 후보. 13장 아래에 두어도 되고, 14장이 받아 둔 것을 그대로 써도 된다.
+# 원자료를 찾을 폴더 후보. 12장 아래에 두어도 되고, 13장이 받아 둔 것을 그대로 써도 된다.
 RAW_CANDIDATES = (
     DATA_DIR / "raw",
-    PRACTICE_DIR / "chapter14" / "data" / "raw",
+    PRACTICE_DIR / "chapter13" / "data" / "raw",
 )
 RAW_PATTERNS = ("상가", "소상공인", "상권정보")
 ENCODINGS = ("utf-8-sig", "cp949", "utf-8")
@@ -115,7 +115,7 @@ def find_raw_files() -> tuple[list[Path], Path]:
         f"  찾은 폴더:\n{tried}\n"
         f"  찾는 이름: {' 또는 '.join(RAW_PATTERNS)} 가 들어간 .csv\n"
         "  → 공공데이터포털 15083033에서 내려받아 위 폴더 중 하나에 둔다.\n"
-        "    절차는 lecture_practice/chapter14/data/raw/README.md 참조."
+        "    절차는 lecture_practice/chapter13/data/raw/README.md 참조."
     )
 
 
@@ -267,7 +267,7 @@ def build_target_stores(df: pd.DataFrame, units: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     print("=" * 72)
-    print("13장 준비(비즈니스): 상가(상권)정보 → 읍면동 상권 지표·편의점 점포 목록")
+    print("12장 준비(비즈니스): 상가(상권)정보 → 읍면동 상권 지표·편의점 점포 목록")
     print("=" * 72)
 
     files, raw_dir = find_raw_files()
@@ -330,14 +330,14 @@ def main() -> None:
 
     stamp = pd.Timestamp.now().strftime("%Y-%m-%d")
     (DATA_DIR / "SOURCES_trade_area.txt").write_text(
-        "13장 비즈니스 분석(13-4) 입력 파일의 출처\n"
+        "12장 비즈니스 분석(12-4) 입력 파일의 출처\n"
         "- 소상공인시장진흥공단 상가(상권)정보 (공공데이터포털 15083033)\n"
         + "".join(f"  · {n}\n" for n in used)
         + f"- 원자료 폴더: {raw_dir}\n"
         f"- 처리 일자: {stamp}\n"
         "- 인구감소지역 목록: 행정안전부 인구감소지역 지정 현황(89곳, 2021.10 최초 지정)\n"
         "  https://www.mois.go.kr/frt/sub/a06/b06/populationDecline/screen.do\n"
-        "- 이 데이터에는 매출·인구·면적이 없다. 13-4는 그 제약 위에서 설계되었다.\n"
+        "- 이 데이터에는 매출·인구·면적이 없다. 12-4는 그 제약 위에서 설계되었다.\n"
         "공개 데이터가 갱신되면 결과가 달라진다. 본문 수치는 이 기준으로 인용한다.\n",
         encoding="utf-8")
 
@@ -345,7 +345,7 @@ def main() -> None:
     print(f"저장: trade_area_units.parquet({len(units):,}행), "
           f"trade_area_stores.parquet({len(stores):,}행), SOURCES_trade_area.txt")
     print("=" * 72)
-    print("[완료] 다음: python 13-4-trade-area-exit-decision.py")
+    print("[완료] 다음: python 12-4-trade-area-exit-decision.py")
 
 
 if __name__ == "__main__":

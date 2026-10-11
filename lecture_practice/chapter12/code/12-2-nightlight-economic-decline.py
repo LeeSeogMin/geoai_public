@@ -1,5 +1,5 @@
 """
-13장 실습 2: 야간조명 경제 프록시와 지역 쇠퇴 예측 (2층 AI 정당 + 측정오차 보정)
+12장 실습 2: 야간조명 경제 프록시와 지역 쇠퇴 예측 (2층 AI 정당 + 측정오차 보정)
 ==============================================================================
 질문: "위성 야간조명으로 지역 경제 쇠퇴를 예측할 수 있는가? 거친 프록시를 그대로 써도 되는가?"
 
@@ -19,8 +19,8 @@
 데이터: 미리 준비한 교육용 시뮬레이션 데이터를 불러와 사용(개인 식별 불가, 시군구).
   분석·추정은 실제 계산값.
 실행:
-    python 13-0-simdata-prep.py                # 최초 1회: 데이터 준비
-    python 13-2-nightlight-economic-decline.py
+    python 12-0-simdata-prep.py                # 최초 1회: 데이터 준비
+    python 12-2-nightlight-economic-decline.py
 """
 
 from pathlib import Path
@@ -63,7 +63,7 @@ def load_regions():
     path = DATA_DIR / "econ_regions.parquet"
     if not path.exists():
         raise SystemExit(
-            f"데이터가 없습니다: {path}\n먼저 실행: python 13-0-simdata-prep.py")
+            f"데이터가 없습니다: {path}\n먼저 실행: python 12-0-simdata-prep.py")
     return pd.read_parquet(path)
 
 
@@ -90,7 +90,7 @@ def spatial_block_cv_r2(df, feat_cols, target="decline", n_blocks=5):
 
 def main():
     print("=" * 64)
-    print("야간조명 경제 프록시와 지역 쇠퇴 예측 (13-2, 2층 AI + 규칙4)")
+    print("야간조명 경제 프록시와 지역 쇠퇴 예측 (12-2, 2층 AI + 규칙4)")
     print("=" * 64)
     df = load_regions()
     print(f"\n분석 단위: {N}개 시군구(20×15), 개인 식별 불가 집계")

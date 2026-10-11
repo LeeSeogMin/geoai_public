@@ -1,5 +1,5 @@
 """
-15장 실습 3: 추정값을 결정으로 바꾸는 층 — 임계비·NPV·용량 제약
+14장 실습 3: 추정값을 결정으로 바꾸는 층 — 임계비·NPV·용량 제약
 ================================================================================
 결정할 문제
 --------------------------------------------------------------------------------
@@ -10,9 +10,9 @@
 이 스크립트는 셋을 계산한다.
   (1) 임계비와 발주량   — 같은 예측, 정반대 결정
   (2) NPV와 hurdle rate — 출점을 할 것인가, 전이율 몇 %까지 견디는가
-  (3) 두 경로의 대조    — 15-2가 추정한 시장 단위 효과와 매장 단위 계산이 맞는가
+  (3) 두 경로의 대조    — 14-2가 추정한 시장 단위 효과와 매장 단위 계산이 맞는가
 
-(3)이 이 장의 두 축이 만나는 자리다. 15-2의 추정 편향이 여기서 **돈의 언어로** 나타난다.
+(3)이 이 장의 두 축이 만나는 자리다. 14-2의 추정 편향이 여기서 **돈의 언어로** 나타난다.
 
 가정값에 대하여
 --------------------------------------------------------------------------------
@@ -24,8 +24,8 @@
 앞 장들이 만든 예측·추정·구간을 **결정**으로 바꾸는 층만 다룬다.
 
 실행:
-    python 15-2-market-synthetic-control.py   # 15-2-estimate.json 생성
-    python 15-3-decision-economics.py
+    python 14-2-market-synthetic-control.py   # 14-2-estimate.json 생성
+    python 14-3-decision-economics.py
 """
 
 import json
@@ -165,7 +165,7 @@ def main():
         lines.append(s)
 
     log("=" * 78)
-    log("15-3 추정값을 결정으로 바꾸는 층 — 임계비·NPV·용량 제약")
+    log("14-3 추정값을 결정으로 바꾸는 층 — 임계비·NPV·용량 제약")
     log("=" * 78)
     log()
     log("[가정값 목록] 전부 가정이며 출처가 아니다. 결론은 절대값이 아니라 민감도다.")
@@ -252,7 +252,7 @@ def main():
     log(f"**손익분기 전이율 = {be:.1%}**")
     log(f"  전이율이 {be:.1%}를 넘으면 이 출점은 자본의 기회비용을 못 넘는다.")
     log()
-    log("14장이 자기잠식 상한을 30%·25% 같은 값으로 두는 관행을 소개했다. 그 숫자가")
+    log("13장이 자기잠식 상한을 30%·25% 같은 값으로 두는 관행을 소개했다. 그 숫자가")
     log("어디서 오는지가 여기서 답해진다. **상한은 관행이 아니라 손익분기 전이율에서")
     log(f"역산된 값이다.** 이 파라미터 조합에서는 {be:.1%}이고, 실무의 25%는 그보다")
     log("낮으니 안전 여유를 둔 값으로 읽힌다. 파라미터가 달라지면 상한도 달라진다 —")
@@ -289,21 +289,21 @@ def main():
     log()
 
     # =======================================================
-    # (3) 두 경로의 대조 — 15-2의 추정 편향이 돈으로 나타난다
+    # (3) 두 경로의 대조 — 14-2의 추정 편향이 돈으로 나타난다
     # =======================================================
     log("=" * 78)
     log("(3) 두 경로의 대조 — 시장 단위 추정치와 매장 단위 계산이 맞는가")
     log("=" * 78)
-    est_path = RESULTS_DIR / "15-2-estimate.json"
+    est_path = RESULTS_DIR / "14-2-estimate.json"
     if not est_path.exists():
-        log(f"[건너뜀] {est_path.name}이 없습니다. 먼저 15-2를 실행하세요.")
+        log(f"[건너뜀] {est_path.name}이 없습니다. 먼저 14-2를 실행하세요.")
         est = None
     else:
         est = json.loads(est_path.read_text(encoding="utf-8"))
         att_hat = est["att_pct_scm_clean"] / 100.0
         att_true = float(np.expm1(est["true_effect_log"]))
-        log(f"15-2의 추정: 시장 매출 {att_hat:+.2%} (placebo p={est['placebo_p']:.3f}, 유의)")
-        log(f"15-2의 참값: 시장 매출 {att_true:+.2%}")
+        log(f"14-2의 추정: 시장 매출 {att_hat:+.2%} (placebo p={est['placebo_p']:.3f}, 유의)")
+        log(f"14-2의 참값: 시장 매출 {att_true:+.2%}")
         log()
         log("두 경로가 같은 값을 가리켜야 한다.")
         log("  경로 1 (매장 단위): 순증 = 신규점 총매출 × (1 − 전이율)")
@@ -453,28 +453,28 @@ def main():
     ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(RESULTS_DIR / "15-3-decision-economics.png", dpi=140)
+    fig.savefig(RESULTS_DIR / "14-3-decision-economics.png", dpi=140)
     plt.close(fig)
-    log("그림 저장: 15-3-decision-economics.png")
+    log("그림 저장: 14-3-decision-economics.png")
 
-    cr_tab.to_csv(RESULTS_DIR / "15-3-critical-ratio.csv", index=False,
+    cr_tab.to_csv(RESULTS_DIR / "14-3-critical-ratio.csv", index=False,
                   encoding="utf-8-sig")
-    pd.DataFrame(npv_rows).to_csv(RESULTS_DIR / "15-3-npv.csv", index=False,
+    pd.DataFrame(npv_rows).to_csv(RESULTS_DIR / "14-3-npv.csv", index=False,
                                   encoding="utf-8-sig")
-    pd.DataFrame(sens_rows).to_csv(RESULTS_DIR / "15-3-breakeven-sensitivity.csv",
+    pd.DataFrame(sens_rows).to_csv(RESULTS_DIR / "14-3-breakeven-sensitivity.csv",
                                    index=False, encoding="utf-8-sig")
-    pd.DataFrame(cap_rows).to_csv(RESULTS_DIR / "15-3-capacity.csv", index=False,
+    pd.DataFrame(cap_rows).to_csv(RESULTS_DIR / "14-3-capacity.csv", index=False,
                                   encoding="utf-8-sig")
     if est is not None:
-        pd.DataFrame(recon_rows).to_csv(RESULTS_DIR / "15-3-reconciliation.csv",
+        pd.DataFrame(recon_rows).to_csv(RESULTS_DIR / "14-3-reconciliation.csv",
                                         index=False, encoding="utf-8-sig")
-        pd.DataFrame(dec_rows).to_csv(RESULTS_DIR / "15-3-decision.csv", index=False,
+        pd.DataFrame(dec_rows).to_csv(RESULTS_DIR / "14-3-decision.csv", index=False,
                                       encoding="utf-8-sig")
-    log("표 저장: 15-3-critical-ratio.csv · 15-3-npv.csv · "
-        "15-3-breakeven-sensitivity.csv · 15-3-capacity.csv · "
-        "15-3-reconciliation.csv · 15-3-decision.csv")
+    log("표 저장: 14-3-critical-ratio.csv · 14-3-npv.csv · "
+        "14-3-breakeven-sensitivity.csv · 14-3-capacity.csv · "
+        "14-3-reconciliation.csv · 14-3-decision.csv")
 
-    (RESULTS_DIR / "15-3-summary.txt").write_text("\n".join(lines), encoding="utf-8")
+    (RESULTS_DIR / "14-3-summary.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

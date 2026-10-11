@@ -1,5 +1,5 @@
 """
-15장 실습 1: 지역 실험의 설계와 검정력 — 시장 40개로 5% 효과를 잡을 수 있는가
+14장 실습 1: 지역 실험의 설계와 검정력 — 시장 40개로 5% 효과를 잡을 수 있는가
 ================================================================================
 결정할 문제
 --------------------------------------------------------------------------------
@@ -42,8 +42,8 @@
 **이 예제는 방법의 성질을 보이지 시장의 사실을 보이지 않는다.**
 
 실행:
-    python 15-0-simdata-prep.py       # 최초 1회
-    python 15-1-geo-experiment-power.py
+    python 14-0-simdata-prep.py       # 최초 1회
+    python 14-1-geo-experiment-power.py
 """
 
 import json
@@ -84,7 +84,7 @@ def load_data():
               "geoexp_adjacency.npy", "geoexp_truth.json"]:
         if not (DATA_DIR / p).exists():
             raise SystemExit(f"데이터가 없습니다: {DATA_DIR / p}\n"
-                             "먼저 실행: python 15-0-simdata-prep.py")
+                             "먼저 실행: python 14-0-simdata-prep.py")
     panel = pd.read_parquet(DATA_DIR / "geoexp_panel.parquet")
     Y = panel.drop(columns=["market_id"]).to_numpy()
     markets = pd.read_parquet(DATA_DIR / "geoexp_markets.parquet")
@@ -340,7 +340,7 @@ def main():
     spill = truth["spillover_log"]
 
     log("=" * 78)
-    log("15-1 지역 실험의 설계와 검정력 — 시장 40개로 5% 효과를 잡을 수 있는가")
+    log("14-1 지역 실험의 설계와 검정력 — 시장 40개로 5% 효과를 잡을 수 있는가")
     log("=" * 78)
     log(f"시장 {Y.shape[0]}개({truth['grid'][0]}×{truth['grid'][1]} 격자) · "
         f"군집 {truth['n_blocks']}개 · 주 {Y.shape[1]}개(사전 {n_pre}) · 배정 반복 {N_REPS}회")
@@ -512,18 +512,18 @@ def main():
     ax.legend()
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(RESULTS_DIR / "15-1-mde-curve.png", dpi=140)
+    fig.savefig(RESULTS_DIR / "14-1-mde-curve.png", dpi=140)
     plt.close(fig)
-    log("그림 저장: 15-1-mde-curve.png")
+    log("그림 저장: 14-1-mde-curve.png")
 
     for wname, tab in tables.items():
         tag = wname.split()[0]
-        tab.to_csv(RESULTS_DIR / f"15-1-designs-{tag}.csv", index=False,
+        tab.to_csv(RESULTS_DIR / f"14-1-designs-{tag}.csv", index=False,
                    encoding="utf-8-sig")
-    curve.to_csv(RESULTS_DIR / "15-1-mde-curve.csv", index=False, encoding="utf-8-sig")
-    log("표 저장: 15-1-designs-세계A/B/C.csv, 15-1-mde-curve.csv")
+    curve.to_csv(RESULTS_DIR / "14-1-mde-curve.csv", index=False, encoding="utf-8-sig")
+    log("표 저장: 14-1-designs-세계A/B/C.csv, 14-1-mde-curve.csv")
 
-    (RESULTS_DIR / "15-1-summary.txt").write_text("\n".join(lines), encoding="utf-8")
+    (RESULTS_DIR / "14-1-summary.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":
