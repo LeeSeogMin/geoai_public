@@ -1,68 +1,68 @@
-# 9장 실습: 보호구역 효과 추정, 이질적 처치효과 기반 배분, 그리고 실사 컷오프 결정
+# 8장 실습: 야간조명 DID·DML, 시차 도입 DID, 그리고 출점 도넛 설계
 
-이 실습은 `docs/ch09.md`와 `lecture/ch09.md`의 내용을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter9/results/`에 저장되어 있습니다.
+이 실습은 8장 본문의 분석을 코드로 확인하는 목적입니다. 결과 로그는 `lecture_practice/chapter8/results/`에 저장되어 있습니다.
 
 요구사항
 
 - 루트에 `.venv` 가상환경이 생성되어 있고 활성화되어 있어야 합니다. 아직이면 `lecture_practice/README.md`의 설치 지침을 먼저 따르세요.
-- `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`9-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
-- 네트워크는 필요하지 않습니다. 세 분석 모두 저장된 합성 자료만 씁니다.
+- `data/` 폴더의 파일은 저장소에 포함되지 않습니다. **`8-0-simdata-prep.py`를 먼저 실행**해야 나머지가 돌아갑니다.
 
 실습 파일 (실행 순서대로)
 
-- `lecture_practice/chapter9/code/9-0-simdata-prep.py` — 세 데이터 생성(보호구역 패널, 참 CATE 격자, 조달 구역)
-- `lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py` — 단순 비교 vs DID, 공간 ML 벌채위험 예측, 신뢰등급
-- `lecture_practice/chapter9/code/9-2-causal-heterogeneity.py` — R-러너 CATE, GATES·BLP 이질성 검정, 배분 전략 비교
-- `lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py` — 비대칭 손실 하의 실사 컷오프, 예산 곡선, 대조군
+- `lecture_practice/chapter8/code/8-0-simdata-prep.py` — 야간조명·시차도입·출점 3종 패널 생성(진짜 효과를 심어 둔다)
+- `lecture_practice/chapter8/code/8-1-nightlight-did-dml.py` — 단순 비교 → DID → DML 3단 비교, event-study
+- `lecture_practice/chapter8/code/8-2-staggered-did.py` — 도입 시점이 지역마다 다를 때 TWFE vs Callaway-Sant'Anna
+- `lecture_practice/chapter8/code/8-3-store-opening-donut-did.py` — 신규 출점의 상권 효과: IPW-DID + 도넛 설계, 링별 노출-반응 프로파일, 대조군 세 세계, 1종 오류율, 순효과
+- `lecture_practice/chapter8/code/_store_dgp.py` — 8-3이 쓰는 합성 데이터 생성 모듈(단독 실행하지 않습니다. `8-0`과 `8-3`이 함께 불러 씁니다)
 
 실행 방법 (Windows cmd/PowerShell / macOS Linux)
 
 ```bash
-python lecture_practice/chapter9/code/9-0-simdata-prep.py
-python lecture_practice/chapter9/code/9-1-protected-area-forest-loss.py
-python lecture_practice/chapter9/code/9-2-causal-heterogeneity.py
-python lecture_practice/chapter9/code/9-3-supply-chain-due-diligence.py
+python lecture_practice/chapter8/code/8-0-simdata-prep.py
+python lecture_practice/chapter8/code/8-1-nightlight-did-dml.py
+python lecture_practice/chapter8/code/8-2-staggered-did.py
+python lecture_practice/chapter8/code/8-3-store-opening-donut-did.py
 ```
+
+> `8-3`은 배치 재추출 200회 + 잡음 재추출 1,000회를 돌리므로 **CPU에서 10분 이상** 걸립니다. 나머지 셋은 각각 1~11초입니다. 빠르게 훑고 싶으면 `MC_REPS_PLACE`를 50 정도로 낮추세요(몬테카를로 오차가 커집니다).
 
 예상 결과(검증 포인트)
 
-- 9-0 자료: 보호구역 패널 `6000행`(300단위×20년, 보호 150) / 참 CATE 격자 `1600개`(보호 692) / 조달 구역 `240개`(참 위반확률 평균 `0.128`, 실현 위반 `25건`)
-- 9-1 설계: 단위 `300개`(보호 150), 2001~2020년, 지정 2011년, **진짜 효과 = `−0.80 %p`**
-- 9-1 추정 비교: 단순 비교 `−1.306`(오차 −0.506) / DID 전체 `−0.822`(−0.022) / DID 매칭 `−0.804`(−0.004)
-- 9-1 공간 ML: 공간 피처 포함 R² `0.307` vs 제외 R² `−0.080` — 공간 시차 기여 `+0.386`
-- 9-1 불확실성: 90% 예측구간 경험적 포함률 `0.907`, 구간 반폭 중앙값 `0.511`(범위 `0.125`~`1.327`), 신뢰등급 높음/중간/낮음 각 `100`개
-- 9-2 이질성: 참 CATE 상관 r `0.744` / GATES 1분위 − 5분위 차이 `+0.587 %p`(z = +5.52) / BLP 보정기울기 β1 `+0.519`
-- 9-2 배분 전략별 총 저감손실: CATE 표적화 `123.12 %p` > 무작위 `86.17` > 사후손실 표적화 `83.28` (oracle `135.13`)
-- 9-3 관측: 손실률 중위 `0.51%`, 90분위 `1.58%`, 최대 `8.761%`. 손실 면적 상위 10%(24구역)가 전체 손실 면적의 `39.6%`
-- 9-3 비용비 10:1: 확률 컷오프 `0.0909`, 실사 `123`건, 기대 총비용 `149.5`(실사 1건 = 1단위), 놓친 위반 기대 `5.21`건
-- 9-3 규칙 비교(R=10, 예산 K=30): 비용 최적 `149.5` < 예산 상위 K `205.7` < 전수 실사 `209.2` < 동수 손실률 컷오프 `219.8` < 제도 기본선 9% `233.3` < 무작위 `291.6` < 무실사 `307.8`
-- 9-3 예산 곡선: 무실사 `307.8` → K\*=`123`건에서 `149.5`. 절감의 90%는 K=`66`건에서 달성. 현 예산 K=30은 절감의 `64.5%`만 얻음
-- 9-3 대조군: 신호 0 세계에서 (위험순위 − 무작위) = `+0.0`(SD 27.2) / 신호 있는 세계에서는 `−89.0`(SD 32.0)
-- 9-3 대조군: 비용 대칭(R=1)이면 확률 컷오프가 정확히 `0.5000`으로 이동, 실사 `7`건
-- 9-3 민감도: 위험함수 기울기 ±50% → 기대 총비용 초과 `+1.3`·`+4.2`단위 / 비용비 오지정 → 초과 `+9.4`~`+116.0`단위
+- 8-1 설계: 격자 `300개`, 2016~2023년, 사업 착수 2020년, **진짜 ATT = `+0.50`**
+- 8-1 단순 사후 비교: `+1.431` (진짜값의 약 3배 — 선택 편향)
+- 8-1 DID: `+1.019` (SE 0.029), 사전추세 상호작용 최대 |값| `0.050`
+- 8-1 고차원 통제 후: OLS `0.506` / DML 무작위 CV `0.511` / DML 공간 블록 CV `0.523`
+- 8-2 설계: **진짜 overall ATT = `0.7875`**, 조기 도입 g=3(100) · 후기 도입 g=5(100) · 미도입(100)
+- 8-2 추정: TWFE `0.5203`(오차 −0.2672) vs Callaway-Sant'Anna `0.7128`(오차 −0.0747)
+- 8-3 설계: 100m 격자 `1,600`개 중 브랜드 상권 `802`개 × `24`개월, 기존점 `12`, 신규점 `3`
+- 8-3 참값: 총효과 `+0.400`, 자기잠식 최대 `0.090`(링 평균 `0.0687`), 잠식 링은 `300~500m`
+- 8-3 추정 계단(반복 200회 평균 편향): 단순 DID 전체 대조 `+0.1594` → 인접 링 `+0.1357` → IPW-DID 인접 링 `+0.0684` → IPW-DID 전체 `+0.0586` → IPW-DID+도넛 `+0.0534` → 이중강건+도넛 `+0.0216`
+- 8-3 링 프로파일: 0–300m는 크게 (+), 300–500m는 (−), 800–1200m는 0을 포함하는 구간
+- 8-3 대조군: 인접 링 대조의 편향이 세계 A `+0.0684` → 세계 B(잠식 0) `−0.0022`. 차이 `+0.0706`이 참 링 평균 잠식 `0.0687`과 거의 같습니다
+- 8-3 1종 오류율(지리 고정, 순수 잡음 세계): 도넛 없음 `0.055` · 도넛 `0.053` — 명목 5% 수준
+- 8-3 유효 클러스터: 상권 격자가 걸친 1km 블록 `15`개 중 처치 격자를 담은 블록은 `7`개(블록별 처치 격자 27·18·17·11·5·1·1). 블록 클러스터 SE는 이 수에 기대므로 신뢰하기 어렵고, 순수 잡음 세계에서 오히려 **과대기각**합니다
 
 검증 팁
 
-- 9-2에서 가장 중요한 줄은 **"손실이 큰 곳부터 보호"(83.28)가 무작위 배분(86.17)보다 못하다**는 대소 관계입니다. 손실이 큰 곳과 보호가 잘 듣는 곳이 다르기 때문입니다. 숫자가 조금 달라져도 이 부등호가 유지되는지 확인하세요.
-- 9-3에서 가장 중요한 줄은 **신호 0 대조군**입니다. 컷오프 최적화와 위험순위가 좋아 보이는 이유가 정말 산림손실 신호 때문인지, 신호를 끊은 세계에서 확인합니다. 신호 0 세계에서 이득이 `+0.0` 근처로 사라지지 않으면 결과를 신호의 덕으로 해석할 수 없습니다.
-- 9-3의 두 민감도를 꼭 견주어 보세요. 위험함수를 ±50% 틀린 대가(1~4단위)가 비용비를 한 자릿수 틀린 대가(최대 116단위)보다 훨씬 작습니다. 기대비용 곡선이 최적점 근처에서 평평하기 때문입니다.
-- 세 실습 모두 **진짜값(정책효과·CATE·위반확률)을 심어 둔 시뮬레이션**입니다. 그래서 채점이 가능합니다. 실제 환경 평가와 실제 공급망 실사에는 정답지가 없다는 점이 핵심 메시지입니다.
-- 9-3은 GFW/Hansen 실데이터를 쓰지 않습니다. 라이선스(CC BY 4.0)는 문제가 없지만 하위 행정구역별 연간 집계를 API 키 없이 받아 낼 고정 경로가 없어 재현이 불가능했습니다. 대신 손실률 분포의 오른쪽 꼬리 구조만 로그정규로 반영했습니다.
-- 9-2는 교차적합이 들어가 실행에 수십 초가 걸립니다. 9-3은 스윕 계산뿐이라 몇 초면 끝납니다.
+- 세 실습 모두 **진짜 효과를 일부러 심어 둔 시뮬레이션**입니다. 그래서 "추정값이 진짜값에 얼마나 가까운가"를 채점할 수 있습니다. 실제 평가에는 이 정답지가 없다는 점이 이 장의 핵심 메시지입니다.
+- 8-1에서 DML이 OLS보다 크게 낫지 않은 것은 정상입니다. 이 합성 구조의 교란이 선형이라 선형 통제로 충분했고, DML은 **비선형·고차원 교란일 때** 정당해집니다.
+- 8-2에서 확인할 것은 TWFE가 진짜값보다 **낮게** 나온다는 방향입니다(약 34% 과소평가). 조기 도입 지역이 비교 그룹에 섞이면서 생기는 오염입니다.
+- **8-3에서 가장 중요한 줄은 대조군입니다.** 도넛이 좋아 보이는 이유가 정말 자기잠식 때문인지, 잠식만 끈 세계 B에서 확인합니다. 그리고 세계 B에서는 **도넛이 인접 링 대조보다 나쁩니다** — 도넛은 무조건 옳은 처방이 아니라 잠식 크기와 대조군 축소 비용의 교환입니다.
+- 8-3에서 한 번의 출점 추정치와 반복 200회 평균 편향이 어긋나는 것도 눈여겨보세요. 처치를 정한 것은 신규점 3곳이므로, 추정치 하나로 절차를 평가하면 "이번 지리의 운"을 절차의 성질로 오해합니다.
+- 8-3의 도넛 폭을 넓히면 표준오차는 거의 그대로인데 편향이 커집니다. 가장 닮은 대조 격자부터 버리기 때문입니다.
+- 8-3에서 **블록 클러스터 SE를 "안전한 선택"으로 쓰지 마세요.** 한 번의 draw에서는 HC1의 2~3배로 커 보이지만, 순수 잡음 세계에서 기각률이 명목 5%의 두 배 넘게 나옵니다. `[6]`의 진단 표가 그 이유(SE 분포의 왼쪽 꼬리)를 보여 줍니다.
 
 결과 파일
 
-- `lecture_practice/chapter9/results/9-1-*.log`, `9-2-*.log`, `9-3-*.log` — 실행 로그
-- `lecture_practice/chapter9/results/spatial_unit_priority.csv`, `admin_area_priority.csv`, `admin_area_priority_uncertainty.csv` — 우선순위표
-- `lecture_practice/chapter9/results/9-2-cate-heterogeneity.png`, `9-2-cate-summary.txt` — 이질성 분석 산출물
-- `lecture_practice/chapter9/results/9-3-due-diligence-cutoff.png` — 위험함수·컷오프와 예산 곡선
-- `lecture_practice/chapter9/results/9-3-cost-ratio-cutoff.csv`, `9-3-rule-comparison.csv`, `9-3-calibration-sensitivity.csv`, `9-3-cost-ratio-misspecification.csv`, `9-3-null-control.csv` — 실사 결정 산출물
+- `lecture_practice/chapter8/results/8-0-simdata-prep.log`, `8-1-nightlight-did-dml.log`, `8-2-staggered-did.log`, `8-3-store-opening-donut-did.log` — 실행 로그
+- `lecture_practice/chapter8/results/*.evidence.json` — 소스·출력 해시와 실행 환경 기록
+- `lecture_practice/chapter8/data/fig_8_1_event_study.png`, `fig_8_2_staggered_did.png`, `fig_8_3_ring_profile.png` — 그림(실행 시 생성)
 
 연관 자료
 
-- 교재: `docs/ch09.md` — 환경·기후 정책과 GeoAI
-- 강의: `lecture/ch09.md` — 강의용 설명과 활동 지침
+- 교재: `docs/ch08.md` — 국내 공간정책 분석·평가 방법론
+- 강의: `lecture/ch08.md` — 강의용 설명과 활동 지침
 
 문제 발생 시
 
-- 실행 로그와 `lecture_practice/chapter9/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
+- 실행 로그와 `lecture_practice/chapter8/results/*.evidence.json`을 함께 첨부해 이 저장소 이슈 또는 수업 게시판에 올려 주세요.
