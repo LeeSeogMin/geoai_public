@@ -56,26 +56,75 @@ ax.legend(loc="lower left", fontsize=8.5, framealpha=0.95)
 ax.set_title("학생마다 두 점 중 한 점만 보인다")
 save(fig, "fig_ex_1_observed_vs_hidden.png")
 
-# 그림 2: 두 반의 이중차분 (3.1절)
+# 그림 2: 두 동네의 이중차분 (3.1절)
 fig, ax = plt.subplots(figsize=(6.5, 4.4))
 x = [0, 1]
-ax.plot(x, [60, 75], "o-", color=BLUE, lw=2.2, label="1반(보충수업 함)")
-ax.plot(x, [70, 75], "o-", color=RED, lw=2.2, label="2반(안 함)")
-ax.plot(x, [60, 65], "o--", color=BLUE, lw=1.6, alpha=0.7, label="1반이 수업을 안 들었다면(2반처럼 +5)")
-ax.annotate("", xy=(1.04, 75), xytext=(1.04, 65), arrowprops=dict(arrowstyle="<->", color="black", lw=1.5))
-ax.text(1.07, 70, "이중차분\n+10", va="center", fontsize=10, fontweight="bold")
+ax.plot(x, [100, 130], "o-", color=BLUE, lw=2.2, label="A동(지역화폐 도입)")
+ax.plot(x, [90, 105], "o-", color=RED, lw=2.2, label="B동(미도입)")
+ax.plot(x, [100, 115], "o--", color=BLUE, lw=1.6, alpha=0.7, label="A동이 도입하지 않았다면(B동처럼 15 증가)")
+ax.annotate("", xy=(1.04, 130), xytext=(1.04, 115), arrowprops=dict(arrowstyle="<->", color="black", lw=1.5))
+ax.text(1.07, 122.5, "이중차분\n15", va="center", fontsize=10, fontweight="bold")
 ax.set_xticks(x)
-ax.set_xticklabels(["학기 초", "학기 말"])
+ax.set_xticklabels(["도입 전", "도입 후"])
 ax.set_xlim(-0.15, 1.45)
-ax.set_ylim(55, 80)
-ax.set_ylabel("반 평균 점수(예시 숫자)")
-ax.legend(loc="upper left", fontsize=8.5)
-ax.set_title("1반의 +15 중 +5는 2반도 오른 몫")
-save(fig, "fig_ex_2_did_two_classes.png")
+ax.set_ylim(80, 140)
+ax.set_ylabel("점포당 월평균 매출(만원, 예시 숫자)")
+ax.legend(loc="lower right", fontsize=8.5)
+ax.set_title("A동이 30 올랐지만 그중 15는 B동도 오른 몫")
+save(fig, "fig_ex_2_did_two_towns.png")
 
-# 그림 3: 실습 1의 이중차분과 진짜 효과 (5.1절)
-pre_t, post_t = 3.129, 4.040
-pre_c, post_c = 2.717, 2.609
+# 그림 3: 도입 전 추세로 평행추세를 살펴봄 (3.2절)
+GREEN = "green"
+t4 = [0, 1, 2, 3]
+B_path = [60, 75, 90, 105]
+A_parallel = [70, 85, 100, 130]   # 도입 전 A동이 B동과 같은 폭(15)으로 오름
+A_diverge = [50, 75, 100, 130]    # 도입 전 A동이 B동보다 빠르게(25) 오름
+fig, axes = plt.subplots(1, 2, figsize=(10, 4.4), sharey=True)
+for ax, a_path, broken in zip(axes, (A_parallel, A_diverge), (False, True)):
+    ax.plot(t4, a_path, "o-", color=BLUE, lw=2.2, label="A동(도입) 실제")
+    ax.plot(t4, B_path, "o-", color=RED, lw=2.2, label="B동(미도입) 실제")
+    ax.axvline(2.5, color=GRAY, ls="--", lw=1)
+    ax.text(2.45, 143, "도입", ha="right", color=GRAY, fontsize=9)
+    ax.plot([2, 3], [100, 115], "o--", color=BLUE, lw=1.6, alpha=0.6, label="B동의 변화폭(15)을 따랐다면")
+    if broken:
+        ax.plot([2, 3], [100, 125], "o:", color=GREEN, lw=2.2, label="도입 전 A동의 변화폭(25)을 이었다면")
+        ax.set_title("도입 전 추세가 나란하지 않음: A동이 원래 더 빠르게 오름", fontsize=10)
+    else:
+        ax.set_title("도입 전 추세가 나란함: 두 동네의 간격이 10으로 일정", fontsize=10)
+    ax.set_xticks(t4)
+    ax.set_xticklabels(["3기 전", "2기 전", "1기 전\n(도입 직전)", "도입 후"])
+    ax.set_xlim(-0.2, 3.5)
+    ax.set_ylim(40, 150)
+    ax.legend(loc="upper left", fontsize=8, bbox_to_anchor=(0.0, 0.93))
+axes[0].set_ylabel("점포당 월평균 매출(만원, 예시 숫자)")
+save(fig, "fig_ex_2a_pre_trends.png")
+
+# 그림 4: 평행추세 가정이 맞는 경우와 깨진 경우 (3.2절). 관측값은 두 칸이 같다
+fig, axes = plt.subplots(1, 2, figsize=(10, 4.4), sharey=True)
+for ax, broken in zip(axes, (False, True)):
+    ax.plot(x, [100, 130], "o-", color=BLUE, lw=2.2, label="A동(도입) 실제")
+    ax.plot(x, [90, 105], "o-", color=RED, lw=2.2, label="B동(미도입) 실제")
+    ax.plot(x, [100, 115], "o--", color=BLUE, lw=1.6, alpha=0.6, label="평행추세를 가정한 A동 경로")
+    ax.annotate("", xy=(1.04, 130), xytext=(1.04, 115), arrowprops=dict(arrowstyle="<->", color="black", lw=1.5))
+    ax.text(1.07, 122.5, "이중차분\n15", va="center", fontsize=9.5, fontweight="bold")
+    if broken:
+        ax.plot(x, [100, 125], "o:", color=GREEN, lw=2.2, label="A동의 진짜 반사실(도입 없이 25 증가)")
+        ax.annotate("", xy=(0.96, 130), xytext=(0.96, 125), arrowprops=dict(arrowstyle="<->", color=GREEN, lw=1.5))
+        ax.text(0.96, 134.5, "진짜 효과 5", va="center", ha="right", fontsize=9.5, color=GREEN, fontweight="bold")
+        ax.set_title("평행추세가 깨진 경우: 이중차분 15, 진짜 효과 5", fontsize=10)
+    else:
+        ax.set_title("평행추세가 맞는 경우: 이중차분 15 = 진짜 효과 15", fontsize=10)
+    ax.set_xticks(x)
+    ax.set_xticklabels(["도입 전", "도입 후"])
+    ax.set_xlim(-0.15, 1.5)
+    ax.set_ylim(80, 140)
+    ax.legend(loc="lower right", fontsize=8)
+axes[0].set_ylabel("점포당 월평균 매출(만원, 예시 숫자)")
+save(fig, "fig_ex_2b_parallel_trends.png")
+
+# 그림 4: 실습 1의 이중차분과 진짜 효과 (5.1절)
+pre_t, post_t = 3.229, 4.140
+pre_c, post_c = 2.617, 2.509
 parallel_cf = pre_t + (post_c - pre_c)   # 평행추세를 가정한 반사실
 true_cf = post_t - 0.50                  # 진짜 ATT 0.50을 빼서 얻은 실제 반사실
 

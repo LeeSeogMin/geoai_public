@@ -89,10 +89,11 @@ def prepare_nightlight():
     for i in range(N_REGIONS):
         for t in YEARS:
             post = 1 if t >= TREAT_YEAR else 0
-            # 공통 추세 + (사후) 잠재 성장력에 비례하는 시변 교란 + 정책효과 + 노이즈
+            # 공통 추세 + 잠재 성장력에 비례하는 집단별 추세(사전부터 벌어짐) + 정책효과 + 노이즈
+            # 0.0875 = 0.35 / 4: 사전 평균 대비 사후 평균이 4년 늦으므로 성장량 차이는 기존 0.35 * latent와 같다
             light = (base_light[i]
                      + 0.04 * (t - YEARS[0])                       # 공통 추세(평행)
-                     + post * 0.35 * latent[i]                     # 시변 교란(선택 편향원)
+                     + 0.0875 * latent[i] * (t - YEARS[0])         # 시변 교란(선택 편향원, 사전부터 존재)
                      + TRUE_ATT * treated[i] * post                # 진짜 정책효과
                      + RNG.normal(0, 0.15))
             rows.append((i, t, post, treated[i], light))
