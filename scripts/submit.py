@@ -116,7 +116,7 @@ ASSIGNMENTS: dict[int, dict] = {
         "title": "그 사업, 정말 효과가 있었나",
         "prep": ["9/9-0-simdata-prep.py"],
         "target": "9/9-1-nightlight-did-dml.py",
-        "watch": "단순 비교 추정치와 이중차분·이중강건 추정치의 격차",
+        "watch": "단순 비교 추정치와 이중차분·공변량 통제(OLS·DML) 추정치의 격차",
         "ask": "단순 비교 값을 사업 성과로 보고하면 무엇이 부풀려지는가? "
                "추정치와 함께 반드시 적어야 할 것을 하나 들어라.",
     },
