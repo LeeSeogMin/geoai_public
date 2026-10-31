@@ -22,12 +22,11 @@
     그 지역을 더 고위험으로 학습하는 되먹임 루프. 예측적 치안의 편향과 동형(Ch11 연결).
   - 예측 점수를 기관 평가지표·행정처분의 근거로 직결하지 않는다. 인간 검토·감사 필수.
 
-데이터: 미리 준비한 민원 시공간 패널(도로 공변량 + 주별 민원 관측)을 불러와
-  사용(개인 식별 불가, 격자·권역 집계). 분석·추정은 불러온 데이터로 계산한 실제 값이다.
+데이터: 저장소 data/ 폴더에 들어 있는 가상 민원 시공간 패널(도로 공변량 + 주별
+  민원 관측)을 불러와 사용(개인 식별 불가, 격자·권역 집계). 분석·추정은 불러온 데이터로 계산한 실제 값이다.
   실제 분석에서는 국민신문고·범정부 민원분석시스템(국민권익위) 자료를 사용한다.
 
 실행:
-    python 10-0-simdata-prep.py            # 최초 1회: 데이터 준비
     python 10-2-civil-complaint-forecast.py
 """
 
@@ -50,9 +49,9 @@ GRID = 16
 N = GRID * GRID                 # 256개 격자
 T = 40                          # 40주
 BURN = 12                       # 앞 12주는 burn-in(정상상태 도달용), 분석은 이후
-# 데이터 생성 파라미터(기저 강도·시간 지속성 ALPHA·공간 확산 KAPPA·계절성)와
-# 정상성 조건(ALPHA+KAPPA<1)은 10-0-simdata-prep.py에 있다. 여기서는 결과를 불러와
-# 분석만 한다.
+# 데이터를 만들 때 쓴 규칙(기저 강도 1.2, 시간 지속성 0.35, 공간 확산 0.35, 계절성)과
+# 정상성 조건(시간 지속성 + 공간 확산 < 1)은 lecture/ch10.md 10절에 적어 두었다.
+# 여기서는 저장된 데이터를 불러와 분석만 한다.
 
 
 def neighbor_sum(mat):
@@ -87,7 +86,9 @@ def load_complaints():
     obs_path = DATA_DIR / "complaint_obs.parquet"
     if not road_path.exists() or not obs_path.exists():
         raise SystemExit(
-            f"데이터가 없습니다: {road_path}\n먼저 실행: python 10-0-simdata-prep.py")
+            f"데이터가 없습니다: {road_path}\n"
+            "저장소의 lecture_practice/chapter10/data/ 에 들어 있는 파일입니다. "
+            "저장소를 최신으로 받았는지 확인하세요(git pull).")
 
     road = (pd.read_parquet(road_path).sort_values("cell")["road"]
             .to_numpy().reshape(GRID, GRID))
