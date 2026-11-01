@@ -1,7 +1,8 @@
-"""ch10.md 그림 두 장을 만든다.
+"""ch10.md 그림 세 장을 만든다.
 
 그림 1은 6.2절의 시간 블록 검증 설명도(10-2 코드의 분할 규칙을 그대로 옮김)이고,
-그림 2는 실습(10-2)이 저장한 results/complaint_response_priority_uncertainty.csv로 그린다.
+그림 2는 9.2절 표의 예시 숫자로 그린 경계 비교 설명도이고,
+그림 3은 실습(10-2)이 저장한 results/complaint_response_priority_uncertainty.csv로 그린다.
 먼저 10-2 코드를 실행해 results/를 만든 뒤 이 파일을 실행한다.
 
 실행: python lecture/graphics/make_ch10_figures.py
@@ -78,7 +79,35 @@ for sp in ("left", "right", "top"):
     ax.spines[sp].set_visible(False)
 save(fig, "fig_10_1_time_block_cv.png")
 
-# 그림 2: 권역별 다음 주 예측과 예측구간 반폭 (실습 2)
+# 그림 2: 경계선 양쪽 비교 (9.2절 표의 예시 숫자). x < 0 규제지역, x > 0 비규제지역
+reg_x, reg_y = [-1.0, -0.5, -0.02], [10.1, 9.9, 9.7]       # 규제지역 쪽(억)
+non_x, non_y = [0.02, 0.5, 1.0], [10.0, 9.8, 9.6]          # 비규제지역 쪽(억)
+fig, ax = plt.subplots(figsize=(8.0, 4.6))
+ax.axvspan(-1.25, 0, color=RED, alpha=0.06)
+ax.axvline(0, color="black", ls="--", lw=1)
+ax.plot(reg_x, reg_y, "o-", color=RED, lw=2, ms=8, label="규제지역 쪽 거래 평균")
+ax.plot(non_x, non_y, "o-", color=BLUE, lw=2, ms=8, label="비규제지역 쪽 거래 평균")
+ax.plot([0.02, -0.5, -1.0], [10.0, 10.2, 10.4], ":", color=BLUE, lw=1.6,
+        label="규제가 없었다면(비규제 쪽 추세를 연장)")
+ax.axhline(9.9, xmin=0.02, xmax=0.48, color=RED, lw=1, alpha=0.5)
+ax.axhline(9.8, xmin=0.52, xmax=0.98, color=BLUE, lw=1, alpha=0.5)
+ax.text(-1.2, 9.86, "규제지역 평균 9.9억", color=RED, fontsize=9, va="top")
+ax.text(0.66, 9.83, "비규제지역 평균 9.8억", color=BLUE, fontsize=9, va="bottom")
+ax.annotate("", xy=(0.0, 9.7), xytext=(0.0, 10.0),
+            arrowprops=dict(arrowstyle="<->", color="black", lw=1.5))
+ax.text(0.07, 9.6, "경계에서의 차이" + chr(10) + "-0.3억 = 규제 효과", fontsize=10, va="center")
+ax.text(-0.62, 10.48, "규제지역", color=RED, fontsize=11, ha="center")
+ax.text(0.62, 10.48, "비규제지역", color=BLUE, fontsize=11, ha="center")
+ax.set_xlim(-1.25, 1.25)
+ax.set_ylim(9.45, 10.6)
+ax.set_xticks([-1.0, -0.5, 0, 0.5, 1.0])
+ax.set_xticklabels(["1km", "0.5km", "경계", "0.5km", "1km"])
+ax.set_xlabel("경계까지 거리")
+ax.set_ylabel("평균 거래가(억, 예시 숫자)")
+ax.legend(loc="lower left", fontsize=8.5, frameon=False)
+save(fig, "fig_10_2_boundary_comparison.png")
+
+# 그림 3: 권역별 다음 주 예측과 예측구간 반폭 (11.3절)
 unc = pd.read_csv(RESULTS / "complaint_response_priority_uncertainty.csv")
 color = {"높음": BLUE, "중간": GRAY, "낮음": RED}
 # 아래쪽에 몰린 여섯 권역의 이름이 겹치지 않도록 점마다 글자 위치를 따로 둔다
@@ -96,6 +125,6 @@ ax.set_xlabel("다음 주 예측 민원(권역 합계, 건)")
 ax.set_ylabel("90% 예측구간 평균 반폭(격자당 건)")
 ax.legend(frameon=False, loc="upper left")
 ax.grid(alpha=0.25)
-save(fig, "fig_10_2_forecast_halfwidth.png")
+save(fig, "fig_10_3_forecast_halfwidth.png")
 
 print("저장:", *sorted(p.name for p in OUT.glob("*.png")), sep="\n  ")
