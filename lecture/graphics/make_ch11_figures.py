@@ -224,10 +224,11 @@ ctrl, sd = float(m2.group(1)), float(m2.group(2))
 fig, ax = plt.subplots(figsize=(6.8, 3.2))
 labels = ["완전 모델\n(전체 500채,\n실제 피해확률)", "관측 모델\n(가입자 277채,\n청구 기록)", "대조군\n(무작위 277채,\n청구 기록)"]
 vals = [full, obs, ctrl]
-bars = ax.bar(labels, vals, color=[GRAY, ORANGE, BLUE], width=0.55,
-              yerr=[0, 0, sd], capsize=6, error_kw={"lw": 1.5})
-for b, v in zip(bars, vals):
-    ax.text(b.get_x() + b.get_width() / 2, v + 0.045, f"{v:.3f}", ha="center", fontsize=11, fontweight="bold")
+bars = ax.bar(labels, vals, color=[GRAY, ORANGE, BLUE], width=0.55)
+ax.errorbar([2], [ctrl], yerr=[sd], color="black", capsize=6, lw=1.5, fmt="none")
+for k, (b, v) in enumerate(zip(bars, vals)):
+    gap = sd + 0.02 if k == 2 else 0.02
+    ax.text(b.get_x() + b.get_width() / 2, v + gap, f"{v:.3f}", ha="center", fontsize=11, fontweight="bold")
 ax.annotate("", xy=(2.5, ctrl), xytext=(2.5, full), arrowprops=dict(arrowstyle="<->", color="#444444"))
 ax.text(2.58, (full + ctrl) / 2, f"{full - ctrl:.3f}\n표본 감소·\n청구 기록 라벨의 몫", va="center", fontsize=9.5, color="#444444")
 ax.text(1.5, 0.80, f"관측 모델과 대조군의 차이 {obs - ctrl:.3f}\n= 가입 선택의 몫(대조군 SD {sd:.3f}보다 작음)",
