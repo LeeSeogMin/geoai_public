@@ -1,12 +1,13 @@
-"""ch11-2.md 그림 일곱 장을 만든다.
+"""ch11-2.md 그림 여덟 장을 만든다.
 
-그림 11.1  4절  공간 시차와 행 표준화(본문 계산 예의 숫자, 실습 출력 아님)
-그림 11.2  5절  그래디언트 부스팅: 11-0이 만든 보험 건물 500채의 표고 하나만 입력해 나무 수별 예측선을 그림
-그림 11.3  6절  무작위 분할과 블록 분할의 배치도(설명용 배치, 숫자 없음)
-그림 11.4  7절  예측구간 폭 비교(본문 계산 예의 숫자, 실습 출력 아님)
-그림 11.5 10절  치안 시뮬레이션 R²와 순찰-실제 위험 상관(results/predictive_policing_bias.csv)
-그림 11.6 11.2절 완전·관측·대조군 R²(results/11-3-insurance-risk-grading.log에서 읽음)
-그림 11.7 11.3절 치안·보험 두 순환의 개념도(숫자 없음)
+그림 11.1  4절  이웃을 정하는 다섯 가지 방법과 공간가중행렬(설명용 배치, 숫자 없음)
+그림 11.2  4절  공간 시차와 행 표준화(본문 계산 예의 숫자, 실습 출력 아님)
+그림 11.3  5절  그래디언트 부스팅: 11-0이 만든 보험 건물 500채의 표고 하나만 입력해 나무 수별 예측선을 그림
+그림 11.4  6절  무작위 분할과 블록 분할의 배치도(설명용 배치, 숫자 없음)
+그림 11.5  7절  예측구간 폭 비교(본문 계산 예의 숫자, 실습 출력 아님)
+그림 11.6 10절  치안 시뮬레이션 R²와 순찰-실제 위험 상관(results/predictive_policing_bias.csv)
+그림 11.7 11.2절 완전·관측·대조군 R²(results/11-3-insurance-risk-grading.log에서 읽음)
+그림 11.8 11.3절 치안·보험 두 순환의 개념도(숫자 없음)
 
 먼저 11-0, 11-2, 11-3 코드를 실행해 data/와 results/를 만든 뒤 이 파일을 실행한다.
 
@@ -113,12 +114,12 @@ axr.text(4.7, -1.7,
          ha="center", fontsize=10.5, color="#444444")
 
 fig.tight_layout()
-fig.savefig(OUT / "fig_11_1_spatial_lag.png", dpi=150)
+fig.savefig(OUT / "fig_11_2_spatial_lag.png", dpi=150)
 plt.close(fig)
-print("saved", OUT / "fig_11_1_spatial_lag.png")
+print("saved", OUT / "fig_11_2_spatial_lag.png")
 
 
-# ── 그림 11.2: 그래디언트 부스팅(5절) ──
+# ── 그림 11.3: 그래디언트 부스팅(5절) ──
 from sklearn.ensemble import GradientBoostingRegressor
 
 bld = pd.read_parquet(PRACTICE / "data" / "insurance_buildings.parquet")
@@ -145,10 +146,10 @@ axes[0].set_ylabel("침수 피해확률", fontsize=9.5)
 fig.tight_layout(rect=(0, 0.07, 1, 1))
 fig.text(0.5, 0.015, "회색 점: 보험 건물 500채. 표고 하나만 입력한 설명용 모델(나무 깊이 2, 학습률 0.1)",
          ha="center", fontsize=9.5, color=GRAY)
-fig.savefig(OUT / "fig_11_2_boosting_steps.png", dpi=150)
+fig.savefig(OUT / "fig_11_3_boosting_steps.png", dpi=150)
 plt.close(fig)
 
-# ── 그림 11.3: 무작위 분할과 블록 분할(6절) ──
+# ── 그림 11.4: 무작위 분할과 블록 분할(6절) ──
 G = 10
 rng = np.random.default_rng(3)
 rand_test = rng.random((G, G)) < 0.3
@@ -171,10 +172,10 @@ fig.legend(handles=[Rectangle((0, 0), 1, 1, fc=BLUE_L, label="학습 칸"),
                     Rectangle((0, 0), 1, 1, fc="#d62728", label="시험 칸")],
            loc="upper center", ncol=2, frameon=False, fontsize=10.5, bbox_to_anchor=(0.5, 1.0))
 fig.tight_layout(rect=(0, 0, 1, 0.94))
-fig.savefig(OUT / "fig_11_3_random_vs_block.png", dpi=150)
+fig.savefig(OUT / "fig_11_4_random_vs_block.png", dpi=150)
 plt.close(fig)
 
-# ── 그림 11.4: 예측구간 폭(7절) ──
+# ── 그림 11.5: 예측구간 폭(7절) ──
 fig, ax = plt.subplots(figsize=(8.4, 2.5))
 for yv, lo, hi, label, col in ((1, 0.225, 0.375, "건물 가  (σ̂ = 0.05)".replace("σ̂", "예상 오차"), BLUE),
                               (0, 0.12, 0.48, "건물 나  (예상 오차 = 0.12)", ORANGE)):
@@ -192,10 +193,10 @@ ax.set_yticks([]); ax.set_xlabel("예측 침수확률", fontsize=10)
 for sp in ("top", "right", "left"):
     ax.spines[sp].set_visible(False)
 fig.tight_layout()
-fig.savefig(OUT / "fig_11_4_interval_width.png", dpi=150)
+fig.savefig(OUT / "fig_11_5_interval_width.png", dpi=150)
 plt.close(fig)
 
-# ── 그림 11.5: 치안 시뮬레이션(10절) ──
+# ── 그림 11.6: 치안 시뮬레이션(10절) ──
 h = pd.read_csv(PRACTICE / "results" / "predictive_policing_bias.csv")
 fig, ax = plt.subplots(figsize=(7.4, 3.3))
 ax.plot(h["round"], h["r2_recorded"], "-o", color=BLUE, lw=2.2, label="기록 기준 R² (모델이 기록을 맞힌 점수)")
@@ -211,10 +212,10 @@ ax.legend(loc="lower right", fontsize=9.5, frameon=False)
 for sp in ("top", "right"):
     ax.spines[sp].set_visible(False)
 fig.tight_layout()
-fig.savefig(OUT / "fig_11_5_policing_rounds.png", dpi=150)
+fig.savefig(OUT / "fig_11_6_policing_rounds.png", dpi=150)
 plt.close(fig)
 
-# ── 그림 11.6: 완전·관측·대조군 R²(11.2절) ──
+# ── 그림 11.7: 완전·관측·대조군 R²(11.2절) ──
 log = (PRACTICE / "results" / "11-3-insurance-risk-grading.log").read_text(encoding="utf-8")
 m1 = re.search(r"전체 R²\s+([0-9.]+)\s+([0-9.]+)", log)
 m2 = re.search(r"무작위 표본 R²:\s*([0-9.]+)\s*\(SD\s*([0-9.]+)", log)
@@ -236,11 +237,11 @@ ax.set_ylim(0, 1.02); ax.set_ylabel("전체 R²", fontsize=10)
 for sp in ("top", "right"):
     ax.spines[sp].set_visible(False)
 fig.tight_layout()
-fig.savefig(OUT / "fig_11_6_selection_control.png", dpi=150)
+fig.savefig(OUT / "fig_11_7_selection_control.png", dpi=150)
 plt.close(fig)
 
 
-# ── 그림 11.7: 두 순환 개념도(11.3절) ──
+# ── 그림 11.8: 두 순환 개념도(11.3절) ──
 from matplotlib.patches import FancyBboxPatch
 
 
@@ -268,6 +269,110 @@ loop(a2, "홍수보험 — 기록이 사라지는 순환",
      ["예측 위험 과소평가", "상품 설계 안 됨", "가입 감소", "청구 기록 결손"],
      BLUE_L, BLUE)
 fig.tight_layout()
-fig.savefig(OUT / "fig_11_7_two_loops.png", dpi=150)
+fig.savefig(OUT / "fig_11_8_two_loops.png", dpi=150)
 plt.close(fig)
-print("saved 7 figures")
+print("saved 8 figures")
+
+
+# ── 그림 11.1: 이웃을 정하는 방법(4절) ──
+def grid3(ax, nbr_cells, title):
+    ax.set_xlim(-0.1, 3.1); ax.set_ylim(-0.1, 3.1); ax.set_aspect("equal"); ax.axis("off")
+    ax.set_title(title, fontsize=11, pad=5)
+    for r in range(3):
+        for c in range(3):
+            if (r, c) == (1, 1):
+                face = ORANGE
+            elif (r, c) in nbr_cells:
+                face = BLUE_L
+            else:
+                face = "white"
+            ax.add_patch(Rectangle((c, 2 - r), 1, 1, fc=face, ec="#555555", lw=1.2))
+    ax.text(1.5, 1.5, "나", ha="center", va="center", fontsize=12, color="white", fontweight="bold")
+
+
+def scatter_panel(ax, seed, title):
+    rng_p = np.random.default_rng(seed)
+    pts = rng_p.random((22, 2)) * 0.9 + 0.05
+    ctr = np.array([0.5, 0.5])
+    pts[0] = ctr
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_aspect("equal")
+    ax.set_xticks([]); ax.set_yticks([])
+    for sp in ax.spines.values():
+        sp.set_color("#999999")
+    ax.set_title(title, fontsize=11, pad=5)
+    return pts, ctr
+
+
+fig, axs = plt.subplots(2, 3, figsize=(10.5, 4.3))
+
+grid3(axs[0, 0], {(0, 1), (1, 0), (1, 2), (2, 1)}, "① rook: 변을 맞댄 4칸")
+grid3(axs[0, 1], {(r, c) for r in range(3) for c in range(3)} - {(1, 1)}, "② queen: 모서리까지 8칸")
+
+pts, ctr = scatter_panel(axs[0, 2], 5, "③ 거리 임계: 반경 d 안의 모든 점")
+dist = np.linalg.norm(pts - ctr, axis=1)
+inside = (dist <= 0.27) & (dist > 0)
+axs[0, 2].add_patch(plt.Circle(ctr, 0.27, fc="none", ec=BLUE, ls="--", lw=1.6))
+axs[0, 2].scatter(pts[~inside, 0], pts[~inside, 1], s=30, color="#bbbbbb")
+axs[0, 2].scatter(pts[inside, 0], pts[inside, 1], s=46, color=BLUE)
+axs[0, 2].scatter(*ctr, s=90, color=ORANGE, zorder=5)
+
+pts, ctr = scatter_panel(axs[1, 0], 11, "④ k-최근접: 가장 가까운 k개(k = 3)")
+d2 = np.linalg.norm(pts - ctr, axis=1)
+near = np.argsort(d2)[1:4]
+mask = np.ones(len(pts), bool); mask[0] = False; mask[near] = False
+for j in near:
+    axs[1, 0].plot([ctr[0], pts[j, 0]], [ctr[1], pts[j, 1]], color=BLUE, lw=1.4)
+axs[1, 0].scatter(pts[mask, 0], pts[mask, 1], s=30, color="#bbbbbb")
+axs[1, 0].scatter(pts[near, 0], pts[near, 1], s=46, color=BLUE)
+axs[1, 0].scatter(*ctr, s=90, color=ORANGE, zorder=5)
+
+ax = axs[1, 1]
+ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_aspect("equal")
+ax.set_xticks([]); ax.set_yticks([])
+for sp in ax.spines.values():
+    sp.set_color("#999999")
+ax.set_title("⑤ 연결망: 도로로 이어진 곳만", fontsize=11, pad=5)
+ax.add_patch(Rectangle((0.52, 0), 0.07, 1, fc="#d9d9d9", ec="none"))
+ax.text(0.555, 0.04, "철도", ha="center", va="bottom", fontsize=9, color="#666666", rotation=90)
+me = np.array([0.40, 0.50])
+left = np.array([[0.15, 0.78], [0.18, 0.25], [0.38, 0.88], [0.36, 0.14]])
+right = np.array([[0.68, 0.50], [0.82, 0.78], [0.80, 0.22]])
+for q in (left[0], left[2]):
+    ax.plot([me[0], q[0]], [me[1], q[1]], color=BLUE, lw=1.6)
+ax.scatter(left[[0, 2], 0], left[[0, 2], 1], s=46, color=BLUE)
+ax.scatter(left[[1, 3], 0], left[[1, 3], 1], s=30, color="#bbbbbb")
+ax.scatter(right[:, 0], right[:, 1], s=30, color="#bbbbbb")
+ax.annotate("", xy=(0.68, 0.50), xytext=(me[0], me[1]),
+            arrowprops=dict(arrowstyle="-", color="#bbbbbb", ls=":", lw=1.4))
+ax.text(0.80, 0.585, "직선으론 가까워도\n철도 건너편은 제외", ha="center", fontsize=8.5, color="#777777")
+ax.scatter(*me, s=90, color=ORANGE, zorder=5)
+
+ax = axs[1, 2]
+ax.set_xlim(0, 10); ax.set_ylim(0, 10); ax.axis("off")
+ax.set_title("⑥ 이웃 정보를 표(W)로 적으면", fontsize=11, pad=5)
+names = ["A", "B", "C"]
+for k, nm in enumerate(names):
+    ax.add_patch(Rectangle((0.3 + k * 1.15, 8.0), 1.0, 1.0, fc=BLUE_L if k != 1 else ORANGE_L, ec="#555555", lw=1.2))
+    ax.text(0.8 + k * 1.15, 8.5, nm, ha="center", va="center", fontsize=11, fontweight="bold")
+ax.text(4.1, 8.5, "← 한 줄로 놓인 세 칸\n(rook: 맞닿은 칸이 이웃)", va="center", fontsize=8.5, color="#555555")
+W = [[0, 1, 0], [1, 0, 1], [0, 1, 0]]
+x0, y0, cw = 2.2, 1.9, 1.35
+for j, nm in enumerate(names):
+    ax.text(x0 + j * cw + cw / 2, y0 + 3 * 1.3 + 0.35, nm, ha="center", fontsize=11, fontweight="bold")
+for i, nm in enumerate(names):
+    ax.text(x0 - 0.4, y0 + (2 - i) * 1.3 + 0.65, nm, ha="center", va="center", fontsize=11, fontweight="bold")
+    for j in range(3):
+        v = W[i][j]
+        ax.add_patch(Rectangle((x0 + j * cw, y0 + (2 - i) * 1.3), cw, 1.3,
+                               fc=BLUE_L if v else "white", ec="#555555", lw=1.2))
+        ax.text(x0 + j * cw + cw / 2, y0 + (2 - i) * 1.3 + 0.65, str(v), ha="center", va="center", fontsize=12)
+ax.text(5.0, 0.55, "i행 j열 = j가 i의 이웃이면 1, 아니면 0", ha="center", fontsize=8.5, color="#555555")
+
+fig.legend(handles=[plt.Line2D([], [], marker="o", ls="", color=ORANGE, ms=9, label="나(기준 위치)"),
+                    plt.Line2D([], [], marker="o", ls="", color=BLUE, ms=8, label="이웃으로 정함"),
+                    plt.Line2D([], [], marker="o", ls="", color="#bbbbbb", ms=7, label="이웃 아님")],
+           loc="lower center", ncol=3, frameon=False, fontsize=10)
+fig.tight_layout(rect=(0, 0.05, 1, 1))
+fig.savefig(OUT / "fig_11_1_neighbor_types.png", dpi=150)
+plt.close(fig)
+print("saved neighbor figure")
