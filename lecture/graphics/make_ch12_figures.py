@@ -137,22 +137,25 @@ ax.set_yticks([1, 2, 3, 4], ["1위", "2위", "3위", "4위"])
 ax.spines[["top", "right", "bottom"]].set_visible(False)
 save(fig, "fig_12_5_weight_rank.png")
 
-# ── 그림 12.6 서강군과 남포군의 결손 비교 ──
+# ── 그림 12.5(파일명 fig_12_6) 서강군과 남포군의 결손 비교 ──
 labels = ["소멸위험", "청년 유출", "서비스 거리", "사업체 부족"]
-fig, ax = plt.subplots(figsize=(9, 2.4))
-xx = np.arange(4)
-ax.bar(xx - 0.2, Z[1], 0.4, color=ORANGE, label=f"서강군 (점수 {s_a[1]:.2f})")
-ax.bar(xx + 0.2, Z[2], 0.4, color=BLUE, label=f"남포군 (점수 {s_a[2]:.2f})")
-ax.axhline(0, color="#333333", lw=0.8)
-ax.set_xticks(xx, labels, fontsize=11)
-ax.set_ylabel("표준화 값\n(클수록 취약)")
-ax.annotate("서비스가 가장 멂", (2 - 0.2, Z[1][2]), (1.2, 1.25), fontsize=10.5, color=ORANGE,
-            arrowprops=dict(arrowstyle="->", color=ORANGE))
-ax.annotate("청년이 빠져나감", (1 + 0.2, Z[2][1]), (-0.3, 1.25), fontsize=10.5, color=BLUE,
-            arrowprops=dict(arrowstyle="->", color=BLUE))
-ax.set_ylim(-1, 1.55)
-ax.spines[["top", "right"]].set_visible(False)
-ax.legend(frameon=False, loc="lower left", fontsize=10)
+fig, axes = plt.subplots(1, 2, figsize=(10, 2.6), sharex=True)
+for ax, k, title in [(axes[0], 1, f"서강군 (점수 {s_a[1]:.2f}) - 서비스가 멀고 사업체가 적음"),
+                     (axes[1], 2, f"남포군 (점수 {s_a[2]:.2f}) - 인구가 늙고 청년이 빠져나감")]:
+    vals = Z[k]
+    yy = np.arange(4)[::-1]
+    ax.barh(yy, vals, 0.6, color=[RED if v > 0 else "#bbbbbb" for v in vals])
+    for y0, v in zip(yy, vals):
+        ax.text(v + (0.05 if v > 0 else -0.05), y0, f"{v:.2f}", va="center",
+                ha="left" if v > 0 else "right", fontsize=10)
+    ax.axvline(0, color="#333333", lw=0.9)
+    ax.set_yticks(yy, labels, fontsize=10.5)
+    ax.set_xlim(-1.5, 1.6)
+    ax.set_title(title, fontsize=11)
+    ax.text(0.08, -0.95, "평균보다 취약 →", fontsize=9.5, color=RED)
+    ax.text(-0.08, -0.95, "← 평균보다 나음", fontsize=9.5, color=GRAY, ha="right")
+    ax.set_ylim(-1.2, 3.5)
+    ax.spines[["top", "right"]].set_visible(False)
 save(fig, "fig_12_6_two_profiles.png")
 
 # ── 그림 12.7 측정오차 편의(설명용 난수) ──
