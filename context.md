@@ -17,11 +17,13 @@
 | `scripts/` | 과제 제출 스크립트 (`submit.py`, `_seeded_run.py`) |
 | `submissions/` | 학생 과제 제출물 |
 
-## 현재 상태 (2026-08-29 기준)
+## 현재 상태 (2026-11-16 기준)
 
-- 1~2장 강의 PDF와 학습 자료 배포 완료 (`lecture-chapter1.pdf`, `lecture-chapter2.pdf`, `docs/ch01.pdf`)
-- 과제 제출 파이프라인 동작 중 (`scripts/submit.py`, 테스트 제출 `submissions/test0001/`)
-- 3장 이후 PDF 변환은 미완
+- 강의 원고는 13장 체제다: `ch01~07`, `ch09~14`(8주차 중간고사로 8번 없음). 환경·기후, 복지·보건, 미래 GeoAI는 선택 읽기 보론(`bonus-*.md`)이다
+- PDF는 `ch05`를 뺀 12개 장에 있다
+- 12~14장은 가상 사례를 따라가며 문제를 푸는 방식으로 다시 썼다. 그림은 `lecture/graphics/make_ch12_figures.py` 등 장별 스크립트로 만든다
+- 실습 결과 폴더(`lecture_practice/**/results/`)는 png만 git에 올리고 로그·CSV는 올리지 않는다. 원고가 이 폴더의 그림을 직접 링크하기 때문이다
+- 과제 제출 파이프라인 동작 중(`scripts/submit.py`)
 
 ## 작업 시 주의
 
