@@ -32,6 +32,13 @@ lecture_practice/chapter7/data/*
 lecture_practice/chapter10/data/*
 !lecture_practice/chapter10/data/complaint_road.parquet
 !lecture_practice/chapter10/data/complaint_obs.parquet
+# 13장: 원자료(상가정보·생활인구)는 올리지 않고, 13-0이 만든 가공 파일만 포함한다.
+# 서울 생활인구 이용조건이 원본 재배포는 정하지 않고 분석 결과물 이용만 허용하기 때문이다.
+!lecture_practice/chapter13/data/
+lecture_practice/chapter13/data/*
+!lecture_practice/chapter13/data/cafes.parquet
+!lecture_practice/chapter13/data/demand_dong.parquet
+!lecture_practice/chapter13/data/SOURCES.txt
 
 # 장별 실행 결과는 로컬에서 생성하며 공개 저장소에 동기화하지 않는다.
 # 단, 강의 원고가 링크하는 그림(png)은 학생 화면에 보이도록 올린다(2026-11-16).

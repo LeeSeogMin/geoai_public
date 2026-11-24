@@ -147,7 +147,7 @@ ASSIGNMENTS: dict[int, dict] = {
     },
     13: {
         "title": "어디에 낼 것인가 — 손님을 나눠 갖는 계산",
-        "prep": ["13/13-0-data-prep.py"],
+        "prep": [],   # 가공 파일(data/cafes.parquet·demand_dong.parquet)을 저장소에 넣었으므로 13-0을 돌리지 않음
         "target": "13/13-1-huff-location-cannibalization.py",
         "watch": "후보지별 배후 수요와 기존 점포에서 옮겨 오는 몫(전이율)",
         "fixed_seed": True,
