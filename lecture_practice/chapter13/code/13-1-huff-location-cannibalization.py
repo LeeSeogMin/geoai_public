@@ -131,7 +131,7 @@ def main():
     res["net_rank"] = res["net"].rank(ascending=False).astype(int)
 
     print("\n" + "-" * 70)
-    print(f"표 14.4  후보지 상위 10곳 — 총배분 순위와 순증 순위 (beta={BETA_BASE}, A=상수)")
+    print(f"후보지 상위 10곳 — 총배분 순위와 순증 순위 (beta={BETA_BASE}, A=상수)")
     print("-" * 70)
     print(f"{'총배분순위':>8} {'자사최근접(m)':>13} {'예상배분(명)':>12} "
           f"{'자기잠식(명)':>12} {'전이율':>8} {'순증(명)':>10} {'순증순위':>8}")
@@ -141,7 +141,7 @@ def main():
               f"{r['net']:>10,.0f} {r['net_rank']:>8}")
 
     print("\n" + "-" * 70)
-    print("표 14.5  자사 최근접 매장까지의 거리와 전이율")
+    print("자사 최근접 매장까지의 거리와 전이율")
     print("-" * 70)
     bins = [0, 300, 500, 800, 1200, 2000, np.inf]
     labels = ["~300", "300~500", "500~800", "800~1200", "1200~2000", "2000~"]
@@ -176,7 +176,7 @@ def main():
               f"({len(ok) / len(res):>5.1%}) | {note}")
 
     print("\n" + "-" * 70)
-    print("표 14.6  민감도 — 거리 저항 beta")
+    print("민감도 — 거리 저항 beta")
     print("-" * 70)
     runs = {b: run(attract, b) for b in BETAS}
     ref_idx = int(runs[BETA_BASE][2].argmax())
@@ -189,7 +189,7 @@ def main():
         print(f"{b:>6.1f} {t2.mean():>11.1%} {n2[idx]:>18,.0f} {shift:>18,.0f}")
 
     print("\n" + "-" * 70)
-    print("표 14.7  민감도 — 매력도 A의 대리변수")
+    print("민감도 — 매력도 A의 대리변수")
     print("-" * 70)
     dss = np.hypot(sx[:, None] - sx[None, :], sy[:, None] - sy[None, :])
     cluster = (dss <= 50).sum(axis=1).astype(float)   # 같은 건물·블록의 집적도
