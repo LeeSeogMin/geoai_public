@@ -81,7 +81,7 @@ ax.spines[["top", "right"]].set_visible(False)
 save(fig, "fig_14_1_three_values.png")
 
 # ── 그림 14.2 잘될 자리를 고르면 ──
-m = np.arange(0, 25)
+m = np.arange(0, 24)                          # 출점 전 12개월(0~11월) + 출점 후 12개월(12~23월)
 open_m = 12
 grow = 100 + 1.0 * m                          # 원래 오르던 상권(출점 없어도 계속 오름)
 effect = np.where(m >= open_m, 4.0, 0.0)      # 참 효과 +4
@@ -92,25 +92,25 @@ post_mean = actual[open_m:].mean()
 naive = post_mean - pre_mean
 print(f"[14.2] 전후 평균 차이 {naive:.1f} / 참 효과 4.0")
 fig, ax = plt.subplots(figsize=(10, 2.5))
-ax.plot(m, actual, "-o", ms=3, color=RED, lw=2, label="출점한 상권(실제)")
+ax.plot(m, actual, "-o", ms=3, color=RED, lw=2, label="출점 대상 상권(실제)")
 ax.plot(m[open_m:], grow[open_m:], "--", color=RED, lw=1.5, alpha=0.7,
         label="출점하지 않았다면(보이지 않음)")
 ax.plot(m, others, "-", color=GRAY, lw=1.5, label="다른 상권 평균")
 ax.hlines(pre_mean, 0, open_m - 1, color=BLUE, lw=1.2, ls=":")
-ax.hlines(post_mean, open_m, 24, color=BLUE, lw=1.2, ls=":")
+ax.hlines(post_mean, open_m, 23, color=BLUE, lw=1.2, ls=":")
 ax.annotate("", (24.6, post_mean), (24.6, pre_mean),
             arrowprops=dict(arrowstyle="<->", color=BLUE))
 ax.text(24.9, (pre_mean + post_mean) / 2, f"전후 비교\n+{naive:.1f}", va="center",
         fontsize=10, color=BLUE)
-ax.annotate("", (23.5, actual[23]), (23.5, grow[23]),
+ax.annotate("", (22.5, actual[22] + 0.5), (22.5, grow[22] + 0.5),
             arrowprops=dict(arrowstyle="<->", color=RED))
-ax.text(23.0, grow[23] - 4.0, "참 효과 +4", va="center", ha="right",
+ax.text(22.0, grow[22] - 4.0, "참 효과 +4", va="center", ha="right",
         fontsize=10, color=RED)
 ax.axvline(open_m - 0.5, color=GRAY, lw=1)
 ax.text(open_m - 0.7, 112, "출점", fontsize=10, color=GRAY, ha="right")
 ax.set_xlim(-0.5, 27.5)
 ax.set_xlabel("월")
-ax.set_ylabel("매출 지수")
+ax.set_ylabel("상권 매출 지수")
 ax.spines[["top", "right"]].set_visible(False)
 ax.legend(frameon=False, fontsize=9.5, loc="upper left")
 save(fig, "fig_14_2_selection.png")
@@ -258,7 +258,7 @@ ax.plot(t, p_don, ":", color=GREEN, lw=2, label=f"합성(인접 제외) 격차 {
 ax.axvline(T0 - 0.5, color=GRAY, lw=1)
 ax.text(T0, ax.get_ylim()[0] + 1, " 출점", color=GRAY, fontsize=9.5)
 ax.set_xlabel("월")
-ax.set_ylabel("매출 지수")
+ax.set_ylabel("상권 매출 지수")
 ax.set_title("(가) 실제와 합성 궤적 (회색 = 기증 상권)", fontsize=10.5)
 ax.legend(frameon=False, fontsize=9, loc="upper left")
 ax.spines[["top", "right"]].set_visible(False)
